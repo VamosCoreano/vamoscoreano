@@ -15,13 +15,15 @@ h1 {
 
 .menu-button {
   display: block;
-  width: 200px;
-  margin: 10px auto;
-  padding: 12px;
+  width: 220px;
+  margin: 12px auto;
+  padding: 14px;
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
   .menu-button:hover {
   background-color: #2e8b57;
