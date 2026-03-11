@@ -132,7 +132,42 @@ h1 {
 .menu-button:hover {
   background-color: var(--color-primary-hover);
 }
+/* back link */
 
+.back-link{
+display:inline-block;
+margin-bottom:var(--space-m);
+font-size:var(--font-s);
+color:var(--color-muted);
+text-decoration:none;
+}
+
+.back-link:hover{
+text-decoration:underline;
+}
+
+/* small text */
+
+.small-text{
+font-size:var(--font-s);
+color:var(--color-muted);
+margin-top:var(--space-m);
+}
+
+/* whatsapp secondary button */
+
+.whatsapp-button{
+display:inline-block;
+margin-top:var(--space-s);
+font-size:var(--font-s);
+color:var(--color-primary);
+text-decoration:none;
+font-weight:500;
+}
+
+.whatsapp-button:hover{
+text-decoration:underline;
+}
 
 /* =========================
    6. SECTIONS
