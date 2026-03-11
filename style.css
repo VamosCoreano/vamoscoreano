@@ -104,9 +104,15 @@ h1 {
    5. SECTIONS
 ========================= */
 
+
 .footer {
   margin-top: 80px;
   padding: 30px 20px;
   font-size: 13px;
   color: #666;
+  line-height: 1.4;
 }
+.footer p {
+  margin: 2px 0;
+}
+
