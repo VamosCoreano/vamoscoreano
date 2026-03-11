@@ -1,63 +1,66 @@
 /* =========================
-   1. RESET / BASE
+   1. DESIGN TOKENS
 ========================= */
+
 :root {
   --space-s: 16px;
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
 }
+
+
+/* =========================
+   2. RESET / BASE
+========================= */
+
 * {
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   background-color: #f8fafc;
   text-align: center;
-   margin: 0;
+  margin: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
 }
+
 h1, h2, h3, p {
   margin-top: 0;
 }
 
+
 /* =========================
-   2. GLOBAL
+   3. TYPOGRAPHY
 ========================= */
-.hero {
-  padding-top: var(--space-s);
-  padding-bottom: var(--space-l);
-}
-.hero h1 {
-  margin-bottom: var(--space-m);
-}
-.menu-section {
-  padding: var(--space-l) 0;
-}
-.hero-subtitle {
-  margin-bottom: 30px;
-  line-height: 1.5;
-}
+
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 42px;
   font-weight: 700;
   color: #2c3e50;
 }
+
 .subtitle {
   font-size: 20px;
   color: #555;
   margin-bottom: 30px;
 }
 
+.hero-subtitle {
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
 
 
 /* =========================
-   3. LAYOUT
+   4. LAYOUT
 ========================= */
 
 .container {
@@ -75,15 +78,13 @@ h1 {
 
 
 /* =========================
-   4. COMPONENTS
+   5. COMPONENTS
 ========================= */
 
 .profile-photo {
-
   width: 180px;
   border-radius: 50%;
   margin-bottom: 20px;
-
 }
 
 .cta-button {
@@ -104,28 +105,38 @@ h1 {
   max-width: 400px;
   margin: 15px auto;
   padding: 18px;
-
   background-color: #2563eb;
   color: white;
-
   text-decoration: none;
   border-radius: 10px;
-
   font-size: 18px;
 }
 
 .cta-button:hover {
   background-color: #1e40af;
 }
-  .menu-button:hover {
+
+.menu-button:hover {
   background-color: #1d4ed8;
 }
-  
+
 
 /* =========================
-   5. SECTIONS
+   6. SECTIONS
 ========================= */
 
+.hero {
+  padding-top: var(--space-s);
+  padding-bottom: var(--space-l);
+}
+
+.hero h1 {
+  margin-bottom: var(--space-m);
+}
+
+.menu-section {
+  padding: var(--space-l) 0;
+}
 
 .footer {
   margin-top: 80px;
@@ -134,7 +145,7 @@ h1 {
   color: #666;
   line-height: 1.4;
 }
+
 .footer p {
   margin: 2px 0;
 }
-
