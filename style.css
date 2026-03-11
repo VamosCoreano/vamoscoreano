@@ -1,8 +1,17 @@
+/* =========================
+   1. RESET / BASE
+========================= */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f8fafc;
   text-align: center;
 }
+
+
+/* =========================
+   2. GLOBAL
+========================= */
 
 h1 {
   color: #2c3e50;
@@ -13,6 +22,28 @@ h1 {
   margin-bottom: 30px;
 }
 
+
+/* =========================
+   3. LAYOUT
+========================= */
+
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 12px;
+}
+
+
+/* =========================
+   4. COMPONENTS
+========================= */
+
 .profile-photo {
 
   width: 180px;
@@ -21,17 +52,6 @@ h1 {
 
   margin-bottom: 20px;
 
-}
-
-.container {
-  max-width: 600px;
-  margin: 80px auto;
-}
-.card {
-  background: white;
-  padding: 30px;
-  margin-top: 30px;
-  border-radius: 12px;
 }
 
 .cta-button {
@@ -69,4 +89,7 @@ h1 {
   background-color: #1d4ed8;
 }
   
-}
+
+/* =========================
+   5. SECTIONS
+========================= */
