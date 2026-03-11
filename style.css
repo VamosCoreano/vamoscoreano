@@ -85,8 +85,8 @@ h1 {
 /* 상단 내비게이션 추가 */
 .main-header {
   background: var(--color-surface);
-  padding: 1rem 0;
-  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -101,15 +101,32 @@ h1 {
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: var(--font-s);
+  letter-spacing: -0.01em;
 }
 nav a {
-  margin-left: 15px;
+  margin-left: 12px;
   text-decoration: none;
   color: var(--color-text);
-  font-size: var(--font-s);
-  font-weight: 600;
+  font-size: var(--font-xs);
+  font-weight: 500;
 }
+/*MOBILE*/
+@media (max-width: 480px) {
+  .main-header {
+    padding: 6px 0; /* 모바일에서는 더 얇게 */
+  }
+  
+  .logo {
+    font-size: 14px; /* 로고 크기 추가 축소 */
+  }
+  
+  nav a {
+    margin-left: 8px; /* 링크 사이 간격 좁히기 */
+    font-size: 12px;  /* 모바일 링크는 푸터와 동일한 12px */
+  }
+}
+///////////**//////
 .container {
   max-width: 600px;
   margin: 0 auto;
