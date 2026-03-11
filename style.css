@@ -1,6 +1,12 @@
 /* =========================
    1. RESET / BASE
 ========================= */
+:root {
+  --space-s: 16px;
+  --space-m: 24px;
+  --space-l: 40px;
+  --space-xl: 80px;
+}
 * {
   box-sizing: border-box;
 }
@@ -19,10 +25,14 @@ img {
    2. GLOBAL
 ========================= */
 .hero {
-  padding: 90px 20px 50px 20px;
+  padding-top: var(--space-s);
+  padding-bottom: var(--space-l);
 }
 .hero h1 {
-  margin-bottom: 20px;
+  margin-bottom: var(--space-m);
+}
+.menu-section {
+  padding: var(--space-l) 0;
 }
 .hero-subtitle {
   margin-bottom: 30px;
@@ -39,9 +49,7 @@ h1 {
   color: #555;
   margin-bottom: 30px;
 }
-.menu-section {
-  padding: 40px 0;
-}
+
 
 
 /* =========================
