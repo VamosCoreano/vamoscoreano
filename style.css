@@ -82,7 +82,34 @@ h1 {
 /* =========================
    4. LAYOUT
 ========================= */
-
+/* 상단 내비게이션 추가 */
+.main-header {
+  background: var(--color-surface);
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: var(--font-s);
+  font-weight: 600;
+}
 .container {
   max-width: 600px;
   margin: 0 auto;
@@ -95,10 +122,6 @@ h1 {
   margin-top: var(--space-m);
   border-radius: 12px;
 }
-
-/* =========================
-   5. COMPONENTS
-========================= */
 
 .profile-photo {
   width: 180px;
@@ -122,11 +145,12 @@ h1 {
   min-width: 220px;
 }
 .menu-button {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: auto;
+   min-width: 160px;
   max-width: 400px;
   margin: var(--space-s) auto;
-  padding: 18px;
+  padding: 12px 24px;
   background-color: var(--color-primary);
   color: white;
   text-decoration: none;
