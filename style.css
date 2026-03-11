@@ -42,6 +42,9 @@ h1 {
   font-weight: bold;
 }
 
+.cta-button:hover {
+  background-color: #1e40af;
+}
   .menu-button:hover {
   background-color: #1d4ed8;
 }
