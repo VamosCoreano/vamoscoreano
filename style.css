@@ -13,7 +13,7 @@
   --font-s: 16px;
   --font-m: 18px;
   --font-l: 20px;
-  --font-xl: 40px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
+  --font-xl: 42px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
 
   /* Colors */
   --color-bg: #f9fafb;
@@ -66,7 +66,7 @@ img {
 /* Slim Header */
 .main-header {
   background: var(--color-surface);
-  padding: 6px 20px;
+  padding: 6px 10px;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
