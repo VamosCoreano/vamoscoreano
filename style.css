@@ -180,6 +180,7 @@ nav a {
 }
 
 .highlight-text {
+   font-size: var(--font-m);
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: 4px;
@@ -187,6 +188,7 @@ nav a {
 }
 
 .sub-text {
+  font-size: var(--font-s);
   font-weight: 500;
   color: var(--color-muted);
   display: block;
