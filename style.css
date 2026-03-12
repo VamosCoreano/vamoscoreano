@@ -163,18 +163,33 @@ nav a {
 /* ==========================================================================
    5. PAGE SECTIONS
    ========================================================================== */
-.hero h1 {
-  margin-top: 0;
-}
-
 .hero {
   padding: var(--space-l) 0 var(--space-m);
 }
 
-.hero-subtitle {
-  max-width: 420px;
-  margin: 0 auto var(--space-m);
+.hero h1 {
+  font-size: var(--font-xl);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-s); /* 제목과 설명 사이 여백 */
+}
+
+.hero-description {
+  max-width: 500px; 
+  margin: 0 auto var(--space-m); 
+  line-height: 1.5; 
+}
+
+.highlight-text {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.sub-text {
+  font-weight: 500;
   color: var(--color-muted);
+  display: block;
 }
 
 .profile-photo {
