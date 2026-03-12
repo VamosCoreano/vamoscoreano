@@ -189,7 +189,7 @@ nav a {
 
 .sub-text {
   font-size: var(--font-s);
-  font-weight: 500;
+  font-weight: 580;
   color: var(--color-muted);
   display: block;
 }
