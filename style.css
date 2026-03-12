@@ -112,6 +112,7 @@ nav a {
   font-size: 12px;
   font-weight: 500;
   line-height: 1; /* 로고와 동일하게 줄높이 1로 고정 */
+   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
 }
@@ -139,6 +140,7 @@ nav a {
   border-radius: 8px;
   transition: all 0.2s ease;
   line-height: 1;
+   letter-spacing: 0.05em;
 }
 
 /* 메인 버튼: 배경이 진하므로 글씨는 흰색 */
