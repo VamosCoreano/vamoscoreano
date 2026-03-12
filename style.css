@@ -164,12 +164,13 @@ nav a {
    5. PAGE SECTIONS
    ========================================================================== */
 .hero {
-  padding: var(--space-l) 0 var(--space-m);
+  padding: var(--space-m) 0 var(--space-m);
 }
 
 .hero h1 {
   font-size: var(--font-xl);
   letter-spacing: -0.02em;
+   margin-top: 0;
   margin-bottom: var(--space-s); /* 제목과 설명 사이 여백 */
 }
 
