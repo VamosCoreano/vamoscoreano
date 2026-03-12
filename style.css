@@ -121,7 +121,7 @@ nav a {
    ========================================================================== */
 /* Common Button Style */
 .cta-button, .menu-button {
-  display: ㅑinline-block;
+  display: inline-block;
   width: 100%;
   max-width: 320px;
   margin: 12px auto;
