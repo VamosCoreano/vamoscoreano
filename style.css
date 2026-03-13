@@ -60,13 +60,15 @@ img {
 /* ==========================================================================
    3. LAYOUT COMPONENTS
    ========================================================================== */
+.main-content {
+  padding-top: var(--space-m);
+  min-height: 80vh; /* 푸터가 둥둥 떠다니는 것을 방지 */
+}
 .container {
   max-width: 600px;
   margin: 0 auto;
   padding: 0 var(--space-s);
 }
-
-/* Slim Header */
 .main-header {
   background: var(--color-surface);
   padding: 6px 8px;
@@ -78,7 +80,19 @@ img {
   display: flex;
   align-items: center;
 }
-
+.main-header nav a {
+  transition: color 0.2s ease;
+}
+.main-header nav a:hover {
+  color: var(--color-primary); /* 마우스 올리면 부드럽게 파란색으로 */
+}
+.page-title {
+  margin-top: 0;
+  margin-bottom: var(--space-l);
+  letter-spacing: 0;
+  font-size: var(--font-xl);
+  text-transform: uppercase;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -118,12 +132,21 @@ nav a {
 }
 
 .card {
-  background-color: var(--color-surface); /* 은은한 백색 (White) */
-  border: 1px solid #f1f5f9; /* 아주 미세하고 우아한 테두리 (Watermark 역할) */
-  border-radius: 12px; /* 살짝 더 부드러운 모서리 */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); /* 싸구려 그림자가 아닌, 공중에 살짝 뜬 듯한 고급스러운 깊이감 */
-  padding: var(--space-l); /* 내부 여백을 넉넉하게 주어 럭셔리함 극대화 */
+  background-color: var(--color-surface);
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: var(--space-m); /* 약 24px의 균일한 여백 */
   margin-bottom: var(--space-m);
+  text-align: left; /* 카드 내 텍스트는 기본 왼쪽 정렬 */
+  transition: transform 0.2s ease;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--space-m);
+  display: block;
 }
 
 /* ==========================================================================
@@ -193,9 +216,7 @@ nav a {
 }
 
 .hero-description {
-  max-width: 500px; 
-  margin: 0 auto 32px; 
-  line-height: 1.6; 
+  margin-bottom: var(--space-l);
 }
 
 .highlight-text {
@@ -210,7 +231,7 @@ nav a {
   font-size: var(--font-s);
   font-weight: 400;
   color: var(--color-muted);
-  display: block;
+  line-height: 1.7;
 }
 
 .profile-photo {
