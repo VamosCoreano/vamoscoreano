@@ -1,13 +1,21 @@
+/* ==========================================================================
+   1. DESIGN TOKENS (Variables)
+   ========================================================================== */
 :root {
+  /* Spacing */
   --space-s: 16px;
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
+   
+  /* Typography */
   --font-xs: 12px;
   --font-s: 16px;
   --font-m: 18px;
   --font-l: 20px;
-  --font-xl: 42px;
+  --font-xl: 42px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
+
+  /* Colors */
   --color-bg: #f9fafb;
   --color-text: #111827;
   --color-muted: #6b7280;
@@ -16,11 +24,13 @@
   --color-surface: #ffffff;
 }
 
+/* ==========================================================================
+   2. RESET & BASE STYLES
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -30,21 +40,59 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   text-align: center;
-  word-break: keep-all;
 }
 
-/* Header & Nav */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-xl);
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-s);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   3. LAYOUT COMPONENTS
+   ========================================================================== */
+.main-content {
+  padding-top: var(--space-m);
+  min-height: 80vh; /* 푸터가 둥둥 떠다니는 것을 방지 */
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--space-s);
+}
 .main-header {
   background: var(--color-surface);
+  padding: 6px 8px;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 56px;
+  height: 44px;
   display: flex;
   align-items: center;
 }
-
+.main-header nav a {
+  transition: color 0.2s ease;
+}
+.main-header nav a:hover {
+  color: var(--color-primary); /* 마우스 올리면 부드럽게 파란색으로 */
+}
+.page-title {
+  margin-top: 0;
+  margin-bottom: var(--space-l);
+  letter-spacing: 0;
+  font-size: var(--font-xl);
+  text-transform: uppercase;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -52,50 +100,122 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 var(--space-s);
+   padding: 0 var(--space-s); 
 }
 
 .logo {
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 16px;
-  letter-spacing: -0.02em;
+  font-size: 14px;
+   line-height: 1; 
+  display: flex;
+  align-items: center;
 }
 
-nav { display: flex; gap: 16px; }
+nav {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
 
 nav a {
+  margin-left: 12px;
   text-decoration: none;
   color: var(--color-text);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
+  line-height: 1; /* 로고와 동일하게 줄높이 1로 고정 */
+   letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
 }
 
-nav a:hover { color: var(--color-primary); }
-
-/* Layout & Typography */
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 var(--space-s);
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  padding: var(--space-m); /* 약 24px의 균일한 여백 */
+  margin-bottom: var(--space-m);
+  text-align: left; /* 카드 내 텍스트는 기본 왼쪽 정렬 */
+  transition: transform 0.2s ease;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: var(--space-m);
+  display: block;
+}
+.card h2.highlight-text {
+  font-size: var(--font-l); /* 카드 내 메인 인사는 조금 더 크게 */
+  margin-bottom: var(--space-s);
+}
+.card h3.highlight-text {
+  font-size: var(--font-m); /* 소제목은 중간 크기로 위계 정리 */
+  margin-top: var(--space-m);
+  margin-bottom: 8px;
+}
+/* ==========================================================================
+   4. UI COMPONENTS (Buttons, Cards)
+   ========================================================================== */
+/* 버튼들을 감싸는 섹션에 여백을 주어 버튼끼리 붙지 않게 합니다 */
+.menu-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* 버튼 사이의 일정한 간격 */
 }
 
-.main-content {
-  padding: var(--space-m) 0 var(--space-xl);
-  min-height: 80vh;
+.cta-button, .menu-button {
+  display: block; /* 세로로 쌓이도록 다시 block으로 복구 */
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto; /* block일 때 중앙 정렬 */
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  line-height: 1;
+   letter-spacing: 0.05em;
 }
 
-.page-title {
-  font-family: 'Poppins', sans-serif;
+/* 메인 버튼: 배경이 진하므로 글씨는 흰색 */
+.cta-button {
+  background-color: var(--color-primary);
+  color: #ffffff !important; /* 무조건 흰색 */
+  border: none;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+}
+.menu-button {
+  background-color: #ffffff;
+  color: var(--color-text);
+  border: 1px solid #e5e7eb;
+}
+.cta-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+.menu-button:hover {
+  background-color: #f8fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary)
+}
+/* ==========================================================================
+   5. PAGE SECTIONS
+   ========================================================================== */
+.hero {
+  padding: var(--space-m) 0 var(--space-l);
+   text-align: center;
+}
+
+.hero h1 {
   font-size: var(--font-xl);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: var(--space-l);
-  letter-spacing: -0.01em;
+   margin-top: 0;
+  margin-bottom: var(--space-s); /* 제목과 설명 사이 여백 */
 }
 
 .hero-description {
@@ -103,119 +223,95 @@ nav a:hover { color: var(--color-primary); }
 }
 
 .highlight-text {
-  font-size: var(--font-m);
+   font-size: var(--font-m);
   font-weight: 600;
-  margin-bottom: 8px;
+  color: var(--color-text);
+  margin-bottom: 6px;
   display: block;
 }
 
 .sub-text {
   font-size: var(--font-s);
+  font-weight: 400;
   color: var(--color-muted);
-}
-
-/* Class List & Card */
-.class-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-m);
-}
-
-.card {
-  background: var(--color-surface);
-  border: 1px solid #f1f5f9;
-  border-radius: 12px;
-  padding: var(--space-m);
-  text-align: left;
-}
-
-.card-title {
-  font-size: var(--font-l);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.card-desc {
-  font-size: var(--font-s);
-  color: var(--color-muted);
-  margin-bottom: var(--space-m);
   line-height: 1.7;
 }
 
-.card-upcoming {
-  opacity: 0.6;
-  border-style: dashed;
-  background-color: transparent;
-}
-
-.card-upcoming .card-title {
-  color: var(--color-muted);
-}
-
-.card-upcoming .card-desc {
-  margin-bottom: 0;
-}
-
-.cta-button, 
-.menu-button {
-  appearance: none;
-  -webkit-appearance: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 320px;
-  height: 56px;
-  padding: 0;
-  
-  /* 마진 복구: 아래쪽에 12px 여백을 무조건 주어 절대 붙지 않게 함 */
-  margin: 0 auto 12px auto; 
-  
-  cursor: pointer;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-family: 'Inter', sans-serif;
-  font-size: var(--font-m);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
-.cta-button:last-child,
-.menu-button:last-child {
-  margin-bottom: 0;
-}
-
-.cta-button { background: var(--color-primary); color: #fff !important; }
-.cta-button:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
-
-.menu-button { background: #fff; color: var(--color-text) !important; border: 1px solid #e5e7eb; }
-.menu-button:hover { background: #f8fafc; border-color: var(--color-primary); color: var(--color-primary) !important; transform: translateY(-2px); }
-
 .profile-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+   display: block;
+  width: 150px; 
   border-radius: 50%;
-  display: block;
   margin: 0 auto var(--space-m);
 }
 
-/* Footer */
+/* ==========================================================================
+   6. UTILITIES & FOOTER
+   ========================================================================== */
+.small-text {
+  font-size: var(--font-xs);
+  color: var(--color-muted);
+  margin-top: var(--space-m);
+}
 .footer {
   margin-top: var(--space-xl);
-  padding: 60px 20px;
+  padding: 40px 20px;
   font-size: var(--font-xs);
   color: var(--color-muted);
   border-top: 1px solid #f0f0f0;
 }
-
-/* Mobile */
+/* ===7.MOBILE=== */
 @media (max-width: 480px) {
-  .page-title { font-size: 32px; }
-  .main-header { height: 48px; }
-  nav a { font-size: 11px; gap: 12px; }
+  .main-header { padding: 4px 8px; height: 40px;}
+  .logo { font-size: 13px; }
+  nav a { margin-left: 10px; font-size: 11px; }
+   h1 { font-size: 28px; margin-top: var(--space-m); }
+   .nav-container {padding: 0 var(--space-xs); }
+   .hero h1, h1, .page-title { font-size: 30px; }
+}
+/* ==========================================================================
+   8. CONTACT PAGE SPECIAL (Toast & Button Reset)
+   ========================================================================== */
+
+/* 이메일 복사 알림창: 공중부양 레이어 */
+#copy-toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: var(--color-text);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+
+#copy-toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+/* 버튼 태그 리셋: <a> 태그와 1px의 오차도 없이 일치시킴 */
+button.menu-button {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  font-family: inherit; /* 부모의 Inter 폰트 상속 */
+  outline: none;
+}
+
+button.menu-button:hover {
+  background-color: #f8fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
 }
