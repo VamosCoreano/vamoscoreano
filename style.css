@@ -1,21 +1,16 @@
-/* ==========================================================================
-   1. DESIGN TOKENS (Variables)
-   ========================================================================== */
+/*===1. DESIGN TOKENS===*/
 :root {
-  /* Spacing */
   --space-s: 16px;
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
    
-  /* Typography */
   --font-xs: 12px;
   --font-s: 16px;
   --font-m: 18px;
   --font-l: 20px;
-  --font-xl: 42px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
+  --font-xl: 42px;
 
-  /* Colors */
   --color-bg: #f9fafb;
   --color-text: #111827;
   --color-muted: #6b7280;
@@ -168,13 +163,14 @@ nav a {
 }
 
 .cta-button, .menu-button {
-  display: block; /* 세로로 쌓이도록 다시 block으로 복구 */
+  display: flex;
   width: 100%;
   max-width: 320px;
   margin: 0 auto; /* block일 때 중앙 정렬 */
-  padding: 16px 20px;
+  padding: 0 20px;
   text-align: center;
   text-decoration: none;
+   font-size: var(--font-m);
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -182,6 +178,8 @@ nav a {
    letter-spacing: 0.05em;
    height: 56px;
    font-family: 'Inter', sans-serif;
+   align-items: center;
+  justify-content: center;
 }
 .cta-button {
   background-color: var(--color-primary);
@@ -243,9 +241,7 @@ nav a {
   margin: 0 auto var(--space-m);
 }
 
-/* ==========================================================================
-   6. UTILITIES & FOOTER
-   ========================================================================== */
+/* ===6. UTILITIES & FOOTER=== */
 .small-text {
   font-size: var(--font-xs);
   color: var(--color-muted);
@@ -270,8 +266,6 @@ nav a {
 /* ==========================================================================
    8. CONTACT PAGE SPECIAL (Toast & Button Reset)
    ========================================================================== */
-
-/* 이메일 복사 알림창: 공중부양 레이어 */
 #copy-toast {
   visibility: hidden;
   min-width: 200px;
@@ -296,15 +290,15 @@ nav a {
   opacity: 1;
   bottom: 50px;
 }
-
-/* 버튼 태그 리셋: <a> 태그와 1px의 오차도 없이 일치시킴 */
 button.menu-button {
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
   border: 1px solid #e5e7eb;
   background-color: #ffffff;
-  font-family: inherit; /* 부모의 Inter 폰트 상속 */
+  font-family: inherit;
+   font-size: inherit;
+  font-weight: inherit;
   outline: none;
 }
 
