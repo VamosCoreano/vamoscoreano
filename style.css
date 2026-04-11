@@ -1,4 +1,3 @@
-/*===1. DESIGN TOKENS===*/
 :root {
   --space-s: 16px;
   --space-m: 24px;
@@ -124,6 +123,7 @@ nav a {
    letter-spacing: 0.05em;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
 }
 
 .card {
