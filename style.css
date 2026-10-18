@@ -4,228 +4,348 @@
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
-   
-  --font-xs: 12px;
-  --font-s: 16px;
-  --font-m: 18px;
-  --font-l: 20px;
-  --font-xl: 42px;
+
+  --font-xs: 0.75rem;
+  --font-s: 1rem;
+  --font-m: 1.125rem;
+  --font-l: 1.25rem;
+  --font-xl: clamp(1.75rem, 5vw, 2.625rem);
 
   --color-bg: #f9fafb;
   --color-text: #111827;
-  --color-muted: #6b7280;
+  --color-muted: #4b5563;
   --color-primary: #2563eb;
   --color-primary-hover: #1d4ed8;
   --color-surface: #ffffff;
+  --color-border: #e5e7eb;
+  --color-border-soft: #f1f5f9;
+  --header-height: 56px;
+  --content-width: 680px;
+  --touch-min: 44px;
+  --radius: 12px;
+  --color-coffee: #b45309;
+  --color-coffee-soft: #fff7ed;
 }
 
-/* ==========================================================================
-   2. RESET & BASE STYLES
-   ========================================================================== */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
-  font-size: var(--font-m);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: var(--font-s);
   line-height: 1.6;
   background-color: var(--color-bg);
   color: var(--color-text);
-  text-align: center;
-}
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--font-xl);
-  letter-spacing: 0;
-  line-height: 1.2;
-  margin-top: var(--space-l);
-  margin-bottom: var(--space-s);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Poppins, Inter, sans-serif;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-xl);
+  margin-bottom: var(--space-s);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 200;
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: var(--color-surface);
+  font-weight: 600;
+  text-decoration: none;
   border-radius: 8px;
 }
 
-/* ==========================================================================
-   3. LAYOUT COMPONENTS
-   ========================================================================== */
+.skip-link:focus {
+  top: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .main-content {
   padding-top: var(--space-m);
-  min-height: 80vh; /* 푸터가 둥둥 떠다니는 것을 방지 */
+  min-height: calc(100vh - var(--header-height) - 160px);
 }
+
 .container {
-  max-width: 600px;
+  max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--space-s);
 }
+
 .main-header {
-  background: var(--color-surface);
-  padding: 6px 8px;
-  border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 44px;
+  min-height: var(--header-height);
   display: flex;
   align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--color-border-soft);
+  backdrop-filter: blur(10px);
 }
-.main-header nav a {
-  transition: color 0.2s ease;
-}
-.main-header nav a:hover {
-  color: var(--color-primary);
-}
-.page-title {
-  margin-top: 0;
-  margin-bottom: var(--space-l);
-  letter-spacing: 0;
-  font-size: var(--font-xl);
-  text-transform: uppercase;
-}
+
 .nav-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--space-s);
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-   padding: 0 var(--space-s); 
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-min);
+  height: var(--touch-min);
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle-bars,
+.menu-toggle-bars::before,
+.menu-toggle-bars::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+.menu-toggle-bars {
+  position: relative;
+}
+
+.menu-toggle-bars::before,
+.menu-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle-bars::before {
+  top: -6px;
+}
+
+.menu-toggle-bars::after {
+  top: 6px;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bars {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-bars::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 .logo {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  font-family: Poppins, sans-serif;
   font-weight: 700;
+  font-size: 0.95rem;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 14px;
-   line-height: 1; 
-  display: flex;
-  align-items: center;
+  letter-spacing: 0.02em;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  line-height: 1;
+.site-nav {
+  min-width: 0;
 }
 
-nav a {
-  margin-left: 12px;
-  text-decoration: none;
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-min);
+  padding: 0 8px;
   color: var(--color-text);
-  font-size: 11px;
+  text-decoration: none;
+  font-size: 0.75rem;
   font-weight: 600;
-  line-height: 1; /* 로고와 동일하게 줄높이 1로 고정 */
-   letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover,
+.nav-list a[aria-current="page"] {
+  color: var(--color-primary);
+}
+
+.page-title {
+  margin-bottom: var(--space-m);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .card {
   background-color: var(--color-surface);
-  border: 1px solid #f1f5f9;
-  border-radius: 12px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  padding: var(--space-m); /* 약 24px의 균일한 여백 */
+  padding: var(--space-m);
   margin-bottom: var(--space-m);
-  text-align: left; /* 카드 내 텍스트는 기본 왼쪽 정렬 */
-  transition: transform 0.2s ease;
+  text-align: left;
 }
+
 .card-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: var(--space-m);
-  display: block;
 }
+
 .card h2.highlight-text {
-  font-size: var(--font-l); /* 카드 내 메인 인사는 조금 더 크게 */
+  font-size: var(--font-l);
   margin-bottom: var(--space-s);
 }
+
 .card h3.highlight-text {
-  font-size: var(--font-m); /* 소제목은 중간 크기로 위계 정리 */
+  font-size: var(--font-m);
   margin-top: var(--space-m);
   margin-bottom: 8px;
 }
-/* ==========================================================================
-   4. UI COMPONENTS (Buttons, Cards)
-   ========================================================================== */
-.menu-section .container {
+
+.menu-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px; /* 버튼 사이의 일정한 간격 */
+  gap: 12px;
 }
 
-.cta-button, .menu-button {
-  display: flex;
+.cta-button,
+.menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 320px;
-  margin: 0 auto; /* block일 때 중앙 정렬 */
+  min-height: 56px;
   padding: 0 20px;
+  border-radius: 8px;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: var(--font-m);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
   text-align: center;
   text-decoration: none;
-   font-size: var(--font-m);
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  line-height: 1;
-   letter-spacing: 0.05em;
-   height: 56px;
-   font-family: 'Inter', sans-serif;
-   align-items: center;
-  justify-content: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
+
 .cta-button {
   background-color: var(--color-primary);
   color: var(--color-surface);
   border: none;
-  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.12);
 }
+
 .menu-button {
   background-color: var(--color-surface);
   color: var(--color-text);
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
 }
+
 .cta-button:hover {
   background-color: var(--color-primary-hover);
   transform: translateY(-2px);
 }
+
 .menu-button:hover {
   background-color: #f8fafc;
   border-color: var(--color-primary);
-  color: var(--color-primary)
+  color: var(--color-primary);
+  transform: translateY(-2px);
 }
-/* ==========================================================================
-   5. PAGE SECTIONS
-   ========================================================================== */
+
+button.menu-button {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+}
+
 .hero {
-  padding: var(--space-m) 0 var(--space-l);
-   text-align: center;
+  padding: var(--space-m) var(--space-s) var(--space-l);
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: var(--font-xl);
-   margin-top: 0;
-  margin-bottom: var(--space-s); /* 제목과 설명 사이 여백 */
+  margin-top: 0;
+  margin-bottom: var(--space-s);
 }
 
 .hero-description {
   margin-bottom: var(--space-l);
+  text-align: center;
 }
 
 .highlight-text {
-   font-size: var(--font-m);
+  font-size: var(--font-m);
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: 6px;
-  display: block;
 }
 
 .sub-text {
@@ -235,41 +355,47 @@ nav a {
   line-height: 1.7;
 }
 
+.sub-text p + p {
+  margin-top: 0.75em;
+}
+
 .profile-photo {
-   display: block;
-  width: 150px; 
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 50%;
   margin: 0 auto var(--space-m);
 }
 
-/* ===6. UTILITIES & FOOTER=== */
 .small-text {
   font-size: var(--font-xs);
   color: var(--color-muted);
-  margin-top: var(--space-m);
+  margin: var(--space-m) 0 8px;
 }
+
 .footer {
   margin-top: var(--space-xl);
   padding: 40px 20px;
   font-size: var(--font-xs);
   color: var(--color-muted);
-  border-top: 1px solid #f0f0f0;
+  text-align: center;
+  border-top: 1px solid var(--color-border-soft);
 }
-/* ===7.MOBILE=== */
-@media (max-width: 480px) {
-  .main-header { padding: 4px 8px; height: 40px;}
-  .logo { font-size: 13px; }
-  nav a { margin-left: 10px; font-size: 11px; }
-   h1 { font-size: 28px; margin-top: var(--space-m); }
-   .nav-container {padding: 0 var(--space-xs); }
-   .hero h1, h1, .page-title { font-size: 30px; }
+
+.donate-band + .footer {
+  margin-top: 0;
 }
-/* ==========================================================================
-   8. CONTACT PAGE SPECIAL (Toast & Button Reset)
-   ========================================================================== */
+
+.action-area {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-l);
+  padding: 0 var(--space-s);
+}
+
 #copy-toast {
   visibility: hidden;
-  min-width: 200px;
+  min-width: min(200px, calc(100% - 32px));
   background-color: var(--color-text);
   color: #fff;
   text-align: center;
@@ -285,49 +411,33 @@ nav a {
   opacity: 0;
   transition: opacity 0.3s, bottom 0.3s;
 }
+
 #copy-toast.show {
   visibility: visible;
   opacity: 1;
   bottom: 50px;
 }
-button.menu-button {
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  font-family: inherit;
-   font-size: inherit;
-  font-weight: 600;
-  outline: none;
-}
-
-/* ==========================================================================
-   9. RESEÑAS (REVIEWS) PAGE STYLES
-   ========================================================================== */
 
 .review-card {
   position: relative;
-  padding: 50px var(--space-m) var(--space-m); /* 상단에 따옴표 공간 확보 */
+  padding: 50px var(--space-m) var(--space-m);
   overflow: hidden;
 }
 
-/* 따옴표를 장식 요소로 변경 */
 .quote-icon {
   position: absolute;
   top: -10px;
   left: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: 100px;
   color: var(--color-primary);
-  opacity: 0.1; /* 아주 은은하게 */
-  pointer-events: none; /* 클릭 방해 금지 */
+  opacity: 0.1;
+  pointer-events: none;
 }
 
-/* 핵심 문장 강조 (현재 HTML에서 닫히지 않은 span 수정용) */
 .focus-text {
   display: block;
-  font-size: 22px; /* 강조를 위해 크게 */
+  font-size: clamp(1.125rem, 3vw, 1.375rem);
   font-weight: 700;
   color: var(--color-text);
   line-height: 1.3;
@@ -339,14 +449,16 @@ button.menu-button {
   font-size: var(--font-s);
   color: var(--color-muted);
   line-height: 1.8;
-  text-align: left;
 }
 
-/* 학생 정보 섹션 */
+.quote-text p + p {
+  margin-top: 1em;
+}
+
 .student-info {
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--color-border-soft);
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -354,6 +466,7 @@ button.menu-button {
 
 .student-name {
   font-weight: 600;
+  font-style: normal;
   color: var(--color-primary);
   font-size: var(--font-s);
 }
@@ -362,40 +475,31 @@ button.menu-button {
   font-size: var(--font-xs);
   color: var(--color-muted);
 }
-button.menu-button:hover {
-  background-color: #f8fafc;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: translateY(-2px);
-}
 
-/* ==========================================================================
-   10. CLASES PAGE STYLES
-   ========================================================================== */
-
-.class-list {
+.class-list,
+.reviews-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-m);
-  margin-bottom: 0;
 }
 
-/* 클래스 카드 — 기존 .card 위에 레이어 */
 .class-card {
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
-  margin-bottom: 0; /* class-list gap으로 대체 */
+  margin-bottom: 0;
 }
 
-/* 레벨 배지 + 제목 묶음 */
+.class-card .menu-button {
+  max-width: none;
+}
+
 .class-card-header {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-/* 레벨 뱃지 (NIVEL 1, PRÓXIMO 등) */
 .class-level {
   display: inline-block;
   font-size: var(--font-xs);
@@ -405,35 +509,393 @@ button.menu-button:hover {
   text-transform: uppercase;
 }
 
-/* 카드 제목 */
 .card-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins, sans-serif;
   font-size: var(--font-l);
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.01em;
   line-height: 1.2;
-  margin: 0;
 }
 
-/* 카드 본문 */
 .card-desc {
   font-size: var(--font-s);
   color: var(--color-muted);
   line-height: 1.75;
-  margin: 0;
 }
 
-/* 준비 중 카드 — 조금 더 흐리게 */
 .class-card--upcoming {
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
 .class-card--upcoming .class-level {
   color: var(--color-muted);
 }
 
-/* action-area — 인라인 style 대체 */
-.action-area {
-  margin-top: var(--space-l);
+.resources-section {
+  scroll-margin-top: calc(var(--header-height) + 12px);
+  padding: var(--space-xl) var(--space-s) var(--space-l);
+}
+
+.resources-section .hero-description {
+  margin-bottom: var(--space-m);
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.resource-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  border-radius: 8px;
+  background: var(--color-border-soft);
+  color: var(--color-primary);
+  font-family: Poppins, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resource-card h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.resource-card p {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.resource-card .menu-button {
+  max-width: none;
+  min-height: 48px;
+  margin-top: auto;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    padding: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius);
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+  }
+
+  .site-nav.is-open {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .nav-list a {
+    justify-content: flex-start;
+    min-height: var(--touch-min);
+    padding: 0 14px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .nav-list a:hover,
+  .nav-list a[aria-current="page"] {
+    background: var(--color-border-soft);
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 560px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 0.85rem;
+  }
+
+  .page-title,
+  .hero h1 {
+    font-size: clamp(1.5rem, 8vw, 1.875rem);
+  }
+}
+
+.donate-band {
+  margin-top: var(--space-xl);
+  padding: 28px var(--space-s);
+  background: var(--color-coffee-soft);
+  border-top: 1px solid #fed7aa;
+  text-align: center;
+}
+
+.donate-band-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.donate-band p {
+  color: var(--color-muted);
+  font-size: var(--font-s);
+}
+
+.donate-band-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-min);
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--color-coffee);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.donate-band-link:hover {
+  filter: brightness(1.05);
+}
+
+.donate-page {
+  text-align: center;
+}
+
+.coffee-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-l);
+}
+
+.coffee-art {
+  width: min(180px, 46vw);
+  height: auto;
+  margin-bottom: var(--space-m);
+}
+
+.coffee-steam {
+  transform-origin: center bottom;
+  animation: steam 2.8s ease-in-out infinite;
+}
+
+.coffee-steam:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.coffee-steam:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+@keyframes steam {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0) scaleX(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-6px) scaleX(1.08);
+  }
+}
+
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: var(--space-m);
+}
+
+.amount-card {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 112px;
+  padding: 16px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.amount-card:hover,
+.amount-card:focus-visible {
+  border-color: var(--color-coffee);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(180, 83, 9, 0.12);
+}
+
+.amount-card-price {
+  font-family: Poppins, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.amount-card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-coffee);
+}
+
+.amount-card-note {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  line-height: 1.3;
+}
+
+.custom-amount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: var(--space-l);
+}
+
+.custom-amount label {
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.custom-amount input {
+  flex: 1 1 140px;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: var(--font-m);
+}
+
+.custom-amount button {
+  flex: 1 1 140px;
+  max-width: none;
+  min-height: 56px;
+}
+
+.btc-cta {
+  max-width: 320px;
+  margin: 0 auto var(--space-xl);
+  background: #0f172a;
+  color: #fff;
+  box-shadow: none;
+}
+
+.btc-cta:hover {
+  background: #1e293b;
+}
+
+.support-board {
+  text-align: left;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.support-board h2 {
+  padding: 20px 20px 0;
+  font-size: var(--font-l);
+}
+
+.support-board > p {
+  padding: 8px 20px 16px;
+  color: var(--color-muted);
+  font-size: var(--font-s);
+}
+
+.support-board iframe {
+  display: block;
+  width: 100%;
+  min-height: 520px;
+  border: 0;
+  border-top: 1px solid var(--color-border-soft);
+  background: var(--color-bg);
+}
+
+.support-placeholder {
+  padding: 24px 20px 28px;
+  color: var(--color-muted);
+  font-size: var(--font-s);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+@media (max-width: 480px) {
+  .amount-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amount-card {
+    min-height: 88px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px 20px;
+    text-align: left;
+  }
+
+  .amount-card-note {
+    margin-left: auto;
+    max-width: 42%;
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

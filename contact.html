@@ -3,65 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta a Hyunho Lee por WhatsApp, Instagram o correo para clases de coreano.">
+  <title>Contacto | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Contacto - VAMOS COREANO</title>
-
-  <link rel="icon" href="/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
 </head>
-
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <header class="main-header">
     <div class="container nav-container">
       <a href="index.html" class="logo">VAMOS COREANO</a>
-      <nav>
-        <a href="about.html">SOBRE Mí</a>
-        <a href="class.html">CLASES</a>
-        <a href="contact.html">CONTACTO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html">Reseñas</a></li>
+          <li><a href="contact.html" aria-current="page">Contacto</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="main-content">
+  <main id="contenido" class="main-content">
     <div class="container">
-      <h1 class="page-title">CONTACTO</h1>
+      <h1 class="page-title">Contacto</h1>
 
       <div class="hero-description">
         <p class="highlight-text">¿Tienes preguntas sobre las clases?</p>
         <p class="sub-text">Escríbeme por cualquiera de estos medios y te responderé lo antes posible.</p>
       </div>
 
-      <section class="menu-section">
-        <div class="container">
-          <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="cta-button" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
-          <a href="https://instagram.com/vamos.coreano" class="menu-button" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-          <button onclick="copyEmail()" class="menu-button">EMAIL</button>
-        </div>
+      <section class="menu-section" aria-label="Medios de contacto">
+        <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="cta-button" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+        <a href="https://instagram.com/vamos.coreano" class="menu-button" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+        <button type="button" class="menu-button" id="copy-email">Correo</button>
       </section>
     </div>
   </main>
 
-  <div id="copy-toast">Correo copiado al portapapeles</div>
+  <div id="copy-toast" role="status" aria-live="polite"></div>
+
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
 
   <footer class="footer">
-    <p>© 2026 VAMOS COREANO</p>
+    <p>© 2026 Vamos Coreano</p>
     <p>Profesor Hyunho Lee</p>
   </footer>
 
   <script>
-    function copyEmail() {
+    document.getElementById("copy-email").addEventListener("click", async () => {
       const email = "1219.hlee@gmail.com";
-      navigator.clipboard.writeText(email).then(() => {
-        const toast = document.getElementById("copy-toast");
-        toast.className = "show";
-        setTimeout(() => { toast.className = ""; }, 2500);
-      });
-    }
+      const toast = document.getElementById("copy-toast");
+
+      try {
+        await navigator.clipboard.writeText(email);
+        toast.textContent = "Correo copiado al portapapeles";
+      } catch {
+        toast.textContent = email;
+      }
+
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+        toast.textContent = "";
+      }, 2500);
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Invítame un café y apoya las clases de coreano de Vamos Coreano. Pagos con Bitcoin a través de BTCPay.">
+  <title>Invítame un café | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">VAMOS COREANO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
+    <div class="container donate-page">
+      <header class="coffee-hero">
+        <svg class="coffee-art" viewBox="0 0 180 180" role="img" aria-labelledby="coffee-title">
+          <title id="coffee-title">Taza de café con vapor</title>
+          <ellipse cx="90" cy="158" rx="48" ry="8" fill="#fed7aa" opacity="0.85"/>
+          <path class="coffee-steam" d="M78 38c0-10 8-14 8-24" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path class="coffee-steam" d="M90 34c0-12 9-16 7-28" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path class="coffee-steam" d="M102 38c0-10 8-14 8-24" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path d="M48 72h84c4 0 8 4 8 8v44c0 22-20 40-50 40S40 146 40 124V80c0-4 4-8 8-8z" fill="#fff7ed" stroke="#b45309" stroke-width="4"/>
+          <path d="M52 84h76v8c0 18-16 28-38 28S52 110 52 92v-8z" fill="#b45309"/>
+          <path d="M140 86c18 4 28 18 22 34-6 14-22 20-36 18" fill="none" stroke="#b45309" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="128" cy="64" r="10" fill="#2563eb"/>
+          <path d="M123 64h10M128 59v10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <h1 class="page-title">Invítame un café</h1>
+        <p class="highlight-text">El hangul se enseña mejor con cafeína.</p>
+        <p class="sub-text">Tú practicas pronunciación. Yo, a las 11 p.m., corrijo tareas con un café imaginario. Si la clase te sirvió, un cafecito recarga al profe — y no, Duolingo no invita la siguiente ronda.</p>
+      </header>
+
+      <section aria-labelledby="amount-title">
+        <h2 id="amount-title" class="visually-hidden">Elige un monto</h2>
+        <div class="amount-grid">
+          <button type="button" class="amount-card" data-amount="3">
+            <span class="amount-card-price">$3</span>
+            <span class="amount-card-label">Espresso</span>
+            <span class="amount-card-note">Un shot de ánimo</span>
+          </button>
+          <button type="button" class="amount-card" data-amount="5">
+            <span class="amount-card-price">$5</span>
+            <span class="amount-card-label">Latte</span>
+            <span class="amount-card-note">Nivel intermedio</span>
+          </button>
+          <button type="button" class="amount-card" data-amount="15">
+            <span class="amount-card-price">$15</span>
+            <span class="amount-card-label">Combo profe</span>
+            <span class="amount-card-note">Sin bostezos en clase</span>
+          </button>
+        </div>
+
+        <form class="custom-amount" id="custom-amount-form">
+          <label for="custom-amount">O elige un monto libre (USD)</label>
+          <input id="custom-amount" name="amount" type="number" min="1" step="0.01" inputmode="decimal" placeholder="Ej. 8">
+          <button type="submit" class="menu-button">Pagar monto libre</button>
+        </form>
+
+        <a class="cta-button btc-cta" id="btc-cta" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con Bitcoin
+        </a>
+      </section>
+
+      <section class="support-board" aria-labelledby="support-title">
+        <h2 id="support-title">Mensajes de quienes ya invitaron el café</h2>
+        <p>Los comentarios llegan en vivo desde la campaña de BTCPay Crowdfund.</p>
+        <iframe id="crowdfund-frame" title="Comentarios de la campaña BTCPay Crowdfund" hidden></iframe>
+        <p class="support-placeholder" id="support-placeholder">
+          Cuando conectes tu app Crowdfund (con “Enable comments”), los saludos de los donantes aparecerán aquí.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
+
+  <script>
+    const DONATE_CONFIG = {
+      btcpayServer: "",
+      crowdfundAppId: "",
+      currency: "USD"
+    };
+
+    const server = DONATE_CONFIG.btcpayServer.replace(/\/$/, "");
+    const appId = DONATE_CONFIG.crowdfundAppId;
+    const configured = Boolean(server && appId);
+    const crowdfundUrl = configured ? `${server}/apps/${appId}/crowdfund` : "";
+
+    function paymentUrl(amount) {
+      if (!configured) return "";
+      if (amount) {
+        return `${server}/apps/${appId}/crowdfund/form?amount=${encodeURIComponent(amount)}`;
+      }
+      return crowdfundUrl;
+    }
+
+    function openPayment(amount) {
+      const url = paymentUrl(amount);
+      if (!url) {
+        window.alert("Aún falta pegar la URL de tu servidor BTCPay y el ID de la app Crowdfund en donate.html.");
+        return;
+      }
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.querySelectorAll(".amount-card").forEach((card) => {
+      card.addEventListener("click", () => openPayment(card.dataset.amount));
+    });
+
+    document.getElementById("custom-amount-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = Number(document.getElementById("custom-amount").value);
+      if (!value || value <= 0) {
+        document.getElementById("custom-amount").focus();
+        return;
+      }
+      openPayment(value);
+    });
+
+    const btcCta = document.getElementById("btc-cta");
+    if (configured) {
+      btcCta.href = crowdfundUrl;
+      const frame = document.getElementById("crowdfund-frame");
+      frame.src = crowdfundUrl;
+      frame.hidden = false;
+      document.getElementById("support-placeholder").hidden = true;
+    } else {
+      btcCta.addEventListener("click", (event) => {
+        event.preventDefault();
+        openPayment();
+      });
+    }
+  </script>
+</body>
+</html>

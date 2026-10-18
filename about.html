@@ -3,72 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce a Hyunho Lee, profesor nativo de coreano residente en Colombia.">
+  <title>Sobre mí | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Sobre mí - VAMOS COREANO</title>
-
-  <link rel="icon" href="/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
 </head>
-
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <header class="main-header">
     <div class="container nav-container">
       <a href="index.html" class="logo">VAMOS COREANO</a>
-      <nav>
-        <a href="about.html">SOBRE Mí</a>
-        <a href="class.html">CLASES</a>
-        <a href="contact.html">CONTACTO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html" aria-current="page">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main class="main-content">
-    <div class="container">
-      <h1 class="page-title">
-        SOBRE MÍ
-      </h1>
+  <main id="contenido" class="main-content">
+    <article class="container">
+      <h1 class="page-title">Sobre mí</h1>
 
       <div class="card">
-        <img src="image/profile-sample.png" alt="Profesor Hyunho" class="profile-photo">
-        
-        <h2 class="highlight-text">¡Hola! Soy Hyunho</h2>
-        <div class="sub-text">
-          <p>Profesor nativo de coreano residente en Colombia.</p>
-          <p>Disfruto el arte de aprender y enseñar idiomas.</p>
-          <p>¿Duolingo? También me gusta, pero el aprendizaje real nace del intercambio humano.</p>
-          <p>Te invito a descubrir el coreano conmigo, de persona a persona. Hablemos.</p>
-        </div>
-        
-        <h3 class="highlight-text">¿Por qué aprender conmigo?</h3>
-        <div class="sub-text">
-          <p>En mis clases, el protagonista eres tú.</p>
-          <p>Sea cual sea tu objetivo, mi enfoque se adapta a ti.</p>
-          <p>Aquí aprendes lo que realmente necesitas y te apasiona.</p>
-          <p>Estoy aquí para derribar los obstáculos que te impiden avanzar y construir juntos tu camino.</p>
-          <p>Soy un profesor que te escucha.</p>
-        </div>
-        
-        <h3 class="highlight-text">Mi formación</h3>
-        <div class="sub-text">
-          <p>Como graduado en Literatura y Cultura Coreanas, entiendo mi idioma nativo desde su raíz.</p>
-          <p>Mi dominio del español me permite explicarte cada concepto de manera clara, facilitando tu aprendizaje desde tu propia lengua.</p>
-          <p>Actualmente, estoy finalizando mi certificación oficial como profesor de coreano, lo que garantiza una enseñanza de alta calidad basada en estándares académicos internacionales.</p>
-        </div>
+        <img src="image/profile-sample.png" alt="Retrato del profesor Hyunho Lee" class="profile-photo" width="150" height="150">
+
+        <section aria-labelledby="intro-title">
+          <h2 id="intro-title" class="highlight-text">¡Hola! Soy Hyunho</h2>
+          <div class="sub-text">
+            <p>Profesor nativo de coreano residente en Colombia.</p>
+            <p>Disfruto el arte de aprender y enseñar idiomas.</p>
+            <p>¿Duolingo? También me gusta, pero el aprendizaje real nace del intercambio humano.</p>
+            <p>Te invito a descubrir el coreano conmigo, de persona a persona. Hablemos.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="why-title">
+          <h3 id="why-title" class="highlight-text">¿Por qué aprender conmigo?</h3>
+          <div class="sub-text">
+            <p>En mis clases, el protagonista eres tú.</p>
+            <p>Sea cual sea tu objetivo, mi enfoque se adapta a ti.</p>
+            <p>Aquí aprendes lo que realmente necesitas y te apasiona.</p>
+            <p>Estoy aquí para derribar los obstáculos que te impiden avanzar y construir juntos tu camino.</p>
+            <p>Soy un profesor que te escucha.</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="formacion-title">
+          <h3 id="formacion-title" class="highlight-text">Mi formación</h3>
+          <div class="sub-text">
+            <p>Como graduado en Literatura y Cultura Coreanas, entiendo mi idioma nativo desde su raíz.</p>
+            <p>Mi dominio del español me permite explicarte cada concepto de manera clara, facilitando tu aprendizaje desde tu propia lengua.</p>
+            <p>Actualmente, estoy finalizando mi certificación oficial como profesor de coreano, lo que garantiza una enseñanza de alta calidad basada en estándares académicos internacionales.</p>
+          </div>
+        </section>
       </div>
-      
-      <div class="action-area" style="margin-top: var(--space-l);">
-        <a href="consultar.html" class="cta-button">¡HABLA CONMIGO!</a>
+
+      <div class="action-area">
+        <a href="consultar.html" class="cta-button">¡Habla conmigo!</a>
       </div>
-    </div>
+    </article>
   </main>
 
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
+
   <footer class="footer">
-    <p>© 2026 VAMOS COREANO</p>
+    <p>© 2026 Vamos Coreano</p>
     <p>Profesor Hyunho Lee</p>
   </footer>
 </body>

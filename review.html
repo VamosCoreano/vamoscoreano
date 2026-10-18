@@ -3,75 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reseñas de estudiantes de Vamos Coreano.">
+  <title>Reseñas | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Reseñas - VAMOS COREANO</title>
-
-  <link rel="icon" href="/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
 </head>
-  
 <body>
-  <header class="main-header">
-      <div class="container nav-container">
-      <a href="index.html" class="logo">VAMOS COREANO</a>
-        <nav>
-          <a href="about.html">SOBRE Mí</a>
-          <a href="class.html">CLASES</a>
-          <a href="contact.html">CONTACTO</a>
-        </nav>
-      </div>
-    </header>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <main class="main-content">
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">VAMOS COREANO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html" aria-current="page">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
     <div class="container">
-      <h1 class="page-title">RESEÑAS</h1>
+      <h1 class="page-title">Reseñas</h1>
 
       <div class="hero-description">
         <p class="highlight-text">Lo que mis estudiantes han logrado</p>
-        <p class="sub-text">Experiencias reales de aprendizaje con VamosCoreano</p>
+        <p class="sub-text">Experiencias reales de aprendizaje con Vamos Coreano</p>
       </div>
 
-      
-      <div class="reviews-list">
+      <section class="reviews-list" aria-label="Opiniones de estudiantes">
         <article class="card review-card">
-          <div class="quote-icon">“</div>
-  
-          <div class="review-body">
-              <span class="focus-text">
-                  "Aprender coreano ha sido una experiencia muy especial gracias a Hyunho, es  profesor excepcional"
-              </span>
-    
-              <p class="quote-text">
-                 Más allá de enseñar un idioma, tiene el don de transmitir confianza, motivación y ganas de seguir aprendiendo cada día. Su paciencia, dedicación y forma tan clara de explicar hacen que se aprenda de manera fácil.
-      <br><br>
-      Siempre brinda material de apoyo, refuerza cada clase  dada y está dispuesto a ayudar con una actitud amable y cercana.
-      Se nota el amor y el compromiso que pone en cada clase, me hizo sentir acompaña y valorada en todo momento.
-      Sin duda, es uno  profesor que deja huella y hacen que aprender sea una experiencia bonita y significativa.
-      <br><br>
-      ¡Totalmente recomendado para quienes quieran aprender coreano, Hyunho excelente maestro!
-    </p>
-  </div>
+          <span class="quote-icon" aria-hidden="true">“</span>
+          <blockquote>
+            <p class="focus-text">“Aprender coreano ha sido una experiencia muy especial gracias a Hyunho, es un profesor excepcional.”</p>
+            <div class="quote-text">
+              <p>Más allá de enseñar un idioma, tiene el don de transmitir confianza, motivación y ganas de seguir aprendiendo cada día. Su paciencia, dedicación y forma tan clara de explicar hacen que se aprenda de manera fácil.</p>
+              <p>Siempre brinda material de apoyo, refuerza cada clase dada y está dispuesto a ayudar con una actitud amable y cercana. Se nota el amor y el compromiso que pone en cada clase, me hizo sentir acompañada y valorada en todo momento.</p>
+              <p>Sin duda, es un profesor que deja huella y hace que aprender sea una experiencia bonita y significativa.</p>
+              <p>¡Totalmente recomendado para quienes quieran aprender coreano, Hyunho excelente maestro!</p>
+            </div>
+            <footer class="student-info">
+              <cite class="student-name">Mónica G.</cite>
+              <span class="student-context">Estudiante del curso “Despegue”</span>
+            </footer>
+          </blockquote>
+        </article>
+      </section>
 
-  <div class="student-info">
-    <span class="student-name">Mónica G.</span>
-    <span class="student-context">Estudiante del curso "DESPEGUE"</span>
-  </div>
-</article>
-      </div>
-
-      <div class="action-area" style="margin-top: var(--space-l);">
-        <a href="consultar.html" class="cta-button">¡SÉ EL PRÓXIMO!</a>
+      <div class="action-area">
+        <a href="consultar.html" class="cta-button">¡Sé el próximo!</a>
       </div>
     </div>
   </main>
 
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
+
   <footer class="footer">
-    <p>© 2026 VAMOS COREANO</p>
+    <p>© 2026 Vamos Coreano</p>
     <p>Profesor Hyunho Lee</p>
   </footer>
 </body>

@@ -3,53 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende coreano real con un profesor nativo. Clases personalizadas con Hyunho Lee en Vamos Coreano.">
+  <title>Vamos Coreano | Clases de coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>VAMOS COREANO</title>
-
   <link rel="icon" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
 </head>
-  
 <body>
-  <header class="main-header">
-      <div class="container nav-container">
-      <a href="index.html" class="logo">VAMOS COREANO</a>
-        <nav>
-          <a href="about.html">SOBRE Mí</a>
-          <a href="class.html">CLASES</a>
-          <a href="contact.html">CONTACTO</a>
-        </nav>
-      </div>
-    </header>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <main class="main-content">
-    <section class="hero">
-      <h1>VAMOS COREANO</h1>
-        <div class="hero-description">
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-current="page">VAMOS COREANO</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Abrir menú</span>
+        <span class="menu-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="#recursos">Recursos gratis</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">VAMOS COREANO</h1>
+      <div class="hero-description">
         <p class="highlight-text">Aprende coreano real con un profesor nativo</p>
         <p class="sub-text">Experiencia humana y aprendizaje enfocado en ti</p>
-        </div>
-      <a href="consultar.html" class="cta-button">¡HABLA CONMIGO!</a>
-    </section>
-  
-    <section class="menu-section">
-      <div class="container">
-        <a href="about.html" class="menu-button">SOBRE EL PROFE</a>
-        <a href="class.html" class="menu-button">CLASES</a>
-        <a href="contact.html" class="menu-button">CONTACTO</a>
-        <a href="review.html" class="menu-button">RESEÑAS</a>
       </div>
+      <a href="consultar.html" class="cta-button">¡Habla conmigo!</a>
     </section>
+
+    <nav class="menu-section" aria-label="Secciones del sitio">
+      <a href="about.html" class="menu-button">Sobre el profe</a>
+      <a href="class.html" class="menu-button">Clases</a>
+      <a href="contact.html" class="menu-button">Contacto</a>
+      <a href="review.html" class="menu-button">Reseñas</a>
+      <a href="donate.html" class="menu-button">Invítame un café</a>
+    </nav>
   </main>
-    
-    <footer class="footer">
-    <p>© 2026 VAMOS COREANO</p>
+
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
     <p>Profesor Hyunho Lee</p>
-    </footer>
+  </footer>
 </body>
 </html>
