@@ -1277,3 +1277,57 @@ footer {
   .it { opacity: 1 !important; transform: none !important; }
   .b.p::after { display: none; }
 }
+
+/* tarjeta del curso (home) */
+.course-card {
+  margin: 0;
+  padding: 56px 48px 40px;
+}
+
+.course-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: var(--sun);
+  color: #16183F;
+  font-weight: 800;
+  font-size: .8rem;
+  letter-spacing: .14em;
+  margin-bottom: 22px;
+}
+
+.course-card h2 {
+  max-width: 20ch;
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+}
+
+.course-card h2::after { display: none; }
+.course-card > p { font-size: 1.08rem; }
+
+.course-list {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid #ffffff26;
+}
+
+.course-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.course-card .b.p {
+  background: var(--co);
+  border-color: var(--co);
+}
+
+.course-all {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+@media(max-width: 640px) {
+  .course-card { padding: 36px 22px 28px; }
+  .course-foot .b { width: 100%; justify-content: center; }
+}
