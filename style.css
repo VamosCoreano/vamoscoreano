@@ -1331,3 +1331,89 @@ footer {
   .course-card { padding: 36px 22px 28px; }
   .course-foot .b { width: 100%; justify-content: center; }
 }
+
+    .class-hero {
+      min-height: calc(100svh - 65px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 56px 0 72px;
+    }
+    .class-hero .w { width: 100%; }
+    .class-hero h1 { margin: 0 auto; }
+    .class-hero .h-line { display: block; }
+    .class-hero .h-black { color: var(--ink); }
+    .class-hero .h-blue { color: var(--bl); margin-top: .06em; }
+    .class-hero .h-sub {
+      max-width: 24ch;
+      margin: clamp(22px, 3.2vw, 38px) auto 0;
+      font-size: clamp(1.15rem, 2.8vw, 1.9rem);
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -.015em;
+      color: var(--mu);
+    }
+    .class-hero .h-cue {
+      display: inline-flex;
+      margin-top: clamp(32px, 5vw, 56px);
+      color: var(--bl);
+      animation: hcue 2.2s ease-in-out infinite;
+    }
+    @keyframes hcue { 0%,100% { transform: translateY(0) } 50% { transform: translateY(8px) } }
+
+    /* AVIÓN: vuela de izquierda a derecha bajo el título */
+    .class-hero .fly {
+      position: relative;
+      width: 100vw;
+      margin: clamp(10px, 2vw, 22px) 0 0 calc(50% - 50vw);
+      height: 76px;
+      pointer-events: none;
+    }
+    .class-hero .plane {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -22px;
+      width: 44px;
+      height: 44px;
+      color: var(--bl);
+      transform: translateX(-140px);
+      animation: hfly 7s cubic-bezier(.45, .05, .25, 1) 1.1s infinite;
+    }
+    .class-hero .plane svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: rotate(45deg);
+      filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--bl) 35%, transparent));
+      animation: hbob 1.6s ease-in-out infinite;
+    }
+    /* estela punteada que se desvanece hacia atrás */
+    .class-hero .plane::before {
+      content: "";
+      position: absolute;
+      right: 38px;
+      top: 21px;
+      width: 52vw;
+      height: 0;
+      border-top: 3px dashed var(--bl);
+      opacity: .55;
+      -webkit-mask-image: linear-gradient(270deg, #000, transparent);
+      mask-image: linear-gradient(270deg, #000, transparent);
+    }
+    /* cruza la pantalla en ~40% del ciclo y descansa el resto */
+    @keyframes hfly {
+      0%   { transform: translateX(-140px); opacity: 0; }
+      4%   { opacity: 1; }
+      40%  { transform: translateX(calc(100vw + 60px)); opacity: 1; }
+      41%  { opacity: 0; }
+      100% { transform: translateX(calc(100vw + 60px)); opacity: 0; }
+    }
+    @keyframes hbob {
+      0%, 100% { transform: rotate(45deg) translate(0, 0); }
+      50%      { transform: rotate(41deg) translate(-2px, -2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .class-hero .fly { display: none; }
+    }
