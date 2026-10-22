@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Recursos de coreano creados para hispanohablantes. Aprende desde tu idioma, a tu ritmo.">
+  <title>Recursos | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+
+
+  </head>
+<body>
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:#2540E8;width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:#FF4D5E;width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:#FFD35C;width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html#top"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="index.html#sobre-mi">Sobre mí</a>
+        <a href="class.html">Clases</a>
+        <a href="index.html#metodo">Método</a>
+        <a href="recursos.html" class="on" aria-current="page">Recursos</a>
+        <a href="index.html#contacto" class="nav-cta-pill">Contacto</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="resource-topline" aria-hidden="true"></div>
+    <section class="resources-hero">
+      <div class="w">
+        <p class="eyebrow rv">Recursos para aprender mejor</p>
+        <h1 class="rv">El coreano,<br><em>por fin en tu idioma.</em></h1>
+        <p class="hero-sub rv" style="--d:1">Todo lo que necesitas para aprender. <strong>Hecho para ti.</strong></p>
+        <p class="hero-note rv" style="--d:2">Coreano explicado desde el español, <strong>no desde el inglés.</strong></p>
+        <a class="h-cue" href="#explorar" aria-label="Explorar recursos">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+      </div>
+    </section>
+
+      <script>
+    // Compatibilidad con el tema y las animaciones de index.html.
+    (() => {
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const themeButton = $('#th');
+      if (themeButton) {
+        themeButton.addEventListener('click', () => {
+          // Si style.css/index.html define el tema mediante una clase, alterna esa clase.
+          document.body.classList.toggle('light');
+          document.body.classList.toggle('dark');
+          const isDark = document.body.classList.contains('dark');
+          themeButton.setAttribute('aria-pressed', String(isDark));
+        });
+      }
+
+      const items = $$('.rv');
+      if ('IntersectionObserver' in window && !reducedMotion) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('vis');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+        items.forEach(item => observer.observe(item));
+      } else {
+        items.forEach(item => item.classList.add('vis'));
+      }
+    })();
+  </script>
+</body>
+</html>
