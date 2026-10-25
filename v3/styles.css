@@ -1,0 +1,390 @@
+:root {
+  --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --headline-size: clamp(2.25rem, 10vw, 5.5rem); /* "Escribe Coreano" (~7.6em) siempre cabe en una línea */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);   /* entradas */
+  --ease-press: cubic-bezier(0.2, 0, 0, 1);    /* hover y pulsación */
+  --ink: #1d1d1f;
+  --glass: rgb(255 255 255 / 0.55);       /* cristal claro: el texto negro se lee sobre cualquier azul */
+  --glass-line: rgb(255 255 255 / 0.7);
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #030b24;
+}
+
+body {
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* ===== Fondo: noche azul con un foco de luz central ===== */
+.sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  /* Base vertical: azul casi negro arriba, azul profundo en el centro, verde azulado oscuro abajo */
+  background:
+    radial-gradient(ellipse 70% 45% at 85% 100%, rgb(24 74 84 / 0.55), transparent 70%),
+    linear-gradient(180deg, #020822 0%, #06173f 38%, #0a2547 62%, #0d2a36 100%);
+}
+
+/* Capa exterior: desplazamiento lento. Capa interior (glow): pulso de tamaño y brillo.
+   Cada una repite el mismo estado al empezar y al terminar, y sus periodos no coinciden,
+   así el movimiento es continuo y nunca se nota el reinicio. Solo se anima transform y opacity. */
+.sky__drift {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 0;
+  height: 0;
+  animation: drift 23s ease-in-out infinite;
+}
+
+/* Más ancho que alto y más ancho que el titular: las letras negras siempre quedan sobre luz */
+.sky__glow {
+  position: absolute;
+  width: 150vw;
+  height: 90vh;
+  left: -75vw;
+  top: -45vh;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    rgb(92 162 242 / 0.95) 0%,
+    rgb(64 130 222 / 0.82) 40%,
+    rgb(32 84 176 / 0.48) 62%,
+    rgb(14 44 110 / 0.15) 85%,
+    transparent 100%);
+  will-change: transform, opacity;
+  animation: pulse 9s ease-in-out infinite;
+}
+
+/* Segundo foco, verde azulado y más tenue, abajo a la derecha y a contratiempo */
+.sky__drift--low {
+  left: 72%;
+  top: 92%;
+  animation-duration: 31s;
+  animation-direction: reverse;
+}
+
+.sky__glow--teal {
+  width: 80vmax;
+  height: 50vmax;
+  left: -40vmax;
+  top: -25vmax;
+  background: radial-gradient(closest-side, rgb(40 120 130 / 0.45), rgb(24 80 96 / 0.18) 55%, transparent 100%);
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+
+/* Móvil: el titular ocupa casi todo el ancho, así que el foco se ensancha para seguir detrás de las letras */
+@media (max-width: 640px) {
+  .sky__glow:not(.sky__glow--teal) {
+    width: 220vw;
+    left: -110vw;
+  }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(3vw, -1.5vh); }
+  50% { transform: translate(0, -3vh); }
+  75% { transform: translate(-3vw, -1.5vh); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+/* ===== Hangul flotando: detrás del contenido, sin capturar clics ===== */
+.hangul {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hangul span {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  white-space: nowrap;
+  /* Tamaño relativo al titular: la mayor (--s: 6) mide el 60%, así el panel central nunca pierde protagonismo */
+  font: 700 max(14px, calc(var(--headline-size) * var(--s) * 0.1)) / 1 "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  color: #fff;
+  opacity: 0;
+  filter: blur(var(--b));
+  will-change: transform, opacity;
+  animation: floatUp var(--d) ease-in-out infinite;
+}
+
+.hangul span.is-hidden { visibility: hidden; }
+
+/* Aparece, sube y se desvanece: invisible al empezar y al terminar, así el reinicio no se ve */
+@keyframes floatUp {
+  0% { opacity: 0; transform: translateY(24px); }
+  50% { opacity: var(--a); }
+  100% { opacity: 0; transform: translateY(-24px) rotate(6deg); }
+}
+
+/* ===== Cristal traductor: rectángulo translúcido que se ajusta a cada palabra ===== */
+.glass {
+  position: fixed;
+  z-index: 1; /* sobre el hangul, por debajo del titular y el dock */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.4);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.07);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.4),
+    0 6px 20px rgb(0 10 40 / 0.25);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Destello que cruza el cristal una vez al aparecer */
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: -50% auto -50% -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.25), transparent);
+  transform: translateX(0) rotate(12deg);
+  opacity: 0;
+}
+
+.glass.is-shining::before { animation: shine 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s; }
+
+@keyframes shine {
+  0% { opacity: 0; transform: translateX(0) rotate(12deg); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(420%) rotate(12deg); }
+}
+
+.glass__text {
+  position: relative;
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 0 1px 10px rgb(0 20 70 / 0.5);
+  opacity: 0;
+}
+
+/* Mide textos sin mostrarlos (script.js) */
+.glass__measure {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+/* Partículas de luz alrededor del cristal */
+.spark {
+  position: fixed;
+  z-index: 1;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px 1px rgb(180 215 255 / 0.6);
+  pointer-events: none;
+}
+
+/* Con ratón: las palabras del fondo se pueden señalar para traducirlas */
+@media (hover: hover) and (pointer: fine) {
+  .hangul span:not(.is-hidden) { pointer-events: auto; }
+}
+
+/* Grano analógico encima de todo */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  mix-blend-mode: soft-light; /* grano muy leve: evita bandas en los degradados oscuros */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ===== Bloque central: titular y, justo debajo, el dock ===== */
+.stage {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 5vh, 56px); /* cerca del titular, pero sin tocarlo */
+  padding: 16px;
+  pointer-events: none;
+}
+
+.headline {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25em;
+  margin: 0;
+  color: #fff;
+  font-size: var(--headline-size);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  text-shadow: 0 2px 32px rgb(0 20 70 / 0.45); /* separa el blanco del foco de luz */
+  animation: rise 1.2s var(--ease-out) 0.15s both;
+}
+
+/* La palabra dinámica: su ancho se anima al cambiar para que "Coreano" se deslice, no salte */
+.headline__word {
+  display: inline-block;
+  text-align: right;
+}
+
+.headline__fixed { font-weight: 600; }
+
+/* ===== Dock (cristal) ===== */
+.dock {
+  pointer-events: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr; /* las tres opciones con el mismo ancho */
+  gap: 12px;
+  padding: 10px;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-line);
+  border-radius: 28px;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.8),
+    0 12px 32px rgb(0 28 110 / 0.18);
+  animation: dockIn 0.9s var(--ease-out) 0.45s both;
+}
+
+.dock__item {
+  --scale: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-sizing: border-box; /* el relleno cuenta dentro del tamaño mínimo */
+  min-width: 128px;
+  min-height: 80px;
+  padding: 16px 24px 14px;
+  border-radius: 18px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 160ms var(--ease-press), background-color 200ms var(--ease-press);
+}
+
+.dock__item:hover { background-color: rgb(255 255 255 / 0.45); }
+
+/* Al pulsar el botón se hunde (encoge), así que nunca sale del dock */
+.dock__item:active {
+  transform: scale(0.96);
+  transition-duration: 100ms;
+}
+
+.dock__item:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Punto indicador bajo el elemento, como las apps abiertas en el dock de macOS */
+.dock__item::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 200ms var(--ease-press), transform 200ms var(--ease-press);
+}
+
+.dock__item:hover::after,
+.dock__item:focus-visible::after {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
+/* Magnificación: solo crece el icono (hasta ×1.25), anclado abajo, dentro del hueco que deja el relleno superior */
+.dock__icon {
+  width: 28px;
+  height: 28px;
+  transform-origin: 50% 100%;
+  transform: scale(var(--scale));
+  transition: transform 160ms var(--ease-press);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dock__label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Móvil: el dock ocupa el ancho disponible y reparte las opciones */
+@media (max-width: 480px) {
+  .dock {
+    width: 100%;
+    box-sizing: border-box; /* el relleno del dock cuenta dentro del 100%, sin salirse del margen */
+  }
+
+  .dock__item {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 4px 12px;
+  }
+
+  .dock__label {
+    font-size: 13px;
+    white-space: normal;
+  }
+}
+
+/* ===== Entradas ===== */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); filter: blur(12px); }
+}
+
+@keyframes dockIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .dock {
+    background: rgb(255 255 255 / 0.85);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky__drift, .sky__glow, .headline, .dock { animation: none; }
+  .hangul span { animation: none; opacity: var(--a); }
+  .glass, .spark { display: none; }
+  .dock__item, .dock__icon { transition: none; }
+}
