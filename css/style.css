@@ -1,12 +1,12 @@
 :root {
   --bg: #F7F7F9;
   --sf: #fff;
-  --ink: #16183F;
-  --mu: #5A5D80;
-  --ln: #E1E3F0;
-  --bl: #2540E8;
+  --ink: #0F172A;
+  --mu: #475569;
+  --ln: #E2E8F0;
+  --bl: #2563EB;
   --co: #FF4D5E;
-  --so: #E6EAFF;
+  --so: #DBEAFE;
   --sun: #FFD35C;
   --kr: "Noto Sans KR", "Malgun Gothic", sans-serif;
   --ez: cubic-bezier(.2, .8, .2, 1);
@@ -19,12 +19,12 @@
 @media(prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0F1128;
-    --sf: #191B3C;
-    --ink: #EEF0FF;
-    --mu: #A3A7D0;
-    --ln: #2B2E5A;
-    --bl: #7C92FF;
-    --so: #222559;
+    --sf: #1E293B;
+    --ink: #F8FAFC;
+    --mu: #94A3B8;
+    --ln: #334155;
+    --bl: #60A5FA;
+    --so: #1E3A8A;
     --oo: .2;
     color-scheme: dark;
   }
@@ -33,12 +33,12 @@
 :root[data-theme="dark"] {
   --oo: .2;
   --bg: #0F1128;
-  --sf: #191B3C;
-  --ink: #EEF0FF;
-  --mu: #A3A7D0;
-  --ln: #2B2E5A;
-  --bl: #7C92FF;
-  --so: #222559;
+  --sf: #1E293B;
+  --ink: #F8FAFC;
+  --mu: #94A3B8;
+  --ln: #334155;
+  --bl: #60A5FA;
+  --so: #1E3A8A;
   color-scheme: dark;
 }
 
@@ -146,7 +146,7 @@ header .w {
   width: 34px;
   height: 34px;
   border-radius: 11px;
-  background: #2540E8;
+  background: #2563EB;
   color: #fff;
   font: 800 17px var(--kr);
   transition: transform .5s var(--ez);
@@ -205,13 +205,14 @@ nav a.nav-cta-pill:hover {
 }
 
 /* hero */
-.hero { padding: 56px 0 80px; }
-
-.hg {
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  gap: 40px;
-  align-items: center;
+/* one action, one screen: el hero ocupa todo el alto visible bajo el header (64px + 1px de borde) */
+.hero {
+  min-height: calc(100svh - 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 0;
+  text-align: center;
 }
 
 .tag {
@@ -255,7 +256,7 @@ h1 em { font-style: normal; color: var(--bl); }
 
 .hero p.lead {
   font-size: 1.25rem;
-  margin: 22px 0 30px;
+  margin: 22px auto 30px;
   opacity: 0;
   animation: up .8s .9s var(--ez) forwards;
 }
@@ -284,8 +285,8 @@ h1 em { font-style: normal; color: var(--bl); }
 }
 
 .b.p {
-  background: #2540E8;
-  border-color: #2540E8;
+  background: #2563EB;
+  border-color: #2563EB;
   color: #fff;
 }
 
@@ -308,7 +309,7 @@ h1 em { font-style: normal; color: var(--bl); }
   border-radius: 999px 999px 28px 28px;
   background: linear-gradient(160deg, #DCE3FF, #FFE1E5);
   overflow: hidden;
-  box-shadow: 0 30px 60px -30px #2540E888;
+  box-shadow: 0 30px 60px -30px #2563EB88;
   animation: rise 1.1s .2s var(--ez) both;
 }
 
@@ -397,7 +398,6 @@ h1 em { font-style: normal; color: var(--bl); }
 }
 
 @media(max-width: 860px) {
-  .hg { grid-template-columns: 1fr; }
   .ph { margin: 20px auto 0; max-width: 340px; }
   .bub { left: -8px; }
 }
@@ -553,7 +553,7 @@ h1 em { font-style: normal; color: var(--bl); }
 }
 
 .cs::after {
-  background: #2540E8aa;
+  background: #2563EBaa;
   left: -140px;
   bottom: -160px;
   animation-delay: -8s;
@@ -677,7 +677,7 @@ h3.sub { font-size: 1.3rem; margin: 0 0 16px; }
 
 .mt:hover {
   transform: translateY(-8px) rotate(-1deg);
-  background: #2540E8;
+  background: #2563EB;
   color: #fff;
 }
 
@@ -728,8 +728,8 @@ h3.sub { font-size: 1.3rem; margin: 0 0 16px; }
 }
 
 .fb[aria-pressed=true] {
-  background: #2540E8;
-  border-color: #2540E8;
+  background: #2563EB;
+  border-color: #2563EB;
   color: #fff;
 }
 
@@ -1159,7 +1159,7 @@ h2.in::after { width: 72px; }
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), #2540E824, transparent 70%);
+  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), #2563EB24, transparent 70%);
   opacity: 0;
   transition: opacity .3s;
   pointer-events: none;
@@ -1238,9 +1238,9 @@ footer {
 .rw { min-height: 72px; }
 
 @keyframes dp {
-  0% { transform: scale(.5); box-shadow: 0 0 0 0 #2540E899; }
+  0% { transform: scale(.5); box-shadow: 0 0 0 0 #2563EB99; }
   60% { transform: scale(1.6); }
-  100% { transform: scale(1.15); box-shadow: 0 0 0 12px #2540E800; }
+  100% { transform: scale(1.15); box-shadow: 0 0 0 12px #2563EB00; }
 }
 
 .it:hover::before { transform: scale(1.4); }
