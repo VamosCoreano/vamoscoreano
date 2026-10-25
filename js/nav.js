@@ -1,4 +1,14 @@
 (function () {
+  const th = document.getElementById("th");
+  if (!th) return;
+  th.addEventListener("click", () => {
+    const d = document.documentElement;
+    const dark = d.dataset.theme ? d.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+    d.dataset.theme = dark ? "light" : "dark";
+  });
+})();
+
+(function () {
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.getElementById("site-nav");
   if (!toggle || !nav) return;
