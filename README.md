@@ -15,12 +15,15 @@ Para mantener la consistencia visual, utilizaremos estrictamente solo 4 colores 
 • Naranja (Acento/Botones) - #F97316
 ### 5. Jerarquía Tipográfica
 Usa un máximo de 2 tipográficas(fondo de texto)
-Define 4 tamaños exactos
-Título principal(más grueso y fuerte,
-Título
-Subtítulo
-Cuerpo
-Y respétalos estrictamente en todo el sitio.
+  Julio
+  Marquez
+Define 6 tamaños exactos
+  hero-impact: 5rem
+  hero: 3rem
+  title: 2rem
+  subtitle: 1.25rem
+  body: 1rem
+  micro: 0.875rem
 ### 6.  Reutilización de Componentes
 Nunca inventes un diseño nuevo para cada página. Crea un "kit básico" (botón principal, tarjeta de curso) en css y úsalo como piezas de Lego.(como coreano jaja)
 ### 7. Tono y Voz
