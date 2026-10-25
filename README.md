@@ -1,4 +1,4 @@
-20261023
+20261025
 
 
 
@@ -22,13 +22,13 @@ Cada detalle importa. Un sutil efecto de glow, fade, textura y movimiento fluido
 
 Para mantener la consistencia visual, utilizaremos estrictamente solo 4 colores en toda la página:
 
-• Blanco (Fondo base/cremoso) - #
+• Blanco (Fondo base/cremoso) - #F8FAFC
 
-• Negro (Texto principal) - #
+• Negro (Texto principal) - #0F172A
 
-• Azul (Color de marca) - #
+• Azul (Color de marca) - #2563EB
 
-• Un color más (Acento/Botones) - #
+• Naranja (Acento/Botones) - #F97316
 
 5\. Jerarquía Tipográfica
 
@@ -62,7 +62,7 @@ E.j.:
 
 ⁠Únete a la comunidad⁠ (O).
 
-Conocer (X) -> conoce (O) 
+Conocer (X) -> conoce (O)
 
 // \*QUe hago con sobre mi… (Sobre nosotros es muy largo :v)
 
@@ -78,25 +78,25 @@ VAMOS COREANO : BRAND
 
 0\. We Are (우리의 정의)
 
-VAMOS COREANO es una plataforma y marca que ofrece contenidos educativos de coreano y una comunidad, diseñados a la medida para hispanohablantes. 
+VAMOS COREANO es una plataforma y marca que ofrece contenidos educativos de coreano y una comunidad, diseñados a la medida para hispanohablantes.
 
 1\. La Misión
 
-Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del "inglés" 
+Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del "inglés"
 
 2\. ¿Por qué nosotros?
 
-No somos otra simple plataforma de cursos de coreano. Un tutor optimizado exclusivamente para hispanohablantes, que combina su especialidad en Literatura Coreana, certificación oficial y una comprensión absoluta del mundo hispano, diseña y lidera este camino. 
+No somos otra simple plataforma de cursos de coreano. Un tutor optimizado exclusivamente para hispanohablantes, que combina su especialidad en Literatura Coreana, certificación oficial y una comprensión absoluta del mundo hispano, diseña y lidera este camino.
 
 3\. El Enemigo
 
-Materiales mal traducidos con IA a través del inglés, la dependencia de la romanización que arruina la pronunciación, y la educación aburrida que obliga a memorizar sin explicar los principios ni el contexto. 
+Materiales mal traducidos con IA a través del inglés, la dependencia de la romanización que arruina la pronunciación, y la educación aburrida que obliga a memorizar sin explicar los principios ni el contexto.
 
 4\. Valores Centrales
 
-&#x20;Claridad Extrema : Que ningún principiante se pregunte "¿Qué debo hacer aquí?" ni por 0.1 segundos. Diseñaremos la educación, la web y el UX/UI de la comunidad de manera abrumadoramente sistemática e intuitiva. 
+&#x20;Claridad Extrema : Que ningún principiante se pregunte "¿Qué debo hacer aquí?" ni por 0.1 segundos. Diseñaremos la educación, la web y el UX/UI de la comunidad de manera abrumadoramente sistemática e intuitiva.
 
-&#x20;Valor Real : No seremos una marca vacía que solo persigue dinero. Jamás haremos compromisos estúpidos que ensucien la página o interrumpan la inmersión del estudiante solo por ganar unos dólares (como poner anuncios innecesarios). 
+&#x20;Valor Real : No seremos una marca vacía que solo persigue dinero. Jamás haremos compromisos estúpidos que ensucien la página o interrumpan la inmersión del estudiante solo por ganar unos dólares (como poner anuncios innecesarios).
 
 5\. Slogan
 
@@ -108,11 +108,11 @@ Un idioma. Un objetivo. 100% para hispanohablantes.
 
 
 
-\[VAMOS COREANO] Mapa del Sitio 
+\[VAMOS COREANO] Mapa del Sitio
 
 0\. Principio
 
-Si necesitas hacer un cambio en la página web, modifica este mapa primero. 
+Si necesitas hacer un cambio en la página web, modifica este mapa primero.
 
 1\. Menú Principal (GNB):
 
@@ -132,7 +132,7 @@ CONTACTO: Contacto
 
 2\. Número de archivos HTML: Exactamente 6
 
-index.html (Inicio): 
+index.html (Inicio):
 
 El lugar donde el visitante aterriza por primera vez. Contiene nuestro imponente manifiesto de marca y actúa como el hub central que distribuye el tráfico hacia todas las subpáginas.
 
@@ -200,11 +200,11 @@ Instrucciones para sobre-mi.html
 
 1\. Regla Absoluta: Jerarquía Visual
 
-Prohibido empezar con "Hola, me llamo..." o historias aburridas sobre Duolingo etc etc… 
+Prohibido empezar con "Hola, me llamo..." o historias aburridas sobre Duolingo etc etc…
 
 El tamaño del texto debe ir de MAYOR a menor: comenzamos con textos ENORMES y frases cortas (Impacto). A medida que el usuario hace scroll hacia abajo, el texto se vuelve más pequeño y detallado.
 
-2\. El Impacto de Hechos en pagina 1 
+2\. El Impacto de Hechos en pagina 1
 
 \- Diseño: Foto de perfil profesional a la derecha. A la izquierda, tipografía gigante y contundente.
 
@@ -220,11 +220,7 @@ El tamaño del texto debe ir de MAYOR a menor: comenzamos con textos ENORMES y f
 
 \- Cuándo aparece: Solo después de hacer 1 o 2 scrolls y haber aplastado al usuario con los "Hechos" de la Sección 1.
 
-\- Diseño: Aquí el tamaño de la fuente se reduce (tamaño de 'Cuerpo' o 'Cuerpo grande'). 
+\- Diseño: Aquí el tamaño de la fuente se reduce (tamaño de 'Cuerpo' o 'Cuerpo grande').
 
 \- Contenido: Ahora sí, explicamos detalladamente nuestra filosofía, el problema con las apps convencionales y la historia de VAMOS COREANO.
-
-
-
-
 
