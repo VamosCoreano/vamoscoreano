@@ -93,7 +93,12 @@ Es el lugar donde el visitante aterriza por primera vez. No es una página para 
       [주절주절] Diseñados a la medida para hispanohablantes.
 * [Sección 3] Sobre Mí (Resumen): Autoridad y confianza en pocas líneas.
 * [Sección 4] Cursos (Resumen): Un vistazo rápido a nuestras clases.
+[왕글씨]CURSOS
+[중간 글씨] Diseñados exclusivamente para ti.
+[설명 글씨] Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
 * [Sección 5] Recursos (Resumen): El gancho de material.
+[왕글씨] RECURSOS
+[중간 글씨] Aprende sin barreras. Crece sin límites.
 * [Sección 6] Contacto (Resumen): Vía rápida.
 * [Sección 7] ÚNETE (Final CTA): Como es el final de la página, debe tener otro impacto visual brutal igual que la Sección 1, empujando al usuario a la acción definitiva.
 * [Footer]

@@ -69,143 +69,308 @@
       </div>
     </div>
 
-<!-- [index.html/Sección 2] Identidad (Manifiesto)--> <!-- 하드코딩 수정 필 -->
-    <section id="identidad" style="padding: var(--s12) 0; text-align: center;">
-      <div class="w" style="max-width: 800px; margin: auto;">
-        
-        <!-- [왕크게] SOMOS -->
-        <h2 class="rv" style="font-size: clamp(4rem, 10vw, 7rem); font-weight: 800; line-height: 1; letter-spacing: -0.04em; margin-bottom: var(--s3); color: var(--ink);">
-          SOMOS
-        </h2>
-
-        <!-- [적당 크게] Una plataforma y marca... -->
-        <p class="rv" style="font-size: var(--fs-title); font-weight: 600; line-height: 1.3; letter-spacing: -0.02em; color: var(--ink); margin-bottom: var(--s3); text-wrap: balance;">
+    <!-- [index.html/Sección 2] Identidad (Manifiesto) -->
+    <section id="identidad" class="identidad">
+      <div class="w identidad-box">
+        <h2 class="somos-title">SOMOS</h2>
+        <p class="identidad-lead rv" style="--d:1">
           Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
         </p>
-
-        <!-- [주절주절] Nuestra misión es guiarte... -->
-        <p class="rv" style="font-size: var(--fs-sub); color: var(--mu); line-height: 1.6; max-width: 54ch; margin: 0 auto;" style="--d:1">
+        <p class="identidad-sub rv" style="--d:2">
           Diseñados a la medida para hispanohablantes.
         </p>
+      </div>
+    </section>
+
+    <!-- [index.html/Sección 3] Sobre Mí (Resumen de Autoridad) -->
+    <section id="sobre-mi" class="section-authority">
+      <div class="w authority-container">
+        
+        <div class="authority-content rv">
+          <h2 class="authority-title rv">TU GUÍA</h2>
+          <p class="authority-desc">
+            Un tutor nativo que domina tu idioma y tu forma de pensar.
+          </p>
+
+          <div class="proof-list">
+            <div class="proof-item rv" style="--d:1">
+              <div class="proof-num">01</div>
+              <div>
+                <strong>Especialista en Literatura Coreana</strong>
+                <span>Enseñanza profunda basada en la estructura real del idioma.</span>
+              </div>
+            </div>
+
+            <div class="proof-item rv" style="--d:2">
+              <div class="proof-num">02</div>
+              <div>
+                <strong>Instructor Oficial Certificado</strong>
+                <span>Metodología pedagógica respaldada y comprobada.</span>
+              </div>
+            </div>
+
+            <div class="proof-item rv" style="--d:3">
+              <div class="proof-num">03</div>
+              <div>
+                <strong>Fluidez Absoluta en Español</strong>
+                <span>Explicaciones lógicas y precisas, 100% sin el filtro del inglés.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="authority-cta">
+            <a href="about.html" class="b p">
+              <span>Conoce la historia completa</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="authority-visual rv" style="--d:2">
+          <div class="tutor-card-tilt" data-tilt>
+            <div class="tutor-card-inner">
+              <img src="images/profile.jpg" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
+              <div class="tutor-badge">
+                <span class="badge-dot"></span>
+                <span>Tutor Oficial · Literatura Coreana</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
 
-    <section id="sobre-mi">
-      <div class="w ab">
-        <div class="rv">
-          <h2>¡Hola!<br>Soy Hyunho</h2>
-          <p class="big">Profesor nativo certificado con dominio fluido del español.</p>
-          
-          <div class="q">
-            <p>Como profesor, siempre me he hecho la misma pregunta:
-              cómo hacer que un hispanohablante aprenda coreano de la forma más fácil y natural.</p>
-          </div>
+    <!-- [index.html/Sección 4] Cursos (Horizontal Peek Showcase) -->
+    <section id="curso" class="section-cursos">
+      <div class="w cursos-head">
+        <div class="cursos-head-text">
+          <h2 class="cursos-title rv">CURSOS</h2>
+          <p class="cursos-lead rv" style="--d:1">
+            Diseñados exclusivamente para ti.
+          </p>
+          <p class="cursos-sub rv" style="--d:2">
+            Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
+          </p>
         </div>
-        <div>
-          <h3 class="rv" style="font-size:1.5rem">¿Por qué aprender conmigo?</h3>
-          <div class="cards">
-            <div class="cd rv" style="--d:2">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 5h16v11H9l-5 4z"/>
-                <path d="M8 9h8M8 12h5"/>
-              </svg>
-              <div>
-                <h3>Explicaciones en tu idioma</h3>
-                <p>Olvídate de la barrera del idioma. Uso mi dominio del español para explicarte la gramática coreana de la forma más lógica y clara para ti.</p>
-              </div>
-            </div>
-            <div class="cd rv" style="--d:3">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="9" r="5.5"/>
-                <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
-              </svg>
-              <div>
-                <h3>Profesor certificado y experto en el idioma</h3>
-                <p>Como graduado en Literatura Coreana y profesor calificado, no solo hablo el idioma: sé cómo enseñarlo desde sus raíces más profundas.</p>
-              </div>
-            </div>
-            <div class="cd rv" style="--d:4">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-              </svg>
-              <div>
-                <h3>Método diseñado exclusivamente para ti</h3>
-                <p>Mi currículo no es genérico. Está creado específicamente para la mente hispanohablante, conectando las similitudes y resolviendo las diferencias entre ambos idiomas.</p>
-              </div>
-            </div>
-            <div class="cd rv" style="--d:5">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>
-              </svg>
-              <div>
-                <h3>Conexión profunda con la cultura hispana</h3>
-                <p>No solo domino el idioma, sino que entiendo tu forma de pensar y comunicarte. Sé exactamente cómo guiarte.</p>
-                <div class="cap"><i></i></div>
-              </div>
-            </div>
-          </div>
+
+        <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
+          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
         </div>
       </div>
-    </section>
 
-    <section id="curso">
-      <div class="w">
-        <div class="tag rv"><i></i>Curso</div>
-
-        <article class="cs course-card rv">
-          <span class="course-badge">DESPEGUE</span>
-          <h2>Diseñado para empezar sin barreras</h2>
-          <p>Si nunca has estudiado coreano, este curso es para ti. Sin requisitos previos. Sin complicaciones. Una experiencia pensada para apasionados de la cultura coreana que buscan aprender de forma natural.</p>
-
-          <div class="course-list">
-            <h3 class="sub">Lo que serás capaz de hacer</h3>
-            <ul class="ls" id="ls"></ul>
+      <!-- 수평 피크(Peek) 슬라이드 트랙 -->
+      <div class="peek-track" id="peek-track">
+        
+        <!-- Card 01: DESPEGUE -->
+        <article class="peek-card peek-card-primary rv" style="--d:1">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 01</span>
+            <span class="peek-kr kr" aria-hidden="true">이륙</span>
           </div>
-
-          <div class="course-foot">
-            <a class="b p" href="class.html">
-              <span>Ver el curso</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div class="peek-body">
+            <h3 class="peek-name">DESPEGUE</h3>
+            <p class="peek-punch">Coreano desde cero.</p>
+            <p class="peek-desc">
+              Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la romanización.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b p">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
             </a>
           </div>
         </article>
 
-        <div class="course-all">
-          <a class="b" href="class.html">Ver todos los cursos</a>
-        </div>
+        <!-- Card 02: ASCENSO -->
+        <article class="peek-card rv" style="--d:2">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 02</span>
+            <span class="peek-kr kr" aria-hidden="true">상승</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">ASCENSO</h3>
+            <p class="peek-punch">Dale alas a tu coreano.</p>
+            <p class="peek-desc">
+              Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones cotidianas.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 03: EXPRESIONES PARA VIAJE -->
+        <article class="peek-card rv" style="--d:3">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">여행</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
+            <p class="peek-punch">Coreano real para tu viaje.</p>
+            <p class="peek-desc">
+              Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y conversaciones locales.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 04: CONVERSACIÓN & CULTURA -->
+        <article class="peek-card rv" style="--d:4">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">실전</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
+            <p class="peek-punch">Habla como un nativo.</p>
+            <p class="peek-desc">
+              Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="w course-all rv">
+        <a class="b" href="class.html">Descubre todos los cursos</a>
       </div>
     </section>
 
-    <section id="metodo">
+    <!-- [index.html/Sección 5] Recursos (Apple Bento Showcase) -->
+    <section id="recursos" class="section-recursos">
       <div class="w">
-        <h2 class="rv">Metodología</h2>
-        <p class="rv" style="--d:1">Para quienes prefieren práctica real con un hablante nativo, en lugar de memorizar frases sueltas.</p>
-        <div class="mg">
-          <div class="mt rv">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 20h24v12a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8zM34 22h3a4 4 0 0 1 0 8h-3"/>
-              <path d="M16 8c-2 3 2 4 0 8M22 8c-2 3 2 4 0 8M28 8c-2 3 2 4 0 8"/>
-            </svg>
-            <h3>Situaciones reales</h3>
-            <p>Simulación práctica en escenarios cotidianos: cafeterías, presentaciones, orientación.</p>
-          </div>
-          <div class="mt rv" style="--d:1">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 10h22v15H16l-6 6v-6H6zM32 18h10v15h-4v6l-6-6H22v-4"/>
-            </svg>
-            <h3>Diálogo fluido</h3>
-            <p>Conversaciones guiadas en tiempo real con un hablante nativo.</p>
-          </div>
-          <div class="mt rv" style="--d:2">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M24 6l4 12 12 4-12 4-4 12-4-12-12-4 12-4z"/>
-            </svg>
-            <h3>Aprendizaje interactivo</h3>
-            <p>Dinámicas diseñadas para afianzar vocabulario y expresiones de forma intuitiva.</p>
-          </div>
+        <div class="recursos-head">
+          <h2 class="recursos-title rv">RECURSOS</h2>
+          <p class="recursos-lead rv" style="--d:1">
+            Aprende sin barreras. Crece sin límites.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- [큰 박스 A] PDF 아카이브 (3D Fan-out Deck) -->
+          <article class="bento-card bento-pdf rv" style="--d:1">
+            <div class="bento-info">
+              <span class="peek-tag">ARCHIVO PDF</span>
+              <h3>Materiales Descargables</h3>
+              <p>Desde el Hangul básico hasta guías de gramática y vocabulario. Estudia sin pasar por el filtro del inglés.</p>
+              <a href="resource.html" class="b p">
+                <span>Descarga las guías</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- 3D Fan-out PDF Deck -->
+            <div class="pdf-fan-deck" aria-hidden="true">
+              <div class="pdf-sheet sheet-left">
+                <span class="sheet-badge">PDF · 01</span>
+                <strong class="kr">한글</strong>
+                <small>Guía de Hangul</small>
+              </div>
+              <div class="pdf-sheet sheet-center">
+                <span class="sheet-badge">PDF · 02</span>
+                <strong class="kr">문법</strong>
+                <small>Gramática Clave</small>
+              </div>
+              <div class="pdf-sheet sheet-right">
+                <span class="sheet-badge">PDF · 03</span>
+                <strong class="kr">어휘</strong>
+                <small>Vocabulario Real</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- [큰 박스 B] 팟캐스트 스테이션 (Live Waveform) -->
+          <article class="bento-card bento-podcast rv" style="--d:2">
+            <div class="bento-info">
+              <span class="peek-tag">AUDIO &amp; CULTURA</span>
+              <h3>Vamos Coreano Podcast</h3>
+              <p>Conocimientos del idioma y la cultura coreana de forma sencilla. Perfecto para escuchar gratis mientras conduces o descansas.</p>
+            </div>
+
+            <!-- 오디오 파형 플레이어 UI -->
+            <div class="podcast-wave-box">
+              <a href="resource.html" class="play-orb" aria-label="Escuchar el podcast">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </a>
+              <div class="wave-meta">
+                <strong>Episodios en español</strong>
+                <div class="waveform" aria-hidden="true">
+                  <i style="--w:1"></i><i style="--w:3"></i><i style="--w:2"></i><i style="--w:5"></i>
+                  <i style="--w:4"></i><i style="--w:2"></i><i style="--w:6"></i><i style="--w:3"></i>
+                  <i style="--w:5"></i><i style="--w:1"></i><i style="--w:4"></i><i style="--w:2"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- [작은 박스 C-1] 스탯 카운터: 어휘/표현 데이터 -->
+          <article class="bento-card bento-stat rv" style="--d:2">
+            <div class="stat-num">+<span data-n="1500">0</span></div>
+            <strong>Expresiones y vocabulario</strong>
+            <p>Base de datos estructurada paso a paso para la mente hispanohablante.</p>
+          </article>
+
+          <!-- [작은 박스 C-2] 스탯 카운터: 100% 무료 -->
+          <article class="bento-card bento-stat rv" style="--d:3">
+            <div class="stat-num"><span data-n="100">0</span>%</div>
+            <strong>Acceso libre y en tu idioma</strong>
+            <p>Materiales creados desde la raíz, sin anuncios que interrumpan tu estudio.</p>
+          </article>
+
+          <!-- [작은 박스 D] 아카이브 전체 열기 액션 카드 -->
+          <a href="resource.html" class="bento-card bento-cta-tile rv" style="--d:4">
+            <div>
+              <span class="peek-tag">BIBLIOTECA ABIERTA</span>
+              <h3>Explora todo el archivo</h3>
+            </div>
+            <div class="tile-arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10"/>
+              </svg>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>
@@ -213,10 +378,9 @@
     <!-- SECCIÓN DE CONTACTO -->
     <section id="contacto">
       <div class="w">
-        <div class="rv" style="text-align: center; margin-bottom: 36px;">
-          <div class="tag"><i></i>Canales Directos</div>
+        <div class="rv contacto-head">
           <h2>Hablemos de tus metas</h2>
-          <p style="margin: 0 auto;">Elige el medio que prefieras para comunicarte conmigo. Resolveré tus dudas y coordinaremos tu inicio en el coreano.</p>
+          <p>Elige el medio que prefieras para comunicarte conmigo. Resolveré tus dudas y coordinaremos tu inicio en el coreano.</p>
         </div>
 
         <div class="contact-actions-grid rv">
@@ -290,172 +454,7 @@
     </svg>
     <span id="toast-text"></span>
   </div>
-
-  <script>
-    const $ = (s, r = document) => r.querySelector(s),
-          $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
-    
-    /* headline letters */
-    (() => {
-      const h = $("#h1");
-      let i = 0;
-      const wrap = (n) => {
-        [...n.childNodes].forEach(c => {
-          if (c.nodeType === 3) {
-            const f = document.createDocumentFragment();
-            c.textContent.split(/(\s+)/).forEach(w => {
-              if (!w) return;
-              if (/^\s+$/.test(w)) {
-                f.append(" ");
-                return;
-              }
-              const s = document.createElement("span");
-              s.style.display = "inline-block";
-              s.setAttribute("aria-hidden", "true");
-              [...w].forEach(l => {
-                const x = document.createElement("span");
-                x.className = "ch";
-                x.style.setProperty("--i", i++);
-                x.textContent = l;
-                s.append(x);
-              });
-              f.append(s);
-            });
-            c.replaceWith(f);
-          } else {
-            wrap(c);
-          }
-        });
-      };
-      wrap(h);
-    })();
-
-    /* Imagen sin efecto parallax */
-    /* abilities + examples */
-    const CK = '<svg viewBox="0 0 24 24" fill="none" stroke="#FFD35C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>';
-    
-    [
-      ["Dominar el Hangul", "Lee y escribe el alfabeto coreano con fluidez."],
-      ["Presentarte al mundo", "Comparte tu nombre, nacionalidad y profesión de manera natural."],
-      ["Navegar por la ciudad", "Ubica objetos y lugares con partículas de posición."],
-      ["Conectar ideas", "Enriquece tus conversaciones con conectores esenciales (y, por eso, pero)."],
-      ["Dominar el tiempo", "Expresa tus actividades en presente, pasado y futuro."]
-    ].forEach(([t, d], i) => {
-      const l = document.createElement("li");
-      l.className = "rv";
-      l.style.setProperty("--d", i);
-      l.innerHTML = CK.replace("<path", `<path style="--d:${i}"`) + `<div><b>${t}.</b> <span>${d}</span></div>`;
-      $("#ls").append(l); });
-    
-
-    /* Lógica de Notificación Toast y Copia */
-    const toast = $("#copy-toast"), toastText = $("#toast-text");
-    let toastTimer = null;
-    
-    function showToast(m) {
-      if (!toast) return;
-      toastText.textContent = m;
-      toast.classList.add("show");
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2800);
-    }
-
-    const copyBtn = $("#copy-email"); if (copyBtn) { copyBtn.onclick = async () => { const email = "1219.hlee@gmail.com"; try { await navigator.clipboard.writeText(email); showToast("Correo copiado al portapapeles: " + email); } catch (e) { showToast("Dirección: " + email); } }; }    
-
-    /* scroll: progress, rail */
-    const tl = $("#tl"), bar = $("#bar");
-
-    function tick() {
-      const max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-    }
-
-    addEventListener("scroll", tick, { passive: true });
-    addEventListener("resize", tick);
-    tick();
-
-    /* reveal + counters */
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("in");
-      const n = e.target.matches("[data-n]") ? e.target : e.target.querySelector("[data-n]");
-      if (n && !n.done) {
-        n.done = 1;
-        const T = +n.dataset.n, t0 = performance.now(), f = t => {
-          const k = Math.min(1, (t - t0) / 1400);
-          n.textContent = Math.round(T * (1 - Math.pow(1 - k, 3)));
-          k < 1 && requestAnimationFrame(f);
-        };
-        RM ? n.textContent = T : requestAnimationFrame(f);
-      }
-      io.unobserve(e.target);
-    }), { threshold: .2 });
-
-    $$("section h2").filter(h => !h.closest(".rv")).forEach(h => h.classList.add("rv")); $$
-(".rv,.ls").forEach(el => io.observe(el));
-
-    /* theme */
-
-    /* fondo, cinta, spotlight, imán */
-    (() => {
-      const b = $(".bg"), G = [..."ㅎㅏㄴㄱㅡㄹ한글가나다라마바사"];
-      if (!RM) {
-        for (let i = 0; i < 16; i++) {
-          const g = document.createElement("i");
-          g.className = "gl";
-          g.textContent = G[i % G.length];
-          g.style.cssText = `left:${(i * 37 + 8) % 96}%;--s:${1.6 + i % 4 * .9}rem;animation-duration:${26 + i * 3}s;animation-delay:-${i * 4}s`;
-          b.append(g);
-        }
-      }
-      const m = $("#mq");
-      m.innerHTML += m.innerHTML;
-      $(".ct .kr").innerHTML = [..."안녕하세요"].map((c, i) => `<span style="--i:${i}">${c}</span>`).join("");
-      
-      addEventListener("pointermove", e => {
-        const t = e.target, c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card");
-        if (c) {
-          const r = c.getBoundingClientRect();
-          c.style.setProperty("--x", e.clientX - r.left + "px");
-          c.style.setProperty("--y", e.clientY - r.top + "px");
-        }
-        const q = t.closest && t.closest(".b");
-        if (q && !RM) {
-          const r = q.getBoundingClientRect();
-          q.style.setProperty("--bx", (e.clientX - r.left - r.width / 2) * .18 + "px");
-          q.style.setProperty("--by", (e.clientY - r.top - r.height / 2) * .28 + "px");
-        }
-      }, { passive: true });
-      
-      $$(".b").forEach(q => q.addEventListener("pointerleave", () => {
-        q.style.setProperty("--bx", "0px");
-        q.style.setProperty("--by", "0px");
-      }));
-    })();
-
-    /* hangul burst */
-    $("#go").onclick = e => {
-      const r = e.currentTarget.getBoundingClientRect(), L = ["안", "녕", "하", "세", "요", "한", "글", "ㅎ", "ㅏ", "ㄴ", "ㄱ", "ㅁ"];
-      if (RM) return;
-      for (let i = 0; i < 22; i++) {
-        const s = document.createElement("span");
-        s.className = "cf";
-        s.textContent = L[i % L.length];
-        s.style.left = r.left + r.width / 2 + "px";
-        s.style.top = r.top + r.height / 2 + "px";
-        s.style.color = ["#2563EB", "#60A5FA", "#94A3B8"][i % 3];
-        document.body.append(s);
-        const a = Math.random() * Math.PI * 2, d = 90 + Math.random() * 170;
-        s.animate([
-          { transform: "translate(-50%,-50%) scale(.4)", opacity: 1 },
-          { transform: `translate(calc(-50% + ${Math.cos(a) * d}px),calc(-50% + ${Math.sin(a) * d - 70}px)) rotate(${Math.random() * 240 - 120}deg) scale(1)`, opacity: 0 }
-        ], { duration: 1100 + Math.random() * 500, easing: "cubic-bezier(.2,.8,.3,1)" }).onfinish = () => s.remove();
-      }
-    };
-  </script>
   <script src="js/nav.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

@@ -36,3 +36,12 @@
     if (event.key === "Escape") setOpen(false);
   });
 })();
+
+/* Sección 4 슬라이드 좌우 버튼 작동 */
+(() => {
+  const track = $("#peek-track"), prev = $("#peek-prev"), next = $("#peek-next");
+  if (!track || !prev || !next) return;
+  const step = () => (track.querySelector(".peek-card")?.offsetWidth || 360) + 24;
+  prev.onclick = () => track.scrollBy({ left: -step(), behavior: "smooth" });
+  next.onclick = () => track.scrollBy({ left: step(), behavior: "smooth" });
+})();
