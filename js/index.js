@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {    
+    
     const $ = (s, r = document) => r.querySelector(s),
           $$ = (s, r = document) => [...r.querySelectorAll(s)];
     const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
@@ -182,3 +184,4 @@ addEventListener("pointermove", e => {
         ], { duration: 1100 + Math.random() * 500, easing: "cubic-bezier(.2,.8,.3,1)" }).onfinish = () => s.remove();
       }
     };
+});

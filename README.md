@@ -15,8 +15,8 @@ Para mantener la consistencia visual, utilizaremos estrictamente solo 4 colores 
 • Naranja (Acento/Botones) - #F97316
 ### 5. Jerarquía Tipográfica
 Usa un máximo de 2 tipográficas(fondo de texto)
-  Julio
-  Marquez
+  Bricolage Grotesque
+  Pretendard
 Define 6 tamaños exactos
   hero-impact: 5rem
   hero: 3rem
