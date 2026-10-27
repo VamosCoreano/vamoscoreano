@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contacta a Hyunho Lee por WhatsApp, Instagram o correo para clases de coreano.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Contacta al equipo de Vamos Coreano por WhatsApp, Instagram o correo electrónico.">
   <title>Contacto | Vamos Coreano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div id="bar"></div>
 
   <header>
     <div class="w">
@@ -35,55 +35,160 @@
     </div>
   </header>
 
-  <main id="contenido" class="main-content">
-    <div class="container">
-      <h1 class="page-title">Contacto</h1>
-
-      <div class="hero-description">
-        <p class="highlight-text">¿Tienes preguntas sobre las clases?</p>
-        <p class="sub-text">Escríbeme por cualquiera de estos medios y te responderé lo antes posible.</p>
+  <main id="contenido">
+    <!-- [Sección 1] Hero Section (El Saludo): 미니멀한 중앙 타이틀과 넓은 여백 -->
+    <section class="hero">
+      <div class="w">
+        <div class="tag"><i></i>Canales Directos</div>
+        <h1>
+          Hablemos de<br>
+          <em>tus metas.</em>
+        </h1>
+        <p class="big" style="margin: var(--s3) auto 0;">
+          Cualquier duda que tengas, nuestro equipo está listo para ayudarte al instante.
+        </p>
       </div>
+    </section>
 
-      <section class="menu-section" aria-label="Medios de contacto">
-        <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="cta-button" target="_blank" rel="noopener noreferrer">WhatsApp<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
-        <a href="https://instagram.com/vamos.coreano" class="menu-button" target="_blank" rel="noopener noreferrer">Instagram<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
-        <button type="button" class="menu-button" id="copy-email">Correo</button>
-      </section>
-    </div>
+    <!-- [Sección 2] Los 3 Canales (Tarjetas Flotantes) -->
+    <section id="contacto">
+      <div class="w">
+        <div class="contact-actions-grid">
+          <!-- 1. WhatsApp (Respuesta Rápida) -->
+          <article class="action-card action-card-featured">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Ideal para respuestas inmediatas, consultas sobre las clases y cupos.</p>
+            <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="b p btn-card" target="_blank" rel="noopener noreferrer">
+              <span>Chatea con nosotros</span>
+            </a>
+          </article>
+
+          <!-- 2. Instagram (Comunidad) -->
+          <article class="action-card">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3>Instagram</h3>
+            <p>Para interacciones más casuales y conocer más sobre nuestra comunidad.</p>
+            <a href="https://instagram.com/vamos.coreano" class="b btn-card" target="_blank" rel="noopener noreferrer">
+              <span>Mándanos un DM</span>
+            </a>
+          </article>
+
+          <!-- 3. Correo Electrónico (Formal) -->
+          <article class="action-card">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <h3>Correo Electrónico</h3>
+            <p>Para asuntos de negocios, propuestas educativas o consultas detalladas.</p>
+            <a href="mailto:1219.hlee@gmail.com?subject=Consulta%20-%20Vamos%20Coreano" class="b btn-card">
+              <span>Envíanos un correo</span>
+            </a>
+            <button type="button" class="copy-sub-action" id="copy-email">Copiar dirección (1219.hlee@gmail.com)</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 2-B] Sobre el profe: 좌측 설명 + 우측 프로필 사진 -->
+    <section>
+      <div class="w ab">
+        <div>
+          <div class="tag"><i></i>Profesor Nativo</div>
+          <h2>Atención directa en tu idioma</h2>
+          <p class="big">Hyunho Lee · Especialista en Literatura Coreana e Instructor Certificado.</p>
+          <div class="q">
+            <p>Sin pasar por el filtro innecesario del inglés. Resolvemos tus dudas y diseñamos tu camino en el coreano directamente en español.</p>
+          </div>
+          <p>Escríbenos con confianza para orientarte según tu nivel y tus objetivos.</p>
+        </div>
+
+        <div class="ph">
+          <div class="arch">
+            <img src="image/profile-sample.png" alt="Retrato del profesor Hyunho Lee">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 3] Contacto Directo (El Toque Humano - Inwoo) -->
+    <section style="border-top: 1px solid var(--ln);">
+      <div class="w">
+        <div class="cd" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s3); padding: var(--s4);">
+          <div>
+            <div class="tag" style="margin-bottom: var(--s1);"><i></i>Dirección Técnica</div>
+            <h3>Habla con nuestro Cofundador y Director Técnico</h3>
+            <p>Conoce a nuestro Cofundador y Director Técnico para soporte, alianzas o consultas directas del proyecto.</p>
+          </div>
+          <a href="https://instagram.com/vamos.coreano" class="b" target="_blank" rel="noopener noreferrer">
+            <span>Contacta a Inwoo por Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <div id="copy-toast" role="status" aria-live="polite"></div>
+  <div id="copy-toast" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF4D5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6 9 17l-5-5"/>
+    </svg>
+    <span id="toast-text"></span>
+  </div>
 
-  <aside class="donate-band" aria-label="Invítame un café">
-    <div class="container donate-band-inner">
-      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
-      <a class="donate-band-link" href="donate.html">Invítame un café</a>
-    </div>
-  </aside>
-
-  <footer class="footer">
-    <p>© 2026 Vamos Coreano</p>
-    <p>Profesor Hyunho Lee</p>
+  <footer>
+    © 2026 Vamos Coreano. Todos los derechos reservados.<br>
+    Diseñado para el mundo hispanohablante.
   </footer>
 
   <script>
-    document.getElementById("copy-email").addEventListener("click", async () => {
-      const email = "1219.hlee@gmail.com";
-      const toast = document.getElementById("copy-toast");
+    /* 이메일 복사 및 토스트 알림 (index.html과 동일 규격) */
+    const toast = document.getElementById("copy-toast"),
+          toastText = document.getElementById("toast-text");
+    let toastTimer = null;
 
-      try {
-        await navigator.clipboard.writeText(email);
-        toast.textContent = "Correo copiado al portapapeles";
-      } catch {
-        toast.textContent = email;
-      }
-
+    function showToast(m) {
+      if (!toast) return;
+      toastText.textContent = m;
       toast.classList.add("show");
-      setTimeout(() => {
-        toast.classList.remove("show");
-        toast.textContent = "";
-      }, 2500);
-    });
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
+    }
+
+    const copyBtn = document.getElementById("copy-email");
+    if (copyBtn) {
+      copyBtn.onclick = async () => {
+        const email = "1219.hlee@gmail.com";
+        try {
+          await navigator.clipboard.writeText(email);
+          showToast("Correo copiado al portapapeles: " + email);
+        } catch (e) {
+          showToast("Dirección: " + email);
+        }
+      };
+    }
+
+    /* 카드 마우스 오버 시 미세한 빛 반사(Spotlight) 효과 연동 */
+    addEventListener("pointermove", e => {
+      const c = e.target.closest && e.target.closest(".cd,.action-card");
+      if (c) {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty("--x", e.clientX - r.left + "px");
+        c.style.setProperty("--y", e.clientY - r.top + "px");
+      }
+    }, { passive: true });
   </script>
   <script src="js/nav.js"></script>
 </body>

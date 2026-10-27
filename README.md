@@ -88,6 +88,9 @@ Es el lugar donde el visitante aterriza por primera vez. No es una página para 
 ### 3. Estructura de Secciones (Flujo de Scroll de arriba hacia abajo)
 * [Sección 1] Hero Section (Impacto Brutal): La primera pantalla. Un mensaje visual y textual abrumador que atrape al usuario al instante (El efecto "¡Boom!").
 * [Sección 2] Identidad: ¿Qué es VAMOS COREANO? (Manifiesto breve).
+      [왕크게] SOMOS
+      [적당 크게] Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
+      [주절주절] Diseñados a la medida para hispanohablantes.
 * [Sección 3] Sobre Mí (Resumen): Autoridad y confianza en pocas líneas.
 * [Sección 4] Cursos (Resumen): Un vistazo rápido a nuestras clases.
 * [Sección 5] Recursos (Resumen): El gancho de material.
