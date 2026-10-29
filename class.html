@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="css/token.css">  
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -41,24 +42,178 @@
     </div>
   </header>
 
+  <!-- [섹션 1] 비행기 위쪽까지만 정확히 한 화면(100svh - 헤더 높이)을 차지하는 히어로 섹션 -->
   <section class="class-hero">
     <div class="w">
       <h1>
-        <span class="h-line h-black">Un idioma.<br>Un objetivo.</span>
-        <span class="h-line h-blue">100% para<br>hispanohablantes.</span>
+        <!-- 1박자 (쿵!): 위에서 묵직하게 내리꽂히는 첫 번째 줄 -->
+        <span class="h-line h-black beat-1">Un idioma.</span>
+        
+        <!-- 2박자 (쿵!): 같은 리듬으로 내리꽂히는 두 번째 줄 -->
+        <span class="h-line h-black beat-2">Un objetivo.</span>
+        
+        <!-- 3박자 (따!): 클랩처럼 시원하게 터지며 등장하는 세 번째 줄 -->
+        <!-- (팁: 만약 3번째 문구를 두 줄이 아니라 한 줄로 길게 보고 싶다면 아래 <br>만 지우시면 됩니다) -->
+        <span class="h-line h-blue beat-3">100% para<br>hispanohablantes.</span>
       </h1>
       
+      <!-- 쿵-쿵-따! 가 끝난 직후 부드럽게 올라오는 서브 문구 -->
       <p class="h-sub">Aprende coreano desde tu idioma, no desde el inglés.</p>
-      <a class="h-cue" href="#temario" aria-label="Ver el temario">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      </a>
-      <div class="fly" aria-hidden="true">
-        <div class="plane">
-          <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-        </div>
-      </div>
+      
+      <!-- ❌ 기존에 있던 화살표(<a class="h-cue">...</a>)는 여기서 완전히 삭제했습니다 -->
     </div>
   </section>
+
+  <!-- [섹션 1과 섹션 2 사이] 비행기를 <section class="class-hero"> 바깥으로 분리! -->
+  <!-- 이렇게 빼두면 섹션 1의 높이 계산에 영향을 주지 않고, 스크롤할 때 섹션 1 바로 아래에서 날아갑니다 -->
+
+  <!-- (위쪽 기존 코드: 비행기 영역 끝부분) -->
+  <div class="class-fly-zone" aria-hidden="true">
+    <div class="fly">
+      <div class="plane">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       👇 [여기에 추가!] index.html의 Sección 4(Cursos) 구조를 재활용한 섹션
+       ===================================================================== -->
+  <section id="curso" class="section-cursos">
+    <div class="w cursos-head">
+      <div class="cursos-head-text">
+        <h2 class="cursos-title rv">CURSOS</h2>
+        <p class="cursos-lead rv" style="--d:1">
+          Diseñados exclusivamente para ti.
+        </p>
+        <p class="cursos-sub rv" style="--d:2">
+          Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
+        </p>
+      </div>
+
+      <!-- 좌우 슬라이드 화살표 버튼 -->
+      <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
+        <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 수평 피크(Peek) 슬라이드 트랙 (스크롤 도달 시 2바퀴 회전 후 중앙 정지) -->
+    <div class="peek-track" id="peek-track">
+      
+      <!-- Card 01: DESPEGUE (주력 코스 -> 버튼 클릭 시 아래 #temario 커리큘럼으로 스크롤 이동!) -->
+      <article class="peek-card peek-card-primary rv" style="--d:1">
+        <div class="peek-top">
+          <span class="peek-tag">CURSO REGULAR · 01</span>
+          <span class="peek-kr kr" aria-hidden="true">이륙</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">DESPEGUE</h3>
+          <p class="peek-punch">Coreano desde cero.</p>
+          <p class="peek-desc">
+            Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la romanización.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <!-- 💡 index.html에서는 href="class.html"이었지만, 여기서는 바로 아래 커리큘럼(#temario)으로 내려가게 변경! -->
+          <a href="#temario" class="b p">
+            <span>Ver el temario</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 02: ASCENSO -->
+      <article class="peek-card rv" style="--d:2">
+        <div class="peek-top">
+          <span class="peek-tag">CURSO REGULAR · 02</span>
+          <span class="peek-kr kr" aria-hidden="true">상승</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">ASCENSO</h3>
+          <p class="peek-punch">Dale alas a tu coreano.</p>
+          <p class="peek-desc">
+            Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones cotidianas.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <!-- 💡 다른 코스들은 문의 페이지(contact.html)나 커뮤니티(join.html)로 연결하거나 #temario로 둘 수 있습니다 -->
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 03: EXPRESIONES PARA VIAJE -->
+      <article class="peek-card rv" style="--d:3">
+        <div class="peek-top">
+          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+          <span class="peek-kr kr" aria-hidden="true">여행</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
+          <p class="peek-punch">Coreano real para tu viaje.</p>
+          <p class="peek-desc">
+            Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y conversaciones locales.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 04: CONVERSACIÓN & CULTURA -->
+      <article class="peek-card rv" style="--d:4">
+        <div class="peek-top">
+          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+          <span class="peek-kr kr" aria-hidden="true">실전</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
+          <p class="peek-punch">Habla como un nativo.</p>
+          <p class="peek-desc">
+            Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 💡 [5번째 코스를 추가하고 싶다면?] 
+           위 <article class="peek-card rv" style="--d:4">...</article> 블록을 복사해서 
+           바로 여기에 하나 더 붙여넣기만 하면 JS가 알아서 카드 개수를 계산해 룰렛을 돌려줍니다! -->
+
+    </div>
+    <!-- ❌ index.html 맨 아래에 있던 <div class="w course-all rv"><a href="class.html">Descubre todos los cursos</a></div>는 
+         이미 class.html 페이지 안이므로 깔끔하게 제거했습니다 -->
+  </section>
+  <!-- =====================================================================
+       👆 [여기까지 추가!] 바로 아래에는 기존의 <section id="temario">가 이어집니다
+       ===================================================================== -->
 
   <section id="temario" style="padding-top:40px">
       <div class="w">
@@ -77,134 +232,7 @@
     <p>Profesor Hyunho Lee</p>
   </footer>
 
-  <script>
-     const $ = (s, r = document) => r.querySelector(s),
-           $$ = (s, r = document) => [...r.querySelectorAll(s)];
-    const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
-
-    const PN = ["Todas", "Hangul y presentación", "Acciones y lugares", "Números y compras", "Los tres tiempos", "Expresarte y conectar"];
-    const S = [
-      ["인사하고 자기소개 하기 / 한글 1", "Saludar y presentarse · Hangul 1", "S이에요/예요", "Consonantes ㅇ ㄴ ㅁ ㄹ~Vocales ㅏ ㅓ ㅗ ㅜ ㅡ ㅣ~Saludar y presentar el nombre", "안녕하세요=Hola;저는 마리아예요=Soy María", 1],
-      ["국적 말하기 / 한글 2", "Hablar de la nacionalidad · Hangul 2", "S이에요/예요", "Consonantes ㄱ ㄷ ㅂ ㅅ ㅈ ㅎ~Vocales ㅐ ㅔ ㅚ ㅟ~Hablar de la nacionalidad", "저는 콜롬비아 사람이에요=Soy colombiano/a;저는 멕시코 사람이에요=Soy mexicano/a", 1],
-      ["직업 말하기 / 한글 3", "Hablar de las profesiones · Hangul 3", "S이에요/예요", "Consonantes ㅋ ㅌ ㅍ ㅊ~Vocales ㅑ ㅕ ㅛ ㅠ ㅒ ㅖ~Concepto de consonante final (Batchim)~Hablar de las profesiones", "저는 학생이에요=Soy estudiante;저는 가수예요=Soy cantante", 1],
-      ["사물 묻고 답하기 / 한글 4", "Preguntar y responder sobre objetos · Hangul 4", "S은/는 S이에요/예요", "Consonantes ㄲ ㄸ ㅃ ㅆ ㅉ~Vocales ㅘ ㅝ ㅙ ㅞ ㅢ~Preguntar por objetos", "이것은 뭐예요?=¿Qué es esto?;이것은 커피예요=Esto es café", 1],
-      ["부정 표현하기 1", "Expresar negación 1", "S은/는 S이/가 아니에요", "Repaso de Hangul~Ser (이에요/예요) vs. no ser (아니에요)", "저는 멕시코 사람이 아니에요=No soy mexicano/a;후안은 가수가 아니에요=Juan no cantante", 1],
-      ["일상생활 동작 말하기", "Hablar de acciones cotidianas", "V + -아요/-어요/-해요", "Repaso de Hangul~Conjugación básica del presente~Concepto de raíz verbal", "밥을 먹어요=Como;커피를 마셔요=Bebo café", 2],
-      ["문장 넓히기 (목적어)", "Ampliar oraciones: acción y objeto", "", "", "", 2],
-      ["부정 표현하기 2", "Expresar negación 2", "S은/는 S을/를 안 V", "Repaso de Hangul~Uso de la negación básica~Negación “안” con verbos~Concepto de partícula", "저는 밥을 안 먹어요=Yo no como;저는 커피를 안 마셔요=Yo no tomo café", 2],
-      ["위치와 존재 말하기", "Expresar ubicación y existencia", "S이/가 S에 있어요/없어요", "Ubicación y existencia~Partícula de lugar -에", "우산이 있어요=Hay un paraguas;우산이 방에 있어요=Hay un paraguas en la habitación", 2],
-      ["장소와 행동 말하기", "Hablar de acciones en un lugar", "-에/-에서", "Partículas de lugar: -에 vs. -에서~Sustantivos de ubicación", "어디에서 공부해요?=¿Dónde estudia?;집에서 한국어를 공부해요=Estudio coreano en casa", 2],
-      ["중간 점검 및 종합 연습", "Repaso intermedio y práctica general", "종합 복습 및 활용", "Repaso acumulativo de las sesiones 1–9~Juego de adivinar personajes~Hablar de objetos en una habitación~Escuchar y describir un espacio~Encontrar errores en oraciones", "컵이 책상 위에 있어요=La taza está sobre el escritorio", 2],
-      ["숫자 읽기 1 (한자어)", "Leer los números 1 (sino-coreanos)", "숫자 (한자어)", "Números sino-coreanos 1–10, 100, 1.000, 10.000~Fechas y días de la semana", "오월 구 일이에요=Es el 9 de mayo", 3],
-      ["숫자 읽기 2 (고유어)", "Leer los números 2 (nativos coreanos)", "숫자 (고유어) + 단위 명사 (개, 명, 살)", "Números nativos coreanos 1–100~Contadores (개, 명) y edad (살)", "딸기 한 개 얼마예요?=¿Cuánto cuesta una fresa?;사과 다섯 개는 오천 원이에요=Cinco manzanas cuestan 5.000 wones", 3],
-      ["시간 묻고 물건 사기", "Preguntar la hora y hacer compras", "숫자(고유어) 시 + 숫자(한자어) 분", "Hora nativa + minutos sino-coreanos~Preguntar y responder la hora~Práctica general de los números", "몇 시예요?=¿Qué hora es?;세 시 사십오 분이에요=Son las 3 y 45", 3],
-      ["과거 경험 말하기", "Hablar de experiencias pasadas", "V + -았/었/했어요", "Sufijo de tiempo pasado (-았/었/했-)", "어제 밥을 먹었어요=Ayer comí;금요일에 학교에 갔어요=El viernes fui a la escuela", 4],
-      ["현재 진행 상황 말하기", "Hablar de acciones en curso", "V + -고 있어요", "Describir acciones en curso (presente continuo)", "마리아는 지금 음악을 듣고 있어요=María está escuchando música ahora", 4],
-      ["미래 계획 말하기", "Hablar de planes futuros", "V + -(으)ㄹ 거예요", "Adverbios de tiempo futuro~Hablar de planes o agendas futuras", "내일 학교에 갈 거예요=Mañana iré a la escuela", 4],
-      ["시제 종합 연습 (과거/현재/미래)", "Práctica de tiempos verbales (pasado, presente, futuro)", "", "Práctica combinada de los 3 tiempos verbales~Uso de vocabulario de tiempo futuro", "아침에 밥을 먹었어요=Desayuné por la mañana", 4],
-      ["상태 및 감정 표현하기", "Expresar estados y emociones", "A + -아요/어요", "Uso de adjetivos básicos~Conjugación de adjetivos~Tener hambre, dolerse, estar cansado, etc.", "저는 배고파요=Tengo hambre;동생은 피곤해요=Mi hermano/a menor está cansado/a", 5],
-      ["이유 말하기", "Expresar causas y motivos", "A/V + -아서/-어서", "Causas y motivos~Conectar oraciones con causa y efecto", "저는 피곤해서 지금 자요=Me duermo ahora porque estoy cansado", 5],
-      ["희망사항 표현하기", "Expresar deseos", "V + -고 싶어요", "Deseos y planes con -고 싶어요~Hablar de lo que se quiere hacer", "저는 한국에 가고 싶어요=Quiero ir a Corea", 5],
-      ["요청하기", "Hacer peticiones e instrucciones", "V + -(으)세요", "Instrucciones y peticiones~Pedir favores o dar indicaciones", "여기에 앉으세요=Tome asiento aquí, por favor", 5],
-      ["제안하기", "Hacer sugerencias", "V + -(으)ㄹ래요?", "Simulación de situaciones: cafetería, estación~Toda la gramática aprendida", "내일 영화관에 갈래요?=¿Quieres ir al cine mañana?", 5],
-      ["문장 연결하기", "Conectar oraciones", "A/V + -지만 · A/V + -고", "Conjunción adversativa -지만 (pero)~Conjunción copulativa -고 (y, además)", "한국어는 어렵지만 재미있어요=El coreano es difícil, pero divertido", 5],
-      ["최종 발표 및 졸업식 하기", "Presentación final y graduación de Despegue", "종합 복습 및 활용", "Escritura final y sesión de preguntas~Feedback general y resumen~Entrega de certificados", "", 5]
-    ];
-    
-    const RK = '<svg class="rk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10l-2 4H9l-2-4c0-4 2-8 5-10zM9 16l-3 4 4-1M15 16l3 4-4-1"/><circle cx="12" cy="10" r="1.6"/></svg>';
-    const its = $("#its");
-
-    if (its) {
-      S.forEach(([kr, es, g, c, x, ph], i) => {
-        const fin = i === S.length - 1;
-        const el = document.createElement("div");
-        el.className = "it" + (fin ? " fin" : "");
-        el.dataset.ph = ph;
-        
-        const li = a => a ? "<ul>" + a.split("~").map(t => `<li>${t}</li>`).join("") + "</ul>" : "";
-        
-        const ex = x ? x.split(";").map(p => {
-          const [a, b] = p.split("=");
-          return `<div class="xx">${a}<small>${b}</small></div>`;
-        }).join("") : "";
-        
-        el.innerHTML = `
-          <button class="rw" aria-expanded="false">
-            <span class="no">${fin ? RK : i + 1}</span>
-            <span><b>${es}</b><small class="kr">${kr}</small></span>
-            <span class="pl">
-              <svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M6 1v10M1 6h10"/>
-              </svg>
-            </span>
-          </button>
-          <div class="pn">
-            <div>
-              <div class="pi">
-                <div>
-                  ${g ? `<h4>Estructura gramatical</h4><span class="gm">${g}</span>` : ""}
-                  ${c ? `<h4>Contenido de la clase</h4>${li(c)}` : `<h4>Contenido</h4><p>Ampliar oraciones combinando acción y objeto.</p>`}
-                </div>
-                <div>
-                  ${ex ? `<h4>Ejemplos</h4>${ex}` : `<h4>${fin ? "Cierre" : "Ejemplos"}</h4><p>${fin ? "Tu graduación de Despegue." : "Se practican en clase."}</p>`}
-                </div>
-              </div>
-            </div>
-          </div>`;
-        
-        $(".rw", el).onclick = e => {
-          const o = el.classList.toggle("open");
-          e.currentTarget.setAttribute("aria-expanded", o);
-        };
-        its.append(el);
-      });
-
-      PN.forEach((n, i) => {
-        const b = document.createElement("button");
-        b.className = "fb";
-        b.textContent = n;
-        b.setAttribute("aria-pressed", i === 0);
-        b.onclick = () => {
-          $$(".fb").forEach(x => x.setAttribute("aria-pressed", x === b)); 
-          $$(".it").forEach(el => {
-            const h = i && +el.dataset.ph !== i;
-            el.classList.toggle("hd", h);
-            if (!h) {
-              el.classList.remove("ent");
-              void el.offsetWidth;
-              el.classList.add("ent");
-            }
-          });
-          // 필요한 경우 class.html의 스크롤 업데이트 함수 호출
-          if (typeof tick === 'function') tick(); 
-        };
-        $("#fl2").append(b);
-      });
-    }
-
-    const io_temario = new IntersectionObserver(es => es.forEach(e => { 
-      if (e.isIntersecting) { 
-        e.target.classList.add("vis"); 
-        io_temario.unobserve(e.target); 
-      } 
-    }), { threshold: .15, rootMargin: "0px 0px -6% 0px" });      
-    
-    $$(".it").forEach(el => typeof RM !== 'undefined' && RM ? el.classList.add("vis") : io_temario.observe(el));
-
-    const tl_temario = $("#tl");
-    if(tl_temario) {
-      addEventListener("scroll", () => {
-        const vh = innerHeight;
-        const rr = $(".rail", tl_temario).getBoundingClientRect();
-        const ly = vh * 0.6; 
-        tl_temario.style.setProperty("--fh", Math.max(0, Math.min(rr.height, ly - rr.top)) + "px");  
-        $$(".it").forEach(el => {
-          if (el.offsetParent) el.classList.toggle("pass", el.getBoundingClientRect().top + 36 < ly);
-        });
-      }, { passive: true });
-    }
-</script>
-
+  <script src="js/class.js"></script>
   <script src="js/nav.js"></script>
 </body>
 </html>

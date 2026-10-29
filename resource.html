@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="css/token.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -82,7 +83,7 @@
         const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('vis');
+              entry.target.classList.add('in');
               observer.unobserve(entry.target);
             }
           });
@@ -93,7 +94,7 @@
 
         items.forEach(item => observer.observe(item));
       } else {
-        items.forEach(item => item.classList.add('vis'));
+        items.forEach(item => item.classList.add('in'));
       }
 
 

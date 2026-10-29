@@ -215,6 +215,7 @@ addEventListener("pointermove", e => {
         const clone = card.cloneNode(true);
         clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
         clone.setAttribute("aria-hidden", "true");
+        clone.inert = true;
         track.append(clone);
       });
     }

@@ -1,0 +1,5436 @@
+
+
+================================================================================
+FILE: about.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Conoce a Vamos Coreano: un tutor de Literatura Coreana y un equipo diseñado para hispanohablantes.">
+  <title>Nosotros | VAMOS COREANO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:var(--bl);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--co-dark);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html" class="on" aria-current="page">Nosotros</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- [Sección 1] TU GUÍA: 3 hechos gigantes (aparecen en cascada desde arriba-izquierda) + foto con 3D Tilt -->
+    <section class="about-hero">
+      <div class="w ab">
+        <div>
+          <div class="tag rv"><i></i>TU GUÍA</div>
+          <h1>
+            <span class="fact rv" style="--d:1">Especialidad en Literatura Coreana.</span>
+            <span class="fact rv" style="--d:2"><em>Instructor Oficial Certificado.</em></span>
+            <span class="fact rv" style="--d:3">Fluidez Absoluta en Español.</span>
+          </h1>
+          <p class="big rv" style="--d:4">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
+        </div>
+
+        <div class="rv" style="--d:3">
+          <div class="ph" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.22">
+            <div class="arch">
+              <img src="img/profile-main.png" alt="Retrato del profesor Hyunho Lee">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 2] La Historia Detallada: saludo, historia, el enemigo, misión y valores -->
+    <section id="historia" class="story">
+      <div class="w ab">
+        <div>
+          <h2>¿Por qué existe Vamos Coreano?</h2>
+          <p class="big rv">Hola, soy Hyunho Lee.</p>
+
+          <span class="kicker rv">La historia</span>
+          <p class="rv">Estudié Literatura Coreana y hoy soy instructor oficial certificado. Pero lo que me llevó a crear este proyecto fue ver, una y otra vez, cómo los hispanohablantes aprendían coreano por el camino más difícil.</p>
+          <p class="rv">Casi todo el material disponible pasa por el inglés, y se nota: explicaciones traducidas dos veces, ejemplos poco naturales y un aprendizaje que nunca termina de conectar con tu forma de pensar. Por eso diseñé un método directo, del español al coreano, pensado para la mente hispanohablante.</p>
+
+          <span class="kicker rv">El enemigo</span>
+          <ul class="enemy rv">
+            <li><span><strong>Materiales traducidos del inglés.</strong> Textos con sabor a traducción automática que confunden más de lo que explican.</span></li>
+            <li><span><strong>La romanización.</strong> Letras latinas que arruinan tu pronunciación desde el primer día.</span></li>
+            <li><span><strong>Memorizar sin entender.</strong> Reglas sueltas, sin principio ni contexto, que se olvidan en una semana.</span></li>
+          </ul>
+
+          <span class="kicker rv">La misión</span>
+          <div class="q rv">
+            <p>Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del inglés.</p>
+          </div>
+        </div>
+
+        <div>
+          <span class="kicker rv" style="margin-top:0">Nuestros valores</span>
+          <div class="cards">
+            <div class="cd rv" style="--d:1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="9" r="5.5"/>
+                <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
+              </svg>
+              <div>
+                <h3>Enseñanza desde la raíz</h3>
+                <p>Sin pasar por el inglés. Conectamos la raíz y los principios del coreano directamente desde la mirada de un hispanohablante.</p>
+              </div>
+            </div>
+
+            <div class="cd rv" style="--d:2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 5h16v11H9l-5 4z"/>
+                <path d="M8 9h8M8 12h5"/>
+              </svg>
+              <div>
+                <h3>Explicaciones en tu idioma</h3>
+                <p>Cada concepto, explicado en español con lógica y claridad. Aprendes a leer y pronunciar en hangul desde el primer día, sin muletas.</p>
+              </div>
+            </div>
+
+            <div class="cd rv" style="--d:3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              <div>
+                <h3>Método diseñado para ti</h3>
+                <p>Un currículo creado para la mente hispanohablante: aprovecha las similitudes entre ambos idiomas y resuelve las diferencias paso a paso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 3] El compañero: Julio Marquez, cofundador -->
+    <section id="equipo" class="team">
+      <div class="w team-grid">
+        <div class="rv">
+          <div class="julio-photo">
+            <img src="img/profile-julio-main.png" alt="Julio Marquez, cofundador y director técnico de Vamos Coreano" onerror="this.remove()">
+          </div>
+        </div>
+
+        <div>
+          <div class="tag rv"><i></i>EL COMPAÑERO</div>
+          <h2>Julio Márquez</h2>
+          <p class="role rv">Cofundador y Director Técnico</p>
+
+          <p class="rv">El mejor contenido educativo funciona sobre un sistema impecable. Julio Márquez es cofundador y director técnico de Vamos Coreano: diseña y lidera toda la arquitectura de la plataforma web y de la comunidad para que te sumerjas en el coreano sin una sola décima de segundo de duda.</p>
+          <p class="rv">Audio, web, servidores, diseño… Julio es nuestro jugador multifunción.</p>
+
+          <ul class="skills rv" aria-label="Áreas de trabajo de Julio">
+            <li>Audio</li>
+            <li>Web</li>
+            <li>Servidores</li>
+            <li>Diseño</li>
+            <li>Y mucho más!</li>
+          </ul>
+
+          <div class="q rv">
+            <p>Nunca soy solo yo. SOMOS NOSOTROS.</p>
+          </div>
+
+          <div class="rv"><a href="contact.html" class="b">Contacta a Julio</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 4] CTA final: verbo imperativo (tú) + destino principal class.html -->
+    <section class="ct about-cta">
+      <div class="w">
+        <h2>Abre tu camino junto a un equipo así</h2>
+        <p>¿A que da confianza?</p>
+        <div class="course-all">
+          <a href="class.html" class="b p">
+            <span>Descubre el curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="w">
+      <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+        Diseñado para el mundo hispanohablante.</p>
+    </div>
+  </footer>
+
+  <!-- Vanilla-tilt.js: 3D Tilt + Glare del retrato -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>
+
+
+================================================================================
+FILE: class.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cursos de coreano por niveles. Empieza con El Despegue y domina el hangul desde el primer día.">
+  <title>Clases | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="css/token.css">  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+
+<body>
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:#2540E8;width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:#FF4D5E;width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:#FFD35C;width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
+
+ <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="class.html" class="on" aria-current="page">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- [섹션 1] 비행기 위쪽까지만 정확히 한 화면(100svh - 헤더 높이)을 차지하는 히어로 섹션 -->
+  <section class="class-hero">
+    <div class="w">
+      <h1>
+        <!-- 1박자 (쿵!): 위에서 묵직하게 내리꽂히는 첫 번째 줄 -->
+        <span class="h-line h-black beat-1">Un idioma.</span>
+        
+        <!-- 2박자 (쿵!): 같은 리듬으로 내리꽂히는 두 번째 줄 -->
+        <span class="h-line h-black beat-2">Un objetivo.</span>
+        
+        <!-- 3박자 (따!): 클랩처럼 시원하게 터지며 등장하는 세 번째 줄 -->
+        <!-- (팁: 만약 3번째 문구를 두 줄이 아니라 한 줄로 길게 보고 싶다면 아래 <br>만 지우시면 됩니다) -->
+        <span class="h-line h-blue beat-3">100% para<br>hispanohablantes.</span>
+      </h1>
+      
+      <!-- 쿵-쿵-따! 가 끝난 직후 부드럽게 올라오는 서브 문구 -->
+      <p class="h-sub">Aprende coreano desde tu idioma, no desde el inglés.</p>
+      
+      <!-- ❌ 기존에 있던 화살표(<a class="h-cue">...</a>)는 여기서 완전히 삭제했습니다 -->
+    </div>
+  </section>
+
+  <!-- [섹션 1과 섹션 2 사이] 비행기를 <section class="class-hero"> 바깥으로 분리! -->
+  <!-- 이렇게 빼두면 섹션 1의 높이 계산에 영향을 주지 않고, 스크롤할 때 섹션 1 바로 아래에서 날아갑니다 -->
+
+  <!-- (위쪽 기존 코드: 비행기 영역 끝부분) -->
+  <div class="class-fly-zone" aria-hidden="true">
+    <div class="fly">
+      <div class="plane">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       👇 [여기에 추가!] index.html의 Sección 4(Cursos) 구조를 재활용한 섹션
+       ===================================================================== -->
+  <section id="curso" class="section-cursos">
+    <div class="w cursos-head">
+      <div class="cursos-head-text">
+        <h2 class="cursos-title rv">CURSOS</h2>
+        <p class="cursos-lead rv" style="--d:1">
+          Diseñados exclusivamente para ti.
+        </p>
+        <p class="cursos-sub rv" style="--d:2">
+          Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
+        </p>
+      </div>
+
+      <!-- 좌우 슬라이드 화살표 버튼 -->
+      <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
+        <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 수평 피크(Peek) 슬라이드 트랙 (스크롤 도달 시 2바퀴 회전 후 중앙 정지) -->
+    <div class="peek-track" id="peek-track">
+      
+      <!-- Card 01: DESPEGUE (주력 코스 -> 버튼 클릭 시 아래 #temario 커리큘럼으로 스크롤 이동!) -->
+      <article class="peek-card peek-card-primary rv" style="--d:1">
+        <div class="peek-top">
+          <span class="peek-tag">CURSO REGULAR · 01</span>
+          <span class="peek-kr kr" aria-hidden="true">이륙</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">DESPEGUE</h3>
+          <p class="peek-punch">Coreano desde cero.</p>
+          <p class="peek-desc">
+            Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la romanización.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <!-- 💡 index.html에서는 href="class.html"이었지만, 여기서는 바로 아래 커리큘럼(#temario)으로 내려가게 변경! -->
+          <a href="#temario" class="b p">
+            <span>Ver el temario</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 02: ASCENSO -->
+      <article class="peek-card rv" style="--d:2">
+        <div class="peek-top">
+          <span class="peek-tag">CURSO REGULAR · 02</span>
+          <span class="peek-kr kr" aria-hidden="true">상승</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">ASCENSO</h3>
+          <p class="peek-punch">Dale alas a tu coreano.</p>
+          <p class="peek-desc">
+            Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones cotidianas.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <!-- 💡 다른 코스들은 문의 페이지(contact.html)나 커뮤니티(join.html)로 연결하거나 #temario로 둘 수 있습니다 -->
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 03: EXPRESIONES PARA VIAJE -->
+      <article class="peek-card rv" style="--d:3">
+        <div class="peek-top">
+          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+          <span class="peek-kr kr" aria-hidden="true">여행</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
+          <p class="peek-punch">Coreano real para tu viaje.</p>
+          <p class="peek-desc">
+            Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y conversaciones locales.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 04: CONVERSACIÓN & CULTURA -->
+      <article class="peek-card rv" style="--d:4">
+        <div class="peek-top">
+          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+          <span class="peek-kr kr" aria-hidden="true">실전</span>
+        </div>
+        <div class="peek-body">
+          <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
+          <p class="peek-punch">Habla como un nativo.</p>
+          <p class="peek-desc">
+            Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
+          </p>
+        </div>
+        <div class="peek-foot">
+          <a href="contact.html" class="b">
+            <span>Consulta este curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- 💡 [5번째 코스를 추가하고 싶다면?] 
+           위 <article class="peek-card rv" style="--d:4">...</article> 블록을 복사해서 
+           바로 여기에 하나 더 붙여넣기만 하면 JS가 알아서 카드 개수를 계산해 룰렛을 돌려줍니다! -->
+
+    </div>
+    <!-- ❌ index.html 맨 아래에 있던 <div class="w course-all rv"><a href="class.html">Descubre todos los cursos</a></div>는 
+         이미 class.html 페이지 안이므로 깔끔하게 제거했습니다 -->
+  </section>
+  <!-- =====================================================================
+       👆 [여기까지 추가!] 바로 아래에는 기존의 <section id="temario">가 이어집니다
+       ===================================================================== -->
+
+  <section id="temario" style="padding-top:40px">
+      <div class="w">
+        <h2 class="rv">Despegue, sesión por sesión</h2>
+        <p class="rv" style="--d:1">Elige una etapa y abre cada clase para ver su gramática, contenidos y ejemplos.</p>
+        <div class="fl2" id="fl2"></div>
+        <div class="tl" id="tl">
+          <div class="rail"><i></i></div>
+          <div id="its"></div>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
+
+  <script src="js/class.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
+
+
+================================================================================
+FILE: consultar.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicita una clase de coreano. Cuéntame tu nivel y tus objetivos.">
+  <title>Consulta | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
+    <div class="container">
+      <h1 class="page-title">Consulta</h1>
+      <div class="hero-description">
+        <p class="highlight-text">Cuéntame sobre tu nivel y tus objetivos.</p>
+        <p class="sub-text">Cuéntame un poco sobre ti y te contacto pronto para empezar.</p>
+      </div>
+
+      <section class="menu-section" aria-label="Enviar solicitud">
+        <a href="https://forms.gle/TxiJ1ru5QFuHEYoj6" class="cta-button" target="_blank" rel="noopener noreferrer">
+          Enviar solicitud<span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+        </a>
+        <p class="small-text">O si prefieres algo más directo:</p>
+        <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="menu-button" target="_blank" rel="noopener noreferrer">
+          WhatsApp<span class="visually-hidden"> (se abre en una pestaña nueva)</span>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>
+
+
+================================================================================
+FILE: contact.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Contacta al equipo de Vamos Coreano por WhatsApp, Instagram o correo electrónico.">
+  <title>Contacto | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <div id="bar"></div>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html" class="on" aria-current="page">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- [Sección 1] Hero Section (El Saludo): 미니멀한 중앙 타이틀과 넓은 여백 -->
+    <section class="hero">
+      <div class="w">
+        <div class="tag"><i></i>Canales Directos</div>
+        <h1>
+          Hablemos de<br>
+          <em>tus metas.</em>
+        </h1>
+        <p class="big" style="margin: var(--s3) auto 0;">
+          Cualquier duda que tengas, nuestro equipo está listo para ayudarte al instante.
+        </p>
+      </div>
+    </section>
+
+    <!-- [Sección 2] Los 3 Canales (Tarjetas Flotantes) -->
+    <section id="contacto">
+      <div class="w">
+        <div class="contact-actions-grid">
+          <!-- 1. WhatsApp (Respuesta Rápida) -->
+          <article class="action-card action-card-featured">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+              </svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Ideal para respuestas inmediatas, consultas sobre las clases y cupos.</p>
+            <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="b p btn-card" target="_blank" rel="noopener noreferrer">
+              <span>Chatea con nosotros</span>
+            </a>
+          </article>
+
+          <!-- 2. Instagram (Comunidad) -->
+          <article class="action-card">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3>Instagram</h3>
+            <p>Para interacciones más casuales y conocer más sobre nuestra comunidad.</p>
+            <a href="https://instagram.com/vamos.coreano" class="b btn-card" target="_blank" rel="noopener noreferrer">
+              <span>Mándanos un DM</span>
+            </a>
+          </article>
+
+          <!-- 3. Correo Electrónico (Formal) -->
+          <article class="action-card">
+            <div class="action-card-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <h3>Correo Electrónico</h3>
+            <p>Para asuntos de negocios, propuestas educativas o consultas detalladas.</p>
+            <a href="mailto:1219.hlee@gmail.com?subject=Consulta%20-%20Vamos%20Coreano" class="b btn-card">
+              <span>Envíanos un correo</span>
+            </a>
+            <button type="button" class="copy-sub-action" id="copy-email">Copiar dirección (1219.hlee@gmail.com)</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 2-B] Sobre el profe: 좌측 설명 + 우측 프로필 사진 -->
+    <section>
+      <div class="w ab">
+        <div>
+          <div class="tag"><i></i>Profesor Nativo</div>
+          <h2>Atención directa en tu idioma</h2>
+          <p class="big">Hyunho Lee · Especialista en Literatura Coreana e Instructor Certificado.</p>
+          <div class="q">
+            <p>Sin pasar por el filtro innecesario del inglés. Resolvemos tus dudas y diseñamos tu camino en el coreano directamente en español.</p>
+          </div>
+          <p>Escríbenos con confianza para orientarte según tu nivel y tus objetivos.</p>
+        </div>
+
+        <div class="ph">
+          <div class="arch">
+            <img src="image/profile-sample.png" alt="Retrato del profesor Hyunho Lee">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 3] Contacto Directo (El Toque Humano - Inwoo) -->
+    <section style="border-top: 1px solid var(--ln);">
+      <div class="w">
+        <div class="cd" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s3); padding: var(--s4);">
+          <div>
+            <div class="tag" style="margin-bottom: var(--s1);"><i></i>Dirección Técnica</div>
+            <h3>Habla con nuestro Cofundador y Director Técnico</h3>
+            <p>Conoce a nuestro Cofundador y Director Técnico para soporte, alianzas o consultas directas del proyecto.</p>
+          </div>
+          <a href="https://instagram.com/vamos.coreano" class="b" target="_blank" rel="noopener noreferrer">
+            <span>Contacta a Inwoo por Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="copy-toast" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF4D5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6 9 17l-5-5"/>
+    </svg>
+    <span id="toast-text"></span>
+  </div>
+
+  <footer>
+    © 2026 Vamos Coreano. Todos los derechos reservados.<br>
+    Diseñado para el mundo hispanohablante.
+  </footer>
+
+  <script>
+    /* 이메일 복사 및 토스트 알림 (index.html과 동일 규격) */
+    const toast = document.getElementById("copy-toast"),
+          toastText = document.getElementById("toast-text");
+    let toastTimer = null;
+
+    function showToast(m) {
+      if (!toast) return;
+      toastText.textContent = m;
+      toast.classList.add("show");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
+    }
+
+    const copyBtn = document.getElementById("copy-email");
+    if (copyBtn) {
+      copyBtn.onclick = async () => {
+        const email = "1219.hlee@gmail.com";
+        try {
+          await navigator.clipboard.writeText(email);
+          showToast("Correo copiado al portapapeles: " + email);
+        } catch (e) {
+          showToast("Dirección: " + email);
+        }
+      };
+    }
+
+    /* 카드 마우스 오버 시 미세한 빛 반사(Spotlight) 효과 연동 */
+    addEventListener("pointermove", e => {
+      const c = e.target.closest && e.target.closest(".cd,.action-card");
+      if (c) {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty("--x", e.clientX - r.left + "px");
+        c.style.setProperty("--y", e.clientY - r.top + "px");
+      }
+    }, { passive: true });
+  </script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
+
+================================================================================
+FILE: index.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>VAMOS COREANO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:var(--bl);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--co-dark);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
+  
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Nosotros</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="w">
+        <h1 id="h1" aria-label="Coreano desde cero. Habla con confianza.">
+        Coreano desde cero.<br>
+        </h1>
+        <span class="index-hero">
+        <span class="calendar-flip" aria-hidden="true">
+          <span class="flip-card active">Habla</span>
+          <span class="flip-card">Escucha</span>
+          <span class="flip-card">Lee</span>
+          <span class="flip-card">Escribe</span>
+        </span>
+        <em class="hero-suffix">con confianza.</em>
+      </span>
+      </div>
+    </section>
+
+    <div class="mq" aria-hidden="true">
+      <div id="mq">
+        <span>안녕하세요</span>
+        <span>Hola</span>
+        <span>감사합니다</span>
+        <span>Gracias</span>
+        <span>저는 스페인 사람이에요</span>
+        <span>Yo soy de España</span>
+        <span>저는 지금 커피를 마셔요</span>
+        <span>Yo tomo café ahora</span>
+        <span>어제 빵을 먹었어요</span>
+        <span>Yo comí pan ayer</span>
+        <span>내일 영화관에 가고 싶어요</span>
+        <span>Yo quiero ir al cine mañana</span>
+        <span>다음 주에 축구할래요?</span>
+        <span>¿Quieres jugar fútbol la próxima semana?</span>
+        <span>제 생일은 십이월 십구일이에요</span>
+        <span>Mi cumpleaños es el diecinueve de diciembre</span>
+      </div>
+    </div>
+
+<!-- [index.html/Sección 2] Identidad (Manifiesto) -->
+<section id="identidad" class="identidad">
+  <div class="w identidad-box">
+    <h2 class="somos-title" data-text="SOMOS">SOMOS</h2>
+    <p class="identidad-lead rv" style="--d:1">
+      Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
+    </p>
+    <p class="identidad-sub rv" style="--d:2">
+      Diseñados a la medida para hispanohablantes.
+    </p>
+  </div>
+</section>
+
+    <!-- [index.html/Sección 3] Sobre Mí (Resumen de Autoridad) -->
+    <section id="Nosotros" class="section-authority">
+      <div class="w authority-container">
+        
+        <div class="authority-content">
+          <h2 class="authority-title rv">TU GUÍA</h2>
+
+          <div class="authority-body rv">
+            <p class="authority-desc">
+              Un tutor nativo que domina tu idioma.
+            </p>
+
+            <div class="proof-list">
+            <div class="proof-item rv" style="--d:1">
+              <div class="proof-num">01</div>
+              <div>
+                <strong>Formación en Literatura Coreana</strong>
+                <span>Explicación profunda basada en la estructura real del idioma.</span>
+              </div>
+            </div>
+
+            <div class="proof-item rv" style="--d:2">
+              <div class="proof-num">02</div>
+              <div>
+                <strong>Instructor Oficial Certificado</strong>
+                <span>Enseñanza estructurada bajo estándares oficiales.</span>
+              </div>
+            </div>
+
+            <div class="proof-item rv" style="--d:3">
+              <div class="proof-num">03</div>
+                <div>
+                <strong>Fluidez Absoluta en Español</strong>
+                <span>Comunicación directa y precisa en tu propio idioma.</span>
+                </div>
+            </div>
+          </div>
+
+          <div class="authority-cta rv" style="--d:3">
+            <a href="about.html" class="b p">
+              <span>Conócenos</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="authority-visual rv" style="--d:2">
+          <div class="tutor-card-tilt" data-tilt>
+            <div class="tutor-card-inner">
+              <img src="img/profile-main.png" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
+              <div class="tutor-badge">
+                <strong>Hyunho Lee</strong>
+                <span>Tutor principal · Vamos Coreano</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- [index.html/Sección 4] Cursos (Horizontal Peek Showcase) -->
+    <section id="curso" class="section-cursos">
+      <div class="w cursos-head">
+        <div class="cursos-head-text">
+          <h2 class="cursos-title rv">CURSOS</h2>
+          <p class="cursos-lead rv" style="--d:1">
+            Diseñados exclusivamente para ti.
+          </p>
+          <p class="cursos-sub rv" style="--d:2">
+            Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
+          </p>
+        </div>
+
+        <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
+          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 수평 피크(Peek) 슬라이드 트랙 -->
+      <div class="peek-track" id="peek-track">
+        
+        <!-- Card 01: DESPEGUE -->
+        <article class="peek-card peek-card-primary rv" style="--d:1">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 01</span>
+            <span class="peek-kr kr" aria-hidden="true">이륙</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">DESPEGUE</h3>
+            <p class="peek-punch">Coreano desde cero.</p>
+            <p class="peek-desc">
+              Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la romanización.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b p">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 02: ASCENSO -->
+        <article class="peek-card rv" style="--d:2">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 02</span>
+            <span class="peek-kr kr" aria-hidden="true">상승</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">ASCENSO</h3>
+            <p class="peek-punch">Dale alas a tu coreano.</p>
+            <p class="peek-desc">
+              Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones cotidianas.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 03: EXPRESIONES PARA VIAJE -->
+        <article class="peek-card rv" style="--d:3">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">여행</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
+            <p class="peek-punch">Coreano real para tu viaje.</p>
+            <p class="peek-desc">
+              Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y conversaciones locales.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 04: CONVERSACIÓN & CULTURA -->
+        <article class="peek-card rv" style="--d:4">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">실전</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
+            <p class="peek-punch">Habla como un nativo.</p>
+            <p class="peek-desc">
+              Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class.html" class="b">
+              <span>Explora el curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="w course-all rv">
+        <a class="b" href="class.html">Descubre todos los cursos</a>
+      </div>
+    </section>
+
+    <!-- [index.html/Sección 5] Recursos (Apple Bento Showcase) -->
+    <section id="recursos" class="section-recursos">
+      <div class="w">
+        <div class="recursos-head">
+          <h2 class="recursos-title rv">RECURSOS</h2>
+          <p class="recursos-lead rv" style="--d:1">
+            Aprende sin barreras. Crece sin límites.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- [큰 박스 A] PDF 아카이브 (3D Fan-out Deck) -->
+          <article class="bento-card bento-pdf rv" style="--d:1">
+            <div class="bento-info">
+              <span class="peek-tag">ARCHIVO PDF</span>
+              <h3>Materiales Descargables</h3>
+              <p>Desde el Hangul básico hasta guías de gramática y vocabulario. Estudia sin pasar por el filtro del inglés.</p>
+              <a href="resource.html" class="b p">
+                <span>Descarga las guías</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- 3D Fan-out PDF Deck -->
+            <div class="pdf-fan-deck" aria-hidden="true">
+              <div class="pdf-sheet sheet-left">
+                <span class="sheet-badge">PDF · 01</span>
+                <strong class="kr">한글</strong>
+                <small>Guía de Hangul</small>
+              </div>
+              <div class="pdf-sheet sheet-center">
+                <span class="sheet-badge">PDF · 02</span>
+                <strong class="kr">문법</strong>
+                <small>Gramática Clave</small>
+              </div>
+              <div class="pdf-sheet sheet-right">
+                <span class="sheet-badge">PDF · 03</span>
+                <strong class="kr">어휘</strong>
+                <small>Vocabulario Real</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- [큰 박스 B] 팟캐스트 스테이션 (Live Waveform) -->
+          <article class="bento-card bento-podcast rv" style="--d:2">
+            <div class="bento-info">
+              <span class="peek-tag">AUDIO &amp; CULTURA</span>
+              <h3>Vamos Coreano Podcast</h3>
+              <p>Conocimientos del idioma y la cultura coreana de forma sencilla. Perfecto para escuchar gratis mientras conduces o descansas.</p>
+            </div>
+
+            <!-- 오디오 파형 플레이어 UI -->
+            <div class="podcast-wave-box">
+              <a href="resource.html" class="play-orb" aria-label="Escuchar el podcast">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </a>
+              <div class="wave-meta">
+                <strong>Episodios en español</strong>
+                <div class="waveform" aria-hidden="true">
+                  <i style="--w:1"></i><i style="--w:3"></i><i style="--w:2"></i><i style="--w:5"></i>
+                  <i style="--w:4"></i><i style="--w:2"></i><i style="--w:6"></i><i style="--w:3"></i>
+                  <i style="--w:5"></i><i style="--w:1"></i><i style="--w:4"></i><i style="--w:2"></i>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- [작은 박스 C-1] 스탯 카운터: 어휘/표현 데이터 -->
+          <article class="bento-card bento-stat rv" style="--d:2">
+            <div class="stat-num">+<span data-n="1500">0</span></div>
+            <strong>Expresiones y vocabulario</strong>
+            <p>Base de datos estructurada paso a paso para la mente hispanohablante.</p>
+          </article>
+
+          <!-- [작은 박스 C-2] 스탯 카운터: 100% 무료 -->
+          <article class="bento-card bento-stat rv" style="--d:3">
+            <div class="stat-num"><span data-n="100">0</span>%</div>
+            <strong>Acceso libre y en tu idioma</strong>
+            <p>Materiales creados desde la raíz, sin anuncios que interrumpan tu estudio.</p>
+          </article>
+
+          <!-- [작은 박스 D] 아카이브 전체 열기 액션 카드 -->
+          <a href="resource.html" class="bento-card bento-cta-tile rv" style="--d:4">
+            <div>
+              <span class="peek-tag">BIBLIOTECA ABIERTA</span>
+              <h3>Explora todo el archivo</h3>
+            </div>
+            <div class="tile-arrow" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M7 7h10v10"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+<!-- [교체 위치: index.html 397~404번째 줄 <section class="ct">...</section> 대신 삽입] -->
+    <!-- [index.html/Sección 6] ÚNETE (Final CTA - Dual Core 3D Engine) -->
+    <section id="unete" class="section-unete">
+      <div class="w unete-wrap">
+
+        <!-- 1. 상단: 뱃지 & 압도적인 타이포그래피 -->
+        <div class="unete-head">
+          <span class="peek-tag peek-tag-accent rv">ÚNETE</span>
+          <h2 class="unete-title rv" style="--d:1">
+            No estudies coreano.<br>
+            <em class="unete-grad">Vívelo.</em>
+          </h2>
+          <p class="unete-sub rv" style="--d:2">
+            Entrenamiento diario, corrección en vivo y recursos exclusivos. Habla con fluidez real.
+          </p>
+        </div>
+
+        <!-- 2. 중앙: 3D 틸트 & 반사광(Glare)이 적용된 '듀얼 코어 엔진' 카드 오브젝트 -->
+        <div class="unete-stage rv" style="--d:2">
+          <div class="dual-core-card" id="unete-card">
+            <!-- 마우스 움직임에 따라 표면을 스쳐 지나가는 홀로그램 반사광 레이어 -->
+            <div class="core-glare" aria-hidden="true"></div>
+
+            <!-- [좌측 코어] Comunidad Viva (Discord / 실시간 대화 & 발음 교정) -->
+            <div class="core-pane core-live">
+              <div class="core-top">
+                <span class="core-badge"><i class="live-dot"></i>EN VIVO · 24/7</span>
+                <span class="core-tag">DISCORD</span>
+              </div>
+
+              <!-- 실시간 음성 첨삭 & 피드백 비주얼 -->
+              <div class="core-visual">
+                <div class="chat-pill">
+                  <span class="chat-avatar kr">한</span>
+                  <div class="chat-Wave">
+                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  </div>
+                  <span class="chat-ok">✓ Pronunciación natural</span>
+                </div>
+                <div class="chat-pill chat-pill-sub">
+                  <span>💬 "Ahora entiendo la diferencia entre 은/는 y 이/가"</span>
+                </div>
+              </div>
+
+              <div class="core-meta">
+                <h3>Comunidad Viva</h3>
+                <p>Práctica diaria y corrección 1:1 en tiempo real con hispanohablantes.</p>
+              </div>
+            </div>
+
+            <!-- [중앙 코어 브릿지] 두 엔진을 연결하는 에너지 시냅스 축 -->
+            <div class="core-bridge" aria-hidden="true">
+              <span class="bridge-line"></span>
+              <div class="bridge-orb">
+                <span class="kr">한</span>
+              </div>
+              <span class="bridge-line"></span>
+            </div>
+
+            <!-- [우측 코어] Segundo Cerebro (Obsidian / 지식 신경망 그래프) -->
+            <div class="core-pane core-brain">
+              <div class="core-top">
+                <span class="core-badge core-badge-blue">RED NEURONAL</span>
+                <span class="core-tag">OBSIDIAN</span>
+              </div>
+
+              <!-- 옵시디언 노드 그래프(신경망) SVG 비주얼 -->
+              <div class="core-visual brain-graph" aria-hidden="true">
+                <svg viewBox="0 0 240 96" fill="none" class="node-svg">
+                  <!-- 노드 연결선 (시냅스) -->
+                  <line x1="45" y1="48" x2="115" y2="24" class="synapse" />
+                  <line x1="45" y1="48" x2="115" y2="72" class="synapse" />
+                  <line x1="115" y1="24" x2="190" y2="48" class="synapse" />
+                  <line x1="115" y1="72" x2="190" y2="48" class="synapse" />
+                  <line x1="115" y1="24" x2="115" y2="72" class="synapse" />
+                  <!-- 노드 점 & 라벨 -->
+                  <circle cx="45" cy="48" r="6" class="node-dot node-main" />
+                  <text x="45" y="70" class="node-txt">Hangul</text>
+
+                  <circle cx="115" cy="24" r="5" class="node-dot" />
+                  <text x="115" y="13" class="node-txt">Gramática</text>
+
+                  <circle cx="115" cy="72" r="5" class="node-dot" />
+                  <text x="115" y="90" class="node-txt">Vocabulario</text>
+
+                  <circle cx="190" cy="48" r="7" class="node-dot node-accent" />
+                  <text x="190" y="72" class="node-txt">Fluidez</text>
+                </svg>
+              </div>
+
+              <div class="core-meta">
+                <h3>Segundo Cerebro</h3>
+                <p>Vocabulario y gramática conectados sin apuntes sueltos ni olvidos.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. 하단: 심리적 장벽을 낮춘 세련된 CTA 버튼 -->
+        <div class="unete-foot rv" style="--d:3">
+          <a href="join.html" class="b p btn-unete">
+            <span>Explora la comunidad</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  <div class="w">
+    <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+      Diseñado para el mundo hispanohablante.</p>
+  </div>
+  </footer>
+
+  <div id="copy-toast" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF4D5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6 9 17l-5-5"/>
+    </svg>
+    <span id="toast-text"></span>
+  </div>
+  <script src="js/nav.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
+
+================================================================================
+FILE: join.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Únete a la comunidad de Vamos Coreano.">
+  <title>Únete | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill" aria-current="page">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="w">
+        <h1>Únete a la comunidad.</h1>
+        <p class="lead">Muy pronto te contamos todo aquí.</p>
+      </div>
+    </section>
+  </main>
+  <script src="js/nav.js"></script>
+</body>
+</html>
+
+
+================================================================================
+FILE: README.md
+================================================================================
+
+# [VAMOS COREANO: BRAND & WEB BLUEPRINT v1.0 - 2026.10]
+
+## Principios de Diseño
+### 1. One Action, One Screen
+En una pantalla, no hables de dos cosas a la vez. Mantén un solo objetivo claro por sección(pantalla)
+### 2. White Space (Espacio en blanco)
+No llenes la pantalla con demasiado texto. Deja que el diseño respire para guiar la atención del usuario.
+### 3. Micro-interactions
+Cada detalle importa. Un sutil efecto de glow, fade, textura y movimiento fluido hace que la página se sienta premium.
+### 4. Restricción de color
+Para mantener la consistencia visual, utilizaremos estrictamente solo 4 colores en toda la página:
+• Blanco (Fondo base/cremoso) - #F8FAFC
+• Negro (Texto principal) - #0F172A
+• Azul (Color de marca) - #2563EB
+• Naranja (Acento/Botones) - #F97316
+### 5. Jerarquía Tipográfica
+2 tipografías
+  Bricolage Grotesque
+  Pretendard
+Define 6 tamaños exactos
+  hero-impact: 5rem
+  hero: 3rem
+  title: 2rem
+  subtitle: 1.25rem
+  body: 1rem
+  micro: 0.875rem
+### 6.  Reutilización de Componentes
+Nunca inventes un diseño nuevo para cada página. Crea un "kit básico" (botón principal, tarjeta de curso) en css y úsalo como piezas de Lego.(como coreano jaja)
+### 7. Tono y Voz
+Todos los mandatos deben dirigirse de "tú". Los botones siempre deben comenzar con un verbo de acción directa. Y siempre no soy yo. SOMOS NOSOTROS.
+E.j.:
+⁠Descubre el curso⁠ (O)
+⁠Enviar⁠ (X) ➔ Envía (O)
+⁠Únete a la comunidad⁠ (O).
+Conocer (X) -> conoce (O) 
+// *QUe hago con sobre mi… (Sobre nosotros es muy largo :v)
+### 8. Sistema de Espaciado 8pt
+Regla: Todos los márgenes y paddings deben ser múltiplos de 8 (8px, 16px, 24px, 32px, 48px, 64px).
+
+## VAMOS COREANO : BRAND
+### 0. We Are (우리의 정의)
+VAMOS COREANO es una plataforma y marca que ofrece contenidos educativos de coreano y una comunidad, diseñados a la medida para hispanohablantes. 
+### 1. La Misión
+Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del "inglés" 
+### 2. ¿Por qué nosotros?
+No somos otra simple plataforma de cursos de coreano. Un tutor optimizado exclusivamente para hispanohablantes, que combina su especialidad en Literatura Coreana, certificación oficial y una comprensión absoluta del mundo hispano, diseña y lidera este camino. 
+### 3. El Enemigo
+Materiales mal traducidos con IA a través del inglés, la dependencia de la romanización que arruina la pronunciación, y la educación aburrida que obliga a memorizar sin explicar los principios ni el contexto. 
+### 4. Valores Centrales
+ Claridad Extrema : Que ningún principiante se pregunte "¿Qué debo hacer aquí?" ni por 0.1 segundos. Diseñaremos la educación, la web y el UX/UI de la comunidad de manera abrumadoramente sistemática e intuitiva. 
+ Valor Real : No seremos una marca vacía que solo persigue dinero. Jamás haremos compromisos estúpidos que ensucien la página o interrumpan la inmersión del estudiante solo por ganar unos dólares (como poner anuncios innecesarios). 
+### 5. Slogan
+Un idioma. Un objetivo. 100% para hispanohablantes.
+하나의 언어. 하나의 목표. 100% 스페인어 화자를 위하여.
+
+## [VAMOS COREANO] Mapa del Sitio 
+### 0. Principio
+Si necesitas hacer un cambio en la página web, modifica este mapa primero. 
+### 1. Menú Principal (GNB):
+Exactamente 5 elementos El orden no es aleatorio.
+ NOSOTROS -> CURSOS ➔ RECURSOS ➔ CONTACTO ➔ [ ÚNETE ]
+* NOSOTROS: Autoridad 
+* CURSOS: El producto principal
+* RECURSOS: Materiales
+* CONTACTO: Contacto
+* [ ÚNETE ]: El destino final (Botón CTA con color de acento, destacado a la derecha).
+### 2. Número de archivos HTML: Exactamente 6
+* index.html (Inicio): 
+El lugar donde el visitante aterriza por primera vez. Contiene nuestro imponente manifiesto de marca y actúa como el hub central que distribuye el tráfico hacia todas las subpáginas.
+* about.html (Sobre el tutor):
+Página diseñada para construir confianza. Aquí demostramos nuestra "Ventaja Injusta" (especialidad en Literatura Coreana, certificación oficial de tutor, etc.).
+* class.html (Clases):
+El showroom que presenta las clases que hemos creado.
+* resource.html (Materiales):
+La página imán (Lead Magnet) que atrae el tráfico de búsqueda del mundo hispano al sitio web, ofreciendo enlaces a podcasts, descargas de PDF, entre otros.
+* contact.html (Contacto):
+Página de contacto directa que incluye un enlace de consulta por WhatsApp o un formulario de correo electrónico.
+* join.html (Landing de Discord):
+La página de ventas clave. Explica el valor de nuestro modelo de negocio principal ("la comunidad de pago") con la majestuosidad de una presentación de Apple, guiando directamente al usuario hacia el pago y registro. (El botón 'ÚNETE' del menú superior dirige a esta página).
+
+## Instrucciones para index.html
+### 1. ¿Qué es este archivo?
+Es el lugar donde el visitante aterriza por primera vez. No es una página para dar mucha información, sino nuestra "Tarjeta de Presentación Premium". Contiene nuestro imponente manifiesto de marca y actúa como el hub central que distribuye el tráfico hacia todas las subpáginas.
+### 2. Reglas de Diseño y UX (La Sensación)
+* Efecto "WOW" (Micro-interacciones): La primera impresión debe ser de extrema profesionalidad. Necesitamos un uso abundante de sutiles efectos de glow, fade-in, texturas y animaciones fluidas al hacer scroll.
+* Menos Información, Más Impacto: No intentes enseñar ni explicar todo aquí. El objetivo es que el usuario piense: "¡Wow, esta página es increíblemente profesional!". Diseño y micro-interacciones vale más que el texto en esta página.
+* Una Pantalla, Un Concepto: Si el contenido es largo, córtalo. Usa botones de (Ver más / Leer más) para enviar al usuario a las subpáginas.
+### 3. Estructura de Secciones (Flujo de Scroll de arriba hacia abajo)
+[Sección 1]
+   Hero Section (Impacto Brutal): La primera pantalla. Un mensaje visual y textual abrumador que atrape al usuario al instante (El efecto "¡Boom!").
+[Sección 2] Identidad: ¿Qué es VAMOS COREANO? (Manifiesto breve).
+   [IMPACT] SOMOS
+   [TITLE] Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
+   [SUBTITLE] Diseñados a la medida para hispanohablantes.
+[Sección 3] NOSOTROS (Resumen): Autoridad y confianza en pocas líneas.
+   [IMPACT]TU GUÍA
+   [TITLE]Un tutor nativo que domina tu idioma y tu forma de pensar.
+[Sección 4] Cursos (Resumen): Un vistazo rápido a nuestras clases.
+   [IMPACT]CURSOS
+   [TITLE] Diseñados exclusivamente para ti.
+   [SUBTITLE] Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
+[Sección 5] Recursos (Resumen): El gancho de material.
+   [IMPACT] RECURSOS
+   [TITLE] Aprende sin barreras. Crece sin límites.
+[Sección 6] ÚNETE (Final CTA): Como es el final de la página, debe tener otro impacto visual brutal 
+   [IMPACT] ÚNETE
+   [TITLE] No estudies coreano. Vívelo.
+   [SUBTITLE] Entrena cada día, recibe corrección al instante y habla con total confianza.
+   [LAST-CTA]
+[Footer]
+
+## Instrucciones para about.html
+### 1. Regla Absoluta: Jerarquía Visual
+Prohibido empezar con "Hola, me llamo..." o historias aburridas sobre Duolingo etc etc… 
+El tamaño del texto debe ir de MAYOR a menor: comenzamos con textos ENORMES y frases cortas (Impacto). A medida que el usuario hace scroll hacia abajo, el texto se vuelve más pequeño y detallado.
+### 2. El Impacto de Hechos en pagina 1 
+- Diseño: Foto de perfil profesional a la derecha. A la izquierda, tipografía gigante y contundente.
+- Contenido: Golpea al usuario directamente con estos 3 hechos indiscutibles (Sin rodeos):
+  1. Especialidad en Literatura Coreana.
+  2. Instructor Oficial Certificado.
+  3. Fluidez Absoluta en Español.
+### 3. [Sección 2 o 3] La Historia Detallada (구구절절 설명 - Storytelling)
+- Cuándo aparece: Solo después de hacer 1 o 2 scrolls y haber aplastado al usuario con los "Hechos" de la Sección 1.
+- Diseño: Aquí el tamaño de la fuente se reduce (tamaño de 'Cuerpo' o 'Cuerpo grande'). 
+- Contenido: Ahora sí, explicamos detalladamente nuestra filosofía, el problema con las apps convencionales y la historia de VAMOS COREANO.
+### Foto de perfil
+- Cambio: En lugar del giro (spin) al hacer hover, sugiero un efecto sutil de 3D Tilt + Reflejo de luz (Glare).
+- Look & Feel: Como el brillo de una tarjeta de crédito física o membresía VIP al moverla. Minimalista y muy elegante.
+- Tech: Se puede implementar con backdrop-filter en CSS y alguna librería de Tilt (ej. Vanilla-tilt.js).
+
+## Instrucciones para class.html
+### 1. [Sección 1] Hero Section (El Impacto Tipográfico)
+* Diseño: Esta sección debe ocupar el 100% de la altura de la pantalla. La protagonista absoluta es la tipografía. Gran contraste, texto centrado con mucho espacio en blanco (White Space).
+* Copy (Texto Exacto):
+Un idioma. Un objetivo. H1 BLACK
+100% para hispanohablantes.  H1 BLUE
+Aprende coreano desde tu idioma, no desde el inglés. H2 GRAY
+### 2. [Sección 2] Cursos Regulares (Ruta de Vuelo Principal)
+   * Concepto Visual: Las clases principales (Despegue, Ascenso, etc.) se mostrarán en una lista vertical. Cada tarjeta debe tener el diseño de un rectángulo glow.
+   * Regla de Interacción (UX): Cuando el usuario hace clic, la tarjeta se expande suavemente hacia abajo (Acordeón).
+   * Contenido Desplegado: Al abrirse el acordeón, el currículum debe mostrarse detalles. y cada bloc tiene
+Estructura gramatical
+contenido de clase
+ejemplos
+### 3. CTA EN EL ULTIMO PARTE
+Para accion
+Ya sea ir a contacto o ver recuerso etc..
+
+## Instrucciones para resource.html
+### 1. [Sección 1] Main Landing (Hero Section)
+   * Diseño: Impacto visual inmediato. Debe transmitir la sensación de "Aquí hay oro gratuito".
+Copy (Sugerencia):
+   * Aprende sin barreras. Crece sin límites.
+   * Desde recursos gratuitos esenciales hasta guías avanzadas. Todo diseñado 100% para hispanohablantes. 
+### 2. [Sección 2] Navegación de Categorías (Tab UI)
+   * Regla de Diseño: ¡NO crees nuevos archivos HTML para cada categoría! Mantén todo en recursos.html. (Se puede cambiar)
+   *    * UI: Usa un menú de pestañas (Tabs) elegante o botones de filtro interactivos justo debajo del Hero Section (Ej: [ Todos ] [ 📄 PDF ] [ 🎧 Podcast ]). Al hacer clic, el contenido de abajo cambia suavemente sin recargar la página.
+### 3. [Sección 3] Listado de Recursos (Contenido)
+   * Diseño de Tarjetas (Cards): Cada recurso debe presentarse en una tarjeta minimalista, con un ícono claro (PDF o Audio) y un botón de "Descargar" o "Escuchar".
+   *    * Copy de Categoría A (PDFs):
+   * 
+   * Materiales Descargables (PDF)
+   * Desde el Hangeul básico hasta vocabulario avanzado. Descarga materiales en múltiples formatos y estudia sin la barrera del inglés.
+   *    * Copy de Categoría B (Podcast):
+   * 
+   * VAMOS COREANO Podcast
+   * Conocimientos del idioma y la cultura coreana de forma sencilla y divertida. Perfecto para escuchar gratis mientras conduces o lavas los platos.
+   * 4. [Sección 4] El Trampolín Final (막단 방지 CTA)
+
+
+      * Objetivo: Si el usuario ya descargó un PDF o escuchó un podcast, está listo para el siguiente nivel.
+      *       * Copy: "¿Te gustó el material gratuito? Imagina lo que lograrás con nuestra comunidad privada."
+      *       * Acción: Botón gigante ➔ [ Únete a la comunidad ] (Dirige a join.html).
+
+## Instrucciones para contact.html 
+### 1. [Sección 1] Hero Section (El Saludo)
+      * Diseño: Muy limpio y minimalista. Un gran título centrado con mucho espacio en blanco para transmitir tranquilidad y profesionalismo.
+      * Copy: …??
+      * Sub-copy: "Cualquier duda que tengas, nuestro equipo está listo para ayudarte al instante." (어떤 질문이든, 우리 팀이 즉시 도와드릴 준비가 되어 있습니다.)
+### 2. Seccion 2 Sobre profe
+Diseño.: Explicacion en la izquierda. foto en la derecha
+Copy:
+### . [Sección 2] Los 3 Canales (Tarjetas Flotantes)
+      * Regla de Diseño : Diseña 3 tarjetas (Cards) minimalistas dispuestas horizontalmente (o verticalmente en móvil). Al pasar el ratón (hover), las tarjetas deben tener un suave efecto de elevación (Floating/Shadow).
+      * Contenido de las 3 Tarjetas:
+      1. WhatsApp (Respuesta Rápida): Ícono de WhatsApp. Texto: "Chatea con nosotros". Ideal para respuestas inmediatas y ventas.
+      2. Instagram (Comunidad): Ícono de Instagram. Texto: "Mándanos un DM". Para interacciones más casuales y social proof.
+      3. Correo Electrónico (Formal): Ícono de un sobre minimalista. Texto: "Envíanos un correo". Para asuntos de negocios o consultas largas.
+### 3. [Sección 3] Contacto Directo (El Toque Humano - Opcional pero recomendado)
+      * Concepto: Para dar el contacto directo de un miembro clave del equipo (Inwoo).
+      * Diseño: Una tarjeta especial arriba de footer con un diseño ligeramente distinto (quizás con una pequeña foto de perfil o un avatar elegante).
+      * Copy:
+Habla con nuestro Cofundador y Director Técnico Conoce nuestro Cofundador y Director Técnico.  [ Contactar a Inwoo por instagram ]
+
+## Instrucciones para join.html (El Destino Final)
+### 1. [Sección 1] Hero Section
+         * 목적: 들어오자마자 가슴을 웅장하게 만듭니다. 배경은 가장 어두운 톤(Negro)으로 깔고 텍스트에 빛(Glow)을 줍니다.
+         * Copy:
+No estudies coreano. Vívelo. (한국어를 공부하지 마라. 살아내라.) Únete a la tripulación VIP y domina el idioma con nuestro sistema definitivo: Discord + Obsidian. 
+[Sección 2] 문제 제기 (왜 혼자 하면 망하는가?)
+            * 목적: 유저의 뼈를 때려서 '결핍'을 느끼게 합니다. (텍스트 중심의 짧은 섹션)
+            * Copy:
+¿Por qué el 90% abandona el coreano? Porque aprender solo, con PDFs sueltos y sin feedback, es volar a ciegas. (왜 90%가 한국어를 포기할까? 피드백 없이 혼자 낱장 PDF로 공부하는 건 눈을 가리고 비행하는 것과 같기 때문이다.)
+[Sección 3] 솔루션 A : Discord (관제탑 & 크루)
+               * 디자인/UX: 여기서부터 스크롤 애니메이션 폭발! 스크롤을 내리면 멋지게 세팅된 디스코드 커뮤니티 화면 목업(Mockup)이 아이패드나 모니터 프레임 안에 담겨서 스르륵 커지며 나타납니다.
+               * 핵심 어필: '외롭지 않은 환경'과 '즉각적인 피드백'
+               * Copy:
+Tu Torre de Control 24/7 (24시간 관제탑) Entorno de inmersión total en Discord. Preguntas en vivo, correcciones de pronunciación y una comunidad de hispanohablantes con tu mismo objetivo. (디스코드에서의 완벽한 몰입 환경. 라이브 질문, 발음 교정, 그리고 같은 목표를 가진 스페인어권 커뮤니티.)
+[Sección 4] 솔루션 B : Obsidian (제2의 뇌 & 비행 일지)
+                  * 디자인/UX: 디스코드 화면이 사라지면서, 이번엔 옵시디언의 세련된 다크모드 화면과 노드 그래프(점들이 연결된 우주 같은 화면)가 웅장하게 나타납니다. (옵시디언의 노드 뷰는 시각적 뽕이 엄청납니다).
+                  * 핵심 어필: '지식의 체계화', '복습의 자동화'
+                  * Copy:
+Tu Segundo Cerebro (당신의 제2의 뇌) Olvídate de los cuadernos desordenados. Construimos tu base de conocimientos en Obsidian. Todo el vocabulario y gramática conectados como una red neuronal. (어수선한 노트는 잊어라. 옵시디언에 지식 베이스를 구축한다. 신경망처럼 연결되는 어휘와 문법.)
+[Sección 5] 가격 및 플랜 (티켓 발권)
+                     * 디자인/UX: 길게 말하지 않고 딱 떨어지는 '프리미엄 멤버십 카드' 또는 '퍼스트 클래스 티켓' 디자인으로 가격을 보여줍니다.
+                     * Copy:
+Pase de Abordaje (탑승권 / 멤버십 플랜) Acceso total. Sin pagos ocultos. (전체 접근 권한. 숨겨진 비용 없음.)
+                        * Acceso a todos los cursos (모든 코스 접근)
+                        * Comunidad Discord VIP (디스코드 VIP)
+                        * Plantillas de Obsidian (옵시디언 템플릿)
+[Sección 6] Final CTA (최종 결제 버튼)
+                        * 목적: 화면 하단에 다다랐을 때, 거대한 버튼 하나만 덩그러니 놓아두어 다른 곳으로 빠져나갈 수 없게 만듭니다.
+                        * Copy:
+El vuelo está a punto de despegar. ¿Subes? (비행기가 곧 이륙합니다. 탑승하시겠습니까?) [ Unirme a la Tripulación Ahora (지금 크루 합류하기) ]
+
+## Instruccion para footer
+1.Contenido
+© 2026 Vamos Coreano. Todos los derechos reservados.
+Diseñado para el mundo hispanohablante.
+
+================================================================================
+FILE: resource.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Recursos de coreano creados para hispanohablantes. Aprende desde tu idioma, a tu ritmo.">
+  <title>Recursos | Vamos Coreano</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:#2540E8;width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:#FF4D5E;width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:#FFD35C;width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
+
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
+      <nav aria-label="Principal">
+        <a href="about.html">Sobre mí</a>
+        <a href="class.html">Cursos</a>
+        <a href="resource.html" class="on" aria-current="page">Recursos</a>
+        <a href="contact.html">Contacto</a>
+        <a href="join.html" class="nav-cta-pill">Únete</a>
+      </nav>
+      <button id="th" aria-label="Cambiar tema claro u oscuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="resource-topline" aria-hidden="true"></div>
+
+    <section class="resources-hero">
+      <div class="w">
+        <p class="eyebrow rv">Recursos para aprender mejor</p>
+
+        <h1 class="rv">
+          El coreano,<br>
+          <em>por fin en tu idioma.</em>
+        </h1>
+
+        <p class="hero-sub rv" style="--d:1">
+          Todo lo que necesitas para aprender. <strong>Hecho para ti.</strong>
+        </p>
+
+        <p class="hero-note rv" style="--d:2">
+          Coreano explicado desde el español, <strong>no desde el inglés.</strong>
+        </p>
+
+        <a class="h-cue" href="#explorar" aria-label="Explorar recursos">
+          <svg width="28" height="28" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const items = document.querySelectorAll('.rv');
+      const reducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      if ('IntersectionObserver' in window && !reducedMotion) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -4% 0px'
+        });
+
+        items.forEach(item => observer.observe(item));
+      } else {
+        items.forEach(item => item.classList.add('in'));
+      }
+
+
+    })();
+  </script>
+  <script src="js/nav.js"></script>
+</body>
+</html>
+```
+
+
+================================================================================
+FILE: assets\image\asd.html
+================================================================================
+
+
+
+
+================================================================================
+FILE: css\about.css
+================================================================================
+
+/* ==========================================================================
+   about.html — estilos específicos (se carga después de style.css)
+   Solo se usan los tamaños de la escala tipográfica: --fs-hero-impact, --fs-hero,
+   --fs-title, --fs-sub, --fs-body, --fs-micro
+   ========================================================================== */
+
+/* ---------- Sección 1: TU GUÍA ---------- */
+.about-hero {
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  padding: var(--s7) 0;
+}
+
+.about-hero .w { width: 100%; }
+
+.about-hero .ab {
+  grid-template-columns: 1.25fr .75fr;
+  align-items: center;
+  gap: var(--s6);
+}
+
+.about-hero h1 {
+  font-size: clamp(var(--fs-hero), 6vw, var(--fs-hero-impact));
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.about-hero h1 .fact {
+  display: block;
+  margin-bottom: var(--s2);
+}
+
+.about-hero h1 .fact:last-child { margin-bottom: 0; }
+
+.about-hero .big { margin-top: var(--s4); }
+
+/* Marco de la foto: arco + sombra suave (vanilla-tilt aplica la inclinación en .ph) */
+.ph {
+  max-width: 420px;
+  margin-left: auto;
+  transform-style: preserve-3d;
+}
+
+.ph .arch {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 200px 200px 32px 32px;
+  overflow: hidden;
+  background: var(--so);
+  border: 1px solid var(--ln);
+  box-shadow: 0 28px 60px -20px rgba(15, 23, 42, 0.22);
+}
+
+.ph .arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media(max-width: 860px) {
+  .about-hero { min-height: 0; }
+  .about-hero .ab { grid-template-columns: 1fr; gap: var(--s5); }
+  .ph { margin: 0 auto; max-width: 340px; }
+}
+
+/* ---------- Sección 2: La historia ---------- */
+.story .ab { grid-template-columns: 1.05fr .95fr; }
+
+.story h2 { max-width: 16ch; }
+
+.kicker {
+  display: block;
+  margin: var(--s4) 0 var(--s1);
+  font-family: var(--font-head);
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--co);
+}
+
+.story .big { margin-bottom: var(--s2); }
+.story p + p { margin-top: var(--s2); }
+
+/* El Enemigo: tres problemas del aprendizaje tradicional */
+.enemy {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--s1);
+}
+
+.enemy li {
+  display: flex;
+  gap: var(--s2);
+  align-items: baseline;
+  color: var(--mu);
+}
+
+.enemy li::before {
+  content: "×";
+  flex: none;
+  font-family: var(--font-head);
+  font-weight: 800;
+  color: var(--co);
+}
+
+.enemy strong { color: var(--ink); }
+
+/* La Misión */
+.story .q { margin: var(--s2) 0 0; }
+
+.story .q p {
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* Tarjetas de valores: se revelan en cascada */
+.story .cards { margin-top: 0; }
+
+.story .cd h3 { margin-bottom: 4px; }
+
+/* ---------- Sección 3: El compañero (Julio) ---------- */
+.team .team-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: var(--s7);
+  align-items: center;
+}
+
+.julio-photo {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bl), var(--co));
+  border: 1px solid var(--ln);
+  box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.18);
+  display: grid;
+  place-items: center;
+  transition: transform .4s var(--ez), border-color .35s;
+}
+
+.julio-photo:hover { transform: translateY(-6px); border-color: var(--bl); }
+
+/* Iniciales como respaldo mientras no hay foto */
+.julio-photo::before {
+  content: "JM";
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: var(--fs-hero-impact);
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.julio-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.team h2 { max-width: none; }
+
+.role {
+  font-size: var(--fs-sub);
+  font-weight: 700;
+  color: var(--bl);
+  margin-bottom: var(--s2);
+}
+
+.team p + p { margin-top: var(--s2); }
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin: var(--s3) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills li {
+  padding: var(--s1) var(--s2);
+  border-radius: 99px;
+  background: var(--so);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.team .q { margin: var(--s3) 0; }
+
+.team .q p {
+  font-family: var(--font-head);
+  font-size: var(--fs-sub);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+@media(max-width: 860px) {
+  .team .team-grid { grid-template-columns: 1fr; gap: var(--s4); }
+  .julio-photo { max-width: 340px; }
+}
+
+/* ---------- Sección 4: CTA final (botón naranja) ---------- */
+.about-cta .b.p {
+  background: var(--co);
+  border-color: var(--co);
+  color: #fff;
+}
+
+
+================================================================================
+FILE: css\style.css
+================================================================================
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 76px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--fs-body)/1.6 var(--font-body);
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 60;
+  background: var(--bg);
+}
+
+.kr { font-family: var(--font-body); }
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 3px solid var(--co);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.w {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 var(--s3);
+}
+
+section { padding: var(--s12) 0; }
+
+h1, h2, h3, h4, h5, h6, 
+.peek-name, .bento-info h3, .action-card h3 {
+  font-family: var(--font-head);
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  font-weight: 800;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-size: var(--fs-title);
+  margin-bottom: var(--s2);
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+h3 {
+  line-height: 1.08;
+  letter-spacing: -.02em;
+  font-weight: 800;
+}
+
+p { max-width: 62ch; color: var(--mu); }
+
+.index-hero {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.28em;
+  color: var(--bl);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.index-hero em {
+  font-style: normal;
+  white-space: nowrap; 
+  flex-shrink: 0;     
+}
+
+@media (max-width: 640px) {
+  .index-hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+  }
+}
+
+/* 3D 달력 플립 컨테이너: 고정 폭(min-width) 제거 */
+.calendar-flip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  perspective: 800px;
+  height: 1.15em;
+  vertical-align: baseline;
+  transition: width 0.45s var(--ez);
+}
+
+/* 달력 낱장 카드: 비활성 카드는 absolute로 빼서 너비 계산에서 제외 + 그라데이션 제거 */
+.flip-card {
+  grid-area: 1 / 1;
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--bl);
+  transform-origin: 50% 100%;
+  backface-visibility: hidden;
+  opacity: 0;
+  transform: rotateX(90deg) translateY(12px);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* 현재 보여지는 단어: relative로 실제 단어 폭만큼만 자리 차지 */
+.flip-card.active {
+  position: relative;
+  opacity: 1;
+  transform: rotateX(0deg) translateY(0);
+  pointer-events: auto;
+}
+
+/* 다음 장으로 넘어가면서 아래로 접히는 단어 */
+.flip-card.exit {
+  opacity: 0;
+  transform: rotateX(-90deg) translateY(-12px);
+  transition: transform 0.5s var(--ez), opacity 0.3s ease;
+}
+
+#bar {
+  position: fixed;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  height: 3px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--bl), var(--co));
+  z-index: 70;
+}
+
+header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 50;
+  backdrop-filter: blur(14px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--ln);
+}
+
+header .w {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  height: var(--s6);
+}
+
+.logo {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  margin-right: auto;
+}
+
+.logo b {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--bl);
+  color: #fff;
+  font: 800 var(--fs-body) var(--font-body);
+  transition: transform .5s var(--ez);
+}
+
+.logo:hover b { transform: rotate(-12deg) scale(1.1); }
+
+nav { display: flex; gap: var(--s1); }
+
+nav a {
+  padding: 6px 14px; /**DO NOT CHANGE HARD CODE**/
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: var(--fs-body);
+  color: var(--mu);
+  transition: .25s;
+}
+
+nav a:hover {
+  color: var(--ink);
+  background: var(--so);
+}
+
+nav a.on {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+nav a.nav-cta-pill {
+  background: var(--co);
+  color: #fff;
+}
+
+nav a.nav-cta-pill:hover {
+  background: #e83f50;
+  color: #fff;
+}
+
+#th {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .5s var(--ez);
+}
+
+#th:hover { transform: rotate(90deg); }
+
+@media(max-width: 760px) {
+  nav { display: none; }
+}
+
+/* hero */
+/* one action, one screen: el hero ocupa todo el alto visible bajo el header (64px + 1px de borde) */
+.hero {
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--s7) 0;
+  text-align: center;
+}
+
+.tag {
+  display: inline-flex;
+  gap: var(--s1);
+  align-items: center;
+  padding: var(--s1) var(--s2) var(--s1) var(--s1);
+  border-radius: 99px;
+  background: var(--so);
+  font-weight: 600;
+  font-size: var(--fs-micro);
+  margin-bottom: var(--s3);
+}
+
+.tag i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--co);
+  animation: pu 1.8s infinite;
+}
+
+@keyframes pu {
+  0% { box-shadow: 0 0 0 0 #FF4D5E88; }
+  100% { box-shadow: 0 0 0 12px #FF4D5E00; }
+}
+
+h1 .ch {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(60%) rotate(6deg);
+  animation: up .8s var(--ez) forwards;
+  animation-delay: calc(var(--i) * 28ms + .15s);
+}
+
+@keyframes up {
+  to { opacity: 1; transform: none; }
+}
+
+h1 em { font-style: normal; color: var(--bl); }
+
+.hero p.lead {
+  font-size: clamp(var(--fs-sub), 2.2vw, var(--fs-title));
+  color: var(--ink);
+  margin: var(--s3) auto var(--s4);
+  opacity: 0;
+  animation: up .8s .9s var(--ez) forwards;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  opacity: 0;
+  animation: up .8s 1.05s var(--ez) forwards;
+}
+
+.b {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: var(--s2) var(--s3);
+  border-radius: 99px;
+  font-size: var(--fs-body);
+  font-family: inherit;
+  border: 2px solid var(--ink);
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform .3s var(--ez), translate .2s, background .3s, color .3s;
+}
+
+.b.p {
+  background: var(--bl);
+  border-color: var(--bl);
+  color: #fff;
+}
+
+.b:hover { transform: translateY(-3px) scale(1.03); }
+.b:active { transform: scale(.96); }
+.b svg { transition: transform .3s var(--ez); }
+.b:hover svg { transform: translateX(4px); }
+
+/* reveal */
+.rv {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .8s var(--ez), transform .8s var(--ez);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.rv.in { opacity: 1; transform: none; }
+
+/* about */
+.ab {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: var(--s7);
+  align-items: start;
+}
+
+.ab h2 { max-width: 14ch; }
+
+.big {
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: var(--s2) 0;
+}
+
+.q {
+  border-left: 4px solid var(--co);
+  padding-left: var(--s2);
+  margin: var(--s3) 0;
+}
+
+.cards { display: grid; gap: var(--s2); margin-top: var(--s3); }
+
+.cd {
+  display: flex;
+  gap: var(--s2);
+  align-items: flex-start;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 22px;
+  padding: var(--s2) var(--s3);
+  transition: transform .35s var(--ez), box-shadow .35s;
+}
+
+.cd:hover {
+  transform: translateX(8px);
+  box-shadow: -6px 8px 0 var(--so);
+}
+
+.cd svg {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  color: var(--bl);
+}
+
+.cd h3 { font-size: var(--fs-sub); margin-bottom: 0; }
+.cd p { font-size: var(--fs-body); }
+
+.cap {
+  margin-top: var(--s1);
+  height: 8px;
+  border-radius: 9px;
+  background: var(--so);
+  overflow: hidden;
+}
+
+.cap i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--bl), var(--co));
+  border-radius: 99px;
+  transition: width 1.8s .4s var(--ez);
+}
+
+.in .cap i { width: 88%; }
+
+@media(max-width: 860px) {
+  .ab { grid-template-columns: 1fr; gap: var(--s4); }
+}
+
+/* course */
+.cs {
+  background: linear-gradient(160deg, #12154A, #1D2170 60%, #2A1F7A);
+  color: #fff;
+  border-radius: 48px;
+  margin: 0 var(--s2);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cs h2, .cs h3 { color: #fff; }
+.cs p { color: #C9CDF5; }
+
+.cs::before, .cs::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: -1;
+  animation: dft 16s ease-in-out infinite alternate;
+}
+
+.cs::before {
+  background: #FF4D5E55;
+  right: -120px;
+  top: -140px;
+}
+
+.cs::after {
+  background: color-mix(in srgb, var(--bl) 67%, transparent);
+  left: -140px;
+  bottom: -160px;
+  animation-delay: -8s;
+}
+
+.cs .w { max-width: 1120px; }
+
+h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin-bottom: var(--s2);
+}
+
+.chip {
+  border: 1.5px solid #ffffff4d;
+  background: #ffffff12;
+  color: #fff;
+  padding: var(--s1) var(--s2);
+  border-radius: 99px;
+  font-size: var(--fs-micro);
+  font-family: inherit;
+  cursor: pointer;
+  transition: .3s var(--ez);
+}
+
+.chip:hover { transform: translateY(-2px); }
+
+.chip[aria-selected=true] {
+  background: var(--co);
+  border-color: var(--co);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.ex {
+  background: #ffffff14;
+  border: 1px solid #ffffff26;
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: var(--s3);
+  min-height: 190px;
+}
+
+.ex .k {
+  font: 800 var(--fs-title) var(--font-body);
+  line-height: 1.5;
+}
+
+.ex .k span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: up .5s var(--ez) forwards;
+  animation-delay: calc(var(--i) * 90ms);
+}
+
+.ex .e {
+  margin-top: var(--s1);
+  color: var(--co-dark);
+  font-weight: 600;
+  opacity: 0;
+  animation: up .6s .6s var(--ez) forwards;
+}
+
+@media(max-width: 860px) {
+  .ck { grid-template-columns: 1fr; gap: var(--s5); }
+  .cs { border-radius: 32px; }
+}
+
+/* syllabus */
+.fl2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin: var(--s3) 0 var(--s4);
+}
+
+.fb {
+  border: 1.5px solid var(--ln);
+  background: var(--sf);
+  color: var(--ink);
+  padding: var(--s1) var(--s2);
+  border-radius: 99px;
+  font-size: var(--fs-micro);
+  font-family: inherit;
+  cursor: pointer;
+  transition: .3s var(--ez);
+}
+
+.fb:hover {
+  border-color: var(--bl);
+  transform: translateY(-2px);
+}
+
+.fb[aria-pressed=true] {
+  background: var(--bl);
+  border-color: var(--bl);
+  color: #fff;
+}
+
+.tl {
+  --pad: var(--s7);
+  --ax: 19px;
+  position: relative;
+  padding-left: var(--pad);
+}
+
+.rail {
+  position: absolute;
+  left: calc(var(--ax) - 2px);
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--ln);
+}
+
+.rail i {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: var(--fh, 0px);
+  border-radius: 4px;
+  background: linear-gradient(var(--bl), var(--co));
+}
+
+.it {
+  position: relative;
+  margin-bottom: var(--s1);
+  opacity: 0;
+  transform: translateX(36px);
+  transition: opacity .6s, transform .7s var(--ez);
+}
+
+.it.vis { opacity: 1; transform: none; }
+.it.hd { display: none; }
+.it.ent { animation: up .5s var(--ez); }
+
+.it::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  left: calc(var(--ax) - var(--pad) - 9px);
+  top: 27px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 4px solid var(--ln);
+  transition: .4s var(--ez);
+}
+
+.it.pass::before {
+  border-color: var(--bl);
+  background: var(--bl);
+  transform: scale(1.15);
+  animation: dp .6s var(--ez);
+}
+
+.rw {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--s2);
+  align-items: center;
+  text-align: left;
+  padding: var(--s2) var(--s3);
+  border-radius: 22px;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .3s, transform .3s var(--ez);
+}
+
+.rw:hover {
+  border-color: var(--bl);
+  transform: translateX(6px);
+}
+
+.no {
+  font-weight: 800;
+  color: var(--bl);
+  min-width: 2.2ch;
+}
+
+.rw b {
+  display: block;
+  font-size: var(--fs-body);
+  line-height: 1.25;
+}
+
+.rw small {
+  display: block;
+  color: var(--mu);
+  font-size: var(--fs-micro);
+}
+
+.rw .kr { font-weight: 500; }
+
+.pl {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--so);
+  display: grid;
+  place-items: center;
+  transition: transform .4s var(--ez), background .3s;
+}
+
+[aria-expanded=true] .pl {
+  transform: rotate(135deg);
+  background: var(--co);
+  color: #fff;
+}
+
+.pn {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .45s var(--ez);
+}
+
+.pn > div { overflow: hidden; }
+.open .pn { grid-template-rows: 1fr; }
+
+.pi {
+  padding: var(--s2) var(--s3) var(--s1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+}
+
+.pi h4 {
+  font-size: var(--fs-micro);
+  color: var(--mu);
+  margin-bottom: var(--s1);
+}
+
+.pi ul {
+  padding-left: var(--s2);
+  color: var(--ink);
+}
+
+.gm {
+  display: inline-block;
+  background: var(--so);
+  padding: var(--s1) var(--s2);
+  border-radius: 10px;
+  font: 600 var(--fs-micro) var(--font-body);
+  margin-bottom: var(--s1);
+}
+
+.xx {
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: var(--s1);
+}
+
+.xx small {
+  display: block;
+  color: var(--mu);
+  font: 400 var(--fs-micro) "Bricolage Grotesque";
+}
+
+.it.fin .rw {
+  background: linear-gradient(120deg, var(--bl), #6A3DE8);
+  color: #fff;
+  border: 0;
+}
+
+.it.fin .no, .it.fin small { color: #ffffffcc; }
+
+.rk {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  animation: lf 1.8s ease-in-out infinite;
+}
+
+@keyframes lf {
+  50% { transform: translateY(-8px) rotate(8deg); }
+}
+
+@media(max-width: 640px) {
+  .pi { grid-template-columns: 1fr; }
+  .tl { --pad: var(--s6); --ax: 14px; }
+}
+
+/* contacto */
+#contacto {
+  padding: var(--s11) 0 var(--s12);
+}
+
+.contact-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s3);
+  margin: var(--s4) 0 0;
+}
+
+.action-card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 28px;
+  padding: var(--s4) var(--s3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.05);
+  transition: transform .4s var(--ez), border-color .3s, box-shadow .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--bl);
+  box-shadow: 0 12px 30px -10px rgba(37, 64, 232, 0.18);
+}
+
+.action-card-featured {
+  border-color: color-mix(in srgb, var(--co) 40%, transparent);
+  background: linear-gradient(180deg, var(--sf), var(--so));
+}
+
+.action-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--so);
+  color: var(--bl);
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--s2);
+  transition: transform .4s var(--ez), background .3s, color .3s;
+}
+
+.action-card:hover .action-card-icon {
+  transform: scale(1.1) rotate(6deg);
+  background: var(--bl);
+  color: #fff;
+}
+
+.action-card h3 {
+  font-size: var(--fs-sub);
+  margin-bottom: var(--s1);
+}
+
+.action-card p {
+  font-size: var(--fs-body);
+  color: var(--mu);
+  margin-bottom: var(--s3);
+  flex-grow: 1;
+}
+
+.action-card .btn-card {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--s1) var(--s3);
+  font-size: var(--fs-body);
+  justify-content: center;
+}
+
+.copy-sub-action {
+  margin-top: var(--s1);
+  background: none;
+  border: none;
+  color: var(--mu);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+
+.copy-sub-action:hover { color: var(--co); }
+
+@media(max-width: 768px) {
+  .contact-actions-grid { grid-template-columns: 1fr; }
+}
+
+#copy-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: var(--bg);
+  padding: var(--s2) var(--s3);
+  border-radius: 99px;
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s var(--ez), transform .25s var(--ez);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+#copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* cta */
+.ct { text-align: center; padding: var(--s11) 0 var(--s14); }
+.ct h2 { margin: 0 auto var(--s2); max-width: 16ch; }
+.ct p { margin: 0 auto var(--s4); }
+
+.ct .kr {
+  display: block;
+  font-size: var(--fs-hero);
+  font-weight: 800;
+  color: var(--bl);
+  line-height: 1.1;
+  margin-bottom: var(--s1);
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--c);
+  filter: blur(110px);
+  opacity: var(--oo, .20);
+  animation: dft 24s ease-in-out infinite alternate;
+}
+
+@keyframes dft {
+  to { transform: translate(70px, 50px) scale(1.15); }
+}
+
+.gl {
+  position: absolute;
+  top: 0;
+  font: 800 var(--s, var(--fs-title)) var(--font-body);
+  color: var(--bl);
+  opacity: .09;
+  animation: dr linear infinite;
+}
+
+@keyframes dr {
+  from { transform: translateY(105vh) rotate(0); }
+  to { transform: translateY(-15vh) rotate(50deg); }
+}
+
+.mq {
+  overflow: hidden;
+  padding: var(--s2) 0;
+  margin-top: var(--s3);
+  border-block: 1px solid var(--ln);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.mq div {
+  display: flex;
+  width: max-content;
+  animation: mq 35s linear infinite;
+  font: 800 var(--fs-title) var(--font-body);
+}
+
+.mq span {
+  display: flex;
+  align-items: center;
+  gap: var(--s6);
+  padding-right: var(--s6);
+  white-space: nowrap;
+}
+
+.mq span::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.mq span:nth-child(even) { color: var(--bl); }
+.mq:hover div { animation-play-state: paused; }
+
+@keyframes mq {
+  to { transform: translateX(-50%); }
+}
+
+.b { translate: var(--bx, 0) var(--by, 0); }
+.arch { transform: none; transition: none; }
+
+h2::after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 0;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--co), var(--co));
+  margin-top: var(--s2);
+  transition: width 1s .4s var(--ez);
+}
+
+h2.in::after { width: 72px; }
+.ct h2::after { margin: var(--s2) auto 0; }
+
+.sc, .cd, .mt, .rw, .action-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sc::after, .cd::after, .mt::after, .rw::after, .action-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--bl) 14%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.sc:hover::after, .cd:hover::after, .mt:hover::after, .rw:hover::after, .action-card:hover::after { opacity: 1; }
+
+.sc.rv:not(.in) { transform: translateY(30px) scale(.9); }
+.cd.rv:not(.in) { transform: translateX(-36px); }
+.mt.rv:not(.in) { transform: translateY(40px) scale(.92) rotate(-2deg); }
+
+.rail i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 16px;
+  height: 16px;
+  margin-left: calc(var(--s1) * -1);
+  border-radius: 50%;
+  background: var(--co);
+  animation: pu 1.6s infinite;
+}
+
+@keyframes fi {
+  from { opacity: 0; transform: translateY(16px); }
+}
+
+.it.ent { animation: fi .5s var(--ez); }
+.open .pi > div > * { animation: fi .5s .15s var(--ez) both; }
+
+.ct .kr span {
+  display: inline-block;
+  animation: wv 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * .15s);
+}
+
+@keyframes wv {
+  50% { transform: translateY(-14px); }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .gl, .orb, .mq div, .cs::before, .cs::after { animation: none; }
+}
+
+footer {
+  border-top: 1px solid var(--ln);
+  padding: var(--s3) 0;
+  color: var(--mu);
+  font-size: var(--fs-micro);
+  text-align: center;
+}
+footer p {
+  max-width: none;
+  margin: 0 auto;
+}
+
+.cf {
+  position: fixed;
+  z-index: 80;
+  pointer-events: none;
+  font: 800 var(--fs-title) var(--font-body);
+  color: var(--co);
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .rv, h1 .ch, .hero p.lead, .btns, .ex .k span, .ex .e {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ajustes: línea de tiempo y dinamismo */
+.rw { min-height: 72px; }
+
+@keyframes dp {
+  0% { transform: scale(.5); box-shadow: 0 0 0 0 color-mix(in srgb, var(--bl) 60%, transparent); }
+  60% { transform: scale(1.6); }
+  100% { transform: scale(1.15); box-shadow: 0 0 0 12px color-mix(in srgb, var(--bl) 0%, transparent); }
+}
+
+.it:hover::before { transform: scale(1.4); }
+.it.open .no { animation: bn .55s var(--ez); }
+
+@keyframes bn {
+  40% { transform: scale(1.4) rotate(-10deg); }
+}
+
+.rw .pl { transition: transform .4s var(--ez); }
+.it.open .rw .pl { transform: rotate(135deg); }
+
+.b.p {
+  position: relative;
+  overflow: hidden;
+}
+
+.b.p::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, #ffffff66 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+
+.b.p:hover::after {
+  transform: translateX(120%);
+  transition: transform .7s var(--ez);
+}
+
+.ph { will-change: transform; }
+
+@media(prefers-reduced-motion: reduce) {
+  .it { opacity: 1 !important; transform: none !important; }
+  .b.p::after { display: none; }
+}
+
+/* tarjeta del curso (home) */
+.course-card {
+  margin: 0;
+  padding: var(--s7) var(--s6) var(--s5);
+}
+
+.course-badge {
+  display: inline-block;
+  padding: var(--s1) var(--s2);
+  border-radius: 99px;
+  background: var(--co);
+  color: #16183F;
+  font-weight: 800;
+  font-size: var(--fs-micro);
+  letter-spacing: .14em;
+  margin-bottom: var(--s3);
+}
+
+.course-card h2 {
+  max-width: 20ch;
+  font-size: var(--fs-title);
+}
+
+.course-card h2::after { display: none; }
+.course-card > p { font-size: var(--fs-body); }
+
+.course-list {
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+  border-top: 1px solid #ffffff26;
+}
+
+.course-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--s4);
+}
+
+.course-card .b.p {
+  background: var(--co);
+  border-color: var(--co);
+}
+
+.course-all {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--s4);
+}
+
+@media(max-width: 640px) {
+  .course-card { padding: var(--s5) var(--s3) var(--s4); }
+  .course-foot .b { width: 100%; justify-content: center; }
+}
+
+/* ==========================================================================
+   class.html — Sección 1 (Hero 1화면 고정 + We Will Rock You 애니메이션)
+   ========================================================================== */
+
+/* [숙제 1] 섹션 1 레이아웃: 헤더(49px)를 뺀 나머지 화면 100%에 정확히 맞춤 */
+.class-hero {
+  height: calc(100svh - var(--header-h));     /* 데스크톱/노트북 모든 모니터에서 정확히 1화면 높이로 고정 */
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--s4) 0;                       /* 상하 여백을 32px(8pt 배수)로 줄여 세로가 좁은 모니터도 여유 확보 */
+  overflow: hidden;                           /* 애니메이션 도중 글자가 커질 때 스크롤바가 생기는 현상 방지 */
+}
+
+/* 모바일(760px 이하)은 질문에서 말씀하신 대로 고정 높이 제약을 풀어 자연스럽게 흐르도록 예외 처리 */
+@media (max-width: 760px) {
+  .class-hero {
+    height: auto;
+    min-height: calc(100svh - var(--header-h));
+    padding: var(--s6) 0;
+  }
+}
+
+.class-hero .w {
+  width: 100%;
+}
+
+/* [숙제 1 핵심] 가로 폭(vw)뿐만 아니라 모니터 세로 높이(svh)까지 동시에 계산하는 반응형 타이포그래피
+   - min(7.2vw, 13.5svh) 덕분에 가로만 넓고 위아래가 납작한 노트북에서도 절대 화면 밖으로 넘치지 않습니다. */
+.class-hero h1 {
+  margin: 0 auto;
+  font-size: clamp(2.5rem, min(7.2vw, 13.5svh), 6.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+
+.class-hero .h-line {
+  display: block;
+}
+
+.class-hero .h-black {
+  color: var(--ink);
+}
+
+.class-hero .h-blue {
+  color: var(--bl);
+  margin-top: 0.12em; /* '쿵, 쿵' 두 줄과 마지막 '따!' 줄 사이에 살짝 호흡을 줌 */
+}
+
+/* 서브 문구: 세로가 작은 모니터에서도 잘리지 않도록 위쪽 여백을 화면 높이에 비례(clamp)하게 설정 */
+.class-hero .h-sub {
+  max-width: 32ch;
+  margin: clamp(var(--s2), 3svh, var(--s4)) auto 0;
+  font-size: var(--fs-sub);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--mu);
+  /* [숙제 2] 쿵-쿵-따(0.15s -> 0.55s -> 0.95s)가 다 끝난 뒤 1.45초에 스르륵 등장 */
+  opacity: 0;
+  transform: translateY(16px);
+  animation: subFadeUp 0.6s var(--ez) 1.45s forwards;
+}
+
+/* ==========================================================================
+   [숙제 2] We Will Rock You ("쿵! 쿵! 따!") 리듬 애니메이션
+   - 박자 간격: 0.4초 간격의 정박 리듬 (0.15초 쿵! -> 0.55초 쿵! -> 0.95초 따!!)
+   - 박자를 더 빠르게/느리게 바꾸고 싶다면 각 .beat-1, .beat-2, .beat-3의 마지막 숫자(지연 시간)만 조절하세요!
+   ========================================================================== */
+
+/* 1박자 (쿵!): Un idioma. */
+.class-hero .beat-1 {
+  opacity: 0;
+  transform-origin: center bottom;
+  animation: rockStomp 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+}
+
+/* 2박자 (쿵!): Un objetivo. */
+.class-hero .beat-2 {
+  opacity: 0;
+  transform-origin: center bottom;
+  animation: rockStomp 0.36s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+}
+
+/* 3박자 (따!): 100% para hispanohablantes. */
+.class-hero .beat-3 {
+  opacity: 0;
+  transform-origin: center center;
+  animation: rockClap 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.95s forwards;
+}
+
+/* [키프레임 1: 쿵! (rockStomp)] 
+   위에서 거대하게(1.38배) 떨어져 바닥을 쾅! 찍고(0.96배로 눌림) 제자리(1배)로 서는 묵직한 타격감 */
+@keyframes rockStomp {
+  0% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.38);
+    filter: blur(6px);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(3px) scale(0.96); /* 바닥을 쿵 찍으며 살짝 눌리는 순간 */
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* [키프레임 2: 따! (rockClap)] 
+   안쪽에서 바깥으로 팡! 하고 탄성 있게 튀어나오며 파란 네온 광채가 번쩍이는 하이라이트 효과 */
+@keyframes rockClap {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+    filter: blur(8px);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.07); /* 따! 하고 앞으로 튀어나오는 탄성 구간 */
+    filter: blur(0) drop-shadow(0 12px 28px color-mix(in srgb, var(--bl) 25%, transparent));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0) drop-shadow(0 0 0 transparent);
+  }
+}
+
+/* [키프레임 3: 여운 (subFadeUp)] 쿵-쿵-따 이후 보조 문구가 차분하게 올라옴 */
+@keyframes subFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   비행기 영역 (.class-fly-zone): 섹션 1 바깥(아래쪽)으로 분리된 비행기 트랙
+   ========================================================================== */
+.class-fly-zone {
+  overflow: hidden;
+  width: 100%;
+}
+
+.class-fly-zone .fly {
+  position: relative;
+  width: 100vw;
+  margin: 0 0 0 calc(50% - 50vw);
+  height: 72px;
+  pointer-events: none;
+}
+
+.class-fly-zone .plane {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -22px;
+  width: 44px;
+  height: 44px;
+  color: var(--bl);
+  transform: translateX(-140px);
+  /* 쿵-쿵-따 애니메이션이 다 끝난 뒤(1.8초 뒤)에 비행기가 출발하도록 딜레이를 1.1s -> 1.8s로 조정 */
+  animation: hfly 7s cubic-bezier(.45, .05, .25, 1) 1.8s infinite;
+}
+
+.class-fly-zone .plane svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  filter: drop-shadow(0 8px 10px color-mix(in srgb, var(--bl) 35%, transparent));
+  animation: hbob 1.6s ease-in-out infinite;
+}
+
+.class-fly-zone .plane::before {
+  content: "";
+  position: absolute;
+  right: 38px;
+  top: 21px;
+  width: 52vw;
+  height: 0;
+  border-top: 3px dashed var(--bl);
+  opacity: .55;
+  -webkit-mask-image: linear-gradient(270deg, #000, transparent);
+  mask-image: linear-gradient(270deg, #000, transparent);
+}
+
+@keyframes hfly {
+  0%   { transform: translateX(-140px); opacity: 0; }
+  4%   { opacity: 1; }
+  40%  { transform: translateX(calc(100vw + 60px)); opacity: 1; }
+  41%  { opacity: 0; }
+  100% { transform: translateX(calc(100vw + 60px)); opacity: 0; }
+}
+
+@keyframes hbob {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  50%      { transform: rotate(41deg) translate(-2px, -2px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .class-fly-zone { display: none; }
+  .class-hero .beat-1,
+  .class-hero .beat-2,
+  .class-hero .beat-3,
+  .class-hero .h-sub {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+  }
+}
+/* ==========================================================================
+   Sección 2: Identidad (Manifiesto - SOMOS 잉크 차오르는 효과 복원)
+   ========================================================================== */
+
+.identidad {
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s11) 0; /* 화면이 매우 작은 기기를 대비한 최소 상하 여백 */
+}
+
+.identidad-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Sección 2: Identidad (애플식 듀얼 레이어 Clip-path Inset)
+   ========================================================================== */
+.somos-title {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(4rem, 13vw, 9.5rem);
+  font-weight: 800;
+  max-width: none;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  margin-bottom: var(--s4);
+  padding: 0 0.08em;
+  color: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.somos-title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: 0 0.08em;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--bl) 0%, var(--co) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-clip-path: inset(-0.08em 100% -0.08em 0);
+  clip-path: inset(-0.08em 100% -0.08em 0);
+  transition: clip-path 1.4s var(--ez), -webkit-clip-path 1.4s var(--ez);
+  will-change: clip-path;
+}
+
+.somos-title.in::before {
+  -webkit-clip-path: inset(-0.08em 0% -0.08em 0);
+  clip-path: inset(-0.08em 0% -0.08em 0);
+}
+.somos-title::after {
+  margin: var(--s2) auto 0;
+}
+
+.identidad-lead {
+  font-size: clamp(var(--fs-sub), 2.6vw, var(--fs-title));
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  max-width: 28ch;
+  margin-bottom: var(--s2);
+}
+
+.identidad-sub {
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  color: var(--mu);
+}
+
+/* ==========================================================================
+   Sección 3: Sobre Mí (Resumen de Autoridad)
+   ========================================================================== */
+.section-authority {
+  padding: var(--s12) 0;
+}
+
+.authority-container {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 0 var(--s7);
+  align-items: stretch;
+}
+
+.authority-content {
+  display: contents; /* 자식 요소(제목, 본문묶음, 버튼)가 그리드 행에 직접 참여하도록 함 */
+}
+.authority-title,
+.authority-body,
+.authority-cta {
+  grid-column: 1; /* 모두 좌측(1열)에 배치 */
+}
+.authority-title {
+  font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
+  max-width: none;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s2);
+  grid-column: 1
+}
+
+.authority-desc {
+  font-size: var(--fs-title);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s2);
+}
+
+.authority-cta {
+  margin-top: var(--s4); /* ★ 원래 proof-list에 있던 하단 여백(32px)을 버튼 위쪽으로 이동 */
+}
+
+.proof-list {
+  display: grid;
+  gap: var(--s2);
+  margin-bottom: 0;
+}
+
+.proof-item {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: var(--s3);
+  align-items: flex-start;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 24px;
+  padding: var(--s3);
+  transition: transform .35s var(--ez), border-color .35s, box-shadow .35s;
+}
+
+.proof-item:hover {
+  transform: translateX(6px);
+  border-color: var(--bl);
+  box-shadow: -6px 8px 0 var(--so);
+}
+
+.proof-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(260px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--bl) 12%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.proof-item:hover::after {
+  opacity: 1;
+}
+
+.proof-num {
+  font-size: var(--fs-sub);
+  font-weight: 800;
+  color: var(--bl);
+  line-height: 1.2;
+  min-width: 2.2ch;
+}
+
+.proof-item strong {
+  display: block;
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.proof-item span {
+  display: block;
+  font-size: var(--fs-body);
+  color: var(--mu);
+}
+
+/*tutor*/
+.authority-visual {
+  grid-column: 2; /* 우측 컬럼(2열) */
+  grid-row: 2;    /* ★ 핵심: 정확히 2행(.authority-body)과 시작·끝 높이를 공유! */
+}
+
+.tutor-card-tilt {
+  perspective: 1000px;
+  height: 100%;
+}
+
+.tutor-card-inner {
+  position: relative;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.16);
+  transition: transform .4s var(--ez), border-color .35s;
+}
+
+.tutor-card-inner:hover {
+  transform: translateY(-6px);
+  border-color: var(--bl);
+}
+
+.tutor-img {
+  width: 100%;
+  flex: 1 1 0;
+  height: 0;
+  min-height: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.tutor-badge {
+  background: transparent;
+  border: 1px solid var(--ln);
+  border-top: 1px solid transparent;
+  padding: var(--s2) var(--s3);
+  gap: var(--s1);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+.tutor-badge strong {
+  font-family: var(--font-head);
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  line-height: 1.2;
+}
+.tutor-badge span{
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--mu);
+}
+
+@media(max-width: 860px) {
+  .authority-container {
+    grid-template-columns: 1fr;
+    gap: var(--s5);
+  }
+}
+
+/* ==========================================================================
+   Sección 4: Cursos (Horizontal Peek Showcase)
+   ========================================================================== */
+.section-cursos {
+  padding: var(--s12) 0;
+}
+
+.cursos-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--s4);
+  margin-bottom: var(--s5);
+}
+
+.cursos-title {
+  font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
+  max-width: none;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s2);
+}
+
+.cursos-lead {
+  font-size: var(--fs-title);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: var(--s1);
+}
+
+.cursos-sub {
+  font-size: var(--fs-body);
+  color: var(--mu);
+}
+
+.cursos-nav {
+  display: flex;
+  gap: var(--s1);
+  flex: none;
+}
+
+.peek-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .3s var(--ez), border-color .3s, background .3s;
+}
+
+.peek-btn:hover {
+  border-color: var(--bl);
+  background: var(--so);
+  transform: scale(1.06);
+}
+
+.peek-track {
+  display: flex;
+  gap: var(--s3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: var(--s1) max(var(--s3), calc(50vw - 180px)) var(--s4);
+  scrollbar-width: none;
+}
+
+.peek-track.is-spinning {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  pointer-events: none; /* 도는 동안 마우스 클릭/드래그 방지 */
+}
+
+.peek-track::-webkit-scrollbar {
+  display: none;
+}
+
+.peek-card {
+  flex: 0 0 360px;
+  scroll-snap-align: center; /* 기존 start 에서 center 로 변경! */
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 32px;
+  padding: var(--s5) var(--s4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s4);
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s var(--ez), border-color .35s, box-shadow .35s;
+}
+
+.peek-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--bl);
+  box-shadow: 0 24px 48px -18px color-mix(in srgb, var(--bl) 18%, transparent);
+}
+
+.peek-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--bl) 12%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.peek-card:hover::after {
+  opacity: 1;
+}
+
+.peek-card-primary {
+  background: linear-gradient(160deg, #12154A, #1D2170 65%, #2540E8);
+  border-color: transparent;
+  color: #fff;
+}
+
+.peek-card-primary .peek-name,
+.peek-card-primary .peek-punch {
+  color: #fff;
+}
+
+.peek-card-primary .peek-desc {
+  color: #C9CDF5;
+}
+
+.peek-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.peek-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 99px;
+  background: var(--so);
+  color: var(--bl);
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+.peek-card-primary .peek-tag {
+  background: color-mix(in srgb, #fff 16%, transparent);
+  color: #fff;
+}
+
+.peek-tag-accent {
+  background: color-mix(in srgb, var(--co) 15%, transparent);
+  color: var(--co);
+}
+
+.peek-kr {
+  font-size: var(--fs-title);
+  font-weight: 800;
+  color: var(--bl);
+  opacity: .35;
+}
+
+.peek-card-primary .peek-kr {
+  color: #fff;
+  opacity: .5;
+}
+
+.peek-name {
+  font-size: var(--fs-title);
+  color: var(--ink);
+  margin-bottom: var(--s1);
+}
+
+.peek-punch {
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: var(--s1);
+}
+
+.peek-desc {
+  font-size: var(--fs-body);
+  color: var(--mu);
+}
+
+@media(max-width: 760px) {
+  .cursos-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .peek-card {
+    flex: 0 0 84vw;
+  }
+}
+
+/* ==========================================================================
+   Sección 5: Recursos (Apple Bento Showcase)
+   ========================================================================== */
+.section-recursos {
+  padding: var(--s12) 0;
+}
+
+.recursos-head {
+  margin-bottom: var(--s6);
+}
+
+.recursos-title {
+  font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
+  max-width: none;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--s2);
+}
+
+.recursos-lead {
+  font-size: var(--fs-title);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* 12컬럼 비대칭 벤토 그리드 */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--s3);
+}
+
+.bento-card {
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 32px;
+  padding: var(--s5) var(--s4);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .4s var(--ez), border-color .35s, box-shadow .35s;
+}
+
+.bento-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--bl);
+  box-shadow: 0 24px 48px -18px color-mix(in srgb, var(--bl) 18%, transparent);
+}
+
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--bl) 12%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.bento-card:hover::after {
+  opacity: 1;
+}
+
+.bento-info h3 {
+  font-size: var(--fs-title);
+  color: var(--ink);
+  margin: var(--s2) 0 var(--s1);
+}
+
+.bento-info p {
+  font-size: var(--fs-body);
+  color: var(--mu);
+  margin-bottom: var(--s4);
+}
+
+/* [큰 박스 A] PDF 아카이브 (7칸) + 3D Fan-out Deck */
+.bento-pdf {
+  grid-column: span 7;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: var(--s3);
+  align-items: center;
+}
+
+.pdf-fan-deck {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 800px;
+}
+
+.pdf-sheet {
+  position: absolute;
+  width: 136px;
+  height: 176px;
+  background: var(--bg);
+  border: 1px solid var(--ln);
+  border-radius: 20px;
+  padding: var(--s2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 32px -12px rgba(15, 23, 42, 0.14);
+  transform-origin: 50% 100%;
+  transition: transform .75s var(--ez), border-color .35s;
+}
+
+.sheet-badge {
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  color: var(--bl);
+}
+
+.pdf-sheet strong {
+  font-size: var(--fs-title);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.pdf-sheet small {
+  font-size: var(--fs-micro);
+  color: var(--mu);
+  font-weight: 600;
+}
+
+/* 스크롤 도착(.in) 시 부채꼴(Fan-out)로 촤르륵 펼쳐짐 */
+.bento-pdf.in .sheet-left {
+  transform: translateX(-42px) translateY(8px) rotate(-14deg);
+}
+
+.bento-pdf.in .sheet-center {
+  transform: translateY(-10px) scale(1.05);
+  background: var(--sf);
+  border-color: var(--bl);
+  z-index: 2;
+}
+
+.bento-pdf.in .sheet-right {
+  transform: translateX(42px) translateY(8px) rotate(14deg);
+}
+
+/* 호버 시 부채꼴이 한층 더 넓게 펼쳐지는 마이크로 인터랙션 */
+.bento-pdf:hover .sheet-left {
+  transform: translateX(-56px) translateY(4px) rotate(-20deg);
+}
+
+.bento-pdf:hover .sheet-center {
+  transform: translateY(-18px) scale(1.08);
+}
+
+.bento-pdf:hover .sheet-right {
+  transform: translateX(56px) translateY(4px) rotate(20deg);
+}
+
+/* [큰 박스 B] 팟캐스트 스테이션 (5칸) + Live Waveform */
+.bento-podcast {
+  grid-column: span 5;
+  background: linear-gradient(160deg, #12154A, #1D2170 65%, #2540E8);
+  border-color: transparent;
+  color: #fff;
+}
+
+.bento-podcast .bento-info h3 {
+  color: #fff;
+}
+
+.bento-podcast .bento-info p {
+  color: #C9CDF5;
+}
+
+.bento-podcast .peek-tag {
+  background: color-mix(in srgb, #fff 16%, transparent);
+  color: #fff;
+}
+
+.podcast-wave-box {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  background: color-mix(in srgb, #fff 10%, transparent);
+  border: 1px solid color-mix(in srgb, #fff 18%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: var(--s2) var(--s3);
+  margin-top: auto;
+}
+
+.play-orb {
+  width: var(--s6);
+  height: var(--s6);
+  border-radius: 50%;
+  background: var(--co);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: transform .3s var(--ez);
+}
+
+.play-orb:hover {
+  transform: scale(1.1);
+}
+
+.wave-meta {
+  flex: 1;
+}
+
+.wave-meta strong {
+  display: block;
+  font-size: var(--fs-micro);
+  color: #fff;
+  margin-bottom: var(--s1);
+}
+
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+}
+
+.waveform i {
+  display: block;
+  width: 4px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--co);
+  animation: eq 1.2s ease-in-out infinite alternate;
+  animation-delay: calc(var(--w) * 140ms);
+}
+
+@keyframes eq {
+  0% { height: 6px; opacity: .5; }
+  100% { height: 24px; opacity: 1; }
+}
+
+/* [작은 박스 C-1, C-2] 스탯 카운터 (각 4칸) */
+.bento-stat {
+  grid-column: span 4;
+  justify-content: center;
+}
+
+.stat-num {
+  font-size: clamp(var(--fs-hero), 5vw, var(--fs-hero-impact));
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--bl);
+  margin-bottom: var(--s2);
+}
+
+.bento-stat strong {
+  display: block;
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  margin-bottom: var(--s1);
+}
+
+.bento-stat p {
+  font-size: var(--fs-body);
+  color: var(--mu);
+}
+
+/* [작은 박스 D] 전체 자료실 이동 타일 (4칸) */
+.bento-cta-tile {
+  grid-column: span 4;
+  background: var(--so);
+  border-color: transparent;
+}
+
+.bento-cta-tile h3 {
+  font-size: var(--fs-title);
+  color: var(--ink);
+  margin-top: var(--s2);
+}
+
+.tile-arrow {
+  width: var(--s6);
+  height: var(--s6);
+  border-radius: 50%;
+  background: var(--bl);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  align-self: flex-end;
+  margin-top: var(--s4);
+  transition: transform .35s var(--ez);
+}
+
+.bento-cta-tile:hover .tile-arrow {
+  transform: translate(4px, -4px) scale(1.08);
+}
+
+@media(max-width: 960px) {
+  .bento-pdf,
+  .bento-podcast {
+    grid-column: span 12;
+  }
+  .bento-stat,
+  .bento-cta-tile {
+    grid-column: span 6;
+  }
+}
+
+@media(max-width: 640px) {
+  .bento-pdf {
+    grid-template-columns: 1fr;
+  }
+  .bento-stat,
+  .bento-cta-tile {
+    grid-column: span 12;
+  }
+}
+
+/* ==========================================================================
+   Sección 6: ÚNETE (Final CTA - Dual Core 3D Engine)
+   ========================================================================== */
+
+/* 1. 섹션 전체 여백 및 중앙 정렬 (배경색 반전 없이 깔끔한 호흡 유지) */
+.section-unete {
+  padding: var(--s12) 0 var(--s14);
+  position: relative;
+}
+
+.unete-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 2. 상단 타이포그래피: 첫 페이지(Hero)급 스케일과 블루->오렌지 그라데이션 */
+.unete-head {
+  margin-bottom: var(--s6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.unete-title {
+  font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
+  max-width: none;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: var(--s2) 0 var(--s2);
+  color: var(--ink);
+}
+
+/* 기존 h2 밑줄 장식 제거 (중앙 대형 타이틀이므로 깔끔하게 유지) */
+.unete-title::after {
+  display: none;
+}
+
+/* Vívelo. 텍스트에 브랜드 블루 -> 오렌지 그라데이션 착색 */
+.unete-grad {
+  font-style: normal;
+  background: linear-gradient(95deg, var(--bl) 10%, var(--co) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-right: 0.06em; /* 기울임이나 글자 잘림 방지 */
+}
+
+.unete-sub {
+  font-size: var(--fs-sub);
+  font-weight: 500;
+  color: var(--mu);
+  max-width: 48ch;
+  line-height: 1.45;
+}
+
+/* 3. 중앙 3D 스테이지 & 은은한 앰비언트 글로우(Ambient Glow) 그림자 */
+.unete-stage {
+  width: 100%;
+  max-width: 920px;
+  perspective: 1200px; /* 3D 기울기 원근감 */
+  margin-bottom: var(--s6);
+  position: relative;
+}
+
+/* 카드 뒤쪽 바닥에 깔리는 부드러운 듀얼 오로라 빛무리 */
+.unete-stage::before {
+  content: "";
+  position: absolute;
+  inset: 12% 8% -6%;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--bl) 22%, transparent), color-mix(in srgb, var(--co) 22%, transparent));
+  filter: blur(48px);
+  border-radius: 40px;
+  z-index: -1;
+  opacity: 0.75;
+  transition: opacity .5s var(--ez), transform .5s var(--ez);
+}
+
+.unete-stage:hover::before {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* 4. 듀얼 코어 카드 본체 (JS에서 --rx, --ry 변수로 3D 각도 제어) */
+.dual-core-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  background: color-mix(in srgb, var(--sf) 88%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--ln);
+  border-radius: 36px;
+  padding: var(--s5);
+  box-shadow: 0 28px 60px -20px rgba(15, 23, 42, 0.12);
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.18s ease-out, border-color 0.35s, box-shadow 0.35s;
+  overflow: hidden;
+  text-align: left;
+}
+
+.dual-core-card:hover {
+  border-color: color-mix(in srgb, var(--bl) 45%, var(--ln));
+  box-shadow: 0 36px 72px -20px rgba(37, 99, 235, 0.18);
+}
+
+/* 마우스를 따라다니는 홀로그램 유리 반사광 (Glare) */
+.core-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    color-mix(in srgb, var(--bl) 12%, rgba(255, 255, 255, 0.35)),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.dual-core-card:hover .core-glare {
+  opacity: 1;
+}
+
+/* 5. 좌/우 코어 패널 공통 레이아웃 */
+.core-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--s3);
+  position: relative;
+  z-index: 2;
+}
+
+.core-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.core-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  color: var(--co);
+  letter-spacing: 0.04em;
+}
+
+.core-badge-blue {
+  color: var(--bl);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--co);
+  animation: pu 1.8s infinite;
+}
+
+.core-tag {
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  color: var(--mu);
+  background: var(--bg);
+  border: 1px solid var(--ln);
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+/* 6. 좌측 코어 비주얼 (실시간 피드백 캡슐 & 파형) */
+.core-visual {
+  background: var(--bg);
+  border: 1px solid var(--ln);
+  border-radius: 22px;
+  padding: var(--s2) var(--s3);
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s1);
+}
+
+.chat-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  background: var(--sf);
+  border: 1px solid var(--ln);
+  border-radius: 99px;
+  padding: 6px 12px 6px 8px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.chat-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bl);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-micro);
+  font-weight: 800;
+  flex: none;
+}
+
+.chat-Wave {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+
+.chat-Wave i {
+  width: 3px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--bl);
+  animation: eq 1s ease-in-out infinite alternate;
+}
+
+.chat-Wave i:nth-child(2n) { animation-delay: .2s; height: 12px; }
+.chat-Wave i:nth-child(3n) { animation-delay: .4s; height: 15px; }
+
+.chat-ok {
+  margin-left: auto;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  color: var(--bl);
+  white-space: nowrap;
+}
+
+.chat-pill-sub {
+  background: transparent;
+  border-style: dashed;
+  font-size: var(--fs-micro);
+  color: var(--mu);
+  padding: 6px 12px;
+}
+
+/* 7. 우측 코어 비주얼 (Obsidian 신경망 노드 그래프) */
+.brain-graph {
+  padding: var(--s1) var(--s2);
+  align-items: center;
+}
+
+.node-svg {
+  width: 100%;
+  height: 92px;
+  overflow: visible;
+}
+
+.synapse {
+  stroke: var(--ln);
+  stroke-width: 1.8;
+  stroke-dasharray: 4 4;
+  animation: dashFlow 12s linear infinite;
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -48; }
+}
+
+.node-dot {
+  fill: var(--sf);
+  stroke: var(--bl);
+  stroke-width: 3;
+}
+
+.node-main {
+  fill: var(--bl);
+}
+
+.node-accent {
+  fill: var(--co);
+  stroke: var(--co);
+}
+
+.node-txt {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--mu);
+  text-anchor: middle;
+}
+
+/* 8. 중앙 브릿지 (두 엔진을 이어주는 코어 축) */
+.core-bridge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--s4);
+  position: relative;
+  z-index: 2;
+}
+
+.bridge-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(180deg, transparent, var(--ln), transparent);
+}
+
+.bridge-orb {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--bl), var(--co));
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: var(--fs-body);
+  box-shadow: 0 8px 20px -4px color-mix(in srgb, var(--bl) 45%, transparent);
+  margin: var(--s1) 0;
+}
+
+.core-meta h3 {
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.core-meta p {
+  font-size: var(--fs-body);
+  color: var(--mu);
+}
+
+/* 9. 하단 CTA 버튼 (시원한 크기감과 화살표 인터랙션) */
+.btn-unete {
+  padding: var(--s2) var(--s5);
+  font-size: var(--fs-sub);
+  font-weight: 700;
+  box-shadow: 0 14px 32px -10px color-mix(in srgb, var(--bl) 45%, transparent);
+}
+
+@media(max-width: 820px) {
+  .dual-core-card {
+    grid-template-columns: 1fr;
+    padding: var(--s4) var(--s3);
+    gap: var(--s3);
+  }
+  .core-bridge {
+    flex-direction: row;
+    padding: var(--s1) 0;
+  }
+  .bridge-line {
+    height: 2px;
+    width: auto;
+    background: linear-gradient(90deg, transparent, var(--ln), transparent);
+  }
+  .bridge-orb {
+    margin: 0 var(--s2);
+  }
+}
+
+
+================================================================================
+FILE: css\token.css
+================================================================================
+
+:root {
+  /* main 4 colors */
+  --bg: #F8FAFC;
+  --ink: #0F172A;
+  --bl: #2563EB;
+  --co: #f97316;
+
+
+  --co-dark: #FF4D5E;
+
+  --mu: #475569;
+  --ln: #E2E8F0;
+  --so: #DBEAFE;
+  --sf: #fff;
+  
+  --ez: cubic-bezier(.2, .8, .2, 1);
+
+  /* fonts */
+  --font-head: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+  /* type scale: the only font sizes allowed on the site */
+  --fs-hero-impact: 5rem;
+  --fs-hero: 3rem;
+  --fs-title: 2rem;
+  --fs-sub: 1.25rem;
+  --fs-body: 1rem;
+  --fs-micro: .875rem;
+
+  /* 8pt spacing: --sN = N x 8px */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+  --s7: 56px;
+  --s8: 64px;
+  --s9: 72px;
+  --s11: 88px;
+  --s12: 96px;
+  --s14: 112px;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+
+  --header-h: 49px;
+}
+
+@media(prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1128;
+    --sf: #1E293B;
+    --ink: #F8FAFC;
+    --mu: #94A3B8;
+    --ln: #334155;
+    --bl: #60A5FA;
+    --so: #1E3A8A;
+    --oo: .2;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --oo: .2;
+  --bg: #0F1128;
+  --sf: #1E293B;
+  --ink: #F8FAFC;
+  --mu: #94A3B8;
+  --ln: #334155;
+  --bl: #60A5FA;
+  --so: #1E3A8A;
+  color-scheme: dark;
+}
+
+================================================================================
+FILE: imshi\donate.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Invítame un café y apoya las clases de coreano de Vamos Coreano. Pagos con Bitcoin a través de BTCPay.">
+  <title>Invítame un café | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">VAMOS COREANO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
+    <div class="container donate-page">
+      <header class="coffee-hero">
+        <svg class="coffee-art" viewBox="0 0 180 180" role="img" aria-labelledby="coffee-title">
+          <title id="coffee-title">Taza de café con vapor</title>
+          <ellipse cx="90" cy="158" rx="48" ry="8" fill="#fed7aa" opacity="0.85"/>
+          <path class="coffee-steam" d="M78 38c0-10 8-14 8-24" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path class="coffee-steam" d="M90 34c0-12 9-16 7-28" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path class="coffee-steam" d="M102 38c0-10 8-14 8-24" fill="none" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+          <path d="M48 72h84c4 0 8 4 8 8v44c0 22-20 40-50 40S40 146 40 124V80c0-4 4-8 8-8z" fill="#fff7ed" stroke="#b45309" stroke-width="4"/>
+          <path d="M52 84h76v8c0 18-16 28-38 28S52 110 52 92v-8z" fill="#b45309"/>
+          <path d="M140 86c18 4 28 18 22 34-6 14-22 20-36 18" fill="none" stroke="#b45309" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="128" cy="64" r="10" fill="#2563eb"/>
+          <path d="M123 64h10M128 59v10" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <h1 class="page-title">Invítame un café</h1>
+        <p class="highlight-text">El hangul se enseña mejor con cafeína.</p>
+        <p class="sub-text">Tú practicas pronunciación. Yo, a las 11 p.m., corrijo tareas con un café imaginario. Si la clase te sirvió, un cafecito recarga al profe — y no, Duolingo no invita la siguiente ronda.</p>
+      </header>
+
+      <section aria-labelledby="amount-title">
+        <h2 id="amount-title" class="visually-hidden">Elige un monto</h2>
+        <div class="amount-grid">
+          <button type="button" class="amount-card" data-amount="3">
+            <span class="amount-card-price">$3</span>
+            <span class="amount-card-label">Espresso</span>
+            <span class="amount-card-note">Un shot de ánimo</span>
+          </button>
+          <button type="button" class="amount-card" data-amount="5">
+            <span class="amount-card-price">$5</span>
+            <span class="amount-card-label">Latte</span>
+            <span class="amount-card-note">Nivel intermedio</span>
+          </button>
+          <button type="button" class="amount-card" data-amount="15">
+            <span class="amount-card-price">$15</span>
+            <span class="amount-card-label">Combo profe</span>
+            <span class="amount-card-note">Sin bostezos en clase</span>
+          </button>
+        </div>
+
+        <form class="custom-amount" id="custom-amount-form">
+          <label for="custom-amount">O elige un monto libre (USD)</label>
+          <input id="custom-amount" name="amount" type="number" min="1" step="0.01" inputmode="decimal" placeholder="Ej. 8">
+          <button type="submit" class="menu-button">Pagar monto libre</button>
+        </form>
+
+        <a class="cta-button btc-cta" id="btc-cta" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con Bitcoin
+        </a>
+      </section>
+
+      <section class="support-board" aria-labelledby="support-title">
+        <h2 id="support-title">Mensajes de quienes ya invitaron el café</h2>
+        <p>Los comentarios llegan en vivo desde la campaña de BTCPay Crowdfund.</p>
+        <iframe id="crowdfund-frame" title="Comentarios de la campaña BTCPay Crowdfund" hidden></iframe>
+        <p class="support-placeholder" id="support-placeholder">
+          Cuando conectes tu app Crowdfund (con “Enable comments”), los saludos de los donantes aparecerán aquí.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
+
+  <script>
+    const DONATE_CONFIG = {
+      btcpayServer: "",
+      crowdfundAppId: "",
+      currency: "USD"
+    };
+
+    const server = DONATE_CONFIG.btcpayServer.replace(/\/$/, "");
+    const appId = DONATE_CONFIG.crowdfundAppId;
+    const configured = Boolean(server && appId);
+    const crowdfundUrl = configured ? `${server}/apps/${appId}/crowdfund` : "";
+
+    function paymentUrl(amount) {
+      if (!configured) return "";
+      if (amount) {
+        return `${server}/apps/${appId}/crowdfund/form?amount=${encodeURIComponent(amount)}`;
+      }
+      return crowdfundUrl;
+    }
+
+    function openPayment(amount) {
+      const url = paymentUrl(amount);
+      if (!url) {
+        window.alert("Aún falta pegar la URL de tu servidor BTCPay y el ID de la app Crowdfund en donate.html.");
+        return;
+      }
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.querySelectorAll(".amount-card").forEach((card) => {
+      card.addEventListener("click", () => openPayment(card.dataset.amount));
+    });
+
+    document.getElementById("custom-amount-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const value = Number(document.getElementById("custom-amount").value);
+      if (!value || value <= 0) {
+        document.getElementById("custom-amount").focus();
+        return;
+      }
+      openPayment(value);
+    });
+
+    const btcCta = document.getElementById("btc-cta");
+    if (configured) {
+      btcCta.href = crowdfundUrl;
+      const frame = document.getElementById("crowdfund-frame");
+      frame.src = crowdfundUrl;
+      frame.hidden = false;
+      document.getElementById("support-placeholder").hidden = true;
+    } else {
+      btcCta.addEventListener("click", (event) => {
+        event.preventDefault();
+        openPayment();
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+================================================================================
+FILE: imshi\ejemplo-practico-snippet.js
+================================================================================
+
+/* Código retirado de index.html — pegar en class.html junto con el HTML de #chips y #ex y el CSS .chips/.chip/.ex */
+const EX = [ ["Presentarte", "안녕하세요. 저는 María예요. 저는 콜롬비아 사람이에요.", "Hola, me llamo María. Soy de Colombia."], ["Ubicar", "책상이 어디에 있어요? 침대 옆에 있어요.", "¿Dónde está el escritorio? Está al lado de la cama."], ["Pasado y presente", "저는 어제 한국어를 공부했어요. 그리고 지금은 영어를 공부하고 있어요.", "Ayer estudié coreano. Ahora estudio inglés."], ["Comprar", "이것은 얼마예요? 오천 원이에요. 사과 세 개 주세요.", "¿Cuánto cuesta esto? Son 5.000 wones. Tres manzanas, por favor."], ["Futuro", "마르셀로 씨는 내일 뭐 할 거예요? 한국에 가고 싶어요.", "¿Qué harás mañana, Marcelo? Quiero ir a Corea."] ];      const showEx = i => { $$(".chip").forEach((c, j) => c.setAttribute("aria-selected", j === i));
+      const [, k, e] = EX[i], x = $("#ex");
+      x.innerHTML = "";
+      const d = document.createElement("div");
+      d.className = "k kr";
+      k.split(" ").forEach((w, n) => {
+        const s = document.createElement("span");
+        s.style.setProperty("--i", n);
+        s.textContent = w;
+        d.append(s, " ");
+      });
+      const p = document.createElement("div");
+      p.className = "e";
+      p.textContent = e;
+      x.append(d, p);
+    };
+
+    EX.forEach(([t], i) => {
+      const c = document.createElement("button");
+      c.className = "chip";
+      c.role = "tab";
+      c.textContent = t;
+      c.onclick = () => showEx(i);
+      $("#chips").append(c);
+    });
+    showEx(0);
+
+
+================================================================================
+FILE: imshi\review.html
+================================================================================
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reseñas de estudiantes de Vamos Coreano.">
+  <title>Reseñas | Vamos Coreano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">VAMOS COREANO</a>
+      <nav class="site-nav" aria-label="Principal">
+        <ul class="nav-list">
+          <li><a href="about.html">Sobre mí</a></li>
+          <li><a href="class.html">Clases</a></li>
+          <li><a href="review.html" aria-current="page">Reseñas</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="main-content">
+    <div class="container">
+      <h1 class="page-title">Reseñas</h1>
+
+      <div class="hero-description">
+        <p class="highlight-text">Lo que mis estudiantes han logrado</p>
+        <p class="sub-text">Experiencias reales de aprendizaje con Vamos Coreano</p>
+      </div>
+
+      <section class="reviews-list" aria-label="Opiniones de estudiantes">
+        <article class="card review-card">
+          <span class="quote-icon" aria-hidden="true">“</span>
+          <blockquote>
+            <p class="focus-text">“Aprender coreano ha sido una experiencia muy especial gracias a Hyunho, es un profesor excepcional.”</p>
+            <div class="quote-text">
+              <p>Más allá de enseñar un idioma, tiene el don de transmitir confianza, motivación y ganas de seguir aprendiendo cada día. Su paciencia, dedicación y forma tan clara de explicar hacen que se aprenda de manera fácil.</p>
+              <p>Siempre brinda material de apoyo, refuerza cada clase dada y está dispuesto a ayudar con una actitud amable y cercana. Se nota el amor y el compromiso que pone en cada clase, me hizo sentir acompañada y valorada en todo momento.</p>
+              <p>Sin duda, es un profesor que deja huella y hace que aprender sea una experiencia bonita y significativa.</p>
+              <p>¡Totalmente recomendado para quienes quieran aprender coreano, Hyunho excelente maestro!</p>
+            </div>
+            <footer class="student-info">
+              <cite class="student-name">Mónica G.</cite>
+              <span class="student-context">Estudiante del curso “Despegue”</span>
+            </footer>
+          </blockquote>
+        </article>
+      </section>
+
+      <div class="action-area">
+        <a href="consultar.html" class="cta-button">¡Sé el próximo!</a>
+      </div>
+    </div>
+  </main>
+
+  <aside class="donate-band" aria-label="Invítame un café">
+    <div class="container donate-band-inner">
+      <p>Si la clase te dejó con energía, el profe funciona mejor con cafeína.</p>
+      <a class="donate-band-link" href="donate.html">Invítame un café</a>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>© 2026 Vamos Coreano</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
+</body>
+</html>
+
+
+================================================================================
+FILE: js\about.js
+================================================================================
+
+/* about.html: barra de progreso, revelado en cascada y foco de luz en tarjetas */
+(function () {
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var RM = window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+  /* barra de progreso de scroll */
+  var bar = document.getElementById("bar");
+  function tick() {
+    if (!bar) return;
+    var max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (max > 0 ? scrollY / max : 0) + ")";
+  }
+  addEventListener("scroll", tick, { passive: true });
+  addEventListener("resize", tick);
+  tick();
+
+  /* los h2 también se revelan (activa la línea naranja bajo el título) */
+  $$("section h2").forEach(function (h) { h.classList.add("rv"); });
+
+  /* revelado: al llegar al 20% del elemento aparece; --d escalona de arriba-izquierda a abajo-derecha */
+  var els = $$(".rv");
+  if (RM || !("IntersectionObserver" in window)) {
+    els.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.2 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* foco de luz que sigue al cursor sobre las tarjetas de valores */
+  var ticking = false, last = null;
+  addEventListener("pointermove", function (ev) {
+    last = ev;
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var c = last.target.closest && last.target.closest(".cd");
+      if (c) {
+        var r = c.getBoundingClientRect();
+        c.style.setProperty("--x", last.clientX - r.left + "px");
+        c.style.setProperty("--y", last.clientY - r.top + "px");
+      }
+      ticking = false;
+    });
+  }, { passive: true });
+})();
+
+
+================================================================================
+FILE: js\class.js
+================================================================================
+
+     const $ = (s, r = document) => r.querySelector(s),
+           $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
+
+    const PN = ["Todas", "Hangul y presentación", "Acciones y lugares", "Números y compras", "Los tres tiempos", "Expresarte y conectar"];
+    const S = [
+      ["인사하고 자기소개 하기 / 한글 1", "Saludar y presentarse · Hangul 1", "S이에요/예요", "Consonantes ㅇ ㄴ ㅁ ㄹ~Vocales ㅏ ㅓ ㅗ ㅜ ㅡ ㅣ~Saludar y presentar el nombre", "안녕하세요=Hola;저는 마리아예요=Soy María", 1],
+      ["국적 말하기 / 한글 2", "Hablar de la nacionalidad · Hangul 2", "S이에요/예요", "Consonantes ㄱ ㄷ ㅂ ㅅ ㅈ ㅎ~Vocales ㅐ ㅔ ㅚ ㅟ~Hablar de la nacionalidad", "저는 콜롬비아 사람이에요=Soy colombiano/a;저는 멕시코 사람이에요=Soy mexicano/a", 1],
+      ["직업 말하기 / 한글 3", "Hablar de las profesiones · Hangul 3", "S이에요/예요", "Consonantes ㅋ ㅌ ㅍ ㅊ~Vocales ㅑ ㅕ ㅛ ㅠ ㅒ ㅖ~Concepto de consonante final (Batchim)~Hablar de las profesiones", "저는 학생이에요=Soy estudiante;저는 가수예요=Soy cantante", 1],
+      ["사물 묻고 답하기 / 한글 4", "Preguntar y responder sobre objetos · Hangul 4", "S은/는 S이에요/예요", "Consonantes ㄲ ㄸ ㅃ ㅆ ㅉ~Vocales ㅘ ㅝ ㅙ ㅞ ㅢ~Preguntar por objetos", "이것은 뭐예요?=¿Qué es esto?;이것은 커피예요=Esto es café", 1],
+      ["부정 표현하기 1", "Expresar negación 1", "S은/는 S이/가 아니에요", "Repaso de Hangul~Ser (이에요/예요) vs. no ser (아니에요)", "저는 멕시코 사람이 아니에요=No soy mexicano/a;후안은 가수가 아니에요=Juan no cantante", 1],
+      ["일상생활 동작 말하기", "Hablar de acciones cotidianas", "V + -아요/-어요/-해요", "Repaso de Hangul~Conjugación básica del presente~Concepto de raíz verbal", "밥을 먹어요=Como;커피를 마셔요=Bebo café", 2],
+      ["문장 넓히기 (목적어)", "Ampliar oraciones: acción y objeto", "", "", "", 2],
+      ["부정 표현하기 2", "Expresar negación 2", "S은/는 S을/를 안 V", "Repaso de Hangul~Uso de la negación básica~Negación “안” con verbos~Concepto de partícula", "저는 밥을 안 먹어요=Yo no como;저는 커피를 안 마셔요=Yo no tomo café", 2],
+      ["위치와 존재 말하기", "Expresar ubicación y existencia", "S이/가 S에 있어요/없어요", "Ubicación y existencia~Partícula de lugar -에", "우산이 있어요=Hay un paraguas;우산이 방에 있어요=Hay un paraguas en la habitación", 2],
+      ["장소와 행동 말하기", "Hablar de acciones en un lugar", "-에/-에서", "Partículas de lugar: -에 vs. -에서~Sustantivos de ubicación", "어디에서 공부해요?=¿Dónde estudia?;집에서 한국어를 공부해요=Estudio coreano en casa", 2],
+      ["중간 점검 및 종합 연습", "Repaso intermedio y práctica general", "종합 복습 및 활용", "Repaso acumulativo de las sesiones 1–9~Juego de adivinar personajes~Hablar de objetos en una habitación~Escuchar y describir un espacio~Encontrar errores en oraciones", "컵이 책상 위에 있어요=La taza está sobre el escritorio", 2],
+      ["숫자 읽기 1 (한자어)", "Leer los números 1 (sino-coreanos)", "숫자 (한자어)", "Números sino-coreanos 1–10, 100, 1.000, 10.000~Fechas y días de la semana", "오월 구 일이에요=Es el 9 de mayo", 3],
+      ["숫자 읽기 2 (고유어)", "Leer los números 2 (nativos coreanos)", "숫자 (고유어) + 단위 명사 (개, 명, 살)", "Números nativos coreanos 1–100~Contadores (개, 명) y edad (살)", "딸기 한 개 얼마예요?=¿Cuánto cuesta una fresa?;사과 다섯 개는 오천 원이에요=Cinco manzanas cuestan 5.000 wones", 3],
+      ["시간 묻고 물건 사기", "Preguntar la hora y hacer compras", "숫자(고유어) 시 + 숫자(한자어) 분", "Hora nativa + minutos sino-coreanos~Preguntar y responder la hora~Práctica general de los números", "몇 시예요?=¿Qué hora es?;세 시 사십오 분이에요=Son las 3 y 45", 3],
+      ["과거 경험 말하기", "Hablar de experiencias pasadas", "V + -았/었/했어요", "Sufijo de tiempo pasado (-았/었/했-)", "어제 밥을 먹었어요=Ayer comí;금요일에 학교에 갔어요=El viernes fui a la escuela", 4],
+      ["현재 진행 상황 말하기", "Hablar de acciones en curso", "V + -고 있어요", "Describir acciones en curso (presente continuo)", "마리아는 지금 음악을 듣고 있어요=María está escuchando música ahora", 4],
+      ["미래 계획 말하기", "Hablar de planes futuros", "V + -(으)ㄹ 거예요", "Adverbios de tiempo futuro~Hablar de planes o agendas futuras", "내일 학교에 갈 거예요=Mañana iré a la escuela", 4],
+      ["시제 종합 연습 (과거/현재/미래)", "Práctica de tiempos verbales (pasado, presente, futuro)", "", "Práctica combinada de los 3 tiempos verbales~Uso de vocabulario de tiempo futuro", "아침에 밥을 먹었어요=Desayuné por la mañana", 4],
+      ["상태 및 감정 표현하기", "Expresar estados y emociones", "A + -아요/어요", "Uso de adjetivos básicos~Conjugación de adjetivos~Tener hambre, dolerse, estar cansado, etc.", "저는 배고파요=Tengo hambre;동생은 피곤해요=Mi hermano/a menor está cansado/a", 5],
+      ["이유 말하기", "Expresar causas y motivos", "A/V + -아서/-어서", "Causas y motivos~Conectar oraciones con causa y efecto", "저는 피곤해서 지금 자요=Me duermo ahora porque estoy cansado", 5],
+      ["희망사항 표현하기", "Expresar deseos", "V + -고 싶어요", "Deseos y planes con -고 싶어요~Hablar de lo que se quiere hacer", "저는 한국에 가고 싶어요=Quiero ir a Corea", 5],
+      ["요청하기", "Hacer peticiones e instrucciones", "V + -(으)세요", "Instrucciones y peticiones~Pedir favores o dar indicaciones", "여기에 앉으세요=Tome asiento aquí, por favor", 5],
+      ["제안하기", "Hacer sugerencias", "V + -(으)ㄹ래요?", "Simulación de situaciones: cafetería, estación~Toda la gramática aprendida", "내일 영화관에 갈래요?=¿Quieres ir al cine mañana?", 5],
+      ["문장 연결하기", "Conectar oraciones", "A/V + -지만 · A/V + -고", "Conjunción adversativa -지만 (pero)~Conjunción copulativa -고 (y, además)", "한국어는 어렵지만 재미있어요=El coreano es difícil, pero divertido", 5],
+      ["최종 발표 및 졸업식 하기", "Presentación final y graduación de Despegue", "종합 복습 및 활용", "Escritura final y sesión de preguntas~Feedback general y resumen~Entrega de certificados", "", 5]
+    ];
+    
+    const RK = '<svg class="rk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 2 5 6 5 10l-2 4H9l-2-4c0-4 2-8 5-10zM9 16l-3 4 4-1M15 16l3 4-4-1"/><circle cx="12" cy="10" r="1.6"/></svg>';
+    const its = $("#its");
+
+    if (its) {
+      S.forEach(([kr, es, g, c, x, ph], i) => {
+        const fin = i === S.length - 1;
+        const el = document.createElement("div");
+        el.className = "it" + (fin ? " fin" : "");
+        el.dataset.ph = ph;
+        
+        const li = a => a ? "<ul>" + a.split("~").map(t => `<li>${t}</li>`).join("") + "</ul>" : "";
+        
+        const ex = x ? x.split(";").map(p => {
+          const [a, b] = p.split("=");
+          return `<div class="xx">${a}<small>${b}</small></div>`;
+        }).join("") : "";
+        
+        el.innerHTML = `
+          <button class="rw" aria-expanded="false">
+            <span class="no">${fin ? RK : i + 1}</span>
+            <span><b>${es}</b><small class="kr">${kr}</small></span>
+            <span class="pl">
+              <svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M6 1v10M1 6h10"/>
+              </svg>
+            </span>
+          </button>
+          <div class="pn">
+            <div>
+              <div class="pi">
+                <div>
+                  ${g ? `<h4>Estructura gramatical</h4><span class="gm">${g}</span>` : ""}
+                  ${c ? `<h4>Contenido de la clase</h4>${li(c)}` : `<h4>Contenido</h4><p>Ampliar oraciones combinando acción y objeto.</p>`}
+                </div>
+                <div>
+                  ${ex ? `<h4>Ejemplos</h4>${ex}` : `<h4>${fin ? "Cierre" : "Ejemplos"}</h4><p>${fin ? "Tu graduación de Despegue." : "Se practican en clase."}</p>`}
+                </div>
+              </div>
+            </div>
+          </div>`;
+        
+        $(".rw", el).onclick = e => {
+          const o = el.classList.toggle("open");
+          e.currentTarget.setAttribute("aria-expanded", o);
+        };
+        its.append(el);
+      });
+
+      PN.forEach((n, i) => {
+        const b = document.createElement("button");
+        b.className = "fb";
+        b.textContent = n;
+        b.setAttribute("aria-pressed", i === 0);
+        b.onclick = () => {
+          $$(".fb").forEach(x => x.setAttribute("aria-pressed", x === b)); 
+          $$(".it").forEach(el => {
+            const h = i && +el.dataset.ph !== i;
+            el.classList.toggle("hd", h);
+            if (!h) {
+              el.classList.remove("ent");
+              requestAnimationFrame(() => {
+                if (!h) el.classList.add("ent");
+              });
+            }
+          });
+          // 필요한 경우 class.html의 스크롤 업데이트 함수 호출
+          if (typeof tick === 'function') tick(); 
+        };
+        $("#fl2").append(b);
+      });
+    }
+
+    const io_temario = new IntersectionObserver(es => es.forEach(e => { 
+      if (e.isIntersecting) { 
+        e.target.classList.add("vis"); 
+        io_temario.unobserve(e.target); 
+      } 
+    }), { threshold: .15, rootMargin: "0px 0px -6% 0px" });      
+    
+    $$(".it").forEach(el => typeof RM !== 'undefined' && RM ? el.classList.add("vis") : io_temario.observe(el));
+
+    // <script> 태그 내 최하단(scroll 이벤트 위쪽)에 추가
+  const revealTargets = $$(".rv");
+  const io_rv = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.classList.add("in");
+    io_rv.unobserve(e.target);
+  }
+  }), { threshold: .15 });
+  revealTargets.forEach(el => typeof RM !== 'undefined' && RM ? el.classList.add("in") : io_rv.observe(el));
+
+// (기존 코드: tl_temario 스크롤 이벤트 끝부분)
+    const tl_temario = $("#tl");
+    if(tl_temario) {
+      addEventListener("scroll", () => {
+        const vh = innerHeight;
+        const rr = $(".rail", tl_temario).getBoundingClientRect();
+        const ly = vh * 0.6; 
+        tl_temario.style.setProperty("--fh", Math.max(0, Math.min(rr.height, ly - rr.top)) + "px");  
+        $$(".it").forEach(el => {
+          if (el.offsetParent) el.classList.toggle("pass", el.getBoundingClientRect().top + 36 < ly);
+        });
+      }, { passive: true });
+    }
+
+    /* =====================================================================
+       👇 [여기에 추가 1] index.js에서 가져온 코스 카드 룰렛 회전 & 좌우 화살표 제어
+       ===================================================================== */
+    (() => {
+      const track = $("#peek-track");
+      if (!track) return;
+
+      const origCards = $$(".peek-card", track);
+      if (!origCards.length) return;
+
+      // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트)
+      for (let s = 0; s < 3; s++) {
+        origCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.classList.add("in"); // 복제된 카드는 투명하지 않게 즉시 표시
+          clone.setAttribute("aria-hidden", "true");
+          clone.inert = true;
+          track.append(clone);
+        });
+      }
+
+      const allCards = $$(".peek-card", track);
+      const setSize = origCards.length; // 원본 카드 개수 (4개면 4, 5개면 5로 자동 계산됨)
+
+      // 특정 인덱스의 카드를 화면 정중앙에 맞추는 scrollLeft 좌표 계산 함수
+      const getCenterScroll = (index) => {
+        const card = allCards[index];
+        return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+      };
+
+      // 초기 위치: 첫 번째 카드(DESPEGUE)를 정중앙에 세팅
+      track.classList.add("is-spinning");
+      track.scrollLeft = getCenterScroll(0);
+      requestAnimationFrame(() => track.classList.remove("is-spinning"));
+
+      // 2. 화면에 트랙이 보이면 1.5초 동안 2바퀴 돌아 DESPEGUE 정중앙에 멈추는 함수
+      let spun = false;
+      const spinRoulette = () => {
+        if (spun) return;
+        spun = true;
+        origCards.forEach(c => c.classList.add("in"));
+        
+        if (RM) {
+          track.scrollLeft = getCenterScroll(setSize);
+          return;
+        }
+
+        track.classList.add("is-spinning");
+
+        const startX = getCenterScroll(0);            // 출발: 0번 세트 DESPEGUE
+        const targetX = getCenterScroll(setSize * 2); // 도착: 정확히 2바퀴 뒤 DESPEGUE
+        const distance = targetX - startX;
+        const duration = 1500;                        // 1.5초 동안 시원하게 회전 후 감속
+        const t0 = performance.now();
+
+        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+
+        const step = (now) => {
+          const elapsed = now - t0;
+          const progress = Math.min(1, elapsed / duration);
+          track.scrollLeft = startX + distance * easeOutQuint(progress);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            // 정지 직후 가운데 세트로 좌표를 치환해 좌우 어느 쪽으로든 화살표 이동이 가능하게 만듦
+            track.scrollLeft = getCenterScroll(setSize);
+            track.classList.remove("is-spinning");
+          }
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      // 3. 스크롤을 내려 코스 트랙이 화면에 20% 보일 때 룰렛 스타트!
+      new IntersectionObserver(([entry], obs) => {
+        if (entry.isIntersecting) {
+          spinRoulette();
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 }).observe(track);
+
+      // 4. 우측 상단 좌/우 화살표 버튼(#peek-prev, #peek-next) 클릭 시 카드 1장씩 부드럽게 이동
+      const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
+      const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + 간격(24px)
+
+      if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
+      if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
+    })();
+
+    /* =====================================================================
+       👇 [여기에 추가 2] 마우스를 올렸을 때 카드(.peek-card)와 타임라인(.rw)이 은은하게 빛나는 효과
+       ===================================================================== */
+    addEventListener("pointermove", e => {
+      const c = e.target.closest && e.target.closest(".peek-card, .rw");
+      if (c) {
+        const r = c.getBoundingClientRect();
+        c.style.setProperty("--x", e.clientX - r.left + "px");
+        c.style.setProperty("--y", e.clientY - r.top + "px");
+      }
+    }, { passive: true });
+
+
+================================================================================
+FILE: js\index.js
+================================================================================
+
+document.addEventListener("DOMContentLoaded", () => {    
+    
+    const $ = (s, r = document) => r.querySelector(s),
+          $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
+    
+    /* headline letters */
+    (() => {
+      const h = $("#h1");
+      let i = 0;
+      const wrap = (n) => {
+        [...n.childNodes].forEach(c => {
+          if (c.nodeType === 3) {
+            const f = document.createDocumentFragment();
+            c.textContent.split(/(\s+)/).forEach(w => {
+              if (!w) return;
+              if (/^\s+$/.test(w)) {
+                f.append(" ");
+                return;
+              }
+              const s = document.createElement("span");
+              s.style.display = "inline-block";
+              s.setAttribute("aria-hidden", "true");
+              [...w].forEach(l => {
+                const x = document.createElement("span");
+                x.className = "ch";
+                x.style.setProperty("--i", i++);
+                x.textContent = l;
+                s.append(x);
+              });
+              f.append(s);
+            });
+            c.replaceWith(f);
+          } else {
+            wrap(c);
+          }
+        });
+      };
+      wrap(h);
+    })();
+
+    /* Lógica de Notificación Toast y Copia */
+    const toast = $("#copy-toast"), toastText = $("#toast-text");
+    let toastTimer = null;
+    
+    function showToast(m) {
+      if (!toast) return;
+      toastText.textContent = m;
+      toast.classList.add("show");
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2800);
+    }
+
+    const copyBtn = $("#copy-email");
+    if (copyBtn) {
+      copyBtn.onclick = async () => {
+        const email = "1219.hlee@gmail.com";
+        try {
+          await navigator.clipboard.writeText(email);
+          showToast("Correo copiado al portapapeles: " + email);
+        } catch (e) {
+          showToast("Dirección: " + email);
+        }
+      };
+    }
+
+    /* scroll: progress, rail */
+    const tl = $("#tl"), bar = $("#bar");
+
+    function tick() {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    }
+
+    addEventListener("scroll", tick, { passive: true });
+    addEventListener("resize", tick);
+    tick();
+
+    /* reveal + counters */
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      const n = e.target.matches("[data-n]") ? e.target : e.target.querySelector("[data-n]");
+      if (n && !n.done) {
+        n.done = 1;
+        const T = +n.dataset.n, t0 = performance.now(), f = t => {
+          const k = Math.min(1, (t - t0) / 1400);
+          n.textContent = Math.round(T * (1 - Math.pow(1 - k, 3)));
+          k < 1 && requestAnimationFrame(f);
+        };
+        RM ? n.textContent = T : requestAnimationFrame(f);
+      }
+      io.unobserve(e.target);
+    }), { threshold: .25 });
+
+    /* SOMOS 전용: 화면 중간(-25%)에 왔을 때만 차오름 */
+    const somosEl = $(".somos-title");
+    if (somosEl) {
+      new IntersectionObserver(([e], obs) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          obs.disconnect();
+        }
+      }, { rootMargin: "0px 0px -25% 0px" }).observe(somosEl);
+    }
+
+    $$("section h2").filter(h => !h.closest(".rv") && !h.classList.contains("somos-title")).forEach(h => h.classList.add("rv"));
+    $$(".rv,.ls").forEach(el => io.observe(el));
+
+    /* fondo, cinta, spotlight, imán */
+    (() => {
+      const b = $(".bg"), G = [..."ㅎㅏㄴㄱㅡㄹ한글가나다라마바사"];
+      if (!RM) {
+        for (let i = 0; i < 16; i++) {
+          const g = document.createElement("i");
+          g.className = "gl";
+          g.textContent = G[i % G.length];
+          g.style.cssText = `left:${(i * 37 + 8) % 96}%;--s:${1.6 + i % 4 * .9}rem;animation-duration:${26 + i * 3}s;animation-delay:-${i * 4}s`;
+          b.append(g);
+        }
+      }
+
+      // 최적화된 코드 (`requestAnimationFrame` 스로틀링 적용 ✨)
+let ticking = false;
+let latestEvent = null;
+
+addEventListener("pointermove", e => {
+  latestEvent = e; // 1. 최신 마우스 위치만 기억해둠
+  
+  if (!ticking) {
+    requestAnimationFrame(() => { // 2. 브라우저 렌더링 주기에 맞춤
+      if (!latestEvent) return;
+      const ev = latestEvent;
+      
+      const t = ev.target;
+      const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card");
+      if (c) {
+        const r = c.getBoundingClientRect(); // 3. 부하가 걸리지 않도록 주기에 맞춰 안전하게 실행
+        c.style.setProperty("--x", ev.clientX - r.left + "px");
+        c.style.setProperty("--y", ev.clientY - r.top + "px");
+      }
+      
+      const q = t.closest && t.closest(".b");
+      if (q && !RM) {
+        const r = q.getBoundingClientRect();
+        q.style.setProperty("--bx", (ev.clientX - r.left - r.width / 2) * .18 + "px");
+        q.style.setProperty("--by", (ev.clientY - r.top - r.height / 2) * .28 + "px");
+      }
+      
+      ticking = false; // 4. 다음 움직임을 받을 준비 완료
+    });
+    
+    ticking = true;
+  }
+}, { passive: true });
+      
+      $$(".b").forEach(q => q.addEventListener("pointerleave", () => {
+        q.style.setProperty("--bx", "0px");
+        q.style.setProperty("--by", "0px");
+      }));
+    })();
+
+/* 탁상달력 플립 타이머 (중복 제거 + 웹폰트 로드 및 리사이즈 완벽 대응) */
+(() => {
+  const wrap = document.querySelector(".calendar-flip");
+  const cards = document.querySelectorAll(".calendar-flip .flip-card");
+  if (!wrap || !cards.length) return;
+  
+  let current = 0;
+
+  // 현재 활성화된 카드의 실제 폭을 측정해 반영하는 함수
+  const updateWidth = () => {
+    wrap.style.width = cards[current].offsetWidth + "px";
+  };
+
+  // 1. 초기 폭 설정
+  updateWidth();
+
+  // 2. 웹폰트(Bricolage Grotesque) 로딩이 끝난 직후 정확한 폭으로 재계산
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateWidth);
+  }
+
+  // 3. 브라우저 창 크기를 조절할 때도 반응형 폰트 크기에 맞춰 폭 재계산
+  window.addEventListener("resize", updateWidth, { passive: true });
+
+  // 4. 2.2초마다 순차 플립 (단일 타이머)
+  setInterval(() => {
+    const prev = current;
+    current = (current + 1) % cards.length;
+    
+    cards[prev].classList.remove("active");
+    cards[prev].classList.add("exit");
+    
+    cards[current].classList.remove("exit");
+    cards[current].classList.add("active");
+
+    updateWidth();
+  }, 2200);
+})();
+/* Cursos: 화면 20% 도달 시 2바퀴(2초) 회전 후 DESPEGUE 정중앙 정지 */
+  (() => {
+    const track = $("#peek-track");
+    if (!track) return;
+
+    const origCards = $$(".peek-card", track);
+    if (!origCards.length) return;
+
+    // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트 = 16장)
+    // 구조: [세트0(앞 여유분)] - [세트1(시작점)] - [세트2] - [세트3(2바퀴 도착점: DESPEGUE)]
+    for (let s = 0; s < 3; s++) {
+      origCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
+        clone.setAttribute("aria-hidden", "true");
+        clone.inert = true;
+        track.append(clone);
+      });
+    }
+
+    const allCards = $$(".peek-card", track);
+    const setSize = origCards.length; // 4장
+
+    // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
+    const getCenterScroll = (index) => {
+      const card = allCards[index];
+      return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+    };
+
+    // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
+    track.classList.add("is-spinning");
+    track.scrollLeft = getCenterScroll(0);
+    requestAnimationFrame(() => track.classList.remove("is-spinning"));
+
+    // 2. 2초(2000ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
+    let spun = false;
+    const spinRoulette = () => {
+      if (spun) return;
+      spun = true;
+      origCards.forEach(c => c.classList.add("in"));
+      // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
+      if (RM) {
+        track.scrollLeft = getCenterScroll(setSize);
+        return;
+      }
+
+      track.classList.add("is-spinning");
+
+      const startX = getCenterScroll(0);          // 출발: 0번 (첫 세트 DESPEGUE)
+      const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
+      const distance = targetX - startX;
+      const duration = 1500; // 요청하신 2초(2000ms) 여유 있는 회전
+      const t0 = performance.now();
+
+      // Quintic Out 곡선: 초반엔 휙휙 돌고 끝에서 부드럽고 묵직하게 감속
+      const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+
+      const step = (now) => {
+        const elapsed = now - t0;
+        const progress = Math.min(1, elapsed / duration);
+        track.scrollLeft = startX + distance * easeOutQuint(progress);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          // 3. 정지 직후: 눈치채지 못하게 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환해
+          // 이후 사용자가 좌/우 어느 쪽으로든 화살표나 드래그를 할 수 있게 여유 공간 확보
+          track.scrollLeft = getCenterScroll(setSize);
+          track.classList.remove("is-spinning");
+        }
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
+    new IntersectionObserver(([entry], obs) => {
+      if (entry.isIntersecting) {
+        spinRoulette();
+        obs.disconnect(); // 최초 1회만 실행
+      }
+    }, { threshold: 0.2 }).observe(track);
+
+    // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 이동 연동
+    const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
+    const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + gap(24px)
+
+    if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
+    if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
+  })();
+
+  /* ÚNETE: 듀얼 코어 카드 3D 틸트(기울기) & 홀로그램 반사광(Glare) 제어 */
+  (() => {
+    const card = $("#unete-card");
+    if (!card || RM) return; // 모션 감소 환경에서는 고정
+
+    let rafId = null;
+
+    card.addEventListener("pointermove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // 카드 내 마우스 X 좌표
+      const y = e.clientY - rect.top;  // 카드 내 마우스 Y 좌표
+
+      // 중심점(0.5, 0.5) 기준 -1 ~ +1 비율 계산
+      const pctX = (x / rect.width) - 0.5;
+      const pctY = (y / rect.height) - 0.5;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          // 너무 과하지 않고 고급스러운 최대 ±5도 틸트
+          card.style.setProperty("--rx", `${(-pctY * 8).toFixed(2)}deg`);
+          card.style.setProperty("--ry", `${(pctX * 10).toFixed(2)}deg`);
+          // 홀로그램 반사광 위치 업데이트
+          card.style.setProperty("--gx", `${x}px`);
+          card.style.setProperty("--gy", `${y}px`);
+          rafId = null;
+        });
+      }
+    }, { passive: true });
+
+    // 마우스가 카드를 벗어나면 스르륵 원래 각도(0deg)로 복귀
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--rx", "0deg");
+      card.style.setProperty("--ry", "0deg");
+    });
+  })();
+
+});
+
+================================================================================
+FILE: js\nav.js
+================================================================================
+
+(function () {
+  const th = document.getElementById("th");
+  if (!th) return;
+  th.addEventListener("click", () => {
+    const d = document.documentElement;
+    const dark = d.dataset.theme ? d.dataset.theme === "dark" : matchMedia("(prefers-color-scheme:dark)").matches;
+    d.dataset.theme = dark ? "light" : "dark";
+  });
+})();
+
+(function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("site-nav");
+  if (!toggle || !nav) return;
+
+  const label = toggle.querySelector(".visually-hidden");
+
+  function setOpen(open) {
+    toggle.setAttribute("aria-expanded", String(open));
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
+    if (label) {
+      label.textContent = open ? "Cerrar menú" : "Abrir menú";
+    }
+  }
+
+  toggle.addEventListener("click", () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+})();

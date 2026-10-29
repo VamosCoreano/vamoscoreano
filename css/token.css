@@ -1,0 +1,75 @@
+:root {
+  /* main 4 colors */
+  --bg: #F8FAFC;
+  --ink: #0F172A;
+  --bl: #2563EB;
+  --co: #f97316;
+
+
+  --co-dark: #FF4D5E;
+
+  --mu: #475569;
+  --ln: #E2E8F0;
+  --so: #DBEAFE;
+  --sf: #fff;
+  
+  --ez: cubic-bezier(.2, .8, .2, 1);
+
+  /* fonts */
+  --font-head: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+  /* type scale: the only font sizes allowed on the site */
+  --fs-hero-impact: 5rem;
+  --fs-hero: 3rem;
+  --fs-title: 2rem;
+  --fs-sub: 1.25rem;
+  --fs-body: 1rem;
+  --fs-micro: .875rem;
+
+  /* 8pt spacing: --sN = N x 8px */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 40px;
+  --s6: 48px;
+  --s7: 56px;
+  --s8: 64px;
+  --s9: 72px;
+  --s11: 88px;
+  --s12: 96px;
+  --s14: 112px;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  color-scheme: light;
+
+  --header-h: 49px;
+}
+
+@media(prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1128;
+    --sf: #1E293B;
+    --ink: #F8FAFC;
+    --mu: #94A3B8;
+    --ln: #334155;
+    --bl: #60A5FA;
+    --so: #1E3A8A;
+    --oo: .2;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --oo: .2;
+  --bg: #0F1128;
+  --sf: #1E293B;
+  --ink: #F8FAFC;
+  --mu: #94A3B8;
+  --ln: #334155;
+  --bl: #60A5FA;
+  --so: #1E3A8A;
+  color-scheme: dark;
+}
