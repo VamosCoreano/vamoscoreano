@@ -6,7 +6,7 @@
   <title>VAMOS COREANO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,16 +14,16 @@
 <body>
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
-    <i class="orb" style="--c:#2540E8;width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:#FFD35C;width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb" style="--c:var(--bl);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--co-dark);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
   
   <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html">Nosotros</a>
         <a href="class.html">Cursos</a>
         <a href="resource.html">Recursos</a>
         <a href="contact.html">Contacto</a>
@@ -43,9 +43,16 @@
       <div class="w">
         <h1 id="h1" aria-label="Coreano desde cero. Habla con confianza.">
         Coreano desde cero.<br>
-        <em>Habla con confianza.</em>
         </h1>
-        <p class="lead">Habla desde la primera clase con un profesor nativo que te enseña coreano en tu propio idioma.</p>
+        <span class="index-hero">
+        <span class="calendar-flip" aria-hidden="true">
+          <span class="flip-card active">Habla</span>
+          <span class="flip-card">Escucha</span>
+          <span class="flip-card">Lee</span>
+          <span class="flip-card">Escribe</span>
+        </span>
+        <em class="hero-suffix">con confianza.</em>
+      </span>
       </div>
     </section>
 
@@ -70,35 +77,37 @@
       </div>
     </div>
 
-    <!-- [index.html/Sección 2] Identidad (Manifiesto) -->
-    <section id="identidad" class="identidad">
-      <div class="w identidad-box">
-        <h2 class="somos-title">SOMOS</h2>
-        <p class="identidad-lead rv" style="--d:1">
-          Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
-        </p>
-        <p class="identidad-sub rv" style="--d:2">
-          Diseñados a la medida para hispanohablantes.
-        </p>
-      </div>
-    </section>
+<!-- [index.html/Sección 2] Identidad (Manifiesto) -->
+<section id="identidad" class="identidad">
+  <div class="w identidad-box">
+    <h2 class="somos-title" data-text="SOMOS">SOMOS</h2>
+    <p class="identidad-lead rv" style="--d:1">
+      Una plataforma que ofrece contenidos educativos de coreano y una comunidad.
+    </p>
+    <p class="identidad-sub rv" style="--d:2">
+      Diseñados a la medida para hispanohablantes.
+    </p>
+  </div>
+</section>
 
     <!-- [index.html/Sección 3] Sobre Mí (Resumen de Autoridad) -->
-    <section id="sobre-mi" class="section-authority">
+    <section id="Nosotros" class="section-authority">
       <div class="w authority-container">
         
-        <div class="authority-content rv">
+        <div class="authority-content">
           <h2 class="authority-title rv">TU GUÍA</h2>
-          <p class="authority-desc">
-            Un tutor nativo que domina tu idioma y tu forma de pensar.
-          </p>
 
-          <div class="proof-list">
+          <div class="authority-body rv">
+            <p class="authority-desc">
+              Un tutor nativo que domina tu idioma.
+            </p>
+
+            <div class="proof-list">
             <div class="proof-item rv" style="--d:1">
               <div class="proof-num">01</div>
               <div>
-                <strong>Especialista en Literatura Coreana</strong>
-                <span>Enseñanza profunda basada en la estructura real del idioma.</span>
+                <strong>Formación en Literatura Coreana</strong>
+                <span>Explicación profunda basada en la estructura real del idioma.</span>
               </div>
             </div>
 
@@ -106,22 +115,22 @@
               <div class="proof-num">02</div>
               <div>
                 <strong>Instructor Oficial Certificado</strong>
-                <span>Metodología pedagógica respaldada y comprobada.</span>
+                <span>Enseñanza estructurada bajo estándares oficiales.</span>
               </div>
             </div>
 
             <div class="proof-item rv" style="--d:3">
               <div class="proof-num">03</div>
-              <div>
+                <div>
                 <strong>Fluidez Absoluta en Español</strong>
-                <span>Explicaciones lógicas y precisas, 100% sin el filtro del inglés.</span>
-              </div>
+                <span>Comunicación directa y precisa en tu propio idioma.</span>
+                </div>
             </div>
           </div>
 
-          <div class="authority-cta">
+          <div class="authority-cta rv" style="--d:3">
             <a href="about.html" class="b p">
-              <span>Conoce la historia completa</span>
+              <span>Conócenos</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6"/>
               </svg>
@@ -132,10 +141,10 @@
         <div class="authority-visual rv" style="--d:2">
           <div class="tutor-card-tilt" data-tilt>
             <div class="tutor-card-inner">
-              <img src="images/profile.jpg" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
+              <img src="img/profile-main.png" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
               <div class="tutor-badge">
-                <span class="badge-dot"></span>
-                <span>Tutor Oficial · Literatura Coreana</span>
+                <strong>Hyunho Lee</strong>
+                <span>Tutor principal · Vamos Coreano</span>
               </div>
             </div>
           </div>

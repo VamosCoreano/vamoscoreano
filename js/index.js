@@ -184,4 +184,61 @@ addEventListener("pointermove", e => {
         ], { duration: 1100 + Math.random() * 500, easing: "cubic-bezier(.2,.8,.3,1)" }).onfinish = () => s.remove();
       }
     };
+    
+    /* 탁상달력 플립 타이머 (2.2초마다 촤르륵) */
+(() => {
+  const cards = document.querySelectorAll(".calendar-flip .flip-card");
+  if (!cards.length) return;
+  
+  let current = 0;
+  setInterval(() => {
+    const prev = current;
+    current = (current + 1) % cards.length;
+    
+    cards[prev].classList.remove("active");
+    cards[prev].classList.add("exit");
+    
+    cards[current].classList.remove("exit");
+    cards[current].classList.add("active");
+  }, 2200);
+})();
+
+/* 탁상달력 플립 타이머 (중복 제거 + 웹폰트 로드 및 리사이즈 완벽 대응) */
+(() => {
+  const wrap = document.querySelector(".calendar-flip");
+  const cards = document.querySelectorAll(".calendar-flip .flip-card");
+  if (!wrap || !cards.length) return;
+  
+  let current = 0;
+
+  // 현재 활성화된 카드의 실제 폭을 측정해 반영하는 함수
+  const updateWidth = () => {
+    wrap.style.width = cards[current].offsetWidth + "px";
+  };
+
+  // 1. 초기 폭 설정
+  updateWidth();
+
+  // 2. 웹폰트(Bricolage Grotesque) 로딩이 끝난 직후 정확한 폭으로 재계산
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateWidth);
+  }
+
+  // 3. 브라우저 창 크기를 조절할 때도 반응형 폰트 크기에 맞춰 폭 재계산
+  window.addEventListener("resize", updateWidth, { passive: true });
+
+  // 4. 2.2초마다 순차 플립 (단일 타이머)
+  setInterval(() => {
+    const prev = current;
+    current = (current + 1) % cards.length;
+    
+    cards[prev].classList.remove("active");
+    cards[prev].classList.add("exit");
+    
+    cards[current].classList.remove("exit");
+    cards[current].classList.add("active");
+
+    updateWidth();
+  }, 2200);
+})();
 });

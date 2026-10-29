@@ -5,6 +5,9 @@
   --bl: #2563EB;
   --co: #f97316;
 
+
+  --co-dark: #FF4D5E;
+
   --mu: #475569;
   --ln: #E2E8F0;
   --so: #DBEAFE;
@@ -17,7 +20,7 @@
   --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
 
   /* type scale: the only font sizes allowed on the site */
-  --fs-hero-impact: 5.5rem;
+  --fs-hero-impact: 5rem;
   --fs-hero: 3rem;
   --fs-title: 2rem;
   --fs-sub: 1.25rem;
@@ -41,6 +44,8 @@
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
   color-scheme: light;
+
+  --header-h: 49px;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -143,6 +148,74 @@ h3 {
 }
 
 p { max-width: 62ch; color: var(--mu); }
+
+.index-hero {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.28em;
+  color: var(--bl);
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.index-hero em {
+  font-style: normal;
+  white-space: nowrap; 
+  flex-shrink: 0;     
+}
+
+@media (max-width: 640px) {
+  .index-hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+  }
+}
+
+/* 3D 달력 플립 컨테이너: 고정 폭(min-width) 제거 */
+.calendar-flip {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  perspective: 800px;
+  height: 1.15em;
+  vertical-align: baseline;
+  transition: width 0.45s var(--ez);
+}
+
+/* 달력 낱장 카드: 비활성 카드는 absolute로 빼서 너비 계산에서 제외 + 그라데이션 제거 */
+.flip-card {
+  grid-area: 1 / 1;
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+  color: var(--bl);
+  transform-origin: 50% 100%;
+  backface-visibility: hidden;
+  opacity: 0;
+  transform: rotateX(90deg) translateY(12px);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* 현재 보여지는 단어: relative로 실제 단어 폭만큼만 자리 차지 */
+.flip-card.active {
+  position: relative;
+  opacity: 1;
+  transform: rotateX(0deg) translateY(0);
+  pointer-events: auto;
+}
+
+/* 다음 장으로 넘어가면서 아래로 접히는 단어 */
+.flip-card.exit {
+  opacity: 0;
+  transform: rotateX(-90deg) translateY(-12px);
+  transition: transform 0.5s var(--ez), opacity 0.3s ease;
+}
 
 #bar {
   position: fixed;
@@ -247,7 +320,7 @@ nav a.nav-cta-pill:hover {
 /* hero */
 /* one action, one screen: el hero ocupa todo el alto visible bajo el header (64px + 1px de borde) */
 .hero {
-  min-height: calc(100svh - 49px);
+  min-height: calc(100svh - var(--header-h));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1156,7 +1229,7 @@ footer {
 }
 
     .class-hero {
-      min-height: calc(100svh - 65px);
+      min-height: calc(100svh - var(--header-h));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1244,8 +1317,13 @@ footer {
 /* ==========================================================================
    Sección 2: Identidad (Manifiesto - SOMOS 잉크 차오르는 효과 복원)
    ========================================================================== */
+
 .identidad {
-  padding: var(--s14) 0;
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s11) 0; /* 화면이 매우 작은 기기를 대비한 최소 상하 여백 */
 }
 
 .identidad-box {
@@ -1255,36 +1333,45 @@ footer {
   align-items: center;
 }
 
+/* ==========================================================================
+   Sección 2: Identidad (애플식 듀얼 레이어 Clip-path Inset)
+   ========================================================================== */
 .somos-title {
+  position: relative;
+  display: inline-block;
   font-size: clamp(4rem, 13vw, 9.5rem);
   font-weight: 800;
   max-width: none;
   line-height: 0.96;
   letter-spacing: -0.045em;
   margin-bottom: var(--s4);
-  /* 잉크가 차오르는 그라데이션 텍스트 마스크 */
-  background: linear-gradient(
-    90deg,
-    var(--bl) 0%,
-    var(--co) 50%,
-    color-mix(in srgb, var(--ink) 14%, transparent) 50%
-  );
-  background-size: 200% 100%;
-  background-position: 100% 0;
+  padding: 0 0.08em;
+  color: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.somos-title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: 0 0.08em;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--bl) 0%, var(--co) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  transition: background-position 1.4s var(--ez), transform .9s var(--ez);
+  -webkit-clip-path: inset(-0.08em 100% -0.08em 0);
+  clip-path: inset(-0.08em 100% -0.08em 0);
+  transition: clip-path 1.4s var(--ez), -webkit-clip-path 1.4s var(--ez);
+  will-change: clip-path;
 }
 
+.somos-title.in::before {
+  -webkit-clip-path: inset(-0.08em 0% -0.08em 0);
+  clip-path: inset(-0.08em 0% -0.08em 0);
+}
 .somos-title::after {
   margin: var(--s2) auto 0;
-}
-
-/* 화면 중앙(-25%) 도달 시(.in) 왼쪽에서 오른쪽으로 잉크가 차오름 */
-.somos-title.in {
-  background-position: 0% 0;
 }
 
 .identidad-lead {
@@ -1313,16 +1400,25 @@ footer {
 .authority-container {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
-  gap: var(--s7);
-  align-items: center;
+  gap: 0 var(--s7);
+  align-items: stretch;
 }
 
+.authority-content {
+  display: contents; /* 자식 요소(제목, 본문묶음, 버튼)가 그리드 행에 직접 참여하도록 함 */
+}
+.authority-title,
+.authority-body,
+.authority-cta {
+  grid-column: 1; /* 모두 좌측(1열)에 배치 */
+}
 .authority-title {
   font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
   max-width: none;
   line-height: 1;
   letter-spacing: -0.03em;
   margin-bottom: var(--s2);
+  grid-column: 1
 }
 
 .authority-desc {
@@ -1331,13 +1427,17 @@ footer {
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s2);
+}
+
+.authority-cta {
+  margin-top: var(--s4); /* ★ 원래 proof-list에 있던 하단 여백(32px)을 버튼 위쪽으로 이동 */
 }
 
 .proof-list {
   display: grid;
   gap: var(--s2);
-  margin-bottom: var(--s4);
+  margin-bottom: 0;
 }
 
 .proof-item {
@@ -1394,17 +1494,26 @@ footer {
   color: var(--mu);
 }
 
+/*tutor*/
+.authority-visual {
+  grid-column: 2; /* 우측 컬럼(2열) */
+  grid-row: 2;    /* ★ 핵심: 정확히 2행(.authority-body)과 시작·끝 높이를 공유! */
+}
+
 .tutor-card-tilt {
   perspective: 1000px;
+  height: 100%;
 }
 
 .tutor-card-inner {
   position: relative;
+  height: 100%;
   border-radius: 32px;
   overflow: hidden;
   background: var(--sf);
   border: 1px solid var(--ln);
-  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.16);
   transition: transform .4s var(--ez), border-color .35s;
 }
@@ -1416,36 +1525,39 @@ footer {
 
 .tutor-img {
   width: 100%;
-  height: 100%;
+  flex: 1 1 0;
+  height: 0;
+  min-height: 0;
   object-fit: cover;
   display: block;
 }
 
 .tutor-badge {
-  position: absolute;
-  left: var(--s3);
-  right: var(--s3);
-  bottom: var(--s3);
-  background: color-mix(in srgb, var(--sf) 88%, transparent);
-  backdrop-filter: blur(12px);
+  background: transparent;
   border: 1px solid var(--ln);
-  border-radius: 99px;
-  padding: var(--s1) var(--s2);
-  display: inline-flex;
-  align-items: center;
+  border-top: 1px solid transparent;
+  padding: var(--s2) var(--s3);
   gap: var(--s1);
   font-size: var(--fs-micro);
   font-weight: 600;
   color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
 }
 
-.badge-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--co);
-  flex: none;
-  animation: pu 1.8s infinite;
+.tutor-badge strong {
+  font-family: var(--font-head);
+  font-size: var(--fs-sub);
+  color: var(--ink);
+  line-height: 1.2;
+}
+.tutor-badge span{
+  font-family: var(--font-body);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--mu);
 }
 
 @media(max-width: 860px) {
