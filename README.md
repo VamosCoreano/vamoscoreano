@@ -105,7 +105,7 @@ Es el lugar donde el visitante aterriza por primera vez. No es una página para 
 [Sección 6] ÚNETE (Final CTA): Como es el final de la página, debe tener otro impacto visual brutal 
    [IMPACT] ÚNETE
    [TITLE] No estudies coreano. Vívelo.
-   [SUBTITLE] Entrenamiento diario, corrección en vivo y recursos exclusivos. Habla con fluidez real.
+   [SUBTITLE] Entrena cada día, recibe corrección al instante y habla con total confianza.
    [LAST-CTA]
 [Footer]
 

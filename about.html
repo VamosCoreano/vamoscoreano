@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Conoce a Vamos Coreano: Especialidad en Literatura Coreana, Instructor Oficial Certificado y Fluidez Absoluta en Español.">
-  <title>N | Vamos Coreano</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Conoce a Vamos Coreano: un tutor de Literatura Coreana y un equipo diseñado para hispanohablantes.">
+  <title>Nosotros | VAMOS COREANO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/about.css">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 <body>
   <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:var(--bl);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--co-dark);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+  </div>
 
   <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html" class="on" aria-current="page">Sobre mí</a>
+        <a href="about.html" class="on" aria-current="page">Nosotros</a>
         <a href="class.html">Cursos</a>
         <a href="resource.html">Recursos</a>
         <a href="contact.html">Contacto</a>
@@ -36,96 +43,155 @@
   </header>
 
   <main id="contenido">
-    <!-- [Sección 1] El Impacto de Hechos en página 1: 좌측 거대 타이포그래피(3대 팩트) + 우측 3D Tilt 프로필 사진 -->
-    <section>
+
+    <!-- [Sección 1] TU GUÍA: 3 hechos gigantes (aparecen en cascada desde arriba-izquierda) + foto con 3D Tilt -->
+    <section class="about-hero">
       <div class="w ab">
         <div>
-          <div class="tag"><i></i>Sobre mí</div>
+          <div class="tag rv"><i></i>TU GUÍA</div>
           <h1>
-            Especialidad en Literatura Coreana.<br>
-            <em>Instructor Oficial Certificado.</em><br>
-            Fluidez Absoluta en Español.
+            <span class="fact rv" style="--d:1">Especialidad en Literatura Coreana.</span>
+            <span class="fact rv" style="--d:2"><em>Instructor Oficial Certificado.</em></span>
+            <span class="fact rv" style="--d:3">Fluidez Absoluta en Español.</span>
           </h1>
-          <p class="big">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
+          <p class="big rv" style="--d:4">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
         </div>
 
-        <div class="ph" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.22">
-          <div class="arch">
-            <img src="image/profile-sample.png" alt="Retrato del profesor Hyunho Lee">
+        <div class="rv" style="--d:3">
+          <div class="ph" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.22">
+            <div class="arch">
+              <img src="img/profile-main.png" alt="Retrato del profesor Hyunho Lee">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [Sección 2] La Historia Detallada: 스크롤 후 작아진 폰트(--fs-title, --fs-sub, --fs-body)와 상세 스토리텔링 -->
-    <section id="historia">
+    <!-- [Sección 2] La Historia Detallada: saludo, historia, el enemigo, misión y valores -->
+    <section id="historia" class="story">
       <div class="w ab">
         <div>
-          <h2>¿Por qué nosotros?</h2>
-          <p class="big">No somos otra simple plataforma de cursos de coreano.</p>
-          <div class="q">
+          <h2>¿Por qué existe Vamos Coreano?</h2>
+          <p class="big rv">Hola, soy Hyunho Lee.</p>
+
+          <span class="kicker rv">La historia</span>
+          <p class="rv">Estudié Literatura Coreana y hoy soy instructor oficial certificado. Pero lo que me llevó a crear este proyecto fue ver, una y otra vez, cómo los hispanohablantes aprendían coreano por el camino más difícil.</p>
+          <p class="rv">Casi todo el material disponible pasa por el inglés, y se nota: explicaciones traducidas dos veces, ejemplos poco naturales y un aprendizaje que nunca termina de conectar con tu forma de pensar. Por eso diseñé un método directo, del español al coreano, pensado para la mente hispanohablante.</p>
+
+          <span class="kicker rv">El enemigo</span>
+          <ul class="enemy rv">
+            <li><span><strong>Materiales traducidos del inglés.</strong> Textos con sabor a traducción automática que confunden más de lo que explican.</span></li>
+            <li><span><strong>La romanización.</strong> Letras latinas que arruinan tu pronunciación desde el primer día.</span></li>
+            <li><span><strong>Memorizar sin entender.</strong> Reglas sueltas, sin principio ni contexto, que se olvidan en una semana.</span></li>
+          </ul>
+
+          <span class="kicker rv">La misión</span>
+          <div class="q rv">
             <p>Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del inglés.</p>
           </div>
-          <p>Un tutor optimizado exclusivamente para hispanohablantes, que combina su especialidad en Literatura Coreana, certificación oficial y una comprensión absoluta del mundo hispano, diseña y lidera este camino.</p>
         </div>
 
-        <div class="cards">
-          <div class="cd">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 5h16v11H9l-5 4z"/>
-              <path d="M8 9h8M8 12h5"/>
-            </svg>
-            <div>
-              <h3>Explicaciones en tu idioma</h3>
-              <p>Dejamos atrás los materiales mal traducidos a través del inglés y la dependencia de la romanización que arruina la pronunciación. Explicamos cada concepto desde tu propia lengua de la forma más lógica y clara.</p>
+        <div>
+          <span class="kicker rv" style="margin-top:0">Nuestros valores</span>
+          <div class="cards">
+            <div class="cd rv" style="--d:1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="9" r="5.5"/>
+                <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
+              </svg>
+              <div>
+                <h3>Enseñanza desde la raíz</h3>
+                <p>Sin pasar por el inglés. Conectamos la raíz y los principios del coreano directamente desde la mirada de un hispanohablante.</p>
+              </div>
             </div>
-          </div>
 
-          <div class="cd">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="9" r="5.5"/>
-              <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
-            </svg>
-            <div>
-              <h3>Enseñanza desde la raíz</h3>
-              <p>Contra la educación aburrida que obliga a memorizar sin explicar los principios ni el contexto, enseñamos el coreano desde sus raíces más profundas con estándares académicos internacionales.</p>
+            <div class="cd rv" style="--d:2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 5h16v11H9l-5 4z"/>
+                <path d="M8 9h8M8 12h5"/>
+              </svg>
+              <div>
+                <h3>Explicaciones en tu idioma</h3>
+                <p>Cada concepto, explicado en español con lógica y claridad. Aprendes a leer y pronunciar en hangul desde el primer día, sin muletas.</p>
+              </div>
             </div>
-          </div>
 
-          <div class="cd">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-            <div>
-              <h3>Método diseñado para ti</h3>
-              <p>Nuestro currículo está creado específicamente para la mente hispanohablante, conectando las similitudes y resolviendo las diferencias entre ambos idiomas de persona a persona.</p>
+            <div class="cd rv" style="--d:3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              <div>
+                <h3>Método diseñado para ti</h3>
+                <p>Un currículo creado para la mente hispanohablante: aprovecha las similitudes entre ambos idiomas y resuelve las diferencias paso a paso.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [Sección 3] CTA Final: 행동 동사로 시작하는 버튼 및 사이트맵 내 정규 페이지 연결 -->
-    <section class="ct">
+    <!-- [Sección 3] El compañero: Julio Marquez, cofundador -->
+    <section id="equipo" class="team">
+      <div class="w team-grid">
+        <div class="rv">
+          <div class="julio-photo">
+            <img src="img/profile-julio-main.png" alt="Julio Marquez, cofundador y director técnico de Vamos Coreano" onerror="this.remove()">
+          </div>
+        </div>
+
+        <div>
+          <div class="tag rv"><i></i>EL COMPAÑERO</div>
+          <h2>Julio Márquez</h2>
+          <p class="role rv">Cofundador y Director Técnico</p>
+
+          <p class="rv">El mejor contenido educativo funciona sobre un sistema impecable. Julio Márquez es cofundador y director técnico de Vamos Coreano: diseña y lidera toda la arquitectura de la plataforma web y de la comunidad para que te sumerjas en el coreano sin una sola décima de segundo de duda.</p>
+          <p class="rv">Audio, web, servidores, diseño… Julio es nuestro jugador multifunción.</p>
+
+          <ul class="skills rv" aria-label="Áreas de trabajo de Julio">
+            <li>Audio</li>
+            <li>Web</li>
+            <li>Servidores</li>
+            <li>Diseño</li>
+            <li>Y mucho más!</li>
+          </ul>
+
+          <div class="q rv">
+            <p>Nunca soy solo yo. SOMOS NOSOTROS.</p>
+          </div>
+
+          <div class="rv"><a href="contact.html" class="b">Contacta a Julio</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 4] CTA final: verbo imperativo (tú) + destino principal class.html -->
+    <section class="ct about-cta">
       <div class="w">
-        <h2>Empieza tu camino en el coreano</h2>
-        <p>Aprende coreano desde tu idioma, con claridad extrema y sin barreras.</p>
+        <h2>Abre tu camino junto a un equipo así</h2>
+        <p>¿A que da confianza?</p>
         <div class="course-all">
-          <a href="class.html" class="b p">Descubre el curso</a>
-          <a href="contact.html" class="b">Habla con nosotros</a>
+          <a href="class.html" class="b p">
+            <span>Descubre el curso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Vamos Coreano. Todos los derechos reservados.<br>
-    Diseñado para el mundo hispanohablante.
+    <div class="w">
+      <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+        Diseñado para el mundo hispanohablante.</p>
+    </div>
   </footer>
 
-  <!-- Vanilla-tilt.js (README에 명시된 프로필 3D Tilt + Glare 라이브러리) -->
+  <!-- Vanilla-tilt.js: 3D Tilt + Glare del retrato -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/about.js"></script>
 </body>
 </html>
