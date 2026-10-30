@@ -13,12 +13,20 @@
     }
   }
 
-  enforceMobileLightMode();
-  if (mobileMQ.addEventListener) {
-    mobileMQ.addEventListener("change", enforceMobileLightMode);
-  } else if (mobileMQ.addListener) {
-    mobileMQ.addListener(enforceMobileLightMode);
+// 1. 함수 내부에 join-page 예외 조건 추가
+function enforceMobileLightMode() {
+  if (mobileMQ.matches && !document.body.classList.contains('join-page')) {
+    d.dataset.theme = "light";
   }
+}
+
+// 2. 실행 및 이벤트 리스너 바인딩 (원래대로 유지)
+enforceMobileLightMode();
+if (mobileMQ.addEventListener) {
+  mobileMQ.addEventListener("change", enforceMobileLightMode);
+} else if (mobileMQ.addListener) {
+  mobileMQ.addListener(enforceMobileLightMode);
+}
 
   // 데스크톱 다크모드 토글 버튼 (#th)
   if (th) {

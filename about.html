@@ -45,26 +45,56 @@
 
   <main id="contenido">
 
-    <!-- [Sección 1] TU GUÍA: 3 hechos gigantes (aparecen en cascada desde arriba-izquierda) + foto con 3D Tilt -->
+<!-- [Sección 1] Hero: 시안 1 (아이브로우 캡션 + 한글 플립 H1 + 서브타이틀 + 01·02·03 슬라이드 스펙) -->
     <section class="about-hero">
       <div class="w ab">
-        <div>
-          <div class="tag rv"><i></i>TU GUÍA</div>
-          <h1>
-            <span class="fact rv" style="--d:1">Especialidad en Literatura Coreana.</span>
-            <span class="fact rv" style="--d:2"><em>Instructor Oficial Certificado.</em></span>
-            <span class="fact rv" style="--d:3">Fluidez Absoluta en Español.</span>
+        
+        <!-- [좌측 컬럼] 인물 정체성 선언 + 3대 핵심 권위 -->
+        <div class="about-hero-copy">
+          
+          <!-- 1. 상단 파란색 캡션 (알약 배경 없이 단단하고 또렷한 대문자 타이포그래피) -->
+          <span class="hero-kicker">FUNDADOR &amp; TUTOR OFICIAL</span>
+
+          <!-- 2. 메인 타이틀: 평소엔 'Hyunho Lee.' -> 마우스 호버 시 '이현호.'로 3D 상하 플립 -->
+          <h1 class="hero-name" aria-label="Hyunho Lee (이현호)">
+            <span class="name-flip" tabindex="0">
+              <!-- 앞면(기본): 스페인어 표기 -->
+              <span class="name-face name-es">Hyunho Lee</span>
+              <!-- 뒷면(호버 시 등장): 한국어 표기 (.kr 클래스로 Pretendard 폰트 자동 적용) -->
+              <span class="name-face name-kr kr" aria-hidden="true">이현호</span>
+            </span>
           </h1>
-          <p class="big rv" style="--d:4">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
+
+          <!-- 3. 서브 타이틀: 이현호 강사가 누구인지 한 문장으로 정의 -->
+          <p class="hero-subtitle">Tu guía directo al coreano real.</p>
+
+          <!-- 4. 하단 01·02·03 스펙 리스트: 페이지 로드 시 왼쪽에서 1 -> 2 -> 3 순서로 착착착 날아와 정렬 -->
+          <ul class="hero-spec-list" aria-label="Credenciales principales">
+            <li class="spec-item" style="--step: 1">
+              <span class="spec-num">01</span>
+              <span class="spec-text">Especialista en Literatura Coreana</span>
+            </li>
+            <li class="spec-item" style="--step: 2">
+              <span class="spec-num">02</span>
+              <span class="spec-text">Instructor con Certificado Oficial</span>
+            </li>
+            <li class="spec-item" style="--step: 3">
+              <span class="spec-num">03</span>
+              <span class="spec-text">Fluidez en Español</span>
+            </li>
+          </ul>
+
         </div>
 
+        <!-- [우측 컬럼] 이현호 강사님 아치형 프로필 사진 + 3D Tilt 효과 (기존 그대로 유지) -->
         <div class="rv" style="--d:3">
           <div class="ph" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.22">
             <div class="arch">
-              <img src="img/profile-main.png" alt="Retrato del profesor Hyunho Lee">
+              <img src="assets/image/profile-main.png" alt="Retrato del profesor Hyunho Lee">
             </div>
           </div>
         </div>
+
       </div>
     </section>
 

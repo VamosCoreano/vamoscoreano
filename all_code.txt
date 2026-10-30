@@ -51,23 +51,30 @@ FILE: about.html
 
   <main id="contenido">
 
-    <!-- [Sección 1] TU GUÍA: 3 hechos gigantes (aparecen en cascada desde arriba-izquierda) + foto con 3D Tilt -->
+<!-- [Sección 1] Hero: 좌측 4줄 순수 텍스트 슬라이드 인 + 우측 3D 아치형 프로필 사진 -->
     <section class="about-hero">
       <div class="w ab">
+        <!-- [좌측 컬럼] 4줄 텍스트 + 하단 슬로건 -->
         <div>
-          <div class="tag rv"><i></i>TU GUÍA</div>
           <h1>
-            <span class="fact rv" style="--d:1">Especialidad en Literatura Coreana.</span>
-            <span class="fact rv" style="--d:2"><em>Instructor Oficial Certificado.</em></span>
-            <span class="fact rv" style="--d:3">Fluidez Absoluta en Español.</span>
+            <!-- 1번째 줄: 고정 타이틀 -->
+            <span class="hero-fixed-line">Tutor Oficial.</span>
+
+            <!-- 2~4번째 줄: 박스/테두리 없이 왼쪽에서 1 -> 2 -> 3 순서로 착착착 날아와 좌정렬로 붙는 텍스트 -->
+            <span class="fact-card" style="--step: 1">Especialista en Literatura</span>
+            <span class="fact-card" style="--step: 2">Certificado Oficial</span>
+            <span class="fact-card" style="--step: 3">Fluidez en Español</span>
           </h1>
-          <p class="big rv" style="--d:4">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
+
+          <!-- 하단 슬로건 -->
+          <p class="big hero-sub-slogan">Un idioma. Un objetivo. 100% para hispanohablantes.</p>
         </div>
 
+        <!-- [우측 컬럼 - TASK 1 복구 완료!] 실수로 지워졌던 이현호 강사님 프로필 사진 + 3D Tilt 효과 -->
         <div class="rv" style="--d:3">
           <div class="ph" data-tilt data-tilt-max="6" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.22">
             <div class="arch">
-              <img src="img/profile-main.png" alt="Retrato del profesor Hyunho Lee">
+              <img src="assets/image/profile-main.png" alt="Retrato del profesor Hyunho Lee">
             </div>
           </div>
         </div>
@@ -2160,38 +2167,89 @@ FILE: css\about.css
    --fs-title, --fs-sub, --fs-body, --fs-micro
    ========================================================================== */
 
-/* ---------- Sección 1: TU GUÍA ---------- */
+/* ---------- Sección 1: Hero (4줄 동일 폰트 + 좌측 슬라이드 인 카드) ---------- */
 .about-hero {
   min-height: calc(100svh - var(--header-h));
   display: flex;
   align-items: center;
-  padding: var(--s7) 0;
+  padding: var(--s6) 0;
+  overflow: hidden; /* 왼쪽 밖(-72px)에서 글자가 날아올 때 가로 스크롤바 생김 방지 */
 }
 
-.about-hero .w { width: 100%; }
+.about-hero .w {
+  width: 100%;
+}
 
 .about-hero .ab {
-  grid-template-columns: 1.25fr .75fr;
+  /* 좌측(텍스트) : 우측(아치형 사진) 비율 */
+  grid-template-columns: 1.25fr 0.75fr;
   align-items: center;
   gap: var(--s6);
 }
 
 .about-hero h1 {
-  font-size: clamp(var(--fs-hero), 6vw, var(--fs-hero-impact));
-  line-height: 1.04;
-  letter-spacing: -0.035em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 4줄 모두 칼같이 좌정렬(Left-align) */
+  gap: var(--s2);          /* 줄 사이 간격 16px */
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 8vw, 4rem); /* index.html 섹션 1의 Coreano desde cero. 와 완벽히 동일한 크기 */
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);       /* 4줄 모두 검정(ink) 통일 */
+  margin: 0;
 }
 
-.about-hero h1 .fact {
+/* 1번째 줄: 고정된 'Tutor Oficial.' (패딩 없이 좌측 끝선에 딱 맞춤) */
+.about-hero .hero-fixed-line {
   display: block;
-  margin-bottom: var(--s2);
+  color: var(--ink);
+  opacity: 0;
+  animation: fadeInPlace 0.45s var(--ez) 0.05s forwards;
 }
 
-.about-hero h1 .fact:last-child { margin-bottom: 0; }
+/* ★ [TASK 2] 2~4번째 줄: 카드 테두리·배경·그림자·패딩을 전부 제거하고 순수 텍스트만 착착착 날아오게 수정 */
+.about-hero .fact-card {
+  display: block;
+  color: var(--ink); /* 글자색 검정(ink) 통일 */
 
-.about-hero .big { margin-top: var(--s4); }
+  /* 페이지 로딩과 동시에 왼쪽(-72px)에서 1 -> 2 -> 3 순서로 튀어나와 이징하며 좌정렬로 딱 붙음 */
+  opacity: 0;
+  transform: translateX(-72px);
+  animation: slideSnapLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--step, 1) * 140ms + 20ms);
+}
 
-/* Marco de la foto: arco + sombra suave (vanilla-tilt aplica la inclinación en .ph) */
+/* 하단 슬로건: 3줄이 착착착 다 붙은 뒤(0.65초) 부드럽게 올라옴 */
+.about-hero .hero-sub-slogan {
+  margin-top: var(--s4);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInPlace 0.6s var(--ez) 0.65s forwards;
+}
+
+/* [키프레임 A] 왼쪽에서 날아와 감속(이징)하며 좌정렬 기준선에 착! 붙는 모션 */
+@keyframes slideSnapLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-72px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* [키프레임 B] 첫 줄과 하단 슬로건 등장 모션 */
+@keyframes fadeInPlace {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 우측 프로필 사진 프레임: 아치형 마스크 + 그림자 */
 .ph {
   max-width: 420px;
   margin-left: auto;
@@ -2216,7 +2274,7 @@ FILE: css\about.css
 }
 
 @media(max-width: 860px) {
-  .about-hero { min-height: 0; }
+  .about-hero { min-height: 0; padding: var(--s8) 0 var(--s6); }
   .about-hero .ab { grid-template-columns: 1fr; gap: var(--s5); }
   .ph { margin: 0 auto; max-width: 340px; }
 }
@@ -2852,8 +2910,17 @@ FILE: css\join.css
 
 /* 1. Reset para Inmersión Total (Dark Mode Forzado Visualmente) */
 .join-page {
-  /* Al usar data-theme="dark" en HTML, token.css ya maneja los colores, 
-     pero aseguramos que el fondo de esta landing sea profundamente oscuro */
+  /* 1. 모바일 라이트모드 강제화 방어 (다크모드 토큰 재주입) */
+  --bg: #0F1128;
+  --sf: #1E293B;
+  --ink: #F8FAFC;
+  --mu: #94A3B8;
+  --ln: #334155;
+  --bl: #60A5FA;
+  --so: #1E3A8A;
+  color-scheme: dark !important;
+
+  /* 2. 기존 배경 및 텍스트 컬러 지정 */
   --bg-deep: #090B14;
   background-color: var(--bg-deep);
   color: var(--ink);
@@ -7267,8 +7334,9 @@ FILE: js\about.js
 FILE: js\class.js
 ================================================================================
 
-     const $ = (s, r = document) => r.querySelector(s),
-           $$ = (s, r = document) => [...r.querySelectorAll(s)];
+(function() {
+const $ = (s, r = document) => r.querySelector(s),
+  $$ = (s, r = document) => [...r.querySelectorAll(s)];
     const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
 
     const PN = ["Todas", "Hangul y presentación", "Acciones y lugares", "Números y compras", "Los tres tiempos", "Expresarte y conectar"];
@@ -7506,7 +7574,7 @@ FILE: js\class.js
         c.style.setProperty("--y", e.clientY - r.top + "px");
       }
     }, { passive: true });
-
+})();
 
 ================================================================================
 FILE: js\contact.js
@@ -8160,12 +8228,20 @@ FILE: js\nav.js
     }
   }
 
-  enforceMobileLightMode();
-  if (mobileMQ.addEventListener) {
-    mobileMQ.addEventListener("change", enforceMobileLightMode);
-  } else if (mobileMQ.addListener) {
-    mobileMQ.addListener(enforceMobileLightMode);
+// 1. 함수 내부에 join-page 예외 조건 추가
+function enforceMobileLightMode() {
+  if (mobileMQ.matches && !document.body.classList.contains('join-page')) {
+    d.dataset.theme = "light";
   }
+}
+
+// 2. 실행 및 이벤트 리스너 바인딩 (원래대로 유지)
+enforceMobileLightMode();
+if (mobileMQ.addEventListener) {
+  mobileMQ.addEventListener("change", enforceMobileLightMode);
+} else if (mobileMQ.addListener) {
+  mobileMQ.addListener(enforceMobileLightMode);
+}
 
   // 데스크톱 다크모드 토글 버튼 (#th)
   if (th) {

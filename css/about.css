@@ -4,38 +4,191 @@
    --fs-title, --fs-sub, --fs-body, --fs-micro
    ========================================================================== */
 
-/* ---------- Sección 1: TU GUÍA ---------- */
+/* ==========================================================================
+   Sección 1: Hero (MasterClass 스타일 — 캡션 + 한글 3D 플립 타이틀 + 01·02·03 슬라이드)
+   ========================================================================== */
 .about-hero {
   min-height: calc(100svh - var(--header-h));
   display: flex;
   align-items: center;
-  padding: var(--s7) 0;
+  padding: var(--s6) 0;
+  overflow: hidden; /* 왼쪽에서 01, 02, 03이 날아올 때 가로 스크롤바 생김 방지 */
 }
 
-.about-hero .w { width: 100%; }
+.about-hero .w {
+  width: 100%;
+}
 
 .about-hero .ab {
-  grid-template-columns: 1.25fr .75fr;
+  /* 좌측(텍스트) : 우측(프로필 사진) 황금 비율 */
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
   gap: var(--s6);
 }
 
-.about-hero h1 {
-  font-size: clamp(var(--fs-hero), 6vw, var(--fs-hero-impact));
-  line-height: 1.04;
-  letter-spacing: -0.035em;
-}
-
-.about-hero h1 .fact {
+/* 1. 상단 파란색 캡션: FUNDADOR & TUTOR OFICIAL (알약 테두리/배경 없음) */
+.hero-kicker {
   display: block;
-  margin-bottom: var(--s2);
+  font-family: var(--font-head);
+  font-size: var(--fs-sub); /* 0.875rem (14px) — 작고 단단한 캡션 사이즈 */
+  font-weight: 800;
+  letter-spacing: 0.14em;     /* 자간을 넓혀 고급스러운 에디토리얼 캡션 느낌 부여 */
+  text-transform: uppercase;
+  color: var(--bl);           /* 브랜드 블루(#2563EB)로 시선 고정 */
+  margin-bottom: var(--s2);   /* 아래 이름과 16px 간격 */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInPlace 0.45s var(--ez) 0.05s forwards;
 }
 
-.about-hero h1 .fact:last-child { margin-bottom: 0; }
+/* 2. 메인 타이틀 컨테이너: Hyunho Lee. (초대형 대신 사진과 균형 잡힌 3rem ~ 4rem) */
+.about-hero .hero-name {
+  font-family: var(--font-head);
+  font-size: clamp(var(--fs-hero), 5.2vw, 4rem); /* 48px ~ 64px 사이로 단단하게 고정 */
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0 0 var(--s2) 0;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInPlace 0.5s var(--ez) 0.12s forwards;
+}
 
-.about-hero .big { margin-top: var(--s4); }
+/* ★ [핵심 기믹] 마우스 호버 시 'Hyunho Lee.' <-> '이현호.' 3D 플립 래퍼 */
+.name-flip {
+  display: inline-grid;       /* 두 글자 레이어를 똑같은 격자 칸(1/1)에 포개어 놓음 */
+  align-items: center;
+  perspective: 900px;         /* 3D 회전 원근감 */
+  cursor: pointer;
+  position: relative;
+}
 
-/* Marco de la foto: arco + sombra suave (vanilla-tilt aplica la inclinación en .ph) */
+/* 스페인어/한국어 공통 플립 면 */
+.name-face {
+  grid-area: 1 / 1;           /* 두 단어가 정확히 같은 좌표를 공유 (덜컥거림 0%) */
+  display: inline-block;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  transition:
+    transform 0.52s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.32s ease;
+}
+
+/* 앞면(기본 상태): 'Hyunho Lee.' 정면 표시 */
+.name-es {
+  color: var(--ink);
+  transform-origin: 50% 0%;
+  transform: rotateX(0deg) translateY(0);
+  opacity: 1;
+}
+
+/* 뒷면(대기 상태): '이현호.' 아래쪽에서 90도 접혀 대기 */
+.name-kr {
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  transform-origin: 50% 100%;
+  transform: rotateX(-90deg) translateY(35%);
+  opacity: 0;
+}
+
+/* 마우스 호버(또는 키보드 포커스) 시: 'Hyunho Lee.'는 위로 접혀 올라가고 '이현호.'가 착! 올라옴 */
+.name-flip:hover .name-es,
+.name-flip:focus-visible .name-es,
+.name-flip.is-flipped .name-es { /* 👈 JS가 이 클래스를 붙이면 스페인어가 위로 접힘 */
+  transform: rotateX(90deg) translateY(-35%);
+  opacity: 0;
+}
+
+.name-flip:hover .name-kr,
+.name-flip:focus-visible .name-kr,
+.name-flip.is-flipped .name-kr { /* 👈 JS가 이 클래스를 붙이면 '이현호.'가 정면으로 나옴 */
+  transform: rotateX(0deg) translateY(0);
+  opacity: 1;
+}
+
+/* 3. 서브 타이틀: Tu guía directo al coreano real. */
+.hero-subtitle {
+  font-family: var(--font-head);
+  font-size: clamp(var(--fs-sub), 2.2vw, var(--fs-title)); /* 20px ~ 32px 사이의 시원한 부제 */
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--mu);           /* 이름(검정)과 스펙(검정) 사이에서 톤을 잡아주는 고급 슬레이트 그레이 */
+  margin: 0 0 var(--s5) 0;    /* 아래 01·02·03 리스트와 40px(--s5) 호흡 확보 */
+  max-width: 28ch;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInPlace 0.5s var(--ez) 0.2s forwards;
+}
+
+/* 4. 하단 01·02·03 슬라이드 인 스펙 리스트 (테두리/박스 없이 순수 타이포 정렬) */
+.hero-spec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);             /* 01, 02, 03 각 줄 사이 간격 16px */
+  border-left: 2px solid var(--ln); /* 좌측에 얇은 수직 가이드라인을 두어 좌정렬 기준선을 시각적으로 고정 */
+  padding-left: var(--s3);    /* 가이드라인에서 24px 띄움 */
+}
+
+/* 각 스펙 한 줄: 왼쪽(-64px)에서 1 -> 2 -> 3 순서로 튀어나와 착착착 붙음 */
+.spec-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s2);
+  opacity: 0;
+  transform: translateX(-64px);
+  animation: slideSnapLeft 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  /* 타이틀이 뜬 직후(0.28초)부터 0.14초 간격으로 착! 착! 착! 진입 */
+  animation-delay: calc(var(--step, 1) * 140ms + 140ms);
+}
+
+/* 01, 02, 03 번호: 고정폭(tabular-nums) 파란색 포인트 */
+.spec-num {
+  font-family: var(--font-head);
+  font-size: var(--fs-body);  /* 1rem (16px) */
+  font-weight: 800;
+  color: var(--bl);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.2ch;           /* 01, 02, 03 폭을 똑같이 맞춰 뒤쪽 텍스트 시작선 칼정렬 */
+  flex: none;
+}
+
+/* 스펙 본문: Especialista en Literatura Coreana 등 */
+.spec-text {
+  font-family: var(--font-head);
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+/* [키프레임 A] 왼쪽에서 날아와 감속(이징)하며 좌정렬 기준선에 착! 붙는 모션 */
+@keyframes slideSnapLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* [키프레임 B] 상단 캡션·이름·서브타이틀 등장 모션 */
+@keyframes fadeInPlace {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 우측 프로필 사진 프레임: 아치형 마스크 + 그림자 */
 .ph {
   max-width: 420px;
   margin-left: auto;
@@ -60,7 +213,7 @@
 }
 
 @media(max-width: 860px) {
-  .about-hero { min-height: 0; }
+  .about-hero { min-height: 0; padding: var(--s8) 0 var(--s6); }
   .about-hero .ab { grid-template-columns: 1fr; gap: var(--s5); }
   .ph { margin: 0 auto; max-width: 340px; }
 }

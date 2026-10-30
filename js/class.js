@@ -1,5 +1,6 @@
-     const $ = (s, r = document) => r.querySelector(s),
-           $$ = (s, r = document) => [...r.querySelectorAll(s)];
+(function() {
+const $ = (s, r = document) => r.querySelector(s),
+  $$ = (s, r = document) => [...r.querySelectorAll(s)];
     const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
 
     const PN = ["Todas", "Hangul y presentación", "Acciones y lugares", "Números y compras", "Los tres tiempos", "Expresarte y conectar"];
@@ -237,3 +238,4 @@
         c.style.setProperty("--y", e.clientY - r.top + "px");
       }
     }, { passive: true });
+})();
