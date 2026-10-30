@@ -1,45 +1,282 @@
+<!-- ==========================================================================
+     FILE: join.html
+     ========================================================================== -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Únete a la comunidad de Vamos Coreano.">
+  <meta name="description" content="Únete a la tripulación VIP de Vamos Coreano. El sistema definitivo: Discord + Obsidian.">
   <title>Únete | Vamos Coreano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="css/token.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/join.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 
-<body>
+<body class="join-page">
+  <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb" style="--c:var(--bl);width:50vmax;height:50vmax;left:-15vmax;top:-10vmax;--oo:0.15"></i>
+    <i class="orb" style="--c:var(--co);width:40vmax;height:40vmax;right:-10vmax;top:40vh;animation-delay:-5s;--oo:0.15"></i>
+    <i class="orb" style="--c:var(--bl);width:45vmax;height:45vmax;left:15vw;bottom:-20vmax;animation-delay:-11s;--oo:0.15"></i>
+  </div>
+
   <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html">Nosotros</a>
         <a href="class.html">Cursos</a>
         <a href="resource.html">Recursos</a>
         <a href="contact.html">Contacto</a>
-        <a href="join.html" class="nav-cta-pill" aria-current="page">Únete</a>
+        <a href="join.html" class="nav-cta-pill on" aria-current="page">Únete</a>
       </nav>
-      <button id="th" aria-label="Cambiar tema claro u oscuro">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.5"/>
-          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
-        </svg>
-      </button>
+      <!-- Botón de tema oculto o deshabilitado en join.html para forzar inmersión Dark Mode (Apple Pro feel) -->
+      <button id="th" aria-label="Cambiar tema" style="display:none;"></button>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="contenido">
+    
+    <!-- [Sección 1] Hero Section: Impacto Brutal -->
+    <section class="join-hero">
       <div class="w">
-        <h1>Únete a la comunidad.</h1>
-        <p class="lead">Muy pronto te contamos todo aquí.</p>
+        <span class="tag rv"><i></i>SISTEMA DEFINITIVO</span>
+        <h1 class="rv" style="--d:1">
+          No estudies coreano.<br>
+          <em class="glow-text">Vívelo.</em>
+        </h1>
+        <p class="lead rv" style="--d:2">
+          Únete a la tripulación VIP y domina el idioma con nuestro sistema definitivo: <strong>Discord + Obsidian</strong>.
+        </p>
+        <div class="scroll-indicator rv" style="--d:3" aria-hidden="true">
+          <div class="mouse"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 2] El Problema (Golpe a la realidad) -->
+    <section class="join-problem">
+      <div class="w problem-box">
+        <h2 class="problem-title rv" style="--d:1">¿Por qué el 90% abandona el coreano?</h2>
+        <p class="problem-answer rv" style="--d:2">
+          Porque aprender solo, con PDFs sueltos y sin feedback, es volar a ciegas.
+        </p>
+      </div>
+    </section>
+
+    <!-- [Sección 3] Solución A: Discord (Torre de Control) -->
+    <section class="join-feature join-discord">
+      <div class="w feature-grid">
+        <div class="feature-text">
+          <div class="tag rv"><i></i>EN VIVO · 24/7</div>
+          <h2 class="rv" style="--d:1">Tu Torre de Control</h2>
+          <p class="rv" style="--d:2">
+            Entorno de inmersión total en Discord. Preguntas en vivo, correcciones de pronunciación y una comunidad de hispanohablantes con tu mismo objetivo.
+          </p>
+        </div>
+        
+        <div class="feature-visual rv" style="--d:2">
+          <!-- Mockup UI Apple/Discord -->
+          <div class="mockup-window glass-panel" data-tilt>
+            <div class="mockup-header">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+              <div class="mockup-title">Discord - Vamos Coreano VIP</div>
+            </div>
+            <div class="mockup-body mockup-discord-ui">
+              <div class="sidebar-servers">
+                <div class="server-icon active kr">한</div>
+                <div class="server-icon bg-so">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+              </div>
+              <div class="sidebar-channels">
+                <div class="channel-group">CANALES DE VUELO</div>
+                <div class="channel active"># 🗣️ pronuciación-check</div>
+                <div class="channel"># 📚 dudas-gramática</div>
+                <div class="channel"># ☕ cafetería-viva</div>
+              </div>
+              <div class="chat-area">
+                <div class="chat-message">
+                  <div class="chat-avatar kr">안</div>
+                  <div class="chat-content">
+                    <span class="chat-name">Andrés <span class="chat-time">Hoy a las 10:42 AM</span></span>
+                    <span class="chat-text">Profe, ¿está bien mi pronunciación de <span class="kr">의사</span>?</span>
+                    <div class="chat-audio">
+                      <div class="play-btn">▶</div>
+                      <div class="wave"><i></i><i style="--h:80%"></i><i style="--h:40%"></i><i style="--h:100%"></i><i></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-message tutor-reply">
+                  <div class="chat-avatar profe-avatar">H</div>
+                  <div class="chat-content">
+                    <span class="chat-name">Hyunho Lee <span class="badge">TUTOR</span> <span class="chat-time">Hoy a las 10:45 AM</span></span>
+                    <span class="chat-text">Casi perfecto Andrés. Recuerda que al inicio de palabra suena como "Ui", no "I". ¡Inténtalo de nuevo, estás muy cerca! 🔥</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glare"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 4] Solución B: Obsidian (Segundo Cerebro) -->
+    <section class="join-feature join-obsidian">
+      <div class="w feature-grid reverse">
+        <div class="feature-text">
+          <div class="tag rv"><i></i>SISTEMA NEURONAL</div>
+          <h2 class="rv" style="--d:1">Tu Segundo Cerebro</h2>
+          <p class="rv" style="--d:2">
+            Olvídate de los cuadernos desordenados. Construimos tu base de conocimientos en Obsidian. Todo el vocabulario y gramática conectados como una red neuronal.
+          </p>
+        </div>
+        
+        <div class="feature-visual rv" style="--d:2">
+          <!-- Mockup UI Obsidian -->
+          <div class="mockup-window glass-panel obsidian-theme" data-tilt>
+            <div class="mockup-header">
+              <span class="mac-dot red"></span>
+              <span class="mac-dot yellow"></span>
+              <span class="mac-dot green"></span>
+              <div class="mockup-title">Obsidian - Base de Conocimiento</div>
+            </div>
+            <div class="mockup-body mockup-obsidian-ui">
+              <svg viewBox="0 0 400 300" class="obsidian-graph" aria-hidden="true">
+                <!-- Conexiones -->
+                <line x1="200" y1="150" x2="100" y2="80" class="node-link" />
+                <line x1="200" y1="150" x2="120" y2="220" class="node-link" />
+                <line x1="200" y1="150" x2="320" y2="100" class="node-link active-link" />
+                <line x1="200" y1="150" x2="280" y2="240" class="node-link" />
+                <line x1="320" y1="100" x2="280" y2="40" class="node-link" />
+                <!-- Nodos -->
+                <circle cx="100" cy="80" r="8" class="node" />
+                <text x="100" y="105" class="node-label kr">동사 (Verbos)</text>
+                
+                <circle cx="120" cy="220" r="6" class="node" />
+                <text x="120" y="240" class="node-label">Partículas</text>
+                
+                <circle cx="320" cy="100" r="10" class="node node-accent" />
+                <text x="320" y="125" class="node-label kr">은/는 vs 이/가</text>
+                
+                <circle cx="280" cy="40" r="5" class="node" />
+                
+                <circle cx="280" cy="240" r="7" class="node" />
+                <text x="280" y="260" class="node-label kr">어휘 (Vocab)</text>
+                
+                <circle cx="200" cy="150" r="14" class="node node-center" />
+                <text x="200" y="180" class="node-label kr">Despegue</text>
+              </svg>
+            </div>
+            <div class="glare"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 5] Precio y Plan (Pase de Abordaje) -->
+    <section class="join-ticket-section">
+      <div class="w">
+        <div class="ticket-wrapper rv">
+          
+          <div class="boarding-pass" id="boarding-pass">
+            <!-- Left Side: Details -->
+            <div class="bp-main">
+              <div class="bp-header">
+                <span class="bp-logo"><b class="kr">한</b> Vamos Coreano</span>
+                <span class="bp-class">FIRST CLASS</span>
+              </div>
+              
+              <div class="bp-title-area">
+                <h2>Pase de Abordaje</h2>
+                <p>Acceso total a la plataforma. Sin pagos ocultos.</p>
+              </div>
+
+              <div class="bp-benefits">
+                <ul>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--co)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span><strong>Acceso vitalicio</strong> a todos los cursos regulares.</span>
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--co)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Comunidad <strong>Discord VIP</strong> 24/7.</span>
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--co)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Sistema <strong>Obsidian y Plantillas</strong>.</span>
+                  </li>
+                  <li>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--co)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span>Correcciones de <strong>pronunciación y feedback</strong>.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Perforation Line -->
+            <div class="bp-divider"></div>
+
+            <!-- Right Side: Stub / Action -->
+            <div class="bp-stub">
+              <div class="bp-price">
+                <span class="currency">$</span>
+                <span class="amount">--</span>
+                <span class="period">/único</span>
+              </div>
+              <div class="barcode">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <span class="flight-status">FLIGHT DEPARTING SOON</span>
+            </div>
+            
+            <!-- 3D Glare effect inside ticket -->
+            <div class="ticket-glare"></div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 6] Final CTA -->
+    <section class="join-final">
+      <div class="w final-box">
+        <h2 class="rv" style="--d:1">El vuelo está a punto de despegar.<br>¿Subes?</h2>
+        <div class="rv" style="--d:2">
+          <a href="#" class="b p btn-huge btn-pulse">
+            <span>Unirme a la Tripulación Ahora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+        </div>
+        <p class="guarantee rv" style="--d:3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Pago 100% seguro por Stripe. Acceso instantáneo.
+        </p>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="w">
+      <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+        Diseñado para el mundo hispanohablante.</p>
+    </div>
+  </footer>
+
   <script src="js/nav.js"></script>
+  <script src="js/join.js"></script>
 </body>
 </html>

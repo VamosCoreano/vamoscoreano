@@ -5,7 +5,6 @@
   --bl: #2563EB;
   --co: #f97316;
 
-
   --co-dark: #FF4D5E;
 
   --mu: #475569;
@@ -48,7 +47,8 @@
   --header-h: 49px;
 }
 
-@media(prefers-color-scheme: dark) {
+/* [Task 1] 데스크톱(761px 이상)에서만 다크모드 허용 — 모바일(<=760px)은 항상 라이트모드 강제 */
+@media (min-width: 761px) and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0F1128;
     --sf: #1E293B;
@@ -62,14 +62,33 @@
   }
 }
 
-:root[data-theme="dark"] {
-  --oo: .2;
-  --bg: #0F1128;
-  --sf: #1E293B;
-  --ink: #F8FAFC;
-  --mu: #94A3B8;
-  --ln: #334155;
-  --bl: #60A5FA;
-  --so: #1E3A8A;
-  color-scheme: dark;
+@media (min-width: 761px) {
+  :root[data-theme="dark"] {
+    --oo: .2;
+    --bg: #0F1128;
+    --sf: #1E293B;
+    --ink: #F8FAFC;
+    --mu: #94A3B8;
+    --ln: #334155;
+    --bl: #60A5FA;
+    --so: #1E3A8A;
+    color-scheme: dark;
+  }
+}
+
+@media (max-width: 760px) {
+  :root,
+  :root[data-theme="dark"] {
+    --bg: #F8FAFC;
+    --ink: #0F172A;
+    --bl: #2563EB;
+    --co: #f97316;
+    --co-dark: #FF4D5E;
+    --mu: #475569;
+    --ln: #E2E8F0;
+    --so: #DBEAFE;
+    --sf: #fff;
+    --header-h: 0px;
+    color-scheme: light !important;
+  }
 }

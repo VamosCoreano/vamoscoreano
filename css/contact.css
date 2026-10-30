@@ -1,0 +1,461 @@
+/* ==========================================================================
+   css/contact.css — estilos exclusivos de contact.html
+   Se carga DESPUÉS de token.css y style.css.
+   Solo tokens: colores (--bl, --co, --ink, --mu, --ln, --so, --sf, --bg),
+   tamaños tipográficos (--fs-*) y espaciado 8pt (--s1 … --s14).
+   ========================================================================== */
+
+/* ---------- Utilidades ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Retrasos de entrada en cascada (sustituyen a style="--d:N") */
+.contact-page .d-1 { --d: 1; }
+.contact-page .d-2 { --d: 2; }
+.contact-page .d-3 { --d: 3; }
+.contact-page .d-4 { --d: 4; }
+
+/* Revelado: animación (no transición) para que no choque con los hover de las tarjetas */
+.contact-page .rv.in {
+  animation: contactRise .8s var(--ez) backwards;
+  animation-delay: calc(var(--d, 0) * 90ms);
+}
+
+@keyframes contactRise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--s4));
+  }
+}
+
+/* ---------- Orbes de fondo (aurora) ---------- */
+.contact-page .orb-a {
+  --c: var(--bl);
+  width: 46vmax;
+  height: 46vmax;
+  left: -12vmax;
+  top: -10vmax;
+}
+
+.contact-page .orb-b {
+  --c: var(--co);
+  width: 38vmax;
+  height: 38vmax;
+  right: -12vmax;
+  top: 30vh;
+  animation-delay: -7s;
+}
+
+.contact-page .orb-c {
+  --c: var(--co-dark);
+  width: 34vmax;
+  height: 34vmax;
+  left: 20vw;
+  bottom: -16vmax;
+  animation-delay: -13s;
+}
+
+/* ---------- [Sección 1] Hero: El Saludo ---------- */
+.contact-hero {
+  min-height: calc(88svh - var(--header-h));
+  padding: var(--s11) 0 var(--s8);
+}
+
+.contact-hero h1 {
+  font-size: clamp(var(--fs-hero), 8vw, var(--fs-hero-impact));
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.contact-hero .ch-word {
+  display: inline-block;
+}
+
+.contact-hero p.lead {
+  max-width: 44ch;
+  margin: var(--s4) auto 0;
+  font-size: var(--fs-sub);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--mu);
+}
+
+/* ---------- [Sección 2] Los Canales ---------- */
+.contact-channels {
+  padding: var(--s4) 0 var(--s12);
+}
+
+.channel-stack {
+  display: grid;
+  gap: var(--s3);
+}
+
+/* Ambas rejillas ocupan el 100% del contenedor con el mismo gap:
+   2 tarjetas (main) y 3 tarjetas (sub) suman exactamente el mismo ancho. */
+.channel-grid {
+  display: grid;
+  gap: var(--s3);
+  width: 100%;
+}
+
+.channel-grid-main { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.channel-grid-sub  { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* --- Main channels (grandes) --- */
+.contact-page .channel-main {
+  align-items: flex-start;
+  text-align: left;
+  min-height: 320px;
+  padding: var(--s5) var(--s4);
+  border-radius: 32px;
+}
+
+.channel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+  width: 100%;
+  margin-bottom: var(--s5);
+}
+
+.contact-page .channel-main .action-card-icon {
+  width: var(--s7);
+  height: var(--s7);
+  margin-bottom: 0;
+  border-radius: 16px;
+}
+
+.contact-page .channel-main h3 {
+  font-size: var(--fs-title);
+  margin-bottom: var(--s1);
+}
+
+.contact-page .channel-main p {
+  max-width: 34ch;
+  margin-bottom: var(--s4);
+}
+
+.contact-page .channel-main .btn-card {
+  width: auto;
+  align-self: flex-start;
+}
+
+/* --- Sub channels (3 columnas) --- */
+.contact-page .channel-sub {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s4);
+  min-height: 176px;
+  padding: var(--s3);
+  border-radius: 24px;
+  text-align: left;
+}
+
+.sub-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+  width: 100%;
+}
+
+.contact-page .channel-sub .action-card-icon {
+  width: var(--s6);
+  height: var(--s6);
+  margin-bottom: 0;
+}
+
+.contact-page .channel-sub h3 {
+  font-size: var(--fs-sub);
+  margin-bottom: 0;
+}
+
+.contact-page .channel-sub p {
+  flex-grow: 0;
+  max-width: 30ch;
+  margin: var(--s1) 0 0;
+}
+
+.sub-arrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--s5);
+  height: var(--s5);
+  border-radius: 50%;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  color: var(--ink);
+  transition: transform .35s var(--ez), background .3s, border-color .3s, color .3s;
+}
+
+.channel-sub:hover .sub-arrow {
+  background: var(--bl);
+  border-color: var(--bl);
+  color: var(--bg);
+  transform: translate(2px, -2px);
+}
+
+.sub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s1) var(--s2);
+}
+
+.contact-page .sub-actions .copy-sub-action {
+  margin-top: 0;
+}
+
+.btn-sm {
+  padding: var(--s1) var(--s2);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+}
+
+/* --- Bling-Bling CTA --- */
+.cta-banner {
+  position: relative;
+  isolation: isolate;
+  margin-top: var(--s3);
+}
+
+.cta-banner::before {
+  content: "";
+  position: absolute;
+  inset: 16% 6% -14%;
+  z-index: -1;
+  border-radius: 40px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--bl) 28%, transparent),
+    color-mix(in srgb, var(--co) 28%, transparent)
+  );
+  filter: blur(48px);
+  opacity: .8;
+  transition: opacity .5s var(--ez);
+  animation: ctaGlow 6s ease-in-out infinite alternate;
+}
+
+.cta-banner:hover::before {
+  opacity: 1;
+}
+
+@keyframes ctaGlow {
+  to { transform: scale(1.05); }
+}
+
+.cta-banner-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding: var(--s6) var(--s5);
+  border-radius: 32px;
+  border: 1px solid var(--ln);
+  background: color-mix(in srgb, var(--sf) 88%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 28px 60px -20px color-mix(in srgb, var(--ink) 14%, transparent);
+  transition: border-color .35s;
+}
+
+.cta-banner:hover .cta-banner-card {
+  border-color: color-mix(in srgb, var(--bl) 45%, var(--ln));
+}
+
+.cta-banner-card h3 {
+  max-width: 20ch;
+  font-size: clamp(var(--fs-sub), 3vw, var(--fs-title));
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.cta-banner-card .b {
+  flex: none;
+}
+
+/* ---------- [Sección 3] Contacto Directo: El Toque Humano ---------- */
+.contact-julio {
+  padding: var(--s6) 0 var(--s14);
+}
+
+.julio-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s4);
+  padding: var(--s5) var(--s4);
+  border-radius: 32px;
+  border: 1px solid var(--ln);
+  background: var(--sf);
+  transition: border-color .35s, box-shadow .35s;
+}
+
+.julio-card:hover {
+  border-color: var(--bl);
+  box-shadow: 0 24px 48px -18px color-mix(in srgb, var(--bl) 18%, transparent);
+}
+
+/* Foco de luz que sigue al cursor (Julio + banner) */
+.julio-card::after,
+.cta-banner-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    320px circle at var(--x, 50%) var(--y, 50%),
+    color-mix(in srgb, var(--bl) 12%, transparent),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+
+.julio-card:hover::after,
+.cta-banner-card:hover::after {
+  opacity: 1;
+}
+
+.julio-avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--s9);
+  height: var(--s9);
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bl), var(--co));
+}
+
+/* Iniciales como respaldo si la foto no carga */
+.julio-avatar::before {
+  content: "JM";
+  font-family: var(--font-head);
+  font-size: var(--fs-sub);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--bg);
+}
+
+.julio-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.julio-text .tag {
+  margin-bottom: var(--s2);
+}
+
+.julio-text h3 {
+  max-width: 24ch;
+  font-size: clamp(var(--fs-sub), 3.2vw, var(--fs-title));
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.julio-text p {
+  max-width: 52ch;
+  margin-top: var(--s2);
+}
+
+.julio-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s2);
+}
+
+.julio-actions-label {
+  max-width: none;
+  font-family: var(--font-head);
+  font-size: var(--fs-body);
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+.julio-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+/* ---------- Toast ---------- */
+.toast-icon {
+  flex: none;
+  color: var(--co-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .julio-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .julio-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .channel-grid-sub {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-hero {
+    padding: var(--s11) 0 var(--s6);
+  }
+
+  .channel-grid-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-page .channel-main {
+    min-height: 0;
+    padding: var(--s4) var(--s3);
+  }
+
+  .channel-top {
+    margin-bottom: var(--s4);
+  }
+
+  .cta-banner-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--s5) var(--s3);
+  }
+
+  .cta-banner-card .b {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .julio-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s3);
+    padding: var(--s4) var(--s3);
+  }
+}

@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Contacta al equipo de Vamos Coreano por WhatsApp, Instagram o correo electrónico.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Contacta al equipo de Vamos Coreano por WhatsApp, Instagram, YouTube, TikTok o correo electrónico.">
   <title>Contacto | Vamos Coreano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="css/token.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
-<body>
+
+<body class="contact-page">
   <div id="bar"></div>
+  <div class="bg" aria-hidden="true">
+    <i class="orb orb-a"></i>
+    <i class="orb orb-b"></i>
+    <i class="orb orb-c"></i>
+  </div>
 
   <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html">Nosotros</a>
         <a href="class.html">Cursos</a>
         <a href="resource.html">Recursos</a>
         <a href="contact.html" class="on" aria-current="page">Contacto</a>
@@ -37,160 +45,211 @@
   </header>
 
   <main id="contenido">
-    <!-- [Sección 1] Hero Section (El Saludo): 미니멀한 중앙 타이틀과 넓은 여백 -->
-    <section class="hero">
+
+    <!-- [Sección 1] Hero (El Saludo) -->
+    <section class="hero contact-hero">
       <div class="w">
-        <div class="tag"><i></i>Canales Directos</div>
-        <h1>
-          Hablemos de<br>
-          <em>tus metas.</em>
-        </h1>
-        <p class="big" style="margin: var(--s3) auto 0;">
-          Cualquier duda que tengas, nuestro equipo está listo para ayudarte al instante.
-        </p>
+        <div class="tag rv"><i></i>Canales Directos</div>
+        <h1 id="h1" aria-label="Hablemos de tus metas.">Hablemos de<br><em>tus metas.</em></h1>
+        <p class="lead">Cuéntanos tu objetivo o resuelve tus dudas en segundos. Elige tu canal preferido y hablemos.</p>
       </div>
     </section>
 
-    <!-- [Sección 2] Los 3 Canales (Tarjetas Flotantes) -->
-    <section id="contacto">
+    <!-- [Sección 2] Los Canales (Main + Sub + CTA) -->
+    <section id="canales" class="contact-channels" aria-labelledby="canales-titulo">
       <div class="w">
-        <div class="contact-actions-grid">
-          <!-- 1. WhatsApp (Respuesta Rápida) -->
-          <article class="action-card action-card-featured">
-            <div class="action-card-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-              </svg>
-            </div>
-            <h3>WhatsApp</h3>
-            <p>Ideal para respuestas inmediatas, consultas sobre las clases y cupos.</p>
-            <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="b p btn-card" target="_blank" rel="noopener noreferrer">
-              <span>Chatea con nosotros</span>
-            </a>
-          </article>
+        <h2 id="canales-titulo" class="sr-only">Canales de contacto</h2>
 
-          <!-- 2. Instagram (Comunidad) -->
-          <article class="action-card">
-            <div class="action-card-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
-              </svg>
-            </div>
-            <h3>Instagram</h3>
-            <p>Para interacciones más casuales y conocer más sobre nuestra comunidad.</p>
-            <a href="https://instagram.com/vamos.coreano" class="b btn-card" target="_blank" rel="noopener noreferrer">
-              <span>Mándanos un DM</span>
-            </a>
-          </article>
+        <div class="channel-stack">
 
-          <!-- 3. Correo Electrónico (Formal) -->
-          <article class="action-card">
-            <div class="action-card-icon" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-              </svg>
-            </div>
-            <h3>Correo Electrónico</h3>
-            <p>Para asuntos de negocios, propuestas educativas o consultas detalladas.</p>
-            <a href="mailto:1219.hlee@gmail.com?subject=Consulta%20-%20Vamos%20Coreano" class="b btn-card">
-              <span>Envíanos un correo</span>
+          <!-- Main Channels: 2 tarjetas grandes -->
+          <div class="channel-grid channel-grid-main">
+
+            <!-- 1. WhatsApp (Respuesta Rápida) -->
+            <article class="action-card action-card-featured channel-main rv d-1">
+              <div class="channel-top">
+                <span class="action-card-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </span>
+                <span class="peek-tag">RESPUESTA RÁPIDA</span>
+              </div>
+              <h3>WhatsApp</h3>
+              <p>Ideal para respuestas inmediatas, consultas sobre clases y cupos.</p>
+              <a href="https://wa.me/message/PSZHNM4T7WRKG1" class="b p btn-card" target="_blank" rel="noopener noreferrer">
+                <span>Chatea con nosotros</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+            </article>
+
+            <!-- 2. Instagram (Comunidad & DM) -->
+            <article class="action-card channel-main rv d-2">
+              <div class="channel-top">
+                <span class="action-card-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="5"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+                  </svg>
+                </span>
+                <span class="peek-tag peek-tag-accent">COMUNIDAD &amp; DM</span>
+              </div>
+              <h3>Instagram</h3>
+              <p>Para interacciones casuales, tips diarios y conocer la comunidad.</p>
+              <a href="https://instagram.com/vamos.coreano" class="b btn-card" target="_blank" rel="noopener noreferrer">
+                <span>Mándanos un DM</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6"/>
+                </svg>
+              </a>
+            </article>
+          </div>
+
+          <!-- Sub Channels: 3 tarjetas (mismo ancho total que las 2 principales) -->
+          <div class="channel-grid channel-grid-sub">
+
+            <!-- 1. YouTube -->
+            <!-- TODO: confirma la URL real del canal. Si tienes el logo oficial, reemplaza el SVG dentro de .action-card-icon -->
+            <a href="https://www.youtube.com/@vamos.coreano" class="action-card channel-sub rv d-1" target="_blank" rel="noopener noreferrer" aria-label="YouTube (se abre en una pestaña nueva)">
+              <div class="sub-top">
+                <span class="action-card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="m10 8 6 4-6 4z"/>
+                  </svg>
+                </span>
+                <span class="sub-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M7 7h10v10"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="sub-body">
+                <h3>YouTube</h3>
+              </div>
             </a>
-            <button type="button" class="copy-sub-action" id="copy-email">Copiar dirección (1219.hlee@gmail.com)</button>
-          </article>
+
+            <!-- 2. TikTok -->
+            <!-- TODO: confirma la URL real de la cuenta. Si tienes el logo oficial, reemplaza el SVG dentro de .action-card-icon -->
+            <a href="https://www.tiktok.com/@vamos.coreano" class="action-card channel-sub rv d-2" target="_blank" rel="noopener noreferrer" aria-label="TikTok (se abre en una pestaña nueva)">
+              <div class="sub-top">
+                <span class="action-card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"/>
+                    <circle cx="6" cy="18" r="3"/>
+                    <circle cx="18" cy="16" r="3"/>
+                  </svg>
+                </span>
+                <span class="sub-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M7 7h10v10"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="sub-body">
+                <h3>TikTok</h3>
+              </div>
+            </a>
+
+            <!-- 3. Correo Electrónico -->
+            <article class="action-card channel-sub rv d-3">
+              <div class="sub-top">
+                <span class="action-card-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="sub-body">
+                <h3>Correo Electrónico</h3>
+                <p>Para alianzas, negocios o consultas formales.</p>
+              </div>
+              <div class="sub-actions">
+                <a href="mailto:1219.hlee@gmail.com?subject=Consulta%20-%20Vamos%20Coreano" class="b btn-sm">
+                  <span>Envía un correo</span>
+                </a>
+                <button type="button" class="copy-sub-action" id="copy-email" data-copy="1219.hlee@gmail.com" data-done="¡Copiado!">Copia la dirección</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Bling-Bling CTA: conexión con la comunidad -->
+        <div class="cta-banner rv d-1">
+          <div class="cta-banner-card">
+            <h3>¿Listo para dar el salto definitivo?</h3>
+            <a href="join.html" class="b p btn-unete">
+              <span>Únete</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- [Sección 2-B] Sobre el profe: 좌측 설명 + 우측 프로필 사진 -->
-    <section>
-      <div class="w ab">
-        <div>
-          <div class="tag"><i></i>Profesor Nativo</div>
-          <h2>Atención directa en tu idioma</h2>
-          <p class="big">Hyunho Lee · Especialista en Literatura Coreana e Instructor Certificado.</p>
-          <div class="q">
-            <p>Sin pasar por el filtro innecesario del inglés. Resolvemos tus dudas y diseñamos tu camino en el coreano directamente en español.</p>
-          </div>
-          <p>Escríbenos con confianza para orientarte según tu nivel y tus objetivos.</p>
-        </div>
-
-        <div class="ph">
-          <div class="arch">
-            <img src="image/profile-sample.png" alt="Retrato del profesor Hyunho Lee">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- [Sección 3] Contacto Directo (El Toque Humano - Inwoo) -->
-    <section style="border-top: 1px solid var(--ln);">
+    <!-- [Sección 3] Contacto Directo (El Toque Humano) -->
+    <section id="julio" class="contact-julio" aria-labelledby="julio-titulo">
       <div class="w">
-        <div class="cd" style="justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--s3); padding: var(--s4);">
-          <div>
-            <div class="tag" style="margin-bottom: var(--s1);"><i></i>Dirección Técnica</div>
-            <h3>Habla con nuestro Cofundador y Director Técnico</h3>
-            <p>Conoce a nuestro Cofundador y Director Técnico para soporte, alianzas o consultas directas del proyecto.</p>
+        <h2 id="julio-titulo" class="sr-only">Contacto directo</h2>
+
+        <article class="julio-card rv">
+          <div class="julio-avatar">
+            <img src="img/profile-julio-main.png" alt="Julio Márquez, cofundador y director técnico de Vamos Coreano" onerror="this.remove()">
           </div>
-          <a href="https://instagram.com/vamos.coreano" class="b" target="_blank" rel="noopener noreferrer">
-            <span>Contacta a Inwoo por Instagram</span>
-          </a>
-        </div>
+
+          <div class="julio-text">
+            <div class="tag"><i></i>Dirección Técnica</div>
+            <h3>Habla con Julio Márquez, Cofundador y Director Técnico</h3>
+            <p>Audio, servidores, diseño web o alianzas… Si tienes dudas técnicas o propuestas de colaboración, el canal está abierto.</p>
+          </div>
+
+          <!-- TODO: si Julio tiene Instagram/correo propios, cambia estos dos enlaces -->
+          <div class="julio-actions" role="group" aria-labelledby="julio-acciones">
+            <p class="julio-actions-label" id="julio-acciones">Contacta a Julio ›</p>
+            <div class="julio-actions-row">
+              <a href="https://instagram.com/vamos.coreano" class="b p btn-sm" target="_blank" rel="noopener noreferrer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>Instagram</span>
+              </a>
+              <a href="mailto:1219.hlee@gmail.com?subject=Consulta%20t%C3%A9cnica%20-%20Vamos%20Coreano" class="b btn-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                <span>Correo</span>
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <div id="copy-toast" role="status" aria-live="polite">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF4D5E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="toast-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M20 6 9 17l-5-5"/>
     </svg>
     <span id="toast-text"></span>
   </div>
 
   <footer>
-    © 2026 Vamos Coreano. Todos los derechos reservados.<br>
-    Diseñado para el mundo hispanohablante.
+    <div class="w">
+      <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+        Diseñado para el mundo hispanohablante.</p>
+    </div>
   </footer>
 
-  <script>
-    /* 이메일 복사 및 토스트 알림 (index.html과 동일 규격) */
-    const toast = document.getElementById("copy-toast"),
-          toastText = document.getElementById("toast-text");
-    let toastTimer = null;
-
-    function showToast(m) {
-      if (!toast) return;
-      toastText.textContent = m;
-      toast.classList.add("show");
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
-    }
-
-    const copyBtn = document.getElementById("copy-email");
-    if (copyBtn) {
-      copyBtn.onclick = async () => {
-        const email = "1219.hlee@gmail.com";
-        try {
-          await navigator.clipboard.writeText(email);
-          showToast("Correo copiado al portapapeles: " + email);
-        } catch (e) {
-          showToast("Dirección: " + email);
-        }
-      };
-    }
-
-    /* 카드 마우스 오버 시 미세한 빛 반사(Spotlight) 효과 연동 */
-    addEventListener("pointermove", e => {
-      const c = e.target.closest && e.target.closest(".cd,.action-card");
-      if (c) {
-        const r = c.getBoundingClientRect();
-        c.style.setProperty("--x", e.clientX - r.left + "px");
-        c.style.setProperty("--y", e.clientY - r.top + "px");
-      }
-    }, { passive: true });
-  </script>
   <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

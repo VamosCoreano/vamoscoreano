@@ -1,0 +1,523 @@
+/* ==========================================================================
+   FILE: css/join.css
+   Estilos exclusivos para join.html (The Premium Apple/Stripe Vibe)
+   ========================================================================== */
+
+/* 1. Reset para Inmersión Total (Dark Mode Forzado Visualmente) */
+.join-page {
+  /* 1. 모바일 라이트모드 강제화 방어 (다크모드 토큰 재주입) */
+  --bg: #0F1128;
+  --sf: #1E293B;
+  --ink: #F8FAFC;
+  --mu: #94A3B8;
+  --ln: #334155;
+  --bl: #60A5FA;
+  --so: #1E3A8A;
+  color-scheme: dark !important;
+
+  /* 2. 기존 배경 및 텍스트 컬러 지정 */
+  --bg-deep: #090B14;
+  background-color: var(--bg-deep);
+  color: var(--ink);
+}
+
+.join-page header {
+  background: color-mix(in srgb, var(--bg-deep) 75%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ln) 50%, transparent);
+}
+
+/* 2. Hero Section */
+.join-hero {
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--s8) 0 var(--s12);
+  position: relative;
+}
+
+.join-hero .tag {
+  background: color-mix(in srgb, var(--co) 15%, transparent);
+  color: var(--co);
+  border: 1px solid color-mix(in srgb, var(--co) 30%, transparent);
+  margin-bottom: var(--s5);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--co) 10%, transparent);
+}
+
+.join-hero h1 {
+  font-size: clamp(var(--fs-hero), 9vw, var(--fs-hero-impact));
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--s4);
+}
+
+.glow-text {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--bl), var(--co));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+/* Efecto de resplandor (Glow) detrás del texto */
+.glow-text::after {
+  content: "Vívelo.";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: blur(24px);
+  opacity: 0.7;
+}
+
+.join-hero .lead {
+  font-size: clamp(var(--fs-sub), 2.2vw, var(--fs-title));
+  color: var(--mu);
+  max-width: 36ch;
+  margin: 0 auto;
+}
+
+.join-hero .lead strong {
+  color: var(--ink);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--s6);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+
+.mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--mu);
+  border-radius: 99px;
+  position: relative;
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 6px;
+  background: var(--mu);
+  border-radius: 99px;
+  animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 12px); opacity: 0; }
+}
+
+/* 3. El Problema */
+.join-problem {
+  padding: var(--s14) 0;
+  text-align: center;
+}
+
+.problem-box {
+  max-width: 800px;
+}
+
+.problem-title {
+  font-size: clamp(var(--fs-title), 4vw, var(--fs-hero));
+  color: var(--mu);
+  margin-bottom: var(--s3);
+  max-width: none;
+}
+
+.problem-answer {
+  font-size: clamp(var(--fs-sub), 3vw, var(--fs-title));
+  font-family: var(--font-head);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--ink);
+  max-width: 22ch;
+  margin: 0 auto;
+  letter-spacing: -0.02em;
+}
+
+/* 4. Características (Discord & Obsidian) */
+.join-feature {
+  padding: var(--s12) 0;
+  overflow: hidden;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--s8);
+  align-items: center;
+}
+
+.feature-grid.reverse {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+.feature-grid.reverse .feature-text {
+  order: 2;
+}
+.feature-grid.reverse .feature-visual {
+  order: 1;
+}
+
+.feature-text h2 {
+  font-size: clamp(var(--fs-hero), 5vw, var(--fs-hero-impact));
+  max-width: 12ch;
+}
+
+.feature-text p {
+  font-size: var(--fs-sub);
+  color: var(--mu);
+}
+
+/* 5. Apple Style Mockup Windows */
+.glass-panel {
+  position: relative;
+  background: color-mix(in srgb, var(--sf) 60%, transparent);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid color-mix(in srgb, var(--ln) 40%, transparent);
+  border-radius: 20px;
+  box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.mockup-header {
+  height: 40px;
+  background: color-mix(in srgb, var(--sf) 40%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--ln) 30%, transparent);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s2);
+  gap: 6px;
+}
+
+.mac-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.mac-dot.red { background: #FF5F56; }
+.mac-dot.yellow { background: #FFBD2E; }
+.mac-dot.green { background: #27C93F; }
+
+.mockup-title {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mu);
+  margin-right: 48px; /* balance dots */
+}
+
+/* Discord UI Sim */
+.mockup-discord-ui {
+  display: flex;
+  height: 340px;
+}
+.sidebar-servers {
+  width: 60px;
+  background: color-mix(in srgb, var(--bg-deep) 80%, transparent);
+  padding: var(--s2) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+}
+.server-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  transition: .3s;
+}
+.server-icon.active {
+  background: var(--bl);
+  border-radius: 14px;
+}
+.server-icon.bg-so { background: var(--so); color: var(--bl); }
+
+.sidebar-channels {
+  width: 180px;
+  background: color-mix(in srgb, var(--sf) 20%, transparent);
+  padding: var(--s2);
+  border-right: 1px solid color-mix(in srgb, var(--ln) 30%, transparent);
+}
+.channel-group {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--mu);
+  margin-bottom: var(--s1);
+  letter-spacing: .05em;
+}
+.channel {
+  font-size: 13px;
+  color: var(--mu);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.channel.active { background: color-mix(in srgb, var(--bl) 20%, transparent); color: var(--ink); }
+
+.chat-area {
+  flex: 1;
+  padding: var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.chat-message { display: flex; gap: var(--s2); }
+.chat-avatar { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; }
+.chat-avatar.kr { background: var(--ln); color: var(--mu); }
+.profe-avatar { background: var(--co); color: #fff; }
+.chat-content { display: flex; flex-direction: column; }
+.chat-name { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.chat-time { font-size: 10px; font-weight: 400; color: var(--mu); }
+.badge { background: var(--co); color: #fff; font-size: 9px; padding: 2px 4px; border-radius: 4px; }
+.chat-text { font-size: 14px; color: color-mix(in srgb, var(--ink) 85%, transparent); margin-top: 4px; }
+.tutor-reply { background: color-mix(in srgb, var(--co) 5%, transparent); padding: var(--s1); border-radius: 8px; border-left: 2px solid var(--co); }
+
+.chat-audio {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  background: var(--sf);
+  padding: 6px 12px;
+  border-radius: 12px;
+  margin-top: 8px;
+  width: fit-content;
+  border: 1px solid var(--ln);
+}
+.play-btn { color: var(--bl); font-size: 12px; }
+.wave { display: flex; gap: 2px; align-items: center; height: 16px; }
+.wave i { width: 3px; height: var(--h, 20%); background: var(--bl); border-radius: 2px; }
+
+/* Obsidian UI Sim */
+.obsidian-theme { background: #000; border-color: #333; }
+.obsidian-theme .mockup-header { background: #111; border-color: #222; }
+.mockup-obsidian-ui {
+  height: 340px;
+  position: relative;
+  background: radial-gradient(circle at center, #111, #000);
+}
+.obsidian-graph { width: 100%; height: 100%; }
+.node-link { stroke: #333; stroke-width: 1.5; }
+.active-link { stroke: var(--co); stroke-dasharray: 4; animation: dash 20s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -100; } }
+.node { fill: #555; transition: .3s; }
+.node-label { fill: #888; font-size: 12px; font-weight: 500; font-family: var(--font-body); }
+.node-center { fill: var(--bl); }
+.node-accent { fill: var(--co); }
+.mockup-obsidian-ui:hover .node-center { transform: scale(1.1); transform-origin: 200px 150px; }
+
+/* 3D Glare for Mockups */
+.glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.glass-panel:hover .glare { opacity: 1; }
+
+/* 6. Boarding Pass (Ticket) */
+.join-ticket-section {
+  padding: var(--s12) 0;
+  perspective: 1200px;
+}
+
+.ticket-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.boarding-pass {
+  display: flex;
+  background: color-mix(in srgb, var(--sf) 85%, transparent);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 24px;
+  border: 1px solid var(--ln);
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: hidden;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.bp-main {
+  flex: 1;
+  padding: var(--s6);
+}
+
+.bp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: var(--s2);
+  margin-bottom: var(--s4);
+}
+
+.bp-logo { font-family: var(--font-head); font-weight: 800; font-size: var(--fs-sub); display: flex; align-items: center; gap: 8px; color: var(--ink); }
+.bp-logo b { background: var(--bl); color: #fff; width: 24px; height: 24px; border-radius: 6px; display: grid; place-items: center; font-size: 12px; }
+.bp-class { font-weight: 800; letter-spacing: 0.1em; color: var(--co); font-size: var(--fs-micro); }
+
+.bp-title-area h2 { font-size: var(--fs-hero); margin-bottom: var(--s1); max-width: none; }
+.bp-title-area p { color: var(--mu); font-size: var(--fs-body); }
+
+.bp-benefits { margin-top: var(--s4); }
+.bp-benefits ul { list-style: none; padding: 0; display: grid; gap: var(--s2); }
+.bp-benefits li { display: flex; align-items: center; gap: var(--s2); font-size: var(--fs-body); color: var(--ink); }
+.bp-benefits strong { color: var(--bl); }
+
+/* Perforation Divider */
+.bp-divider {
+  width: 2px;
+  background: repeating-linear-gradient(to bottom, var(--ln) 0, var(--ln) 8px, transparent 8px, transparent 16px);
+  position: relative;
+}
+.bp-divider::before, .bp-divider::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-deep); /* Matches page background to look like a cutout */
+  border-radius: 50%;
+  transform: translateX(-50%);
+  border: 1px solid var(--ln);
+}
+.bp-divider::before { top: -17px; border-top-color: transparent; border-left-color: transparent; transform: translateX(-50%) rotate(45deg); }
+.bp-divider::after { bottom: -17px; border-bottom-color: transparent; border-right-color: transparent; transform: translateX(-50%) rotate(45deg); }
+
+.bp-stub {
+  width: 260px;
+  padding: var(--s6) var(--s4);
+  background: color-mix(in srgb, var(--so) 10%, transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bp-price { margin-bottom: var(--s4); color: var(--ink); }
+.bp-price .currency { font-size: var(--fs-title); font-weight: 800; vertical-align: top; }
+.bp-price .amount { font-size: var(--fs-hero-impact); font-family: var(--font-head); font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
+.bp-price .period { display: block; font-size: var(--fs-micro); color: var(--mu); font-weight: 600; margin-top: 4px; }
+
+.barcode {
+  display: flex;
+  gap: 3px;
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: var(--s3);
+}
+.barcode i { background: var(--ink); height: 100%; }
+.barcode i:nth-child(1) { width: 2px; } .barcode i:nth-child(2) { width: 6px; } .barcode i:nth-child(3) { width: 3px; }
+.barcode i:nth-child(4) { width: 8px; } .barcode i:nth-child(5) { width: 2px; } .barcode i:nth-child(6) { width: 5px; }
+.barcode i:nth-child(7) { width: 4px; } .barcode i:nth-child(8) { width: 2px; } .barcode i:nth-child(9) { width: 7px; }
+.barcode i:nth-child(10){ width: 3px; } .barcode i:nth-child(11){ width: 1px; } .barcode i:nth-child(12){ width: 6px; }
+
+.flight-status { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; color: var(--co); background: color-mix(in srgb, var(--co) 15%, transparent); padding: 4px 10px; border-radius: 99px; }
+
+.ticket-glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.1), transparent 40%);
+  pointer-events: none;
+}
+
+/* 7. Final CTA */
+.join-final {
+  padding: var(--s12) 0 var(--s14);
+}
+
+.final-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.final-box h2 {
+  font-size: clamp(var(--fs-hero), 6vw, var(--fs-hero-impact));
+  max-width: none;
+  margin-bottom: var(--s6);
+}
+
+.btn-huge {
+  padding: var(--s3) var(--s6);
+  font-size: var(--fs-title);
+  border-radius: 99px;
+  box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--bl) 50%, transparent);
+}
+
+.btn-pulse {
+  animation: pulseGlow 3s infinite alternate;
+}
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--bl) 40%, transparent); }
+  100% { box-shadow: 0 0 0 20px transparent; }
+}
+
+.guarantee {
+  margin-top: var(--s4);
+  font-size: var(--fs-micro);
+  color: var(--mu);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.guarantee svg { color: #27C93F; }
+
+/* Responsive */
+@media(max-width: 960px) {
+  .feature-grid, .feature-grid.reverse { grid-template-columns: 1fr; gap: var(--s6); }
+  .feature-text { text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .boarding-pass { flex-direction: column; }
+  .bp-divider { width: 100%; height: 2px; background: repeating-linear-gradient(to right, var(--ln) 0, var(--ln) 8px, transparent 8px, transparent 16px); }
+  .bp-divider::before { top: 50%; left: -17px; transform: translateY(-50%) rotate(45deg); }
+  .bp-divider::after { top: 50%; right: -17px; left: auto; transform: translateY(-50%) rotate(45deg); }
+  .bp-stub { width: 100%; border-top: none; }
+}
+
+@media(max-width: 640px) {
+  .join-hero { padding: var(--s12) 0 var(--s8); }
+  .mockup-discord-ui { flex-direction: column; height: auto; }
+  .sidebar-channels, .sidebar-servers { width: 100%; flex-direction: row; }
+  .bp-main { padding: var(--s4); }
+  .btn-huge { width: 100%; justify-content: center; font-size: var(--fs-sub); padding: var(--s3) var(--s4); }
+}

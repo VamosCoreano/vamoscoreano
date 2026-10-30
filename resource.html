@@ -3,30 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Recursos de coreano creados para hispanohablantes. Aprende desde tu idioma, a tu ritmo.">
-  <title>Recursos | Vamos Coreano</title>
+  <meta name="description" content="Recursos gratuitos de coreano para hispanohablantes: materiales descargables en PDF, guías paso a paso y episodios de Vamos Coreano Podcast.">
+  <title>Recursos | VAMOS COREANO</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&family=Noto+Sans+KR:wght@500;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="stylesheet" href="css/token.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/resource.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 
 <body>
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
-    <i class="orb" style="--c:#2540E8;width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c:#FF4D5E;width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:#FFD35C;width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb" style="--c:var(--bl);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--co-dark);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
-
 
   <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html">Nosotros</a>
         <a href="class.html">Cursos</a>
         <a href="resource.html" class="on" aria-current="page">Recursos</a>
         <a href="contact.html">Contacto</a>
@@ -42,65 +46,369 @@
   </header>
 
   <main id="top">
-    <div class="resource-topline" aria-hidden="true"></div>
-
-    <section class="resources-hero">
+    <!-- [Sección 1] Main Landing (Hero Section — "Aquí hay oro gratuito") -->
+    <section class="res-hero">
       <div class="w">
-        <p class="eyebrow rv">Recursos para aprender mejor</p>
+        <div class="tag rv"><i></i>BIBLIOTECA ABIERTA · 100% GRATUITO</div>
 
-        <h1 class="rv">
-          El coreano,<br>
-          <em>por fin en tu idioma.</em>
+        <h1 class="rv" style="--d:1">
+          Aprende sin barreras.<br>
+          <em>Crece sin límites.</em>
         </h1>
 
-        <p class="hero-sub rv" style="--d:1">
-          Todo lo que necesitas para aprender. <strong>Hecho para ti.</strong>
+        <p class="res-hero-lead rv" style="--d:2">
+          Desde recursos gratuitos esenciales hasta guías avanzadas. Todo diseñado 100% para hispanohablantes.
         </p>
 
-        <p class="hero-note rv" style="--d:2">
-          Coreano explicado desde el español, <strong>no desde el inglés.</strong>
+        <p class="res-hero-sub rv" style="--d:3">
+          Coreano explicado directamente desde la lógica del español, <strong>sin pasar por el filtro innecesario del inglés</strong> ni depender de la romanización.
         </p>
 
-        <a class="h-cue" href="#explorar" aria-label="Explorar recursos">
-          <svg width="28" height="28" viewBox="0 0 24 24"
-               fill="none" stroke="currentColor" stroke-width="2.2"
-               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- 3대 리소스 아카이브 퀵 점프 칩 -->
+        <div class="res-pillars-bar rv" style="--d:4" aria-label="Categorías principales de recursos">
+          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="pdf">
+            <b>01</b>
+            <span>Materiales PDF</span>
+          </a>
+          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="guia">
+            <b>02</b>
+            <span>Guías de Estudio</span>
+          </a>
+          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="podcast">
+            <b>03</b>
+            <span>Vamos Coreano Podcast</span>
+          </a>
+        </div>
+
+        <a class="res-cue rv" style="--d:4" href="#explorar" aria-label="Explorar el archivo de recursos">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
         </a>
       </div>
     </section>
+
+    <!-- [Sección 2 & 3] Navegación de Categorías (Tab UI) + Los 3 Portales de Recursos -->
+    <section id="explorar" class="res-hub-section">
+      <div class="w">
+
+        <!-- Sticky Segmented Control (Tab UI) -->
+        <div class="res-toolbar-wrap rv">
+          <div class="res-tabs" role="tablist" aria-label="Filtrar recursos por categoría">
+            <button type="button" class="res-tab" role="tab" aria-selected="true" data-filter="all">
+              <span>Todos</span>
+              <span class="res-tab-count">3</span>
+            </button>
+            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="pdf">
+              <span>📄 Materiales PDF</span>
+            </button>
+            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="guia">
+              <span>🧭 Guías de Estudio</span>
+            </button>
+            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="podcast">
+              <span>🎧 Podcast</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3대 전용 페이지(pdf-resource, guia-resource, podcast-resource) 게이트웨이 쇼케이스 -->
+        <div class="res-portals">
+
+          <!-- ===============================================================
+               [PORTAL 01] Materiales Descargables (PDF) -> pdf-resource.html
+               =============================================================== -->
+          <article class="res-portal rv" data-category="pdf" id="portal-pdf">
+            <div class="res-portal-info">
+              <div>
+                <div class="res-portal-top">
+                  <span class="res-cat-badge">CATEGORÍA 01 · ARCHIVOS PDF</span>
+                  <span class="res-watermark kr" aria-hidden="true">문서</span>
+                </div>
+                <h2>Materiales Descargables (PDF)</h2>
+                <p class="res-portal-lead">
+                  Imprime, subraya y domina el idioma desde la raíz.
+                </p>
+                <p class="res-portal-desc">
+                  Desde el Hangeul básico hasta vocabulario avanzado. Descarga materiales en múltiples formatos y estudia sin la barrera del inglés.
+                </p>
+                <div class="res-portal-meta">
+                  <span class="res-meta-pill">Formato A4 &amp; Tablet</span>
+                  <span class="res-meta-pill">Sin romanización</span>
+                  <span class="res-meta-pill">Descarga directa</span>
+                </div>
+              </div>
+
+              <div class="res-portal-actions">
+                <a href="pdf-resource.html" class="b p">
+                  <span>Explora todos los PDFs</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- 우측: 대표 PDF 리소스 프리뷰 카드 3종 -->
+            <div class="res-preview-stack">
+              <a href="pdf-resource.html" class="res-item-card">
+                <div class="res-item-icon kr" aria-hidden="true">한</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">PDF · 01 · ESENCIAL</span>
+                  <h3>Tabla Maestra del Hangul y Batchim</h3>
+                  <p>Los principios fonéticos reales explicados con sonidos del español.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="pdf-resource.html" class="res-item-card">
+                <div class="res-item-icon kr" aria-hidden="true">문</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">PDF · 02 · GRAMÁTICA</span>
+                  <h3>Mapa Visual de Partículas Coreanas</h3>
+                  <p>Domina 은/는, 이/가, 을/를 y 에/에서 con esquemas comparativos claros.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="pdf-resource.html" class="res-item-card">
+                <div class="res-item-icon kr" aria-hidden="true">어</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">PDF · 03 · VOCABULARIO</span>
+                  <h3>100 Verbos y Expresiones del Día a Día</h3>
+                  <p>Conjugaciones en presente, pasado y futuro listas para conversar.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ===============================================================
+               [PORTAL 02] Guías de Estudio (Ruta y Método) -> guia-resource.html
+               =============================================================== -->
+          <article class="res-portal rv" data-category="guia" id="portal-guia">
+            <div class="res-portal-info">
+              <div>
+                <div class="res-portal-top">
+                  <span class="res-cat-badge res-cat-badge-accent">CATEGORÍA 02 · GUÍAS &amp; MÉTODO</span>
+                  <span class="res-watermark kr" aria-hidden="true">길</span>
+                </div>
+                <h2>Guías de Estudio Paso a Paso</h2>
+                <p class="res-portal-lead">
+                  Tu hoja de ruta clara para no perderte ni un segundo.
+                </p>
+                <p class="res-portal-desc">
+                  Artículos estratégicos y guías profundas que conectan la estructura del coreano directamente con la mente hispanohablante. Entiende el porqué antes de memorizar.
+                </p>
+                <div class="res-portal-meta">
+                  <span class="res-meta-pill">Hojas de ruta por nivel</span>
+                  <span class="res-meta-pill">Método Español → Coreano</span>
+                  <span class="res-meta-pill">Sistema Obsidian</span>
+                </div>
+              </div>
+
+              <div class="res-portal-actions">
+                <a href="guia-resource.html" class="b p">
+                  <span>Lee todas las guías</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- 우측: 대표 학습 가이드 카드 3종 -->
+            <div class="res-preview-stack">
+              <a href="guia-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">01</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">GUÍA · RUTA DE VUELO</span>
+                  <h3>Cómo aprender coreano desde cero en 30 días</h3>
+                  <p>El plan exacto para leer fluido en Hangul y armar tus primeras frases.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="guia-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">02</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">GUÍA · ESTRUCTURA MENTAL</span>
+                  <h3>El orden SOV: Cómo pensar en coreano sin traducir</h3>
+                  <p>Domina la arquitectura de las oraciones coreanas desde tu propio idioma.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="guia-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">03</div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">GUÍA · SEGUNDO CEREBRO</span>
+                  <h3>Organiza tu vocabulario coreano con Obsidian</h3>
+                  <p>Olvídate de los apuntes sueltos y conecta cada palabra como una red neuronal.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ===============================================================
+               [PORTAL 03] VAMOS COREANO Podcast -> podcast-resource.html
+               =============================================================== -->
+          <article class="res-portal res-portal-podcast rv" data-category="podcast" id="portal-podcast">
+            <div class="res-portal-info">
+              <div>
+                <div class="res-portal-top">
+                  <span class="res-cat-badge">CATEGORÍA 03 · AUDIO &amp; CULTURA</span>
+                  <span class="res-watermark kr" aria-hidden="true">음</span>
+                </div>
+                <h2>VAMOS COREANO Podcast</h2>
+                <p class="res-portal-lead">
+                  Tu inmersión auditiva en español y coreano real.
+                </p>
+                <p class="res-portal-desc">
+                  Conocimientos del idioma y la cultura coreana de forma sencilla y divertida. Perfecto para escuchar gratis mientras conduces o lavas los platos.
+                </p>
+
+                <!-- 오디오 파형 비주얼 박스 -->
+                <div class="res-podcast-wave" aria-hidden="true">
+                  <span class="res-wave-dot"></span>
+                  <span class="res-wave-label">Episodios en español · Acceso libre</span>
+                  <div class="waveform">
+                    <i style="--w:1"></i><i style="--w:4"></i><i style="--w:2"></i><i style="--w:6"></i>
+                    <i style="--w:3"></i><i style="--w:5"></i><i style="--w:2"></i><i style="--w:4"></i>
+                    <i style="--w:1"></i><i style="--w:5"></i><i style="--w:3"></i><i style="--w:2"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="res-portal-actions">
+                <a href="podcast-resource.html" class="b p">
+                  <span>Escucha todos los episodios</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- 우측: 대표 팟캐스트 에피소드 프리뷰 카드 3종 -->
+            <div class="res-preview-stack">
+              <a href="podcast-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">EPISODIO 01 · PRONUNCIACIÓN</span>
+                  <h3>Por qué la romanización arruina tu coreano</h3>
+                  <p>14 min · Cómo entrenar tu oído con los sonidos reales de Corea desde el día uno.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="podcast-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">EPISODIO 02 · CULTURA VIVA</span>
+                  <h3>Niveles de cortesía (존댓말 vs. 반말) sin estrés</h3>
+                  <p>18 min · Cuándo usar cada registro al viajar, hacer amigos o trabajar en Corea.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+
+              <a href="podcast-resource.html" class="res-item-card">
+                <div class="res-item-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <div class="res-item-body">
+                  <span class="res-item-tag">EPISODIO 03 · MENTE HISPANA</span>
+                  <h3>Ventajas secretas de un hispanohablante en el coreano</h3>
+                  <p>16 min · Similitudes fonéticas y expresivas que el inglés jamás te permite ver.</p>
+                </div>
+                <span class="res-item-action" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M13 6l6 6-6 6"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- [Sección 4] El Trampolín Final (막단 방지 CTA -> join.html) -->
+    <section class="res-trampolin">
+      <div class="w">
+        <div class="res-trampolin-card rv">
+          <div class="tag"><i></i>EL TRAMPOLÍN FINAL</div>
+          <h2 class="rv" style="--d:1">¿Te gustó el material gratuito?</h2>
+          <p class="res-trampolin-lead rv" style="--d:2">
+            Imagina lo que lograrás con nuestra comunidad privada.
+          </p>
+          <p class="res-trampolin-sub rv" style="--d:3">
+            Deja de estudiar en solitario con archivos sueltos. Entrena cada día en vivo por Discord y construye tu Segundo Cerebro en Obsidian junto a nosotros.
+          </p>
+          <div class="rv" style="--d:4">
+            <a href="join.html" class="b p res-trampolin-btn">
+              <span>Únete a la comunidad</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    (() => {
-      const items = document.querySelectorAll('.rv');
-      const reducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)'
-      ).matches;
+  <footer>
+    <div class="w">
+      <p>© 2026 Vamos Coreano. Todos los derechos reservados.<br>
+        Diseñado para el mundo hispanohablante.</p>
+    </div>
+  </footer>
 
-      if ('IntersectionObserver' in window && !reducedMotion) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -4% 0px'
-        });
-
-        items.forEach(item => observer.observe(item));
-      } else {
-        items.forEach(item => item.classList.add('in'));
-      }
-
-
-    })();
-  </script>
   <script src="js/nav.js"></script>
+  <script src="js/resource.js"></script>
 </body>
 </html>
-```

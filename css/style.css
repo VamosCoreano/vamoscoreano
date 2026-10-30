@@ -237,8 +237,280 @@ nav a.nav-cta-pill:hover {
 
 #th:hover { transform: rotate(90deg); }
 
-@media(max-width: 760px) {
-  nav { display: none; }
+/* ==========================================================================
+   [MANUAL PATCH] css/style.css 에 추가할 스트라이프 모바일 햄버거 & 풀스크린 시트 스타일
+   - 기존 @media(max-width: 760px) { nav { display: none; } } 자리에 덮어쓰거나
+   - css/style.css 맨 아래(최하단)에 그대로 붙여넣으세요.
+   ========================================================================== */
+
+@media (max-width: 760px) {
+  /* [Task 2] 모바일 접속 시 상단 네비게이션 바(header) 완전 제거 */
+  header {
+    display: none !important;
+  }
+}
+
+/* 데스크톱(>760px)에서는 스트라이프 모바일 햄버거/시트 숨김 */
+.stripe-burger,
+.stripe-sheet {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  /* 1. 우측 상단에 둥둥 떠 있는 스트라이프 스타일 햄버거 캡슐 카드 */
+  .stripe-burger {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 14px);
+    right: 16px;
+    z-index: 160;
+    width: 48px;
+    height: 44px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.10), 0 1px 3px rgba(15, 23, 42, 0.05);
+    color: var(--bl);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 0;
+    pointer-events: auto;
+    transition: background 0.35s var(--ez), border-color 0.35s var(--ez), box-shadow 0.35s var(--ez), transform 0.25s var(--ez);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .stripe-burger:active {
+    transform: scale(0.94);
+  }
+
+  /* 메뉴가 열렸을 때: 스트라이프 2번째 사진처럼 연한 블루(var(--so)) 배경의 X 버튼으로 변신 */
+  body.menu-open .stripe-burger {
+    background: var(--so);
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  /* 햄버거 3줄 -> X자 모핑 아이콘 */
+  .stripe-burger-box {
+    position: relative;
+    width: 18px;
+    height: 14px;
+    display: block;
+  }
+
+  .stripe-burger-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2.2px;
+    border-radius: 99px;
+    background: var(--bl);
+    transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, top 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stripe-burger-line:nth-child(1) { top: 0; }
+  .stripe-burger-line:nth-child(2) { top: 6px; }
+  .stripe-burger-line:nth-child(3) { top: 12px; }
+
+  body.menu-open .stripe-burger-line:nth-child(1) {
+    top: 6px;
+    transform: rotate(45deg);
+  }
+  body.menu-open .stripe-burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  body.menu-open .stripe-burger-line:nth-child(3) {
+    top: 6px;
+    transform: rotate(-45deg);
+  }
+
+  /* 2. 햄버거 버튼 위치에서부터 화면 전체로 익스팬드(Expand)되는 풀스크린 시트 */
+  .stripe-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: calc(env(safe-area-inset-top, 0px) + 14px) 20px calc(env(safe-area-inset-bottom, 0px) + 24px);
+    overflow-y: auto;
+    pointer-events: none;
+    visibility: hidden;
+    clip-path: inset(
+      calc(env(safe-area-inset-top, 0px) + 14px)
+      16px
+      calc(100% - env(safe-area-inset-top, 0px) - 58px)
+      calc(100% - 64px)
+      round 10px
+    );
+    opacity: 0;
+    transition:
+      clip-path 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.22s ease,
+      visibility 0s linear 0.52s;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  body.menu-open .stripe-sheet {
+    pointer-events: auto;
+    visibility: visible;
+    clip-path: inset(0px 0px 0px 0px round 0px);
+    opacity: 1;
+    transition:
+      clip-path 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.15s ease,
+      visibility 0s linear 0s;
+  }
+
+  /* 시트 상단 헤더: 좌측 로고 */
+  .stripe-sheet-top {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin-bottom: var(--s3);
+  }
+
+  /* 시트 내부 네비게이션 리스트 (점선 구분선 + 우측 파란 화살표) */
+  .stripe-sheet-nav {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .stripe-sheet-item {
+    border-bottom: 1px dashed var(--ln);
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.38s var(--ez), transform 0.38s var(--ez);
+    transition-delay: calc(var(--m, 0) * 45ms + 120ms);
+  }
+
+  body.menu-open .stripe-sheet-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stripe-sheet-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 4px;
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .stripe-sheet-link:active,
+  .stripe-sheet-link.is-active {
+    color: var(--bl);
+  }
+
+  .stripe-sheet-chevron {
+    color: var(--bl);
+    flex: none;
+    transition: transform 0.25s var(--ez);
+  }
+
+  .stripe-sheet-link:active .stripe-sheet-chevron {
+    transform: translateX(4px);
+  }
+
+  /* 하단 추천 코스 박스 + 2단 풀사이즈 액션 버튼 영역 */
+  .stripe-sheet-bottom {
+    margin-top: var(--s4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s3);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.42s var(--ez) 0.32s, transform 0.42s var(--ez) 0.32s;
+  }
+
+  body.menu-open .stripe-sheet-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stripe-promo-box {
+    display: block;
+    padding: var(--s3);
+    border-radius: 12px;
+    border: 1px solid var(--ln);
+    background: #FFFFFF;
+    text-align: left;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .stripe-promo-box:active {
+    border-color: var(--bl);
+    background: var(--bg);
+  }
+
+  .stripe-promo-title {
+    display: block;
+    font-family: var(--font-head);
+    font-size: var(--fs-body);
+    font-weight: 700;
+    color: var(--bl);
+    margin-bottom: 4px;
+  }
+
+  .stripe-promo-desc {
+    display: block;
+    font-size: var(--fs-micro);
+    color: var(--mu);
+    line-height: 1.45;
+  }
+
+  .stripe-cta-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stripe-btn-primary,
+  .stripe-btn-secondary {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.2s var(--ez), background 0.2s ease;
+  }
+
+  .stripe-btn-primary {
+    background: var(--bl);
+    color: #FFFFFF;
+    border: 1px solid var(--bl);
+    box-shadow: 0 6px 18px -6px rgba(37, 99, 235, 0.45);
+  }
+
+  .stripe-btn-secondary {
+    background: #FFFFFF;
+    color: var(--bl);
+    border: 1px solid var(--ln);
+  }
+
+  .stripe-btn-primary:active,
+  .stripe-btn-secondary:active {
+    transform: scale(0.98);
+  }
 }
 
 /* hero */

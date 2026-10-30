@@ -8,7 +8,7 @@ No llenes la pantalla con demasiado texto. Deja que el diseño respire para guia
 ### 3. Micro-interactions
 Cada detalle importa. Un sutil efecto de glow, fade, textura y movimiento fluido hace que la página se sienta premium.
 ### 4. Restricción de color
-Para mantener la consistencia visual, utilizaremos estrictamente solo 4 colores en toda la página:
+Para mantener la consistencia visual, utilizaremos estrictamente solo 4x3 colores en toda la página:
 • Blanco (Fondo base/cremoso) - #F8FAFC
 • Negro (Texto principal) - #0F172A
 • Azul (Color de marca) - #2563EB
@@ -33,9 +33,11 @@ E.j.:
 ⁠Enviar⁠ (X) ➔ Envía (O)
 ⁠Únete a la comunidad⁠ (O).
 Conocer (X) -> conoce (O) 
-// *QUe hago con sobre mi… (Sobre nosotros es muy largo :v)
 ### 8. Sistema de Espaciado 8pt
 Regla: Todos los márgenes y paddings deben ser múltiplos de 8 (8px, 16px, 24px, 32px, 48px, 64px).
+### 9. Reglas Globales de UX/UI
+Navegación Móvil: Se utiliza una cápsula flotante al estilo Stripe + una hoja expansiva a pantalla completa (stripe-sheet).
+Política de Modo Oscuro: El interruptor (toggle) de modo oscuro/claro solo se habilita en la versión de escritorio (>760px). En dispositivos móviles, se impone el Modo Claro
 
 ## VAMOS COREANO : BRAND
 ### 0. We Are (우리의 정의)
@@ -64,19 +66,12 @@ Exactamente 5 elementos El orden no es aleatorio.
 * RECURSOS: Materiales
 * CONTACTO: Contacto
 * [ ÚNETE ]: El destino final (Botón CTA con color de acento, destacado a la derecha).
-### 2. Número de archivos HTML: Exactamente 6
-* index.html (Inicio): 
-El lugar donde el visitante aterriza por primera vez. Contiene nuestro imponente manifiesto de marca y actúa como el hub central que distribuye el tráfico hacia todas las subpáginas.
-* about.html (Sobre el tutor):
-Página diseñada para construir confianza. Aquí demostramos nuestra "Ventaja Injusta" (especialidad en Literatura Coreana, certificación oficial de tutor, etc.).
-* class.html (Clases):
-El showroom que presenta las clases que hemos creado.
-* resource.html (Materiales):
-La página imán (Lead Magnet) que atrae el tráfico de búsqueda del mundo hispano al sitio web, ofreciendo enlaces a podcasts, descargas de PDF, entre otros.
-* contact.html (Contacto):
-Página de contacto directa que incluye un enlace de consulta por WhatsApp o un formulario de correo electrónico.
-* join.html (Landing de Discord):
-La página de ventas clave. Explica el valor de nuestro modelo de negocio principal ("la comunidad de pago") con la majestuosidad de una presentación de Apple, guiando directamente al usuario hacia el pago y registro. (El botón 'ÚNETE' del menú superior dirige a esta página).
+### 2. Número de archivos HTML: 9 (Estructura Gateway)
+   5 páginas principales
+      index.html, about.html, class.html, contact.html, join.html
+resource.html actúa como un 'Hub (Gateway)' que dirige hacia las subcategorías.
+   3 páginas de recursos detallados
+      pdf-resource.html, guia-resource.html, podcast-resource.html
 
 ## Instrucciones para index.html
 ### 1. ¿Qué es este archivo?
@@ -129,22 +124,15 @@ El tamaño del texto debe ir de MAYOR a menor: comenzamos con textos ENORMES y f
 - Tech: Se puede implementar con backdrop-filter en CSS y alguna librería de Tilt (ej. Vanilla-tilt.js).
 
 ## Instrucciones para class.html
-### 1. [Sección 1] Hero Section (El Impacto Tipográfico)
-* Diseño: Esta sección debe ocupar el 100% de la altura de la pantalla. La protagonista absoluta es la tipografía. Gran contraste, texto centrado con mucho espacio en blanco (White Space).
-* Copy (Texto Exacto):
-Un idioma. Un objetivo. H1 BLACK
-100% para hispanohablantes.  H1 BLUE
-Aprende coreano desde tu idioma, no desde el inglés. H2 GRAY
-### 2. [Sección 2] Cursos Regulares (Ruta de Vuelo Principal)
-   * Concepto Visual: Las clases principales (Despegue, Ascenso, etc.) se mostrarán en una lista vertical. Cada tarjeta debe tener el diseño de un rectángulo glow.
-   * Regla de Interacción (UX): Cuando el usuario hace clic, la tarjeta se expande suavemente hacia abajo (Acordeón).
-   * Contenido Desplegado: Al abrirse el acordeón, el currículum debe mostrarse detalles. y cada bloc tiene
-Estructura gramatical
-contenido de clase
-ejemplos
-### 3. CTA EN EL ULTIMO PARTE
-Para accion
-Ya sea ir a contacto o ver recuerso etc..
+### [Sección 1] Hero Section
+   UX/UI: Ocupa exactamente 100svh de altura. En lugar de una disposición de texto estática, aplica una animación de impacto con retraso secuencial (ritmo de percusión) para maximizar el atractivo visual.
+   Copy: Un idioma. (Impacto 1) / Un objetivo. (Impacto 2) / 100% para hispanohablantes. (Impacto 3)
+   Transición: Al finalizar la animación del texto, un avión atraviesa la parte exterior inferior de la sección (.class-fly-zone) para incentivar el scroll hacia la siguiente sección.
+### [Sección 2] Cursos
+   UX/UI: Se reutiliza el slider horizontal estilo ruleta (efecto Peek) de index.html. Al entrar en el viewport, gira dos vueltas durante 1.5 segundos y se detiene en el curso principal (DESPEGUE) para captar la atención del usuario.
+
+### [Sección 3] Temario (Acordeón de currículo)
+   UX/UI: Menú en forma de acordeón con un diseño de línea de tiempo vertical y chips de filtrado (Filtering Chips). Al hacer clic, se despliegan de forma fluida la estructura gramatical, el contenido de la clase y los ejemplos prácticos de cada lección.
 
 ## Instrucciones para resource.html
 ### 1. [Sección 1] Main Landing (Hero Section)
@@ -154,7 +142,7 @@ Copy (Sugerencia):
    * Desde recursos gratuitos esenciales hasta guías avanzadas. Todo diseñado 100% para hispanohablantes. 
 ### 2. [Sección 2] Navegación de Categorías (Tab UI)
    * Regla de Diseño: ¡NO crees nuevos archivos HTML para cada categoría! Mantén todo en recursos.html. (Se puede cambiar)
-   *    * UI: Usa un menú de pestañas (Tabs) elegante o botones de filtro interactivos justo debajo del Hero Section (Ej: [ Todos ] [ 📄 PDF ] [ 🎧 Podcast ]). Al hacer clic, el contenido de abajo cambia suavemente sin recargar la página.
+   *    * UI: Usa un menú de pestañas (Tabs) elegante o botones de filtro interactivos justo debajo del Hero Section (Ej: [ Todos ] [ 📄 PDF ] [ 🎧 Podcast ]...). Al hacer clic, el contenido de abajo cambia suavemente sin recargar la página.
 ### 3. [Sección 3] Listado de Recursos (Contenido)
    * Diseño de Tarjetas (Cards): Cada recurso debe presentarse en una tarjeta minimalista, con un ícono claro (PDF o Audio) y un botón de "Descargar" o "Escuchar".
    *    * Copy de Categoría A (PDFs):
@@ -172,25 +160,16 @@ Copy (Sugerencia):
       *       * Copy: "¿Te gustó el material gratuito? Imagina lo que lograrás con nuestra comunidad privada."
       *       * Acción: Botón gigante ➔ [ Únete a la comunidad ] (Dirige a join.html).
 
-## Instrucciones para contact.html 
-### 1. [Sección 1] Hero Section (El Saludo)
-      * Diseño: Muy limpio y minimalista. Un gran título centrado con mucho espacio en blanco para transmitir tranquilidad y profesionalismo.
-      * Copy: …??
-      * Sub-copy: "Cualquier duda que tengas, nuestro equipo está listo para ayudarte al instante." (어떤 질문이든, 우리 팀이 즉시 도와드릴 준비가 되어 있습니다.)
-### 2. Seccion 2 Sobre profe
-Diseño.: Explicacion en la izquierda. foto en la derecha
-Copy:
-### . [Sección 2] Los 3 Canales (Tarjetas Flotantes)
-      * Regla de Diseño : Diseña 3 tarjetas (Cards) minimalistas dispuestas horizontalmente (o verticalmente en móvil). Al pasar el ratón (hover), las tarjetas deben tener un suave efecto de elevación (Floating/Shadow).
-      * Contenido de las 3 Tarjetas:
-      1. WhatsApp (Respuesta Rápida): Ícono de WhatsApp. Texto: "Chatea con nosotros". Ideal para respuestas inmediatas y ventas.
-      2. Instagram (Comunidad): Ícono de Instagram. Texto: "Mándanos un DM". Para interacciones más casuales y social proof.
-      3. Correo Electrónico (Formal): Ícono de un sobre minimalista. Texto: "Envíanos un correo". Para asuntos de negocios o consultas largas.
-### 3. [Sección 3] Contacto Directo (El Toque Humano - Opcional pero recomendado)
-      * Concepto: Para dar el contacto directo de un miembro clave del equipo (Inwoo).
-      * Diseño: Una tarjeta especial arriba de footer con un diseño ligeramente distinto (quizás con una pequeña foto de perfil o un avatar elegante).
-      * Copy:
-Habla con nuestro Cofundador y Director Técnico Conoce nuestro Cofundador y Director Técnico.  [ Contactar a Inwoo por instagram ]
+## Instrucciones para contact.html (Actualización)
+### [Sección 1] Hero Section (El Saludo)
+   H1: Hablemos de tus metas.
+   Sub-copy: Cuéntanos tu objetivo o resuelve tus dudas en segundos. Elige tu canal preferido y hablemos.
+### [Sección 2] Los Canales & Impact CTA
+   Main (2 tarjetas): WhatsApp (Respuesta rápida), Instagram (Comunidad & DM).
+   Sub (3 tarjetas): YouTube, TikTok, Correo Electrónico (Integrado con botón para copiar al portapapeles con un clic).
+   Banner CTA: Ubicar en la parte inferior de la lista de canales el componente .cta-banner con un efecto de resplandor (glow) de color. ➔ "¿Listo para dar el salto definitivo? [ Únete ]"
+### [Sección 3] Contacto Directo (Julio Márquez)
+Fijada como sección oficial. Destacar la posición de director encargado de gestionar múltiples áreas, incluyendo soporte técnico, servidores, diseño web y alianzas.
 
 ## Instrucciones para join.html (El Destino Final)
 ### 1. [Sección 1] Hero Section
