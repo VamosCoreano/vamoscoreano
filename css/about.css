@@ -34,7 +34,7 @@
   font-weight: 800;
   letter-spacing: 0.14em;     /* 자간을 넓혀 고급스러운 에디토리얼 캡션 느낌 부여 */
   text-transform: uppercase;
-  color: var(--bl);           /* 브랜드 블루(#2563EB)로 시선 고정 */
+  color: var(--blue-main);           /* 브랜드 블루(#2563EB)로 시선 고정 */
   margin-bottom: var(--s2);   /* 아래 이름과 16px 간격 */
   opacity: 0;
   transform: translateY(10px);
@@ -152,7 +152,7 @@
   font-family: var(--font-head);
   font-size: var(--fs-body);  /* 1rem (16px) */
   font-weight: 800;
-  color: var(--bl);
+  color: var(--blue-main);
   font-variant-numeric: tabular-nums;
   min-width: 2.2ch;           /* 01, 02, 03 폭을 똑같이 맞춰 뒤쪽 텍스트 시작선 칼정렬 */
   flex: none;
@@ -290,7 +290,7 @@
   aspect-ratio: 1 / 1;
   border-radius: 32px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--bl), var(--co));
+  background: linear-gradient(135deg, var(--blue-main), var(--co));
   border: 1px solid var(--ln);
   box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.18);
   display: grid;
@@ -298,7 +298,7 @@
   transition: transform .4s var(--ez), border-color .35s;
 }
 
-.julio-photo:hover { transform: translateY(-6px); border-color: var(--bl); }
+.julio-photo:hover { transform: translateY(-6px); border-color: var(--blue-main); }
 
 /* Iniciales como respaldo mientras no hay foto */
 .julio-photo::before {
@@ -307,7 +307,7 @@
   font-weight: 800;
   font-size: var(--fs-hero-impact);
   letter-spacing: -0.04em;
-  color: #fff;
+  color: var(--light-sf);
 }
 
 .julio-photo img {
@@ -324,7 +324,7 @@
 .role {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: var(--bl);
+  color: var(--blue-main);
   margin-bottom: var(--s2);
 }
 
@@ -367,5 +367,5 @@
 .about-cta .b.p {
   background: var(--co);
   border-color: var(--co);
-  color: #fff;
+  color: var(--light-sf);
 }

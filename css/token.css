@@ -1,16 +1,21 @@
 :root {
-  /* main 4 colors */
-  --bg: #F8FAFC;
-  --ink: #0F172A;
-  --bl: #2563EB;
-  --co: #f97316;
+/* 1. Surfaces */
+  --light-bg:   #F8FAFC; /* 01. Main Background & Dark Headline */
+  --light-sf:   #FFFFFF; /* 02. Light Card */
+  --dark-bg:    #090D16; /* 03. Dark Background */
+  --dark-sf:    #131B2E; /* 04. Dark Card */
 
-  --co-dark: #FF4D5E;
+  /* 2. Neutrals */
+  --ink-900:  #0F172A; /* 05. Primary Dark Ink */
+  --ink-600:  #475569; /* 06. Light Subtext */
+  --ink-400:  #94A3B8; /* 07. Dark Subtext */
+  --ink-200:  #E2E8F0; /* 08. Hairline Border  */
 
-  --mu: #475569;
-  --ln: #E2E8F0;
-  --so: #DBEAFE;
-  --sf: #fff;
+  /* 3. Brand & Accents  */
+  --blue-main:   #2563EB; /* 09. Brand Blue */
+  --blue-sky:   #60A5FA; /* 10. Dark Mode Brand */
+  --orange: #F97316; /* 11. Primary Orange */
+  --coral:  #FF3B5C; /* 12. Point Coral */
   
   --ez: cubic-bezier(.2, .8, .2, 1);
 
@@ -39,55 +44,50 @@
   --s11: 88px;
   --s12: 96px;
   --s14: 112px;
-  box-sizing: border-box;
-  padding-top: env(safe-area-inset-top, 0px);
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+
   color-scheme: light;
 
   --header-h: 49px;
 }
 
-/* [Task 1] 데스크톱(761px 이상)에서만 다크모드 허용 — 모바일(<=760px)은 항상 라이트모드 강제 */
-@media (min-width: 761px) and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0F1128;
-    --sf: #1E293B;
-    --ink: #F8FAFC;
-    --mu: #94A3B8;
-    --ln: #334155;
-    --bl: #60A5FA;
-    --so: #1E3A8A;
-    --oo: .2;
-    color-scheme: dark;
-  }
-}
-
 @media (min-width: 761px) {
-  :root[data-theme="dark"] {
-    --oo: .2;
-    --bg: #0F1128;
-    --sf: #1E293B;
-    --ink: #F8FAFC;
-    --mu: #94A3B8;
-    --ln: #334155;
-    --bl: #60A5FA;
-    --so: #1E3A8A;
-    color-scheme: dark;
+
+  /* A. 데스크탑 OS가 다크모드일 때, 라이트 토클 하지 않았을 때, 다크 허용 */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: var(--dark-bg);
+      --sf: var(--dark-sf);
+      --ink: var(--light-bg);
+      --mu: var(--ink-400);
+      --ln: var(--ink-200);
+      --bl: var(--blue-sky);
+      color-scheme: dark;
+    }
   }
+  /* B. 데스크탑 유저가 OS는 라이트지만 버튼으로 다크모드를 강제했을 때, 다크 허용*/
+    :root[data-theme="dark"] {
+      --bg: var(--dark-bg);
+      --sf: var(--dark-sf);
+      --ink: var(--light-bg);
+      --mu: var(--ink-400);
+      --ln: var(--ink-200);
+      --bl: var(--blue-sky);
+      color-scheme: dark;
+    }
 }
 
+/* 2. 모바일 (760px 이하): 무조건 라이트모드 강제 */
 @media (max-width: 760px) {
   :root,
   :root[data-theme="dark"] {
-    --bg: #F8FAFC;
-    --ink: #0F172A;
-    --bl: #2563EB;
-    --co: #f97316;
-    --co-dark: #FF4D5E;
-    --mu: #475569;
-    --ln: #E2E8F0;
-    --so: #DBEAFE;
-    --sf: #fff;
+    --bg: var(--light-bg);
+    --ink: var(--ink-900);
+    --bl: var(--blue-main);
+    --co: var(--orange);
+    --cr: var(--coral);
+    --mu: var(--ink-600);
+    --ln: var(--ink-200);
+    --sf: var(--light-sf);
     --header-h: 0px;
     color-scheme: light !important;
   }

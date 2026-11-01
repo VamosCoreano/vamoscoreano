@@ -77,12 +77,12 @@
 
 .res-pillar-chip:hover {
   transform: translateY(-3px);
-  border-color: var(--bl);
-  color: var(--bl);
+  border-color: var(--blue-main);
+  color: var(--blue-main);
 }
 
 .res-pillar-chip b {
-  color: var(--bl);
+  color: var(--blue-main);
   font-family: var(--font-head);
 }
 
@@ -93,7 +93,7 @@
   border-radius: 50%;
   border: 1px solid var(--ln);
   background: var(--sf);
-  color: var(--bl);
+  color: var(--blue-main);
   display: grid;
   place-items: center;
   transition: transform 0.35s var(--ez), border-color 0.3s, background 0.3s;
@@ -101,7 +101,7 @@
 }
 
 .res-cue:hover {
-  border-color: var(--bl);
+  border-color: var(--blue-main);
   background: var(--so);
   transform: translateY(4px);
 }
@@ -161,9 +161,9 @@
 }
 
 .res-tab[aria-selected="true"] {
-  background: var(--bl);
-  color: #fff;
-  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--bl) 55%, transparent);
+  background: var(--blue-main);
+  color: var(--light-sf);
+  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--blue-main) 55%, transparent);
 }
 
 .res-tab-count {
@@ -206,8 +206,8 @@
 }
 
 .res-portal:hover {
-  border-color: color-mix(in srgb, var(--bl) 45%, var(--ln));
-  box-shadow: 0 32px 64px -22px color-mix(in srgb, var(--bl) 16%, transparent);
+  border-color: color-mix(in srgb, var(--blue-main) 45%, var(--ln));
+  box-shadow: 0 32px 64px -22px color-mix(in srgb, var(--blue-main) 16%, transparent);
 }
 
 /* 탭 필터링 시 숨김 애니메이션 */
@@ -255,7 +255,7 @@
   padding: var(--s1) var(--s2);
   border-radius: 99px;
   background: var(--so);
-  color: var(--bl);
+  color: var(--blue-main);
   font-size: var(--fs-micro);
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -269,7 +269,7 @@
 .res-watermark {
   font-size: var(--fs-title);
   font-weight: 800;
-  color: var(--bl);
+  color: var(--blue-main);
   opacity: 0.25;
   line-height: 1;
 }
@@ -350,7 +350,7 @@
 
 .res-item-card:hover {
   transform: translateX(6px);
-  border-color: var(--bl);
+  border-color: var(--blue-main);
   background: var(--sf);
   box-shadow: 0 12px 28px -12px rgba(37, 99, 235, 0.16);
 }
@@ -360,7 +360,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(240px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--bl) 12%, transparent), transparent 70%);
+  background: radial-gradient(240px circle at var(--x, 50%) var(--y, 50%), color-mix(in srgb, var(--blue-main) 12%, transparent), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -375,7 +375,7 @@
   height: var(--s6);
   border-radius: 16px;
   background: var(--so);
-  color: var(--bl);
+  color: var(--blue-main);
   display: grid;
   place-items: center;
   font-weight: 800;
@@ -386,7 +386,7 @@
 
 .res-item-card:hover .res-item-icon {
   transform: scale(1.08) rotate(-4deg);
-  background: var(--bl);
+  background: var(--blue-main);
   color: #fff;
 }
 
@@ -398,7 +398,7 @@
   display: inline-block;
   font-size: var(--fs-micro);
   font-weight: 700;
-  color: var(--bl);
+  color: var(--blue-main);
   margin-bottom: 2px;
 }
 
@@ -430,15 +430,15 @@
 }
 
 .res-item-card:hover .res-item-action {
-  background: var(--bl);
-  border-color: var(--bl);
+  background: var(--blue-main);
+  border-color: var(--blue-main);
   color: #fff;
   transform: translateX(3px);
 }
 
 /* ---------- Portal 03 (Podcast) 전용 다크 인디고 테마 (index.html Bento와 통일) ---------- */
 .res-portal-podcast {
-  background: linear-gradient(160deg, #0F172A, #1E3A8A 65%, var(--bl));
+  background: linear-gradient(160deg, var(--dark-background), #1E3A8A 65%, var(--blue-main));
   border-color: transparent;
   color: #fff;
 }
@@ -572,7 +572,7 @@
   position: absolute;
   inset: -40% -10% auto;
   height: 240px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--bl) 16%, transparent), transparent 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--blue-main) 16%, transparent), transparent 70%);
   pointer-events: none;
 }
 

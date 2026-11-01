@@ -40,7 +40,7 @@
 
 /* ---------- Orbes de fondo (aurora) ---------- */
 .contact-page .orb-a {
-  --c: var(--bl);
+  --c: var(--blue-main);
   width: 46vmax;
   height: 46vmax;
   left: -12vmax;
@@ -57,7 +57,7 @@
 }
 
 .contact-page .orb-c {
-  --c: var(--co-dark);
+  --c: var(--coral);
   width: 34vmax;
   height: 34vmax;
   left: 20vw;
@@ -201,8 +201,8 @@
 }
 
 .channel-sub:hover .sub-arrow {
-  background: var(--bl);
-  border-color: var(--bl);
+  background: var(--blue-main);
+  border-color: var(--blue-main);
   color: var(--bg);
   transform: translate(2px, -2px);
 }
@@ -239,7 +239,7 @@
   border-radius: 40px;
   background: linear-gradient(
     90deg,
-    color-mix(in srgb, var(--bl) 28%, transparent),
+    color-mix(in srgb, var(--blue-main) 28%, transparent),
     color-mix(in srgb, var(--co) 28%, transparent)
   );
   filter: blur(48px);
@@ -274,7 +274,7 @@
 }
 
 .cta-banner:hover .cta-banner-card {
-  border-color: color-mix(in srgb, var(--bl) 45%, var(--ln));
+  border-color: color-mix(in srgb, var(--blue-main) 45%, var(--ln));
 }
 
 .cta-banner-card h3 {
@@ -308,8 +308,8 @@
 }
 
 .julio-card:hover {
-  border-color: var(--bl);
-  box-shadow: 0 24px 48px -18px color-mix(in srgb, var(--bl) 18%, transparent);
+  border-color: var(--blue-main);
+  box-shadow: 0 24px 48px -18px color-mix(in srgb, var(--blue-main) 18%, transparent);
 }
 
 /* Foco de luz que sigue al cursor (Julio + banner) */
@@ -320,7 +320,7 @@
   inset: 0;
   background: radial-gradient(
     320px circle at var(--x, 50%) var(--y, 50%),
-    color-mix(in srgb, var(--bl) 12%, transparent),
+    color-mix(in srgb, var(--blue-main) 12%, transparent),
     transparent 70%
   );
   opacity: 0;
@@ -341,7 +341,7 @@
   height: var(--s9);
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--bl), var(--co));
+  background: linear-gradient(135deg, var(--blue-main), var(--co));
 }
 
 /* Iniciales como respaldo si la foto no carga */
@@ -404,7 +404,7 @@
 /* ---------- Toast ---------- */
 .toast-icon {
   flex: none;
-  color: var(--co-dark);
+  color: var(--coral);
 }
 
 /* ---------- Responsive ---------- */

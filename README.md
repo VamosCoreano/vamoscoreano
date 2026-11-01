@@ -8,11 +8,24 @@ No llenes la pantalla con demasiado texto. Deja que el diseño respire para guia
 ### 3. Micro-interactions
 Cada detalle importa. Un sutil efecto de glow, fade, textura y movimiento fluido hace que la página se sienta premium.
 ### 4. Restricción de color
-Para mantener la consistencia visual, utilizaremos estrictamente solo 4x3 colores en toda la página:
-• Blanco (Fondo base/cremoso) - #F8FAFC
-• Negro (Texto principal) - #0F172A
-• Azul (Color de marca) - #2563EB
-• Naranja (Acento/Botones) - #F97316
+Para mantener la consistencia visual, utilizaremos estrictamente solo 12 colores en toda la página:
+   #### 1. Surfaces
+      #F8FAFC; /* 01. Main Background & Dark Headline */
+      var(--light-sf); /* 02. Light Card */
+      #090D16; /* 03. Dark Background */
+      #131B2E; /* 04. Dark Card */
+   #### 2. Neutrals */
+      #0F172A; /* 05. Primary Dark Ink */
+      #475569; /* 06. Light Subtext */
+      #94A3B8; /* 07. Dark Subtext */
+      #E2E8F0; /* 08. Hairline Border  */
+   #### 3. Brand & Accents
+      #2563EB; /* 09. Brand Blue */
+      #60A5FA; /* 10. Dark Mode Brand */
+      #F97316; /* 11. Primary Orange */
+      #FF3B5C; /* 12. Point Coral */
+   #### 4. Regla
+      1. Usar los colores primitivos directamente, sin pasar por tokens semánticos.
 ### 5. Jerarquía Tipográfica
 2 tipografías
   Bricolage Grotesque
