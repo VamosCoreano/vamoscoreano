@@ -1,35 +1,33 @@
 :root {
-/* 1. Surfaces */
-  --light-bg:   #F8FAFC; /* 01. Main Background & Dark Headline */
-  --light-sf:   #FFFFFF; /* 02. Light Card */
-  --dark-bg:    #090D16; /* 03. Dark Background */
-  --dark-sf:    #131B2E; /* 04. Dark Card */
+  /* 1. Surfaces */
+  --p-slate-50:    #F8FAFC; /* Light Canvas */
+  --p-white:       #FFFFFF; /* Light Surface / Elevated Card */
+  --p-navy-950:    #090D16; /* Dark Canvas */
+  --p-navy-900:    #131B2E; /* Dark Surface / Elevated Card */
 
   /* 2. Neutrals */
-  --ink-900:  #0F172A; /* 05. Primary Dark Ink */
-  --ink-600:  #475569; /* 06. Light Subtext */
-  --ink-400:  #94A3B8; /* 07. Dark Subtext */
-  --ink-200:  #E2E8F0; /* 08. Hairline Border  */
+  --p-slate-900:   #0F172A; /* Primary Dark Ink */
+  --p-slate-600:   #475569; /* Muted Light-Mode Ink */
+  --p-slate-400:   #94A3B8; /* Muted Dark-Mode Ink */
+  --p-slate-200:   #E2E8F0; /* Light Hairline Border */
 
   /* 3. Brand & Accents  */
-  --blue-main:   #2563EB; /* 09. Brand Blue */
-  --blue-sky:   #60A5FA; /* 10. Dark Mode Brand */
-  --orange: #F97316; /* 11. Primary Orange */
-  --coral:  #FF3B5C; /* 12. Point Coral */
-  
-  --ez: cubic-bezier(.2, .8, .2, 1);
+  --p-blue-600:    #2563EB; /* Brand Blue (Light Mode) */
+  --p-blue-400:    #60A5FA; /* Brand Sky Blue (Dark Mode) */
+  --p-orange-500:  #F97316; /* Accent Orange */
+  --p-coral-500:   #FF3B5C; /* Point Coral / Alert */
 
   /* fonts */
   --font-head: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
 
-  /* type scale: the only font sizes allowed on the site */
-  --fs-hero-impact: 5rem;
-  --fs-hero: 3rem;
-  --fs-title: 2rem;
-  --fs-sub: 1.25rem;
-  --fs-body: 1rem;
-  --fs-micro: .875rem;
+  /* Type Scale (Strict 6-step scale) */
+  --fs-hero-impact: 5rem;     /* 80px */
+  --fs-hero:        3rem;     /* 48px */
+  --fs-title:       2rem;     /* 32px */
+  --fs-sub:         1.25rem;  /* 20px */
+  --fs-body:        1rem;     /* 16px */
+  --fs-micro:       0.875rem; /* 14px */
 
   /* 8pt spacing: --sN = N x 8px */
   --s1: 8px;
@@ -45,50 +43,98 @@
   --s12: 96px;
   --s14: 112px;
 
-  color-scheme: light;
+  /* 6. Motion */
+  --ez-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
 
-  --header-h: 49px;
+  /* SEMANTIC TOKENSnLight Mode) */
+    color-scheme: light;
+
+    /* Backgrounds & Surfaces */
+    --bg-canvas:        var(--p-slate-50);
+    --bg-surface:       var(--p-white);
+    --bg-inverse:       var(--p-navy-950);
+
+    /* Typography / Ink Roles */
+    --text-primary:     var(--p-slate-900);
+    --text-secondary:   var(--p-slate-600);
+    --text-inverse:     var(--p-slate-50);
+
+    /* Borders & Dividers */
+    --border-subtle:    var(--p-slate-200);
+    --border-strong:    var(--p-slate-400);
+
+    /* Interactive & Accent Roles */
+    --accent-primary:   var(--p-blue-600);
+    --accent-secondary: var(--p-orange-500);
+    --accent-highlight: var(--p-coral-500);
+
+    /* Semantic Spacing & Layout Aliases */
+    --space-section-y:  var(--s12);
+    --space-card-pad:   var(--s3);
+    --space-stack-gap:  var(--s2);
+    --header-h:         49px;
+
+    /* Legacy Short Aliases (Optional backward-compatibility bridge) */
+    --bg:  var(--bg-canvas);
+    --sf:  var(--bg-surface);
+    --ink: var(--text-primary);
+    --mu:  var(--text-secondary);
+    --ln:  var(--border-subtle);
+    --bl:  var(--accent-primary);
+    --co:  var(--accent-secondary);
+    --cr:  var(--accent-highlight);
 }
 
+/* 1. Desktop Only (761px+): Dark Mode Allowed */
 @media (min-width: 761px) {
-
-  /* A. 데스크탑 OS가 다크모드일 때, 라이트 토클 하지 않았을 때, 다크 허용 */
+  /* A. System Dark Mode (when not explicitly forced to light) */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: var(--dark-bg);
-      --sf: var(--dark-sf);
-      --ink: var(--light-bg);
-      --mu: var(--ink-400);
-      --ln: var(--ink-200);
-      --bl: var(--blue-sky);
       color-scheme: dark;
+
+      --bg-canvas:      var(--p-navy-950);
+      --bg-surface:     var(--p-navy-900);
+      --bg-inverse:     var(--p-slate-50);
+
+      --text-primary:   var(--p-slate-50);
+      --text-secondary: var(--p-slate-400);
+      --text-inverse:   var(--p-slate-900);
+
+      --border-subtle:  color-mix(in srgb, var(--p-slate-400) 20%, transparent);
+      --border-strong:  var(--p-slate-600);
+
+      --accent-primary: var(--p-blue-400);
     }
   }
-  /* B. 데스크탑 유저가 OS는 라이트지만 버튼으로 다크모드를 강제했을 때, 다크 허용*/
-    :root[data-theme="dark"] {
-      --bg: var(--dark-bg);
-      --sf: var(--dark-sf);
-      --ink: var(--light-bg);
-      --mu: var(--ink-400);
-      --ln: var(--ink-200);
-      --bl: var(--blue-sky);
-      color-scheme: dark;
-    }
+
+  /* B. Explicit Dark Mode Toggle */
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg-canvas:      var(--p-navy-950);
+    --bg-surface:     var(--p-navy-900);
+    --bg-inverse:     var(--p-slate-50);
+
+    --text-primary:   var(--p-slate-50);
+    --text-secondary: var(--p-slate-400);
+    --text-inverse:   var(--p-slate-900);
+
+    --border-subtle:  color-mix(in srgb, var(--p-slate-400) 20%, transparent);
+    --border-strong:  var(--p-slate-600);
+
+    --accent-primary: var(--p-blue-400);
+  }
 }
 
-/* 2. 모바일 (760px 이하): 무조건 라이트모드 강제 */
+/* 2. Mobile (760px and below):
+   Light mode is already the :root default and dark mode is scoped to 761px+,
+   so mobile automatically stays in Light Mode with zero duplicate color code! */
 @media (max-width: 760px) {
-  :root,
-  :root[data-theme="dark"] {
-    --bg: var(--light-bg);
-    --ink: var(--ink-900);
-    --bl: var(--blue-main);
-    --co: var(--orange);
-    --cr: var(--coral);
-    --mu: var(--ink-600);
-    --ln: var(--ink-200);
-    --sf: var(--light-sf);
-    --header-h: 0px;
-    color-scheme: light !important;
+  :root {
+    --header-h:        0px;
+    --space-section-y: var(--s8);
+    --space-card-pad:  var(--s2);
   }
 }

@@ -54,7 +54,7 @@
 
 .glow-text {
   font-style: normal;
-  background: linear-gradient(135deg, var(--blue-main), var(--co));
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-highlight) 50%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

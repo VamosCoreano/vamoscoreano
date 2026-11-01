@@ -238,10 +238,11 @@
   z-index: -1;
   border-radius: 40px;
   background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--blue-main) 28%, transparent),
-    color-mix(in srgb, var(--co) 28%, transparent)
-  );
+  90deg,
+  color-mix(in srgb, var(--accent-primary) 28%, transparent) 0%,
+  color-mix(in srgb, var(--accent-highlight) 28%, transparent) 50%,
+  color-mix(in srgb, var(--accent-secondary) 28%, transparent) 100%
+);
   filter: blur(48px);
   opacity: .8;
   transition: opacity .5s var(--ez);

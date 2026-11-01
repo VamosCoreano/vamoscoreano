@@ -24,8 +24,8 @@ Para mantener la consistencia visual, utilizaremos estrictamente solo 12 colores
       #60A5FA; /* 10. Dark Mode Brand */
       #F97316; /* 11. Primary Orange */
       #FF3B5C; /* 12. Point Coral */
-   #### 4. Regla
-      1. Usar los colores primitivos directamente, sin pasar por tokens semánticos.
+   #### 4.Reglas
+      1. Salvo en token.css, queda estrictamente prohibido codificar colores o usar variables con el prefijo --p-.
 ### 5. Jerarquía Tipográfica
 2 tipografías
   Bricolage Grotesque
