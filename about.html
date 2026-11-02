@@ -98,41 +98,38 @@
       </div>
     </section>
 
-    <!-- [Sección 2] La Historia Detallada: saludo, historia, el enemigo, misión y valores -->
+   <!-- [Sección 2] La Historia Detallada (기존 코드에서 La misión 부분만 제거된 상태) -->
     <section id="historia" class="story">
       <div class="w ab">
         <div>
-          <h2>¿Por qué existe Vamos Coreano?</h2>
+          <h2>¿Quiénes somos?</h2>
           <p class="big rv">Hola, soy Hyunho Lee.</p>
 
           <span class="kicker rv">La historia</span>
-          <p class="rv">Estudié Literatura Coreana y hoy soy instructor oficial certificado. Pero lo que me llevó a crear este proyecto fue ver, una y otra vez, cómo los hispanohablantes aprendían coreano por el camino más difícil.</p>
-          <p class="rv">Casi todo el material disponible pasa por el inglés, y se nota: explicaciones traducidas dos veces, ejemplos poco naturales y un aprendizaje que nunca termina de conectar con tu forma de pensar. Por eso diseñé un método directo, del español al coreano, pensado para la mente hispanohablante.</p>
+          <p class="rv">
+            Estudié la licenciatura en Lengua y Literatura Coreana y hoy enseño en plataformas internacionales como profesor oficial certificado. Durante mis clases, noté un gran problema: casi no hay diversidad de material disponible para hispanohablantes.
+            <br>Tras pasar mucho tiempo traduciendo y adaptando recursos existentes para mis alumnos, pensé: «Voy a crearlo yo mismo». Así nació Vamos Coreano, una plataforma diseñada exclusivamente para el mundo hispanohablante.
+          </p>
 
-          <span class="kicker rv">El enemigo</span>
-          <ul class="enemy rv">
-            <li><span><strong>Materiales traducidos del inglés.</strong> Textos con sabor a traducción automática que confunden más de lo que explican.</span></li>
-            <li><span><strong>La romanización.</strong> Letras latinas que arruinan tu pronunciación desde el primer día.</span></li>
-            <li><span><strong>Memorizar sin entender.</strong> Reglas sueltas, sin principio ni contexto, que se olvidan en una semana.</span></li>
-          </ul>
-
-          <span class="kicker rv">La misión</span>
-          <div class="q rv">
-            <p>Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del inglés.</p>
-          </div>
+          <span class="kicker rv">Un mar de información, pero sin brújula</span>
+          <p class="rv">
+            Además, al enseñar a tantos estudiantes, descubrí un problema aún mayor: el exceso de información y la falta de un guía. En plena era de la inteligencia artificial, tenemos acceso instantáneo a respuestas precisas e infinitas. A simple vista, aprender un idioma parece más fácil que nunca. Pero la realidad es otra: es como lanzarse en medio del océano para aprender a nadar sin saber flotar. Curiosamente, la pregunta que más escuchaba en mis clases no era «Profesor, ¿qué significa esto?», sino «¿Y ahora qué hago?». Ahí comprendí todo. No les faltaba información; estaban perdidos. Les faltaba una brújula.
+          </p>
+          <!-- ❌ 기존 La misión 블록 삭제 완료 (우측 카드 3개와 좌우 높이 밸런스가 딱 맞아집니다!) -->
         </div>
 
         <div>
           <span class="kicker rv" style="margin-top:0">Nuestros valores</span>
           <div class="cards">
+            <!-- (기존 카드 3개 그대로 유지) -->
             <div class="cd rv" style="--d:1">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="9" r="5.5"/>
                 <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
               </svg>
               <div>
-                <h3>Enseñanza desde la raíz</h3>
-                <p>Sin pasar por el inglés. Conectamos la raíz y los principios del coreano directamente desde la mirada de un hispanohablante.</p>
+                <h3>Aprender sin perderse</h3>
+                <p>Olvídate de la incertidumbre de no saber por dónde seguir. Te damos la dirección exacta y el método preciso para que domines el coreano sin perderte en el intento.</p>
               </div>
             </div>
 
@@ -142,8 +139,8 @@
                 <path d="M8 9h8M8 12h5"/>
               </svg>
               <div>
-                <h3>Explicaciones en tu idioma</h3>
-                <p>Cada concepto, explicado en español con lógica y claridad. Aprendes a leer y pronunciar en hangul desde el primer día, sin muletas.</p>
+                <h3>Fonética real y directa</h3>
+                <p>Conectamos los sonidos del coreano con la fonética hispanohablante para que hables con claridad y sin acentos extraños.</p>
               </div>
             </div>
 
@@ -153,12 +150,28 @@
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
               </svg>
               <div>
-                <h3>Método diseñado para ti</h3>
-                <p>Un currículo creado para la mente hispanohablante: aprovecha las similitudes entre ambos idiomas y resuelve las diferencias paso a paso.</p>
+                <h3>Diseñado para comunicarse</h3>
+                <p>Te damos herramientas prácticas desde la primera lección para que puedas expresarte, entender el contexto y conectar con personas reales.</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 👇 [Sección 3] LA MISIÓN (SOMOS 그라데이션 필인 재활용 + 초대형 선언문) -->
+    <section id="mision" class="identidad mision-sec">
+      <div class="w identidad-box">
+        <h2 class="somos-title" data-text="LA MISIÓN">LA MISIÓN</h2>
+        
+        <p class="mision-giant rv" style="--d:1">
+          Nuestra misión es ser esa <em class="m-brujula">«brújula»</em>:<br>
+          guiar a los hispanohablantes a aprender el coreano con un método 
+          <strong class="m-point">claro</strong>, 
+          <strong class="m-point">directo</strong> y 
+          <strong class="m-point">diseñado</strong> 
+          exclusivamente desde su propia lengua.
+        </p>
       </div>
     </section>
 

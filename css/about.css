@@ -266,7 +266,99 @@
 
 .story .cd h3 { margin-bottom: 4px; }
 
-/* ---------- Sección 3: El compañero (Julio) ---------- */
+/* ==========================================================================
+   Sección 3: LA MISIÓN (index.css의 SOMOS 필인 그라데이션 이식 + 왕큰글씨)
+   ========================================================================== */
+.mision-sec {
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s11) 0;
+}
+
+.mision-sec .identidad-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SOMOS 재탕: 스크롤 도달 시 왼쪽 -> 오른쪽으로 차오르는 3색 그라데이션 타이틀 */
+.mision-sec .somos-title {
+  position: relative;
+  display: inline-block;
+  font-size: clamp(var(--fs-hero), 10vw, 8.5rem); /* LA MISIÓN 9글자가 한 줄에 꽉 차는 최적 스케일 */
+  font-weight: 800;
+  max-width: none;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  margin-bottom: var(--s5);
+  padding: 0 0.08em;
+  color: color-mix(in srgb, var(--text-primary) 14%, transparent);
+}
+
+.mision-sec .somos-title::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  padding: 0 0.08em;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-highlight) 50%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-clip-path: inset(-0.08em 100% -0.08em 0);
+  clip-path: inset(-0.08em 100% -0.08em 0);
+  transition: clip-path 1.4s var(--ez-out), -webkit-clip-path 1.4s var(--ez-out);
+  will-change: clip-path;
+}
+
+.mision-sec .somos-title.in::before {
+  -webkit-clip-path: inset(-0.08em 0% -0.08em 0);
+  clip-path: inset(-0.08em 0% -0.08em 0);
+}
+
+/* 기존 h2 하단 주황색 짧은 바 제거 */
+.mision-sec .somos-title::after {
+  display: none;
+}
+
+/* 왕큰글씨 본문: Bricolage Grotesque 헤드라인 폰트 + 묵직한 타이틀 스케일 */
+.mision-giant {
+  font-family: var(--font-head);
+  font-size: clamp(var(--fs-sub), 3.4vw, var(--fs-hero));
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  max-width: 28ch;
+  margin: 0 auto;
+  text-wrap: balance;
+}
+
+/* "brújula": 악센트 프라이머리(브랜드 블루) + 은은한 블루 글로우 */
+.m-brujula {
+  font-style: normal;
+  color: var(--accent-primary);
+  text-shadow: 0 8px 28px color-mix(in srgb, var(--accent-primary) 28%, transparent);
+}
+
+/* *뽀인트 단어 3총사 (claro, directo, diseñado): 오렌지->코랄 하이라이트 언더라인 */
+.m-point {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: var(--text-primary);
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-highlight));
+  background-repeat: no-repeat;
+  background-size: 100% 0.14em;
+  background-position: 0 92%;
+  padding-bottom: 0.04em;
+}
+
+/* ---------- Sección 4: El compañero (Julio) ---------- */
 .julio-photo {
   position: relative;
   aspect-ratio: 1 / 1;

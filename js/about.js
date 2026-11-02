@@ -72,4 +72,18 @@
       nameFlip.classList.remove("is-flipped"); // 이후엔 순수 CSS :hover로만 작동
     }, { once: true });
   }
+  /* LA MISIÓN 전용: 화면 중간(-25%)에 도달했을 때 그라데이션 잉크가 차오름 (index.js와 동일 로직) */
+  var somosEl = document.querySelector(".somos-title");
+  if (somosEl) {
+    if (RM || !("IntersectionObserver" in window)) {
+      somosEl.classList.add("in");
+    } else {
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) {
+          entries[0].target.classList.add("in");
+          obs.disconnect();
+        }
+      }, { rootMargin: "0px 0px -25% 0px" }).observe(somosEl);
+    }
+  }
 })();

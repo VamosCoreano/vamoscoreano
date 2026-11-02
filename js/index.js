@@ -66,35 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    /* scroll: progress, rail */
-    const tl = $("#tl"), bar = $("#bar");
-
-    function tick() {
-      const max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-    }
-
-    addEventListener("scroll", tick, { passive: true });
-    addEventListener("resize", tick);
-    tick();
-
-    /* reveal + counters */
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("in");
-      const n = e.target.matches("[data-n]") ? e.target : e.target.querySelector("[data-n]");
-      if (n && !n.done) {
-        n.done = 1;
-        const T = +n.dataset.n, t0 = performance.now(), f = t => {
-          const k = Math.min(1, (t - t0) / 1400);
-          n.textContent = Math.round(T * (1 - Math.pow(1 - k, 3)));
-          k < 1 && requestAnimationFrame(f);
-        };
-        RM ? n.textContent = T : requestAnimationFrame(f);
-      }
-      io.unobserve(e.target);
-    }), { threshold: .25 });
-
     /* SOMOS 전용: 화면 중간(-25%)에 왔을 때만 차오름 */
     const somosEl = $(".somos-title");
     if (somosEl) {
@@ -105,9 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, { rootMargin: "0px 0px -25% 0px" }).observe(somosEl);
     }
-
-    $$("section h2").filter(h => !h.closest(".rv") && !h.classList.contains("somos-title")).forEach(h => h.classList.add("rv"));
-    $$(".rv,.ls").forEach(el => io.observe(el));
 
     /* fondo, cinta, spotlight, imán */
     (() => {
@@ -121,45 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
           b.append(g);
         }
       }
-
-      // 최적화된 코드 (`requestAnimationFrame` 스로틀링 적용 ✨)
-let ticking = false;
-let latestEvent = null;
-
-addEventListener("pointermove", e => {
-  latestEvent = e; // 1. 최신 마우스 위치만 기억해둠
-  
-  if (!ticking) {
-    requestAnimationFrame(() => { // 2. 브라우저 렌더링 주기에 맞춤
-      if (!latestEvent) return;
-      const ev = latestEvent;
-      
-      const t = ev.target;
-      const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card");
-      if (c) {
-        const r = c.getBoundingClientRect(); // 3. 부하가 걸리지 않도록 주기에 맞춰 안전하게 실행
-        c.style.setProperty("--x", ev.clientX - r.left + "px");
-        c.style.setProperty("--y", ev.clientY - r.top + "px");
-      }
-      
-      const q = t.closest && t.closest(".b");
-      if (q && !RM) {
-        const r = q.getBoundingClientRect();
-        q.style.setProperty("--bx", (ev.clientX - r.left - r.width / 2) * .18 + "px");
-        q.style.setProperty("--by", (ev.clientY - r.top - r.height / 2) * .28 + "px");
-      }
-      
-      ticking = false; // 4. 다음 움직임을 받을 준비 완료
-    });
-    
-    ticking = true;
-  }
-}, { passive: true });
-      
-      $$(".b").forEach(q => q.addEventListener("pointerleave", () => {
-        q.style.setProperty("--bx", "0px");
-        q.style.setProperty("--by", "0px");
-      }));
     })();
 
 /* 탁상달력 플립 타이머 (중복 제거 + 웹폰트 로드 및 리사이즈 완벽 대응) */
@@ -200,97 +129,6 @@ addEventListener("pointermove", e => {
     updateWidth();
   }, 2200);
 })();
-/* Cursos: 화면 20% 도달 시 2바퀴(2초) 회전 후 DESPEGUE 정중앙 정지 */
-  (() => {
-    const track = $("#peek-track");
-    if (!track) return;
-
-    const origCards = $$(".peek-card", track);
-    if (!origCards.length) return;
-
-    // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트 = 16장)
-    // 구조: [세트0(앞 여유분)] - [세트1(시작점)] - [세트2] - [세트3(2바퀴 도착점: DESPEGUE)]
-    for (let s = 0; s < 3; s++) {
-      origCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
-        clone.setAttribute("aria-hidden", "true");
-        clone.inert = true;
-        track.append(clone);
-      });
-    }
-
-    const allCards = $$(".peek-card", track);
-    const setSize = origCards.length; // 4장
-
-    // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
-    const getCenterScroll = (index) => {
-      const card = allCards[index];
-      return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-    };
-
-    // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
-    track.classList.add("is-spinning");
-    track.scrollLeft = getCenterScroll(0);
-    requestAnimationFrame(() => track.classList.remove("is-spinning"));
-
-    // 2. 2초(2000ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
-    let spun = false;
-    const spinRoulette = () => {
-      if (spun) return;
-      spun = true;
-      origCards.forEach(c => c.classList.add("in"));
-      // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
-      if (RM) {
-        track.scrollLeft = getCenterScroll(setSize);
-        return;
-      }
-
-      track.classList.add("is-spinning");
-
-      const startX = getCenterScroll(0);          // 출발: 0번 (첫 세트 DESPEGUE)
-      const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
-      const distance = targetX - startX;
-      const duration = 1500; // 요청하신 2초(2000ms) 여유 있는 회전
-      const t0 = performance.now();
-
-      // Quintic Out 곡선: 초반엔 휙휙 돌고 끝에서 부드럽고 묵직하게 감속
-      const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
-
-      const step = (now) => {
-        const elapsed = now - t0;
-        const progress = Math.min(1, elapsed / duration);
-        track.scrollLeft = startX + distance * easeOutQuint(progress);
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          // 3. 정지 직후: 눈치채지 못하게 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환해
-          // 이후 사용자가 좌/우 어느 쪽으로든 화살표나 드래그를 할 수 있게 여유 공간 확보
-          track.scrollLeft = getCenterScroll(setSize);
-          track.classList.remove("is-spinning");
-        }
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
-    new IntersectionObserver(([entry], obs) => {
-      if (entry.isIntersecting) {
-        spinRoulette();
-        obs.disconnect(); // 최초 1회만 실행
-      }
-    }, { threshold: 0.2 }).observe(track);
-
-    // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 이동 연동
-    const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
-    const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + gap(24px)
-
-    if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
-    if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
-  })();
-
   /* ÚNETE: 듀얼 코어 카드 3D 틸트(기울기) & 홀로그램 반사광(Glare) 제어 */
   (() => {
     const card = $("#unete-card");

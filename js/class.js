@@ -125,17 +125,39 @@ const $ = (s, r = document) => r.querySelector(s),
 
 // (기존 코드: tl_temario 스크롤 이벤트 끝부분)
     const tl_temario = $("#tl");
-    if(tl_temario) {
-      addEventListener("scroll", () => {
-        const vh = innerHeight;
-        const rr = $(".rail", tl_temario).getBoundingClientRect();
-        const ly = vh * 0.6; 
-        tl_temario.style.setProperty("--fh", Math.max(0, Math.min(rr.height, ly - rr.top)) + "px");  
-        $$(".it").forEach(el => {
-          if (el.offsetParent) el.classList.toggle("pass", el.getBoundingClientRect().top + 36 < ly);
-        });
-      }, { passive: true });
+if (tl_temario) {
+  const railEl = $(".rail", tl_temario);
+  const items = $$(".it", tl_temario);
+  let tlTicking = false;
+
+  const updateTimeline = () => {
+    tlTicking = false;
+    const ly = innerHeight * 0.6;
+
+    // [1단계: READ 전용] 모든 기하 측정을 먼저 한 번에 수행
+    const rr = railEl.getBoundingClientRect();
+    const fh = Math.max(0, Math.min(rr.height, ly - rr.top));
+    const passStates = items.map(el =>
+      !el.classList.contains("hd") && (el.getBoundingClientRect().top + 36 < ly)
+    );
+
+    // [2단계: WRITE 전용] 측정값을 바탕으로 스타일·클래스 일괄 반영
+    tl_temario.style.setProperty("--fh", fh + "px");
+    items.forEach((el, idx) => {
+      if (!el.classList.contains("hd")) {
+        el.classList.toggle("pass", passStates[idx]);
+      }
+    });
+  };
+
+  addEventListener("scroll", () => {
+    if (!tlTicking) {
+      requestAnimationFrame(updateTimeline);
+      tlTicking = true;
     }
+  }, { passive: true });
+  updateTimeline();
+}
 
     /* =====================================================================
        👇 [여기에 추가 1] index.js에서 가져온 코스 카드 룰렛 회전 & 좌우 화살표 제어

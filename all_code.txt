@@ -108,23 +108,23 @@ FILE: about.html
     <section id="historia" class="story">
       <div class="w ab">
         <div>
-          <h2>¿Por qué existe Vamos Coreano?</h2>
+          <h2>¿Quiénes somos?</h2>
           <p class="big rv">Hola, soy Hyunho Lee.</p>
 
           <span class="kicker rv">La historia</span>
-          <p class="rv">Estudié Literatura Coreana y hoy soy instructor oficial certificado. Pero lo que me llevó a crear este proyecto fue ver, una y otra vez, cómo los hispanohablantes aprendían coreano por el camino más difícil.</p>
-          <p class="rv">Casi todo el material disponible pasa por el inglés, y se nota: explicaciones traducidas dos veces, ejemplos poco naturales y un aprendizaje que nunca termina de conectar con tu forma de pensar. Por eso diseñé un método directo, del español al coreano, pensado para la mente hispanohablante.</p>
+          <p class="rv">
+            Estudié la licenciatura en Lengua y Literatura Coreana y hoy enseño en plataformas internacionales como profesor oficial certificado. Durante mis clases, noté un gran problema: casi no hay diversidad de material disponible para hispanohablantes.
+            <br>Tras pasar mucho tiempo traduciendo y adaptando recursos existentes para mis alumnos, pensé: «Voy a crearlo yo mismo». Así nació Vamos Coreano, una plataforma diseñada exclusivamente para el mundo hispanohablante.
+          </p>
 
-          <span class="kicker rv">El enemigo</span>
-          <ul class="enemy rv">
-            <li><span><strong>Materiales traducidos del inglés.</strong> Textos con sabor a traducción automática que confunden más de lo que explican.</span></li>
-            <li><span><strong>La romanización.</strong> Letras latinas que arruinan tu pronunciación desde el primer día.</span></li>
-            <li><span><strong>Memorizar sin entender.</strong> Reglas sueltas, sin principio ni contexto, que se olvidan en una semana.</span></li>
-          </ul>
+          <span class="kicker rv">Un mar de información, pero sin brújula</span>
+          <p class="rv">
+            Además, al enseñar a tantos estudiantes, descubrí un problema aún mayor: el exceso de información y la falta de un guía. En plena era de la inteligencia artificial, tenemos acceso instantáneo a respuestas precisas e infinitas. A simple vista, aprender un idioma parece más fácil que nunca. Pero la realidad es otra: es como lanzarse en medio del océano para aprender a nadar sin saber flotar. Curiosamente, la pregunta que más escuchaba en mis clases no era «Profesor, ¿qué significa esto?», sino «¿Y ahora qué hago?». Ahí comprendí todo. No les faltaba información; estaban perdidos. Les faltaba una brújula.
+          </p>
 
           <span class="kicker rv">La misión</span>
           <div class="q rv">
-            <p>Nuestra misión es guiar a los hispanohablantes a dominar el coreano de la forma más rápida y precisa, sin pasar por el filtro innecesario del inglés.</p>
+            <p>Nuestra misión es ser esa brújula: guiar a la comunidad hispanohablante a dominar el coreano con un método claro, directo y diseñado exclusivamente desde su propia lengua.</p>
           </div>
         </div>
 
@@ -137,8 +137,9 @@ FILE: about.html
                 <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
               </svg>
               <div>
-                <h3>Enseñanza desde la raíz</h3>
-                <p>Sin pasar por el inglés. Conectamos la raíz y los principios del coreano directamente desde la mirada de un hispanohablante.</p>
+                <h3>Aprender sin perderse</h3>
+                <p>Olvídate de la incertidumbre de no saber por dónde seguir. Te damos la dirección exacta y el método preciso para que domines el coreano sin perderte en el intento.
+                </p>
               </div>
             </div>
 
@@ -148,8 +149,8 @@ FILE: about.html
                 <path d="M8 9h8M8 12h5"/>
               </svg>
               <div>
-                <h3>Explicaciones en tu idioma</h3>
-                <p>Cada concepto, explicado en español con lógica y claridad. Aprendes a leer y pronunciar en hangul desde el primer día, sin muletas.</p>
+                <h3>Fonética real y directa</h3>
+                <p>Conectamos los sonidos del coreano con la fonética hispanohablante para que hables con claridad y sin acentos extraños.</p>
               </div>
             </div>
 
@@ -159,8 +160,8 @@ FILE: about.html
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
               </svg>
               <div>
-                <h3>Método diseñado para ti</h3>
-                <p>Un currículo creado para la mente hispanohablante: aprovecha las similitudes entre ambos idiomas y resuelve las diferencias paso a paso.</p>
+                <h3>Diseñado para comunicarse</h3>
+                <p>Te damos herramientas prácticas desde la primera lección para que puedas expresarte, entender el contexto y conectar con personas reales.</p>
               </div>
             </div>
           </div>
@@ -890,7 +891,7 @@ FILE: index.html
         <div class="authority-visual rv" style="--d:2">
           <div class="tutor-card-tilt" data-tilt>
             <div class="tutor-card-inner">
-              <img src="/assets/image/profile-main.png" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
+              <img src="assets/image/profile-main.png" alt="Hyunho Lee - Tutor nativo de coreano" class="tutor-img">
               <div class="tutor-badge">
                 <strong>Hyunho Lee</strong>
                 <span>Tutor principal · Vamos Coreano</span>
@@ -4171,16 +4172,18 @@ FILE: css\index.css
 .waveform i {
   display: block;
   width: 4px;
-  height: 8px;
+  height: 24px;
   border-radius: 99px;
   background: var(--accent-secondary);
+  transform-origin: center;
+  will-change: transform, opacity;
   animation: eq 1.2s ease-in-out infinite alternate;
   animation-delay: calc(var(--w) * 140ms);
 }
 
 @keyframes eq {
-  0% { height: 6px; opacity: .5; }
-  100% { height: 24px; opacity: 1; }
+  0%   { transform: scaleY(0.25); opacity: .5; }
+  100% { transform: scaleY(1);    opacity: 1; }
 }
 
 /* [작은 박스 C-1, C-2] 스탯 카운터 (각 4칸) */
@@ -4489,14 +4492,15 @@ FILE: css\index.css
 
 .chat-Wave i {
   width: 3px;
-  height: 6px;
+  height: 15px;
   border-radius: 99px;
   background: var(--accent-primary);
+  transform-origin: center;
+  will-change: transform, opacity;
   animation: eq 1s ease-in-out infinite alternate;
 }
-
-.chat-Wave i:nth-child(2n) { animation-delay: .2s; height: 12px; }
-.chat-Wave i:nth-child(3n) { animation-delay: .4s; height: 15px; }
+.chat-Wave i:nth-child(2n) { animation-delay: .2s; }
+.chat-Wave i:nth-child(3n) { animation-delay: .4s; }
 
 .chat-ok {
   margin-left: auto;
@@ -6309,17 +6313,22 @@ nav a.nav-cta-pill.on {
   margin-bottom: var(--s3);
 }
 
-.tag i {
-  width: 9px;
-  height: 9px;
+.tag i, .live-dot, .res-wave-dot {
+  position: relative;
+}
+.tag i::before, .live-dot::before, .res-wave-dot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
-  background: var(--accent-secondary);
-  animation: pu 1.8s infinite;
+  background: inherit;
+  animation: pu 1.8s var(--ez-out) infinite;
+  pointer-events: none;
 }
 
 @keyframes pu {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent-highlight) 55%, transparent); }
-  100% { box-shadow: 0 0 0 12px transparent; }
+  0%   { transform: scale(1);   opacity: 0.65; }
+  100% { transform: scale(2.6); opacity: 0; }
 }
 
 h1 .ch {
@@ -6569,12 +6578,11 @@ h1 em { font-style: normal; color: var(--accent-primary); }
 .orb {
   position: absolute;
   border-radius: 50%;
-  background: var(--c);
-  filter: blur(110px);
-  opacity: var(--oo, .20);
+  background: radial-gradient(circle, var(--c) 0%, color-mix(in srgb, var(--c) 45%, transparent) 38%, transparent 70%);
+  opacity: var(--oo, .28);
+  will-change: transform;
   animation: dft 24s ease-in-out infinite alternate;
 }
-
 @keyframes dft {
   to { transform: translate(70px, 50px) scale(1.15); }
 }
@@ -7617,17 +7625,39 @@ const $ = (s, r = document) => r.querySelector(s),
 
 // (기존 코드: tl_temario 스크롤 이벤트 끝부분)
     const tl_temario = $("#tl");
-    if(tl_temario) {
-      addEventListener("scroll", () => {
-        const vh = innerHeight;
-        const rr = $(".rail", tl_temario).getBoundingClientRect();
-        const ly = vh * 0.6; 
-        tl_temario.style.setProperty("--fh", Math.max(0, Math.min(rr.height, ly - rr.top)) + "px");  
-        $$(".it").forEach(el => {
-          if (el.offsetParent) el.classList.toggle("pass", el.getBoundingClientRect().top + 36 < ly);
-        });
-      }, { passive: true });
+if (tl_temario) {
+  const railEl = $(".rail", tl_temario);
+  const items = $$(".it", tl_temario);
+  let tlTicking = false;
+
+  const updateTimeline = () => {
+    tlTicking = false;
+    const ly = innerHeight * 0.6;
+
+    // [1단계: READ 전용] 모든 기하 측정을 먼저 한 번에 수행
+    const rr = railEl.getBoundingClientRect();
+    const fh = Math.max(0, Math.min(rr.height, ly - rr.top));
+    const passStates = items.map(el =>
+      !el.classList.contains("hd") && (el.getBoundingClientRect().top + 36 < ly)
+    );
+
+    // [2단계: WRITE 전용] 측정값을 바탕으로 스타일·클래스 일괄 반영
+    tl_temario.style.setProperty("--fh", fh + "px");
+    items.forEach((el, idx) => {
+      if (!el.classList.contains("hd")) {
+        el.classList.toggle("pass", passStates[idx]);
+      }
+    });
+  };
+
+  addEventListener("scroll", () => {
+    if (!tlTicking) {
+      requestAnimationFrame(updateTimeline);
+      tlTicking = true;
     }
+  }, { passive: true });
+  updateTimeline();
+}
 
     /* =====================================================================
        👇 [여기에 추가 1] index.js에서 가져온 코스 카드 룰렛 회전 & 좌우 화살표 제어
@@ -7996,35 +8026,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     }
 
-    /* scroll: progress, rail */
-    const tl = $("#tl"), bar = $("#bar");
-
-    function tick() {
-      const max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-    }
-
-    addEventListener("scroll", tick, { passive: true });
-    addEventListener("resize", tick);
-    tick();
-
-    /* reveal + counters */
-    const io = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add("in");
-      const n = e.target.matches("[data-n]") ? e.target : e.target.querySelector("[data-n]");
-      if (n && !n.done) {
-        n.done = 1;
-        const T = +n.dataset.n, t0 = performance.now(), f = t => {
-          const k = Math.min(1, (t - t0) / 1400);
-          n.textContent = Math.round(T * (1 - Math.pow(1 - k, 3)));
-          k < 1 && requestAnimationFrame(f);
-        };
-        RM ? n.textContent = T : requestAnimationFrame(f);
-      }
-      io.unobserve(e.target);
-    }), { threshold: .25 });
-
     /* SOMOS 전용: 화면 중간(-25%)에 왔을 때만 차오름 */
     const somosEl = $(".somos-title");
     if (somosEl) {
@@ -8035,9 +8036,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, { rootMargin: "0px 0px -25% 0px" }).observe(somosEl);
     }
-
-    $$("section h2").filter(h => !h.closest(".rv") && !h.classList.contains("somos-title")).forEach(h => h.classList.add("rv"));
-    $$(".rv,.ls").forEach(el => io.observe(el));
 
     /* fondo, cinta, spotlight, imán */
     (() => {
@@ -8051,45 +8049,6 @@ document.addEventListener("DOMContentLoaded", () => {
           b.append(g);
         }
       }
-
-      // 최적화된 코드 (`requestAnimationFrame` 스로틀링 적용 ✨)
-let ticking = false;
-let latestEvent = null;
-
-addEventListener("pointermove", e => {
-  latestEvent = e; // 1. 최신 마우스 위치만 기억해둠
-  
-  if (!ticking) {
-    requestAnimationFrame(() => { // 2. 브라우저 렌더링 주기에 맞춤
-      if (!latestEvent) return;
-      const ev = latestEvent;
-      
-      const t = ev.target;
-      const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card");
-      if (c) {
-        const r = c.getBoundingClientRect(); // 3. 부하가 걸리지 않도록 주기에 맞춰 안전하게 실행
-        c.style.setProperty("--x", ev.clientX - r.left + "px");
-        c.style.setProperty("--y", ev.clientY - r.top + "px");
-      }
-      
-      const q = t.closest && t.closest(".b");
-      if (q && !RM) {
-        const r = q.getBoundingClientRect();
-        q.style.setProperty("--bx", (ev.clientX - r.left - r.width / 2) * .18 + "px");
-        q.style.setProperty("--by", (ev.clientY - r.top - r.height / 2) * .28 + "px");
-      }
-      
-      ticking = false; // 4. 다음 움직임을 받을 준비 완료
-    });
-    
-    ticking = true;
-  }
-}, { passive: true });
-      
-      $$(".b").forEach(q => q.addEventListener("pointerleave", () => {
-        q.style.setProperty("--bx", "0px");
-        q.style.setProperty("--by", "0px");
-      }));
     })();
 
 /* 탁상달력 플립 타이머 (중복 제거 + 웹폰트 로드 및 리사이즈 완벽 대응) */
@@ -8130,97 +8089,6 @@ addEventListener("pointermove", e => {
     updateWidth();
   }, 2200);
 })();
-/* Cursos: 화면 20% 도달 시 2바퀴(2초) 회전 후 DESPEGUE 정중앙 정지 */
-  (() => {
-    const track = $("#peek-track");
-    if (!track) return;
-
-    const origCards = $$(".peek-card", track);
-    if (!origCards.length) return;
-
-    // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트 = 16장)
-    // 구조: [세트0(앞 여유분)] - [세트1(시작점)] - [세트2] - [세트3(2바퀴 도착점: DESPEGUE)]
-    for (let s = 0; s < 3; s++) {
-      origCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
-        clone.setAttribute("aria-hidden", "true");
-        clone.inert = true;
-        track.append(clone);
-      });
-    }
-
-    const allCards = $$(".peek-card", track);
-    const setSize = origCards.length; // 4장
-
-    // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
-    const getCenterScroll = (index) => {
-      const card = allCards[index];
-      return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-    };
-
-    // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
-    track.classList.add("is-spinning");
-    track.scrollLeft = getCenterScroll(0);
-    requestAnimationFrame(() => track.classList.remove("is-spinning"));
-
-    // 2. 2초(2000ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
-    let spun = false;
-    const spinRoulette = () => {
-      if (spun) return;
-      spun = true;
-      origCards.forEach(c => c.classList.add("in"));
-      // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
-      if (RM) {
-        track.scrollLeft = getCenterScroll(setSize);
-        return;
-      }
-
-      track.classList.add("is-spinning");
-
-      const startX = getCenterScroll(0);          // 출발: 0번 (첫 세트 DESPEGUE)
-      const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
-      const distance = targetX - startX;
-      const duration = 1500; // 요청하신 2초(2000ms) 여유 있는 회전
-      const t0 = performance.now();
-
-      // Quintic Out 곡선: 초반엔 휙휙 돌고 끝에서 부드럽고 묵직하게 감속
-      const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
-
-      const step = (now) => {
-        const elapsed = now - t0;
-        const progress = Math.min(1, elapsed / duration);
-        track.scrollLeft = startX + distance * easeOutQuint(progress);
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          // 3. 정지 직후: 눈치채지 못하게 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환해
-          // 이후 사용자가 좌/우 어느 쪽으로든 화살표나 드래그를 할 수 있게 여유 공간 확보
-          track.scrollLeft = getCenterScroll(setSize);
-          track.classList.remove("is-spinning");
-        }
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
-    new IntersectionObserver(([entry], obs) => {
-      if (entry.isIntersecting) {
-        spinRoulette();
-        obs.disconnect(); // 최초 1회만 실행
-      }
-    }, { threshold: 0.2 }).observe(track);
-
-    // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 이동 연동
-    const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
-    const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + gap(24px)
-
-    if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
-    if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
-  })();
-
   /* ÚNETE: 듀얼 코어 카드 3D 틸트(기울기) & 홀로그램 반사광(Glare) 제어 */
   (() => {
     const card = $("#unete-card");
@@ -8569,6 +8437,189 @@ if (mobileMQ.addEventListener) {
     document.addEventListener("DOMContentLoaded", mountStripeMobileNav);
   } else {
     mountStripeMobileNav();
+  }
+})();
+
+/* ==========================================================================
+   공통 5대 엔진 (진행바, .rv 리빌, 스포트라이트, 자석 버튼, 가로 룰렛)
+   ========================================================================== */
+(function () {
+  function initCommonEngines() {
+    const $ = (s, r = document) => r.querySelector(s),
+          $$ = (s, r = document) => [...r.querySelectorAll(s)];
+    const RM = window.matchMedia ? window.matchMedia("(prefers-reduced-motion:reduce)").matches : false;
+
+    /* 1. scroll: progress (#bar) */
+    const bar = $("#bar");
+
+    function tick() {
+      if (!bar) return;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    }
+    window.tick = tick;
+
+    addEventListener("scroll", tick, { passive: true });
+    addEventListener("resize", tick);
+    tick();
+
+    /* 2. reveal (.rv -> .in) + counters ([data-n]) */
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      const n = e.target.matches("[data-n]") ? e.target : e.target.querySelector("[data-n]");
+      if (n && !n.done) {
+        n.done = 1;
+        const T = +n.dataset.n, t0 = performance.now(), f = t => {
+          const k = Math.min(1, (t - t0) / 1400);
+          n.textContent = Math.round(T * (1 - Math.pow(1 - k, 3)));
+          k < 1 && requestAnimationFrame(f);
+        };
+        RM ? n.textContent = T : requestAnimationFrame(f);
+      }
+      io.unobserve(e.target);
+    }), { threshold: .25 });
+
+    $$("section h2").filter(h => !h.closest(".rv") && !h.classList.contains("somos-title") && !h.classList.contains("sr-only")).forEach(h => h.classList.add("rv"));
+    $$(".rv,.ls").forEach(el => RM ? el.classList.add("in") : io.observe(el));
+
+    /* 3 & 4. spotlight (--x, --y) & imán (.b --bx, --by) */
+    (() => {
+      let ticking = false;
+      let latestEvent = null;
+
+      addEventListener("pointermove", e => {
+        latestEvent = e; // 1. 최신 마우스 위치만 기억해둠
+        
+        if (!ticking) {
+          requestAnimationFrame(() => { // 2. 브라우저 렌더링 주기에 맞춤
+            if (!latestEvent) return;
+            const ev = latestEvent;
+            
+            const t = ev.target;
+            const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card,.cta-banner-card,.julio-card,.res-item-card,.res-portal");
+            if (c) {
+              const r = c.getBoundingClientRect(); // 3. 부하가 걸리지 않도록 주기에 맞춰 안전하게 실행
+              c.style.setProperty("--x", ev.clientX - r.left + "px");
+              c.style.setProperty("--y", ev.clientY - r.top + "px");
+            }
+            
+            const q = t.closest && t.closest(".b");
+            if (q && !RM) {
+              const r = q.getBoundingClientRect();
+              q.style.setProperty("--bx", (ev.clientX - r.left - r.width / 2) * .18 + "px");
+              q.style.setProperty("--by", (ev.clientY - r.top - r.height / 2) * .28 + "px");
+            }
+            
+            ticking = false; // 4. 다음 움직임을 받을 준비 완료
+          });
+          
+          ticking = true;
+        }
+      }, { passive: true });
+      
+      $$(".b").forEach(q => q.addEventListener("pointerleave", () => {
+        q.style.setProperty("--bx", "0px");
+        q.style.setProperty("--by", "0px");
+      }));
+    })();
+
+    /* 5. Cursos: 화면 20% 도달 시 2바퀴(2초) 회전 후 DESPEGUE 정중앙 정지 */
+    (() => {
+      const track = $("#peek-track");
+      if (!track) return;
+
+      const origCards = $$(".peek-card", track);
+      if (!origCards.length) return;
+
+      // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트 = 16장)
+      // 구조: [세트0(앞 여유분)] - [세트1(시작점)] - [세트2] - [세트3(2바퀴 도착점: DESPEGUE)]
+      for (let s = 0; s < 3; s++) {
+        origCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
+          clone.setAttribute("aria-hidden", "true");
+          clone.inert = true;
+          track.append(clone);
+        });
+      }
+
+      const allCards = $$(".peek-card", track);
+      const setSize = origCards.length; // 4장
+
+      // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
+      const getCenterScroll = (index) => {
+        const card = allCards[index];
+        return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+      };
+
+      // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
+      track.classList.add("is-spinning");
+      track.scrollLeft = getCenterScroll(0);
+      requestAnimationFrame(() => track.classList.remove("is-spinning"));
+
+      // 2. 2초(2000ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
+      let spun = false;
+      const spinRoulette = () => {
+        if (spun) return;
+        spun = true;
+        origCards.forEach(c => c.classList.add("in"));
+        // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
+        if (RM) {
+          track.scrollLeft = getCenterScroll(setSize);
+          return;
+        }
+
+        track.classList.add("is-spinning");
+
+        const startX = getCenterScroll(0);          // 출발: 0번 (첫 세트 DESPEGUE)
+        const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
+        const distance = targetX - startX;
+        const duration = 1500; // 요청하신 2초(2000ms) 여유 있는 회전
+        const t0 = performance.now();
+
+        // Quintic Out 곡선: 초반엔 휙휙 돌고 끝에서 부드럽고 묵직하게 감속
+        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+
+        const step = (now) => {
+          const elapsed = now - t0;
+          const progress = Math.min(1, elapsed / duration);
+          track.scrollLeft = startX + distance * easeOutQuint(progress);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            // 3. 정지 직후: 눈치채지 못하게 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환해
+            // 이후 사용자가 좌/우 어느 쪽으로든 화살표나 드래그를 할 수 있게 여유 공간 확보
+            track.scrollLeft = getCenterScroll(setSize);
+            track.classList.remove("is-spinning");
+          }
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
+      new IntersectionObserver(([entry], obs) => {
+        if (entry.isIntersecting) {
+          spinRoulette();
+          obs.disconnect(); // 최초 1회만 실행
+        }
+      }, { threshold: 0.2 }).observe(track);
+
+      // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 이동 연동
+      const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
+      const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + gap(24px)
+
+      if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
+      if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
+    })();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCommonEngines);
+  } else {
+    initCommonEngines();
   }
 })();
 
