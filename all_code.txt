@@ -25,9 +25,9 @@ FILE: about.html
 <body>
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
-    <i class="orb" style="--c:var(--blue-main);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c:var(--co);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:var(--coral);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb" style="--c:var(--accent-primary);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--accent-highlight);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--accent-secondary);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
 
   <header>
@@ -267,7 +267,7 @@ FILE: class.html
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html">Nosotros</a>
         <a href="class.html" class="on" aria-current="page">Cursos</a>
         <a href="resource.html">Recursos</a>
         <a href="contact.html">Contacto</a>
@@ -760,9 +760,9 @@ FILE: index.html
 <body>
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
-    <i class="orb" style="--c:var(--blue-main);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c:var(--orange);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:var(--coral);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb" style="--c:var(--accent-primary);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--accent-highlight);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--accent-secondary);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
   
   <header>
@@ -912,17 +912,14 @@ FILE: index.html
           </p>
         </div>
 
-        <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
-          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
+        <!-- [이동 1] 상단 헤더 우측: 섹션 설명 직후 전체 코스 페이지(class.html)로 바로 넘어갈 수 있는 CTA 배치 -->
+        <div class="cursos-head-cta rv" style="--d:2">
+          <a class="b" href="class.html">
+            <span>Descubre todos los cursos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
             </svg>
-          </button>
-          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -1011,6 +1008,7 @@ FILE: index.html
               Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
             </p>
           </div>
+          <!-- [복구 1] 4번째 카드의 하단 버튼 영역 -->
           <div class="peek-foot">
             <a href="class.html" class="b">
               <span>Explora el curso</span>
@@ -1020,11 +1018,21 @@ FILE: index.html
             </a>
           </div>
         </article>
-
       </div>
 
-      <div class="w course-all rv">
-        <a class="b" href="class.html">Descubre todos los cursos</a>
+      <div class="w course-all rv" style="--d:2">
+        <div class="cursos-nav" role="group" aria-label="Controles de deslizador">
+          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -1605,6 +1613,12 @@ Regla: Todos los márgenes y paddings deben ser múltiplos de 8 (8px, 16px, 24px
 ### 9. Reglas Globales de UX/UI
 Navegación Móvil: Se utiliza una cápsula flotante al estilo Stripe + una hoja expansiva a pantalla completa (stripe-sheet).
 Política de Modo Oscuro: El interruptor (toggle) de modo oscuro/claro solo se habilita en la versión de escritorio (>760px). En dispositivos móviles, se impone el Modo Claro
+### 10. Sistema de Puntos de Quiebre (Breakpoints)
+Para mantener una consistencia visual impecable y un código limpio, utilizaremos estrictamente solo 2 puntos de quiebre (breakpoints) en todo el proyecto:
+   1. `960px` (Tablet y Tarjetas Complejas):
+  El punto donde las tarjetas Bento, los componentes de doble núcleo 3D y las estructuras de múltiples columnas se reorganizan a una sola columna para evitar la saturación visual en tablets y pantallas medianas.
+   2. `760px` (Móvil Oficial):*
+  El estándar global de navegación. Oculta la barra de navegación de escritorio (GNB), activa el menú flotante de pantalla completa estilo Stripe (hamburguesa) y fija de forma estricta el Modo Claro (Light Mode) en dispositivos móviles.
 
 ## VAMOS COREANO : BRAND
 ### 0. We Are (우리의 정의)
@@ -2197,15 +2211,6 @@ FILE: resource.html
 FILE: css\about.css
 ================================================================================
 
-/* ==========================================================================
-   about.html — estilos específicos (se carga después de style.css)
-   Solo se usan los tamaños de la escala tipográfica: --fs-hero-impact, --fs-hero,
-   --fs-title, --fs-sub, --fs-body, --fs-micro
-   ========================================================================== */
-
-/* ==========================================================================
-   Sección 1: Hero (MasterClass 스타일 — 캡션 + 한글 3D 플립 타이틀 + 01·02·03 슬라이드)
-   ========================================================================== */
 .about-hero {
   min-height: calc(100svh - var(--header-h));
   display: flex;
@@ -2225,40 +2230,39 @@ FILE: css\about.css
   gap: var(--s6);
 }
 
-/* 1. 상단 파란색 캡션: FUNDADOR & TUTOR OFICIAL (알약 테두리/배경 없음) */
 .hero-kicker {
   display: block;
   font-family: var(--font-head);
-  font-size: var(--fs-sub); /* 0.875rem (14px) — 작고 단단한 캡션 사이즈 */
+  font-size: var(--fs-sub);
   font-weight: 800;
-  letter-spacing: 0.14em;     /* 자간을 넓혀 고급스러운 에디토리얼 캡션 느낌 부여 */
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--blue-main);           /* 브랜드 블루(#2563EB)로 시선 고정 */
-  margin-bottom: var(--s2);   /* 아래 이름과 16px 간격 */
+  color: var(--accent-primary); 
+  margin-bottom: var(--s2);
   opacity: 0;
   transform: translateY(10px);
-  animation: fadeInPlace 0.45s var(--ez) 0.05s forwards;
+  animation: fadeInPlace 0.45s var(--ez-out) 0.05s forwards;
 }
 
 /* 2. 메인 타이틀 컨테이너: Hyunho Lee. (초대형 대신 사진과 균형 잡힌 3rem ~ 4rem) */
 .about-hero .hero-name {
   font-family: var(--font-head);
-  font-size: clamp(var(--fs-hero), 5.2vw, 4rem); /* 48px ~ 64px 사이로 단단하게 고정 */
+  font-size: clamp(var(--fs-hero), 5.2vw, 4rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.035em;
-  color: var(--ink);
+  color: var(--text-primary);
   margin: 0 0 var(--s2) 0;
   opacity: 0;
   transform: translateY(12px);
-  animation: fadeInPlace 0.5s var(--ez) 0.12s forwards;
+  animation: fadeInPlace 0.5s var(--ez-out) 0.12s forwards;
 }
 
 /* ★ [핵심 기믹] 마우스 호버 시 'Hyunho Lee.' <-> '이현호.' 3D 플립 래퍼 */
 .name-flip {
   display: inline-grid;       /* 두 글자 레이어를 똑같은 격자 칸(1/1)에 포개어 놓음 */
   align-items: center;
-  perspective: 900px;         /* 3D 회전 원근감 */
+  perspective: 960px;         /* 3D 회전 원근감 */
   cursor: pointer;
   position: relative;
 }
@@ -2307,19 +2311,18 @@ FILE: css\about.css
   opacity: 1;
 }
 
-/* 3. 서브 타이틀: Tu guía directo al coreano real. */
 .hero-subtitle {
   font-family: var(--font-head);
-  font-size: clamp(var(--fs-sub), 2.2vw, var(--fs-title)); /* 20px ~ 32px 사이의 시원한 부제 */
+  font-size: clamp(var(--fs-sub), 2.2vw, var(--fs-title));
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  color: var(--mu);           /* 이름(검정)과 스펙(검정) 사이에서 톤을 잡아주는 고급 슬레이트 그레이 */
-  margin: 0 0 var(--s5) 0;    /* 아래 01·02·03 리스트와 40px(--s5) 호흡 확보 */
+  color: var(--text-secondary);
+  margin: 0 0 var(--s5) 0;
   max-width: 28ch;
   opacity: 0;
   transform: translateY(12px);
-  animation: fadeInPlace 0.5s var(--ez) 0.2s forwards;
+  animation: fadeInPlace 0.5s var(--ez-out) 0.2s forwards;
 }
 
 /* 4. 하단 01·02·03 슬라이드 인 스펙 리스트 (테두리/박스 없이 순수 타이포 정렬) */
@@ -2351,7 +2354,7 @@ FILE: css\about.css
   font-family: var(--font-head);
   font-size: var(--fs-body);  /* 1rem (16px) */
   font-weight: 800;
-  color: var(--blue-main);
+  color: var(--accent-primary);
   font-variant-numeric: tabular-nums;
   min-width: 2.2ch;           /* 01, 02, 03 폭을 똑같이 맞춰 뒤쪽 텍스트 시작선 칼정렬 */
   flex: none;
@@ -2399,8 +2402,8 @@ FILE: css\about.css
   aspect-ratio: 4 / 5;
   border-radius: 200px 200px 32px 32px;
   overflow: hidden;
-  background: var(--so);
-  border: 1px solid var(--ln);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
   box-shadow: 0 28px 60px -20px rgba(15, 23, 42, 0.22);
 }
 
@@ -2411,7 +2414,7 @@ FILE: css\about.css
   display: block;
 }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .about-hero { min-height: 0; padding: var(--s8) 0 var(--s6); }
   .about-hero .ab { grid-template-columns: 1fr; gap: var(--s5); }
   .ph { margin: 0 auto; max-width: 340px; }
@@ -2477,36 +2480,34 @@ FILE: css\about.css
 .story .cd h3 { margin-bottom: 4px; }
 
 /* ---------- Sección 3: El compañero (Julio) ---------- */
-.team .team-grid {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: var(--s7);
-  align-items: center;
-}
-
 .julio-photo {
   position: relative;
   aspect-ratio: 1 / 1;
   border-radius: 32px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--blue-main), var(--co));
-  border: 1px solid var(--ln);
+  /* [수정] --blue-main -> --accent-primary, --co -> --accent-secondary */
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border: 1px solid var(--border-subtle);
   box-shadow: 0 24px 48px -18px rgba(15, 23, 42, 0.18);
   display: grid;
   place-items: center;
-  transition: transform .4s var(--ez), border-color .35s;
+  /* [수정] --ez -> --ez-out */
+  transition: transform .4s var(--ez-out), border-color .35s;
 }
 
-.julio-photo:hover { transform: translateY(-6px); border-color: var(--blue-main); }
+.julio-photo:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-primary); /* [수정] --blue-main -> --accent-primary */
+}
 
-/* Iniciales como respaldo mientras no hay foto */
+/* 사진 로드 전 백업 이니셜(JM) 텍스트 컬러 복구 */
 .julio-photo::before {
   content: "JM";
   font-family: var(--font-head);
   font-weight: 800;
   font-size: var(--fs-hero-impact);
   letter-spacing: -0.04em;
-  color: var(--light-sf);
+  color: var(--bg-surface); /* [수정] 미정의 --light-sf -> --bg-surface */
 }
 
 .julio-photo img {
@@ -2523,7 +2524,7 @@ FILE: css\about.css
 .role {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: var(--blue-main);
+  color: var(--accent-primary); /* [수정] --blue-main -> --accent-primary */
   margin-bottom: var(--s2);
 }
 
@@ -2541,10 +2542,11 @@ FILE: css\about.css
 .skills li {
   padding: var(--s1) var(--s2);
   border-radius: 99px;
-  background: var(--so);
+  background: var(--bg-surface); /* [수정] 미정의 --so -> --bg-surface */
+  border: 1px solid var(--border-subtle); /* 배경과 구분되도록 미세 테두리 추가 */
   font-size: var(--fs-micro);
   font-weight: 600;
-  color: var(--ink);
+  color: var(--text-primary);
 }
 
 .team .q { margin: var(--s3) 0; }
@@ -2557,18 +2559,17 @@ FILE: css\about.css
   color: var(--ink);
 }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .team .team-grid { grid-template-columns: 1fr; gap: var(--s4); }
   .julio-photo { max-width: 340px; }
 }
 
 /* ---------- Sección 4: CTA final (botón naranja) ---------- */
 .about-cta .b.p {
-  background: var(--co);
-  border-color: var(--co);
-  color: var(--light-sf);
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  color: var(--bg-surface);
 }
-
 
 ================================================================================
 FILE: css\contact.css
@@ -2995,13 +2996,13 @@ FILE: css\contact.css
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .channel-grid-sub {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .contact-hero {
     padding: var(--s11) 0 var(--s6);
   }
@@ -3399,7 +3400,7 @@ FILE: css\join.css
 }
 
 .ticket-wrapper {
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
   transform-style: preserve-3d;
 }
@@ -3558,7 +3559,7 @@ FILE: css\join.css
   .bp-stub { width: 100%; border-top: none; }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .join-hero { padding: var(--s12) 0 var(--s8); }
   .mockup-discord-ui { flex-direction: column; height: auto; }
   .sidebar-channels, .sidebar-servers { width: 100%; flex-direction: row; }
@@ -4255,9 +4256,11 @@ html {
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
+  margin: 0;
   background: var(--bg-canvas);
   color: var(--text-primary);
   font: 400 var(--fs-body)/1.6 var(--font-body);
@@ -4341,7 +4344,7 @@ p { max-width: 62ch; color: var(--text-secondary); }
   flex-shrink: 0;     
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .index-hero {
     flex-direction: column;
     align-items: center;
@@ -4433,7 +4436,7 @@ header .w {
   height: 34px;
   border-radius: 11px;
   background: var(--accent-primary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
   font: 800 var(--fs-body) var(--font-body);
   transition: transform .5s var(--ez-out);
 }
@@ -4463,7 +4466,7 @@ nav a.on {
 
 nav a.nav-cta-pill {
   background: var(--accent-secondary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
 }
 
 nav a.nav-cta-pill:hover {
@@ -4924,14 +4927,14 @@ h1 em { font-style: normal; color: var(--accent-primary); }
 
 .in .cap i { width: 88%; }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .ab { grid-template-columns: 1fr; gap: var(--s4); }
 }
 
 /* course */
 .cs {
   background: linear-gradient(160deg, #12154A, #1D2170 60%, #2A1F7A);
-  color: var(--light-sf);
+  color: var(--bg-surface);
   border-radius: 48px;
   margin: 0 var(--s2);
   position: relative;
@@ -4939,7 +4942,7 @@ h1 em { font-style: normal; color: var(--accent-primary); }
   isolation: isolate;
 }
 
-.cs h2, .cs h3 { color: var(--light-sf); }
+.cs h2, .cs h3 { color: var(--bg-surface); }
 .cs p { color: #C9CDF5; } /* 이건 대체 뭐냐 */
 
 .cs::before, .cs::after {
@@ -4980,7 +4983,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 .chip {
   border: 1.5px solid color-mix(in srgb, #ffffff 30%, transparent);
   background: color-mix(in srgb, #ffffff 7%, transparent);
-  color: var(--light-sf);
+  color: var(--bg-surface);
   padding: var(--s1) var(--s2);
   border-radius: 99px;
   font-size: var(--fs-micro);
@@ -4994,7 +4997,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 .chip[aria-selected=true] {
   background: var(--accent-secondary);
   border-color: var(--accent-secondary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
   transform: scale(1.05);
 }
 
@@ -5028,7 +5031,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
   animation: up .6s .6s var(--ez-out) forwards;
 }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .ck { grid-template-columns: 1fr; gap: var(--s5); }
   .cs { border-radius: 32px; }
 }
@@ -5061,7 +5064,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 .fb[aria-pressed=true] {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
 }
 
 .tl {
@@ -5132,7 +5135,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
   text-align: left;
   padding: var(--s2) var(--s3);
   border-radius: 22px;
-  border: 1px solid var(--border-subtitle);
+  border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
   color: var(--text-primary);
   font: inherit;
@@ -5178,7 +5181,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 [aria-expanded=true] .pl {
   transform: rotate(135deg);
   background: var(--accent-secondary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
 }
 
 .pn {
@@ -5232,16 +5235,16 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 
 .it.fin .rw {
   background: linear-gradient(120deg, var(--accent-primary), #6A3DE8);
-  color: var(--light-sf);
+  color: var(--bg-surface);
   border: 0;
 }
 
-.it.fin .no, .it.fin small { color: color-mix(in srgb, var(--light-sf) 80%, transparent); }
+.it.fin .no, .it.fin small { color: color-mix(in srgb, var(--bg-surface) 80%, transparent); }
 
 .rk {
   width: 30px;
   height: 30px;
-  color: var(--light-sf);
+  color: var(--bg-surface);
   animation: lf 1.8s ease-in-out infinite;
 }
 
@@ -5249,7 +5252,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
   50% { transform: translateY(-8px) rotate(8deg); }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .pi { grid-template-columns: 1fr; }
   .tl { --pad: var(--s6); --ax: 14px; }
 }
@@ -5307,7 +5310,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 .action-card:hover .action-card-icon {
   transform: scale(1.1) rotate(6deg);
   background: var(--accent-primary);
-  color: var(--light-sf);
+  color: var(--bg-surface);
 }
 
 .action-card h3 {
@@ -5344,7 +5347,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 
 .copy-sub-action:hover { color: var(--accent-secondary); }
 
-@media(max-width: 768px) {
+@media(max-width: 760px) {
   .contact-actions-grid { grid-template-columns: 1fr; }
 }
 
@@ -5638,7 +5641,7 @@ footer p {
   margin-top: var(--s4);
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .course-card { padding: var(--s5) var(--s3) var(--s4); }
   .course-foot .b { width: 100%; justify-content: center; }
 }
@@ -6157,6 +6160,10 @@ footer p {
   margin-bottom: var(--s5);
 }
 
+.cursos-head-cta {
+  flex: none;
+}
+
 .cursos-title {
   font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
   max-width: none;
@@ -6181,8 +6188,12 @@ footer p {
 
 .cursos-nav {
   display: flex;
-  gap: var(--s1);
+  gap: var(--s2);
   flex: none;
+}
+
+.section-cursos .course-all {
+  margin-top: var(--s2);
 }
 
 .peek-btn {
@@ -6652,7 +6663,7 @@ footer p {
   }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .bento-pdf {
     grid-template-columns: 1fr;
   }
@@ -6734,7 +6745,7 @@ footer p {
   content: "";
   position: absolute;
   inset: 12% 8% -6%;
-  background: : linear-gradient(
+  background: linear-gradient(
   90deg,
   color-mix(in srgb, var(--accent-primary) 22%, transparent) 0%,
   color-mix(in srgb, var(--accent-highlight) 22%, transparent) 50%,
@@ -7011,7 +7022,7 @@ footer p {
   box-shadow: 0 14px 32px -10px color-mix(in srgb, var(--accent-primary) 45%, transparent);
 }
 
-@media(max-width: 820px) {
+@media(max-width: 960px) {
   .dual-core-card {
     grid-template-columns: 1fr;
     padding: var(--s4) var(--s3);

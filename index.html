@@ -15,9 +15,9 @@
 <body>
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
-    <i class="orb" style="--c:var(--blue-main);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c:var(--orange);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:var(--coral);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb" style="--c:var(--accent-primary);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
+    <i class="orb" style="--c:var(--accent-highlight);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb" style="--c:var(--accent-secondary);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
   
   <header>
@@ -167,17 +167,14 @@
           </p>
         </div>
 
-        <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
-          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
+        <!-- [이동 1] 상단 헤더 우측: 섹션 설명 직후 전체 코스 페이지(class.html)로 바로 넘어갈 수 있는 CTA 배치 -->
+        <div class="cursos-head-cta rv" style="--d:2">
+          <a class="b" href="class.html">
+            <span>Descubre todos los cursos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
             </svg>
-          </button>
-          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </button>
+          </a>
         </div>
       </div>
 
@@ -266,6 +263,7 @@
               Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
             </p>
           </div>
+          <!-- [복구 1] 4번째 카드의 하단 버튼 영역 -->
           <div class="peek-foot">
             <a href="class.html" class="b">
               <span>Explora el curso</span>
@@ -275,11 +273,21 @@
             </a>
           </div>
         </article>
-
       </div>
 
-      <div class="w course-all rv">
-        <a class="b" href="class.html">Descubre todos los cursos</a>
+      <div class="w course-all rv" style="--d:2">
+        <div class="cursos-nav" role="group" aria-label="Controles de deslizador">
+          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 

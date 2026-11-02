@@ -419,13 +419,13 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .channel-grid-sub {
     grid-template-columns: minmax(0, 1fr);
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .contact-hero {
     padding: var(--s11) 0 var(--s6);
   }

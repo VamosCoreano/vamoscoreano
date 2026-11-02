@@ -51,6 +51,12 @@ Regla: Todos los márgenes y paddings deben ser múltiplos de 8 (8px, 16px, 24px
 ### 9. Reglas Globales de UX/UI
 Navegación Móvil: Se utiliza una cápsula flotante al estilo Stripe + una hoja expansiva a pantalla completa (stripe-sheet).
 Política de Modo Oscuro: El interruptor (toggle) de modo oscuro/claro solo se habilita en la versión de escritorio (>760px). En dispositivos móviles, se impone el Modo Claro
+### 10. Sistema de Puntos de Quiebre (Breakpoints)
+Para mantener una consistencia visual impecable y un código limpio, utilizaremos estrictamente solo 2 puntos de quiebre (breakpoints) en todo el proyecto:
+   1. `960px` (Tablet y Tarjetas Complejas):
+  El punto donde las tarjetas Bento, los componentes de doble núcleo 3D y las estructuras de múltiples columnas se reorganizan a una sola columna para evitar la saturación visual en tablets y pantallas medianas.
+   2. `760px` (Móvil Oficial):*
+  El estándar global de navegación. Oculta la barra de navegación de escritorio (GNB), activa el menú flotante de pantalla completa estilo Stripe (hamburguesa) y fija de forma estricta el Modo Claro (Light Mode) en dispositivos móviles.
 
 ## VAMOS COREANO : BRAND
 ### 0. We Are (우리의 정의)

@@ -355,7 +355,7 @@
 }
 
 .ticket-wrapper {
-  max-width: 860px;
+  max-width: 760px;
   margin: 0 auto;
   transform-style: preserve-3d;
 }
@@ -514,7 +514,7 @@
   .bp-stub { width: 100%; border-top: none; }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .join-hero { padding: var(--s12) 0 var(--s8); }
   .mockup-discord-ui { flex-direction: column; height: auto; }
   .sidebar-channels, .sidebar-servers { width: 100%; flex-direction: row; }

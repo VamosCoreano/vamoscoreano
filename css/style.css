@@ -8,9 +8,11 @@ html {
 
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
+  margin: 0;
   background: var(--bg-canvas);
   color: var(--text-primary);
   font: 400 var(--fs-body)/1.6 var(--font-body);
@@ -94,7 +96,7 @@ p { max-width: 62ch; color: var(--text-secondary); }
   flex-shrink: 0;     
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .index-hero {
     flex-direction: column;
     align-items: center;
@@ -677,7 +679,7 @@ h1 em { font-style: normal; color: var(--accent-primary); }
 
 .in .cap i { width: 88%; }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .ab { grid-template-columns: 1fr; gap: var(--s4); }
 }
 
@@ -781,7 +783,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
   animation: up .6s .6s var(--ez-out) forwards;
 }
 
-@media(max-width: 860px) {
+@media(max-width: 760px) {
   .ck { grid-template-columns: 1fr; gap: var(--s5); }
   .cs { border-radius: 32px; }
 }
@@ -1002,7 +1004,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
   50% { transform: translateY(-8px) rotate(8deg); }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .pi { grid-template-columns: 1fr; }
   .tl { --pad: var(--s6); --ax: 14px; }
 }
@@ -1097,7 +1099,7 @@ h3.sub { font-size: var(--fs-sub); margin: 0 0 var(--s2); }
 
 .copy-sub-action:hover { color: var(--accent-secondary); }
 
-@media(max-width: 768px) {
+@media(max-width: 760px) {
   .contact-actions-grid { grid-template-columns: 1fr; }
 }
 
@@ -1391,7 +1393,7 @@ footer p {
   margin-top: var(--s4);
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .course-card { padding: var(--s5) var(--s3) var(--s4); }
   .course-foot .b { width: 100%; justify-content: center; }
 }
@@ -1910,6 +1912,10 @@ footer p {
   margin-bottom: var(--s5);
 }
 
+.cursos-head-cta {
+  flex: none;
+}
+
 .cursos-title {
   font-size: clamp(var(--fs-hero), 7vw, var(--fs-hero-impact));
   max-width: none;
@@ -1934,8 +1940,12 @@ footer p {
 
 .cursos-nav {
   display: flex;
-  gap: var(--s1);
+  gap: var(--s2);
   flex: none;
+}
+
+.section-cursos .course-all {
+  margin-top: var(--s2);
 }
 
 .peek-btn {
@@ -2405,7 +2415,7 @@ footer p {
   }
 }
 
-@media(max-width: 640px) {
+@media(max-width: 760px) {
   .bento-pdf {
     grid-template-columns: 1fr;
   }
@@ -2764,7 +2774,7 @@ footer p {
   box-shadow: 0 14px 32px -10px color-mix(in srgb, var(--accent-primary) 45%, transparent);
 }
 
-@media(max-width: 820px) {
+@media(max-width: 960px) {
   .dual-core-card {
     grid-template-columns: 1fr;
     padding: var(--s4) var(--s3);
