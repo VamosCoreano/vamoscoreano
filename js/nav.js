@@ -6,12 +6,6 @@
   const th = document.getElementById("th");
   const mobileMQ = window.matchMedia("(max-width: 760px)");
 
-  // [Task 1] 모바일 뷰포트(<=760px) 접속 시 항상 밝은 모드(light) 강제
-  function enforceMobileLightMode() {
-    if (mobileMQ.matches) {
-      d.dataset.theme = "light";
-    }
-  }
 
 // 1. 함수 내부에 join-page 예외 조건 추가
 function enforceMobileLightMode() {

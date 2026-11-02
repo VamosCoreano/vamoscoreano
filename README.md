@@ -11,7 +11,7 @@ Cada detalle importa. Un sutil efecto de glow, fade, textura y movimiento fluido
 Para mantener la consistencia visual, utilizaremos estrictamente solo 12 colores en toda la página:
    #### 1. Surfaces
       #F8FAFC; /* 01. Main Background & Dark Headline */
-      var(--light-sf); /* 02. Light Card */
+      #FFFFFF; /* 02. Light Card */
       #090D16; /* 03. Dark Background */
       #131B2E; /* 04. Dark Card */
    #### 2. Neutrals */
