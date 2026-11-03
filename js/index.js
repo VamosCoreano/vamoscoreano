@@ -91,43 +91,98 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })();
 
-/* 탁상달력 플립 타이머 (중복 제거 + 웹폰트 로드 및 리사이즈 완벽 대응) */
+/* 탁상달력 플립 타이머 (강제 동기 레이아웃 제거 + 폭 캐싱 + Reduced Motion/가시성 제어) */
 (() => {
   const wrap = document.querySelector(".calendar-flip");
   const cards = document.querySelectorAll(".calendar-flip .flip-card");
   if (!wrap || !cards.length) return;
-  
-  let current = 0;
 
-  // 현재 활성화된 카드의 실제 폭을 측정해 반영하는 함수
-  const updateWidth = () => {
-    wrap.style.width = cards[current].offsetWidth + "px";
+  let current = 0;
+  let cardWidths = [];
+  let timerId = null;
+  let resizeRaf = null;
+  let inView = true;
+
+  const motionMQ = window.matchMedia
+    ? window.matchMedia("(prefers-reduced-motion: reduce)")
+    : null;
+
+  // [READ/WRITE 분리] 초기화·웹폰트 로드 완료·리사이즈 시점에만 4개 단어 폭을 일괄 측정해 메모리에 캐싱
+  const measureAndApplyWidth = () => {
+    cardWidths = [...cards].map(c => c.offsetWidth);
+    if (cardWidths[current] > 0) {
+      wrap.style.width = cardWidths[current] + "px";
+    }
   };
 
-  // 1. 초기 폭 설정
-  updateWidth();
+  // 플립 실행 시점에는 DOM Read(offsetWidth) 없이 캐싱된 폭만 즉시 반영 (강제 동기 리플로우 0회)
+  const applyCachedWidth = () => {
+    const w = cardWidths[current] || cards[current].offsetWidth;
+    wrap.style.width = w + "px";
+  };
 
-  // 2. 웹폰트(Bricolage Grotesque) 로딩이 끝난 직후 정확한 폭으로 재계산
+  // 1. 초기 폭 측정 및 반영
+  measureAndApplyWidth();
+
+  // 2. 웹폰트(Bricolage Grotesque) 로딩이 끝난 직후 정확한 폭으로 재측정
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(updateWidth);
+    document.fonts.ready.then(measureAndApplyWidth);
   }
 
-  // 3. 브라우저 창 크기를 조절할 때도 반응형 폰트 크기에 맞춰 폭 재계산
-  window.addEventListener("resize", updateWidth, { passive: true });
+  // 3. 브라우저 창 크기를 조절할 때 rAF 스로틀링으로 반응형 폰트 크기에 맞춰 재측정
+  window.addEventListener("resize", () => {
+    if (resizeRaf !== null) return;
+    resizeRaf = requestAnimationFrame(() => {
+      resizeRaf = null;
+      measureAndApplyWidth();
+    });
+  }, { passive: true });
 
-  // 4. 2.2초마다 순차 플립 (단일 타이머)
-  setInterval(() => {
+  // 4. 2.2초 순차 플립 1스텝 함수 (내부에서 offsetWidth를 읽지 않아 Layout Thrashing 원천 차단)
+  const stepFlip = () => {
     const prev = current;
     current = (current + 1) % cards.length;
-    
+
     cards[prev].classList.remove("active");
     cards[prev].classList.add("exit");
-    
+
     cards[current].classList.remove("exit");
     cards[current].classList.add("active");
 
-    updateWidth();
-  }, 2200);
+    applyCachedWidth();
+  };
+
+  // 5. 타이머 생명주기 제어: 모션 감소(WCAG 2.2.2/2.3.3), 백그라운드 탭, 화면 밖 스크롤 시 자동 일시정지
+  const shouldRun = () => {
+    const reduced = motionMQ ? motionMQ.matches : RM;
+    return !reduced && !document.hidden && inView;
+  };
+
+  const syncTimer = () => {
+    if (shouldRun()) {
+      if (timerId === null) {
+        timerId = setInterval(stepFlip, 2200);
+      }
+    } else if (timerId !== null) {
+      clearInterval(timerId);
+      timerId = null;
+    }
+  };
+
+  // 히어로 영역이 화면에서 벗어나면 플립 중지 (하단 섹션 스크롤 중 상단 width 변경 리플로우 방지)
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      syncTimer();
+    }, { threshold: 0 }).observe(wrap);
+  }
+
+  document.addEventListener("visibilitychange", syncTimer);
+  if (motionMQ && motionMQ.addEventListener) {
+    motionMQ.addEventListener("change", syncTimer);
+  }
+
+  syncTimer();
 })();
   /* ÚNETE: 듀얼 코어 카드 3D 틸트(기울기) & 홀로그램 반사광(Glare) 제어 */
   (() => {

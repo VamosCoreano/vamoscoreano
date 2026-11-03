@@ -544,6 +544,30 @@
   margin-right: auto;
 }
 
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+}
+
+.waveform i {
+  display: block;
+  width: 4px;
+  height: 24px;
+  border-radius: 99px;
+  background: var(--accent-secondary);
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: eq 1.2s ease-in-out infinite alternate;
+  animation-delay: calc(var(--w) * 140ms);
+}
+
+@keyframes eq {
+  0%   { transform: scaleY(0.25); opacity: .5; }
+  100% { transform: scaleY(1);    opacity: 1; }
+}
+
 /* ---------- [Sección 4] El Trampolín Final (막단 방지 CTA -> join.html) ---------- */
 .res-trampolin {
   padding: var(--s11) 0 var(--s14);

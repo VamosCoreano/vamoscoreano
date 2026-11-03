@@ -295,7 +295,8 @@
   border: 1px solid var(--border-subtle);
 }
 .play-btn { color: var(--accent-primary); font-size: var(--fs-micro); }
-.wave i   { width: 3px; height: var(--h, 20%); background: var(--accent-primary); border-radius: 2px; }
+.wave     { display: flex; align-items: center; gap: 3px; height: 18px; }
+.wave i   { display: block; width: 3px; height: var(--h, 20%); background: var(--accent-primary); border-radius: 2px; }
 
 /* Obsidian UI Sim (#000, #111, #222, #333, #555, #888 -> 공식 다크 토큰으로 교체) */
 .obsidian-theme {

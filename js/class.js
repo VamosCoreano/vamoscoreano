@@ -113,151 +113,39 @@ const $ = (s, r = document) => r.querySelector(s),
     
     $$(".it").forEach(el => typeof RM !== 'undefined' && RM ? el.classList.add("vis") : io_temario.observe(el));
 
-    // <script> 태그 내 최하단(scroll 이벤트 위쪽)에 추가
-  const revealTargets = $$(".rv");
-  const io_rv = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) {
-    e.target.classList.add("in");
-    io_rv.unobserve(e.target);
-  }
-  }), { threshold: .15 });
-  revealTargets.forEach(el => typeof RM !== 'undefined' && RM ? el.classList.add("in") : io_rv.observe(el));
-
-// (기존 코드: tl_temario 스크롤 이벤트 끝부분)
+    // (기존 코드: tl_temario 스크롤 이벤트 끝부분)
     const tl_temario = $("#tl");
-if (tl_temario) {
-  const railEl = $(".rail", tl_temario);
-  const items = $$(".it", tl_temario);
-  let tlTicking = false;
+    if (tl_temario) {
+      const railEl = $(".rail", tl_temario);
+      const items = $$(".it", tl_temario);
+      let tlTicking = false;
 
-  const updateTimeline = () => {
-    tlTicking = false;
-    const ly = innerHeight * 0.6;
+      const updateTimeline = () => {
+        tlTicking = false;
+        const ly = innerHeight * 0.6;
 
-    // [1단계: READ 전용] 모든 기하 측정을 먼저 한 번에 수행
-    const rr = railEl.getBoundingClientRect();
-    const fh = Math.max(0, Math.min(rr.height, ly - rr.top));
-    const passStates = items.map(el =>
-      !el.classList.contains("hd") && (el.getBoundingClientRect().top + 36 < ly)
-    );
+        // [1단계: READ 전용] 모든 기하 측정을 먼저 한 번에 수행
+        const rr = railEl.getBoundingClientRect();
+        const fh = Math.max(0, Math.min(rr.height, ly - rr.top));
+        const passStates = items.map(el =>
+          !el.classList.contains("hd") && (el.getBoundingClientRect().top + 36 < ly)
+        );
 
-    // [2단계: WRITE 전용] 측정값을 바탕으로 스타일·클래스 일괄 반영
-    tl_temario.style.setProperty("--fh", fh + "px");
-    items.forEach((el, idx) => {
-      if (!el.classList.contains("hd")) {
-        el.classList.toggle("pass", passStates[idx]);
-      }
-    });
-  };
-
-  addEventListener("scroll", () => {
-    if (!tlTicking) {
-      requestAnimationFrame(updateTimeline);
-      tlTicking = true;
-    }
-  }, { passive: true });
-  updateTimeline();
-}
-
-    /* =====================================================================
-       👇 [여기에 추가 1] index.js에서 가져온 코스 카드 룰렛 회전 & 좌우 화살표 제어
-       ===================================================================== */
-    (() => {
-      const track = $("#peek-track");
-      if (!track) return;
-
-      const origCards = $$(".peek-card", track);
-      if (!origCards.length) return;
-
-      // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트)
-      for (let s = 0; s < 3; s++) {
-        origCards.forEach(card => {
-          const clone = card.cloneNode(true);
-          clone.classList.add("in"); // 복제된 카드는 투명하지 않게 즉시 표시
-          clone.setAttribute("aria-hidden", "true");
-          clone.inert = true;
-          track.append(clone);
-        });
-      }
-
-      const allCards = $$(".peek-card", track);
-      const setSize = origCards.length; // 원본 카드 개수 (4개면 4, 5개면 5로 자동 계산됨)
-
-      // 특정 인덱스의 카드를 화면 정중앙에 맞추는 scrollLeft 좌표 계산 함수
-      const getCenterScroll = (index) => {
-        const card = allCards[index];
-        return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
-      };
-
-      // 초기 위치: 첫 번째 카드(DESPEGUE)를 정중앙에 세팅
-      track.classList.add("is-spinning");
-      track.scrollLeft = getCenterScroll(0);
-      requestAnimationFrame(() => track.classList.remove("is-spinning"));
-
-      // 2. 화면에 트랙이 보이면 1.5초 동안 2바퀴 돌아 DESPEGUE 정중앙에 멈추는 함수
-      let spun = false;
-      const spinRoulette = () => {
-        if (spun) return;
-        spun = true;
-        origCards.forEach(c => c.classList.add("in"));
-        
-        if (RM) {
-          track.scrollLeft = getCenterScroll(setSize);
-          return;
-        }
-
-        track.classList.add("is-spinning");
-
-        const startX = getCenterScroll(0);            // 출발: 0번 세트 DESPEGUE
-        const targetX = getCenterScroll(setSize * 2); // 도착: 정확히 2바퀴 뒤 DESPEGUE
-        const distance = targetX - startX;
-        const duration = 1500;                        // 1.5초 동안 시원하게 회전 후 감속
-        const t0 = performance.now();
-
-        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
-
-        const step = (now) => {
-          const elapsed = now - t0;
-          const progress = Math.min(1, elapsed / duration);
-          track.scrollLeft = startX + distance * easeOutQuint(progress);
-
-          if (progress < 1) {
-            requestAnimationFrame(step);
-          } else {
-            // 정지 직후 가운데 세트로 좌표를 치환해 좌우 어느 쪽으로든 화살표 이동이 가능하게 만듦
-            track.scrollLeft = getCenterScroll(setSize);
-            track.classList.remove("is-spinning");
+        // [2단계: WRITE 전용] 측정값을 바탕으로 스타일·클래스 일괄 반영
+        tl_temario.style.setProperty("--fh", fh + "px");
+        items.forEach((el, idx) => {
+          if (!el.classList.contains("hd")) {
+            el.classList.toggle("pass", passStates[idx]);
           }
-        };
-
-        requestAnimationFrame(step);
+        });
       };
 
-      // 3. 스크롤을 내려 코스 트랙이 화면에 20% 보일 때 룰렛 스타트!
-      new IntersectionObserver(([entry], obs) => {
-        if (entry.isIntersecting) {
-          spinRoulette();
-          obs.disconnect();
+      addEventListener("scroll", () => {
+        if (!tlTicking) {
+          requestAnimationFrame(updateTimeline);
+          tlTicking = true;
         }
-      }, { threshold: 0.2 }).observe(track);
-
-      // 4. 우측 상단 좌/우 화살표 버튼(#peek-prev, #peek-next) 클릭 시 카드 1장씩 부드럽게 이동
-      const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
-      const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + 간격(24px)
-
-      if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
-      if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
-    })();
-
-    /* =====================================================================
-       👇 [여기에 추가 2] 마우스를 올렸을 때 카드(.peek-card)와 타임라인(.rw)이 은은하게 빛나는 효과
-       ===================================================================== */
-    addEventListener("pointermove", e => {
-      const c = e.target.closest && e.target.closest(".peek-card, .rw");
-      if (c) {
-        const r = c.getBoundingClientRect();
-        c.style.setProperty("--x", e.clientX - r.left + "px");
-        c.style.setProperty("--y", e.clientY - r.top + "px");
-      }
-    }, { passive: true });
+      }, { passive: true });
+      updateTimeline();
+    }
 })();

@@ -64,7 +64,11 @@ if (mobileMQ.addEventListener) {
     const sheet = document.createElement("aside");
     sheet.className = "stripe-sheet";
     sheet.id = "stripe-mobile-sheet";
+    sheet.setAttribute("role", "dialog");
+    sheet.setAttribute("aria-modal", "true");
+    sheet.setAttribute("aria-label", "Menú de navegación");
     sheet.setAttribute("aria-hidden", "true");
+    sheet.inert = true;
 
     // 상단 영역 (로고 복제)
     const topBar = document.createElement("div");
@@ -97,9 +101,13 @@ if (mobileMQ.addEventListener) {
       li.className = "stripe-sheet-item";
       li.style.setProperty("--m", String(idx));
 
+      const isActive = currentPath === item.href;
       const a = document.createElement("a");
-      a.className = "stripe-sheet-link" + (currentPath === item.href ? " is-active" : "");
+      a.className = "stripe-sheet-link" + (isActive ? " is-active" : "");
       a.href = item.href;
+      if (isActive) {
+        a.setAttribute("aria-current", "page");
+      }
 
       const textSpan = document.createElement("span");
       textSpan.textContent = item.label;
@@ -127,6 +135,8 @@ if (mobileMQ.addEventListener) {
     });
 
     const upperWrap = document.createElement("div");
+    upperWrap.setAttribute("role", "navigation");
+    upperWrap.setAttribute("aria-label", "Navegación móvil");
     upperWrap.append(topBar, ul);
 
     // 하단 영역: 스트라이프 스타일 카탈로그 카드 + 2단 풀사이즈 CTA 버튼
@@ -163,12 +173,37 @@ if (mobileMQ.addEventListener) {
     sheet.append(upperWrap, bottomWrap);
     document.body.append(burger, sheet);
 
+    const sheetLinks = [...sheet.querySelectorAll("a[href]")];
+    const focusables = [burger, ...sheetLinks];
+
+    // 배경 요소 inert 격리/복원 (기존에 inert였던 요소는 보존)
+    function setBackgroundInert(open) {
+      [...document.body.children].forEach(el => {
+        if (el === burger || el === sheet || el.tagName === "SCRIPT") return;
+        if (open) {
+          if (!el.inert) {
+            el.inert = true;
+            el.dataset.menuInert = "1";
+          }
+        } else if (el.dataset.menuInert === "1") {
+          el.inert = false;
+          delete el.dataset.menuInert;
+        }
+      });
+    }
+
     // 열기/닫기 상태 제어 함수
-    function setMenuOpen(open) {
+    function setMenuOpen(open, { restoreFocus = false } = {}) {
       document.body.classList.toggle("menu-open", open);
       burger.setAttribute("aria-expanded", String(open));
       burger.setAttribute("aria-label", open ? "Cerrar menú de navegación" : "Abrir menú de navegación");
       sheet.setAttribute("aria-hidden", String(!open));
+      sheet.inert = !open;
+      setBackgroundInert(open);
+
+      if (!open && restoreFocus) {
+        burger.focus();
+      }
     }
 
     burger.addEventListener("click", () => {
@@ -176,20 +211,44 @@ if (mobileMQ.addEventListener) {
       setMenuOpen(!isOpen);
     });
 
-    sheet.querySelectorAll("a").forEach(link => {
+    sheetLinks.forEach(link => {
       link.addEventListener("click", () => setMenuOpen(false));
     });
 
     document.addEventListener("keydown", e => {
-      if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
-        setMenuOpen(false);
+      if (!document.body.classList.contains("menu-open")) return;
+
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setMenuOpen(false, { restoreFocus: true });
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        const active = document.activeElement;
+
+        if (e.shiftKey) {
+          if (active === first || !focusables.includes(active)) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (active === last || !focusables.includes(active)) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     });
 
     // 화면이 데스크톱 크기(>760px)로 넓어지면 열린 모바일 메뉴 자동 닫기
     if (mobileMQ.addEventListener) {
       mobileMQ.addEventListener("change", e => {
-        if (!e.matches) setMenuOpen(false);
+        if (!e.matches && document.body.classList.contains("menu-open")) {
+          setMenuOpen(false);
+        }
       });
     }
   }
@@ -285,33 +344,38 @@ if (mobileMQ.addEventListener) {
       }));
     })();
 
-    /* 5. Cursos: 화면 20% 도달 시 2바퀴(2초) 회전 후 DESPEGUE 정중앙 정지 */
+    /* 5. Cursos: 화면 20% 도달 시 2바퀴(1.5초) 회전 후 DESPEGUE 정중앙 정지 */
     (() => {
       const track = $("#peek-track");
-      if (!track) return;
+      if (!track || track.dataset.peekInit === "1") return;
 
-      const origCards = $$(".peek-card", track);
+      const origCards = $$(".peek-card:not([data-clone])", track);
       if (!origCards.length) return;
+      track.dataset.peekInit = "1";
 
-      // 1. 앞뒤로 카드 세트를 복제하여 2바퀴 이상 돌 수 있는 물리적 트랙 확보 (총 4세트 = 16장)
-      // 구조: [세트0(앞 여유분)] - [세트1(시작점)] - [세트2] - [세트3(2바퀴 도착점: DESPEGUE)]
+      // 1. DocumentFragment로 일괄 복제하여 단일 DOM 리플로우만 발생 (총 4세트 = 16장)
+      // 구조: [세트0(앞 여유분)] - [세트1(기준 홈)] - [세트2(2바퀴 도착점)] - [세트3(뒤 여유분)]
+      const frag = document.createDocumentFragment();
       for (let s = 0; s < 3; s++) {
         origCards.forEach(card => {
           const clone = card.cloneNode(true);
+          clone.dataset.clone = "true";
           clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
           clone.setAttribute("aria-hidden", "true");
           clone.inert = true;
-          track.append(clone);
+          $$("a, button", clone).forEach(el => el.setAttribute("tabindex", "-1"));
+          frag.appendChild(clone);
         });
       }
+      track.appendChild(frag);
 
       const allCards = $$(".peek-card", track);
-      const setSize = origCards.length; // 4장
+      const setSize = origCards.length; // 원본 카드 개수 (4장)
 
       // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
       const getCenterScroll = (index) => {
         const card = allCards[index];
-        return card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2;
+        return card ? card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2 : 0;
       };
 
       // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
@@ -319,27 +383,45 @@ if (mobileMQ.addEventListener) {
       track.scrollLeft = getCenterScroll(0);
       requestAnimationFrame(() => track.classList.remove("is-spinning"));
 
-      // 2. 2초(2000ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
+      // 2. 1.5초(1500ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
       let spun = false;
+      let spinRafId = null;
+
+      const cancelSpin = () => {
+        if (spinRafId !== null) {
+          cancelAnimationFrame(spinRafId);
+          spinRafId = null;
+          track.classList.remove("is-spinning");
+        }
+      };
+
       const spinRoulette = () => {
         if (spun) return;
         spun = true;
+
+        // [READ 단계] DOM 클래스 변경(WRITE) 전에 기하 좌표를 먼저 일괄 측정하여 강제 동기 레이아웃 방지
+        const startX = getCenterScroll(0);            // 출발: 0번 (첫 세트 DESPEGUE)
+        const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
+        const homeX = getCenterScroll(setSize);       // 정지 후 치환할 기준 홈: 4번 (두 번째 세트 DESPEGUE)
+
+        // [WRITE 단계] 원본 카드 표시 전환
         origCards.forEach(c => c.classList.add("in"));
+
         // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
         if (RM) {
-          track.scrollLeft = getCenterScroll(setSize);
+          track.classList.add("is-spinning");
+          track.scrollLeft = homeX;
+          requestAnimationFrame(() => track.classList.remove("is-spinning"));
           return;
         }
 
         track.classList.add("is-spinning");
 
-        const startX = getCenterScroll(0);          // 출발: 0번 (첫 세트 DESPEGUE)
-        const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
         const distance = targetX - startX;
-        const duration = 1500; // 요청하신 2초(2000ms) 여유 있는 회전
+        const duration = 1500;
         const t0 = performance.now();
 
-        // Quintic Out 곡선: 초반엔 휙휙 돌고 끝에서 부드럽고 묵직하게 감속
+        // Quintic Out 곡선: 초반엔 시원하게 돌고 끝에서 부드럽고 묵직하게 감속
         const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
 
         const step = (now) => {
@@ -348,16 +430,17 @@ if (mobileMQ.addEventListener) {
           track.scrollLeft = startX + distance * easeOutQuint(progress);
 
           if (progress < 1) {
-            requestAnimationFrame(step);
+            spinRafId = requestAnimationFrame(step);
           } else {
-            // 3. 정지 직후: 눈치채지 못하게 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환해
-            // 이후 사용자가 좌/우 어느 쪽으로든 화살표나 드래그를 할 수 있게 여유 공간 확보
-            track.scrollLeft = getCenterScroll(setSize);
-            track.classList.remove("is-spinning");
+            spinRafId = null;
+            // 3. 정지 직후: scroll-behavior: auto가 유지된 상태에서 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환한 뒤
+            // 다음 프레임에 is-spinning을 해제하여 스냅/스무스 스크롤 간섭 없이 양방향 이동 여유 공간 확보
+            track.scrollLeft = homeX;
+            requestAnimationFrame(() => track.classList.remove("is-spinning"));
           }
         };
 
-        requestAnimationFrame(step);
+        spinRafId = requestAnimationFrame(step);
       };
 
       // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
@@ -368,12 +451,38 @@ if (mobileMQ.addEventListener) {
         }
       }, { threshold: 0.2 }).observe(track);
 
-      // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 이동 연동
+      // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 및 무한 루프 보정 연동
       const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
-      const stepWidth = () => origCards[0].offsetWidth + 24; // 카드 폭 + gap(24px)
+      const getStepWidth = () =>
+        allCards.length > 1
+          ? allCards[1].offsetLeft - allCards[0].offsetLeft
+          : origCards[0].offsetWidth + 24;
 
-      if (prevBtn) prevBtn.onclick = () => track.scrollBy({ left: -stepWidth(), behavior: "smooth" });
-      if (nextBtn) nextBtn.onclick = () => track.scrollBy({ left: stepWidth(), behavior: "smooth" });
+      const moveByStep = (dir) => {
+        cancelSpin();
+        const stepW = getStepWidth();
+        const setSpan = getCenterScroll(setSize) - getCenterScroll(0);
+
+        // 양 끝 세트(세트 0 또는 세트 3)에 진입한 경우 눈치채지 못하게 중앙 세트로 선제 치환
+        if (setSpan > 0) {
+          if (dir < 0 && track.scrollLeft <= getCenterScroll(1)) {
+            track.style.scrollBehavior = "auto";
+            track.scrollLeft += setSpan;
+            track.offsetWidth; // 즉시 좌표 반영 플러시
+            track.style.scrollBehavior = "";
+          } else if (dir > 0 && track.scrollLeft >= getCenterScroll(setSize * 3 - 2)) {
+            track.style.scrollBehavior = "auto";
+            track.scrollLeft -= setSpan;
+            track.offsetWidth;
+            track.style.scrollBehavior = "";
+          }
+        }
+
+        track.scrollBy({ left: dir * stepW, behavior: RM ? "auto" : "smooth" });
+      };
+
+      if (prevBtn) prevBtn.addEventListener("click", () => moveByStep(-1));
+      if (nextBtn) nextBtn.addEventListener("click", () => moveByStep(1));
     })();
   }
 
