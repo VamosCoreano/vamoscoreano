@@ -292,9 +292,9 @@
   font-weight: 800;
   max-width: none;
   line-height: 0.96;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.02em;
   margin-bottom: var(--s5);
-  padding: 0 0.08em;
+  padding: 0.22em 0.08em 0.08em;
   color: color-mix(in srgb, var(--text-primary) 14%, transparent);
 }
 
@@ -302,22 +302,22 @@
   content: attr(data-text);
   position: absolute;
   inset: 0;
-  padding: 0 0.08em;
+  padding: 0.22em 0.08em 0.08em;
   pointer-events: none;
   background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-highlight) 50%, var(--accent-secondary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-clip-path: inset(-0.08em 100% -0.08em 0);
-  clip-path: inset(-0.08em 100% -0.08em 0);
+  -webkit-clip-path: inset(-0.25em 100% -0.08em 0);
+  clip-path: inset(-0.25em 100% -0.08em 0);
   transition: clip-path 1.4s var(--ez-out), -webkit-clip-path 1.4s var(--ez-out);
   will-change: clip-path;
 }
 
 .mision-sec .somos-title.in::before {
-  -webkit-clip-path: inset(-0.08em 0% -0.08em 0);
-  clip-path: inset(-0.08em 0% -0.08em 0);
+  -webkit-clip-path: inset(-0.25em 0% -0.08em 0);
+  clip-path: inset(-0.25em 0% -0.08em 0);
 }
 
 /* 기존 h2 하단 주황색 짧은 바 제거 */

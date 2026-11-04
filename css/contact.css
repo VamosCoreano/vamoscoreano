@@ -364,10 +364,6 @@
   display: block;
 }
 
-.julio-text .tag {
-  margin-bottom: var(--s2);
-}
-
 .julio-text h3 {
   max-width: 24ch;
   font-size: clamp(var(--fs-sub), 3.2vw, var(--fs-title));

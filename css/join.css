@@ -14,14 +14,6 @@
   position: relative;
 }
 
-.join-hero .tag {
-  background: color-mix(in srgb, var(--co) 15%, transparent);
-  color: var(--co);
-  border: 1px solid color-mix(in srgb, var(--co) 30%, transparent);
-  margin-bottom: var(--s5);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--co) 10%, transparent);
-}
-
 .join-hero h1 {
   font-size: clamp(var(--fs-hero), 9vw, var(--fs-hero-impact));
   line-height: 1.05;

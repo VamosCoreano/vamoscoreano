@@ -41,6 +41,9 @@ if (mobileMQ.addEventListener) {
     if (document.querySelector(".stripe-burger")) return;
 
     const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const logoHref = document.querySelector("header .logo")?.getAttribute("href") || "index.html";
+    const basePrefix = logoHref.startsWith("../") ? "../" : "";
+    const activeNavHref = document.querySelector("header nav a.on")?.getAttribute("href") || "";
 
     // 1. 우측 상단 둥둥 떠 있는 햄버거 버튼 생성
     const burger = document.createElement("button");
@@ -80,7 +83,7 @@ if (mobileMQ.addEventListener) {
     } else {
       const fallbackLogo = document.createElement("a");
       fallbackLogo.className = "logo";
-      fallbackLogo.href = "index.html";
+      fallbackLogo.href = basePrefix + "index.html";
       fallbackLogo.textContent = "Vamos Coreano";
       topBar.appendChild(fallbackLogo);
     }
@@ -101,10 +104,10 @@ if (mobileMQ.addEventListener) {
       li.className = "stripe-sheet-item";
       li.style.setProperty("--m", String(idx));
 
-      const isActive = currentPath === item.href;
+      const isActive = currentPath === item.href || activeNavHref.endsWith(item.href);
       const a = document.createElement("a");
       a.className = "stripe-sheet-link" + (isActive ? " is-active" : "");
-      a.href = item.href;
+      a.href = basePrefix + item.href;
       if (isActive) {
         a.setAttribute("aria-current", "page");
       }
@@ -145,7 +148,7 @@ if (mobileMQ.addEventListener) {
 
     const promoBox = document.createElement("a");
     promoBox.className = "stripe-promo-box";
-    promoBox.href = "class.html";
+    promoBox.href = basePrefix + "class.html";
     const promoTitle = document.createElement("strong");
     promoTitle.className = "stripe-promo-title";
     promoTitle.textContent = "Ver todos los cursos";
@@ -159,12 +162,12 @@ if (mobileMQ.addEventListener) {
 
     const primaryBtn = document.createElement("a");
     primaryBtn.className = "stripe-btn-primary";
-    primaryBtn.href = "join.html";
+    primaryBtn.href = basePrefix + "join.html";
     primaryBtn.textContent = "Únete a la comunidad ›";
 
     const secondaryBtn = document.createElement("a");
     secondaryBtn.className = "stripe-btn-secondary";
-    secondaryBtn.href = "contact.html";
+    secondaryBtn.href = basePrefix + "contact.html";
     secondaryBtn.textContent = "Habla con nosotros";
 
     ctaStack.append(primaryBtn, secondaryBtn);
@@ -253,10 +256,158 @@ if (mobileMQ.addEventListener) {
     }
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", mountStripeMobileNav);
-  } else {
+  /* ==========================================================================
+     [재사용 모듈] 서브 상단 캡슐 스위처 (SUB_NAV_GROUPS & mountSubCapsuleNav)
+     - Cursos / Recursos 및 향후 확장될 섹션에서 공통으로 재사용 가능한 선언형 구조
+     - 데스크톱 전용(모바일은 CSS에서 생략, 추후 햄버거 상세메뉴에 SUB_NAV_GROUPS 재사용 가능)
+     - 스크롤을 내리면 숨겨지고(.is-hidden), 올리면 다시 떠오르는 방향 감지 엔진 내장
+     ========================================================================== */
+  const SUB_NAV_GROUPS = {
+    cursos: {
+      ariaLabel: "Submenú de cursos",
+      items: [
+        { id: "despegue", label: "Despegue", href: "class/despegue.html" },
+        { id: "ascenso", label: "Ascenso", href: "class/ascenso.html" },
+        { id: "viaje", label: "Viaje", href: "class/viaje.html" },
+        { id: "conversacion", label: "Conversación", href: "class/conversacion.html" }
+      ]
+    },
+    recursos: {
+      ariaLabel: "Submenú de recursos",
+      items: [
+        { id: "pdf", label: "Materiales PDF", href: "pdf-resource.html" },
+        { id: "guia", label: "Guías de Estudio", href: "guia-resource.html" },
+        { id: "podcast", label: "Podcast", href: "podcast-resource.html" }
+      ]
+    }
+  };
+
+  function resolveSubNavKey(currentPath, activeNavHref) {
+    const explicitKey = document.body.dataset.subnav?.toLowerCase();
+    if (explicitKey && SUB_NAV_GROUPS[explicitKey]) return explicitKey;
+
+    if (
+      document.body.dataset.course ||
+      activeNavHref.endsWith("class.html") ||
+      currentPath === "class.html"
+    ) {
+      return "cursos";
+    }
+
+    if (
+      activeNavHref.endsWith("resource.html") ||
+      currentPath === "resource.html" ||
+      currentPath.endsWith("-resource.html")
+    ) {
+      return "recursos";
+    }
+
+    return null;
+  }
+
+  function mountSubCapsuleNav() {
+    if (document.querySelector(".sub-capsule-wrap")) return;
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const currentPath = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const logoHref = document.querySelector("header .logo")?.getAttribute("href") || "index.html";
+    const basePrefix = logoHref.startsWith("../") ? "../" : "";
+    const activeNavHref = document.querySelector("header nav a.on")?.getAttribute("href") || "";
+
+    const groupKey = resolveSubNavKey(currentPath, activeNavHref);
+    if (!groupKey) return;
+
+    const group = SUB_NAV_GROUPS[groupKey];
+    if (!group || !group.items.length) return;
+
+    const activeCourseId = (
+      document.body.dataset.course ||
+      document.body.dataset.subitem ||
+      ""
+    ).toLowerCase();
+
+    const wrap = document.createElement("div");
+    wrap.className = "sub-capsule-wrap";
+
+    const capsule = document.createElement("div");
+    capsule.className = "sub-capsule";
+    capsule.setAttribute("role", "navigation");
+    capsule.setAttribute("aria-label", group.ariaLabel);
+
+    const frag = document.createDocumentFragment();
+    group.items.forEach((item, idx) => {
+      if (idx > 0) {
+        const dot = document.createElement("span");
+        dot.className = "sub-capsule-dot";
+        dot.setAttribute("aria-hidden", "true");
+        frag.appendChild(dot);
+      }
+
+      const itemFile = item.href.split("/").pop().toLowerCase();
+      const isActive = activeCourseId === item.id || currentPath === itemFile;
+
+      const a = document.createElement("a");
+      a.className = "sub-capsule-link" + (isActive ? " is-active" : "");
+      a.href = basePrefix + item.href;
+      a.textContent = item.label;
+      if (isActive) {
+        a.setAttribute("aria-current", "page");
+      }
+      frag.appendChild(a);
+    });
+
+    capsule.appendChild(frag);
+    wrap.appendChild(capsule);
+    header.insertAdjacentElement("afterend", wrap);
+
+    // 스크롤 방향 감지: 아래로 내리면 숨기고(.is-hidden), 위로 올리면 다시 떠오름
+    let lastY = Math.max(0, window.scrollY);
+    let subNavTicking = false;
+
+    const updateSubCapsuleVisibility = () => {
+      subNavTicking = false;
+      const y = Math.max(0, window.scrollY);
+      const delta = y - lastY;
+
+      if (y <= 24) {
+        wrap.classList.remove("is-hidden");
+        lastY = y;
+      } else if (delta > 6 && y > 56) {
+        wrap.classList.add("is-hidden");
+        lastY = y;
+      } else if (delta < -6) {
+        wrap.classList.remove("is-hidden");
+        lastY = y;
+      }
+    };
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!subNavTicking) {
+          requestAnimationFrame(updateSubCapsuleVisibility);
+          subNavTicking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    // 키보드 Tab 포커스 진입 시 숨겨진 캡슐 즉시 표시 (접근성 보장)
+    wrap.addEventListener("focusin", () => {
+      wrap.classList.remove("is-hidden");
+    });
+  }
+
+  function initNavigation() {
     mountStripeMobileNav();
+    mountSubCapsuleNav();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initNavigation);
+  } else {
+    initNavigation();
   }
 })();
 
@@ -344,7 +495,7 @@ if (mobileMQ.addEventListener) {
       }));
     })();
 
-    /* 5. Cursos: 화면 20% 도달 시 2바퀴(1.5초) 회전 후 DESPEGUE 정중앙 정지 */
+    /* 5. Cursos: 3-Set 순환 링 버퍼(좌측 복제 4 + 중앙 원본 4 + 우측 복제 4 = 총 12장) 및 전 구간 버튼 인터랙션 보장 */
     (() => {
       const track = $("#peek-track");
       if (!track || track.dataset.peekInit === "1") return;
@@ -353,132 +504,197 @@ if (mobileMQ.addEventListener) {
       if (!origCards.length) return;
       track.dataset.peekInit = "1";
 
-      // 1. DocumentFragment로 일괄 복제하여 단일 DOM 리플로우만 발생 (총 4세트 = 16장)
-      // 구조: [세트0(앞 여유분)] - [세트1(기준 홈)] - [세트2(2바퀴 도착점)] - [세트3(뒤 여유분)]
-      const frag = document.createDocumentFragment();
-      for (let s = 0; s < 3; s++) {
+      const setSize = origCards.length; // 원본 카드 개수 (4장)
+
+      // 클론 생성 헬퍼: inert를 절대 부여하지 않아 모든 복제 카드의 버튼 클릭/호버 인터랙션을 100% 활성화
+      // (스크린 리더 중복 읽기 방지용 aria-hidden과 키보드 Tab 중복 방지용 tabindex="-1"만 부여)
+      const createCloneSet = () => {
+        const frag = document.createDocumentFragment();
         origCards.forEach(card => {
           const clone = card.cloneNode(true);
           clone.dataset.clone = "true";
-          clone.classList.add("in"); // 복제 카드는 투명하지 않게 즉시 표시
+          clone.classList.add("in");
           clone.setAttribute("aria-hidden", "true");
-          clone.inert = true;
           $$("a, button", clone).forEach(el => el.setAttribute("tabindex", "-1"));
+          $$(".b", clone).forEach(q => q.addEventListener("pointerleave", () => {
+            q.style.setProperty("--bx", "0px");
+            q.style.setProperty("--by", "0px");
+          }));
           frag.appendChild(clone);
         });
-      }
-      track.appendChild(frag);
+        return frag;
+      };
+
+      // 구조: [좌측 버퍼 세트(0~3)] - [중앙 원본 홈 세트(4~7)] - [우측 버퍼 세트(8~11)] (총 12장)
+      track.insertBefore(createCloneSet(), origCards[0]);
+      track.appendChild(createCloneSet());
 
       const allCards = $$(".peek-card", track);
-      const setSize = origCards.length; // 원본 카드 개수 (4장)
 
-      // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산 함수
+      // 특정 인덱스의 카드를 트랙 정중앙에 맞추는 scrollLeft 좌표 계산
       const getCenterScroll = (index) => {
         const card = allCards[index];
         return card ? card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2 : 0;
       };
 
-      // 초기 위치: 첫 번째 카드(인덱스 0, DESPEGUE)를 중앙에 세팅
-      track.classList.add("is-spinning");
-      track.scrollLeft = getCenterScroll(0);
-      requestAnimationFrame(() => track.classList.remove("is-spinning"));
-
-      // 2. 1.5초(1500ms) 동안 2바퀴(카드 8장분) 돌아 인덱스 8(3번째 세트 DESPEGUE)에 멈추는 함수
-      let spun = false;
-      let spinRafId = null;
-
-      const cancelSpin = () => {
-        if (spinRafId !== null) {
-          cancelAnimationFrame(spinRafId);
-          spinRafId = null;
-          track.classList.remove("is-spinning");
-        }
-      };
-
-      const spinRoulette = () => {
-        if (spun) return;
-        spun = true;
-
-        // [READ 단계] DOM 클래스 변경(WRITE) 전에 기하 좌표를 먼저 일괄 측정하여 강제 동기 레이아웃 방지
-        const startX = getCenterScroll(0);            // 출발: 0번 (첫 세트 DESPEGUE)
-        const targetX = getCenterScroll(setSize * 2); // 도착: 8번 (정확히 2바퀴 뒤 DESPEGUE)
-        const homeX = getCenterScroll(setSize);       // 정지 후 치환할 기준 홈: 4번 (두 번째 세트 DESPEGUE)
-
-        // [WRITE 단계] 원본 카드 표시 전환
-        origCards.forEach(c => c.classList.add("in"));
-
-        // 모션 감소 설정(접근성) 켜진 경우 회전 없이 즉시 중앙 정렬
-        if (RM) {
-          track.classList.add("is-spinning");
-          track.scrollLeft = homeX;
-          requestAnimationFrame(() => track.classList.remove("is-spinning"));
-          return;
-        }
-
-        track.classList.add("is-spinning");
-
-        const distance = targetX - startX;
-        const duration = 1500;
-        const t0 = performance.now();
-
-        // Quintic Out 곡선: 초반엔 시원하게 돌고 끝에서 부드럽고 묵직하게 감속
-        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
-
-        const step = (now) => {
-          const elapsed = now - t0;
-          const progress = Math.min(1, elapsed / duration);
-          track.scrollLeft = startX + distance * easeOutQuint(progress);
-
-          if (progress < 1) {
-            spinRafId = requestAnimationFrame(step);
-          } else {
-            spinRafId = null;
-            // 3. 정지 직후: scroll-behavior: auto가 유지된 상태에서 가운데 세트(인덱스 4, DESPEGUE)로 좌표를 치환한 뒤
-            // 다음 프레임에 is-spinning을 해제하여 스냅/스무스 스크롤 간섭 없이 양방향 이동 여유 공간 확보
-            track.scrollLeft = homeX;
-            requestAnimationFrame(() => track.classList.remove("is-spinning"));
-          }
-        };
-
-        spinRafId = requestAnimationFrame(step);
-      };
-
-      // 4. 화면 20% 지점 도달 감지 (threshold: 0.2)
-      new IntersectionObserver(([entry], obs) => {
-        if (entry.isIntersecting) {
-          spinRoulette();
-          obs.disconnect(); // 최초 1회만 실행
-        }
-      }, { threshold: 0.2 }).observe(track);
-
-      // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 및 무한 루프 보정 연동
-      const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
       const getStepWidth = () =>
         allCards.length > 1
           ? allCards[1].offsetLeft - allCards[0].offsetLeft
           : origCards[0].offsetWidth + 24;
 
-      const moveByStep = (dir) => {
-        cancelSpin();
-        const stepW = getStepWidth();
-        const setSpan = getCenterScroll(setSize) - getCenterScroll(0);
+      const getSetSpan = () => getCenterScroll(setSize * 2) - getCenterScroll(setSize);
 
-        // 양 끝 세트(세트 0 또는 세트 3)에 진입한 경우 눈치채지 못하게 중앙 세트로 선제 치환
-        if (setSpan > 0) {
-          if (dir < 0 && track.scrollLeft <= getCenterScroll(1)) {
-            track.style.scrollBehavior = "auto";
-            track.scrollLeft += setSpan;
-            track.offsetWidth; // 즉시 좌표 반영 플러시
-            track.style.scrollBehavior = "";
-          } else if (dir > 0 && track.scrollLeft >= getCenterScroll(setSize * 3 - 2)) {
-            track.style.scrollBehavior = "auto";
-            track.scrollLeft -= setSpan;
-            track.offsetWidth;
-            track.style.scrollBehavior = "";
-          }
+      // 스냅/스무스 간섭 없이 단일 프레임 내에 좌표를 즉시 치환하고 인터랙션 잠금을 즉시 해제하는 헬퍼
+      const setInstantScroll = (targetLeft) => {
+        track.classList.add("is-spinning");
+        track.scrollLeft = targetLeft;
+        void track.offsetWidth; // 즉시 레이아웃 반영
+        track.classList.remove("is-spinning");
+      };
+
+      // 초기 위치: 중앙 원본 홈 세트의 첫 카드(인덱스 4, 원본 DESPEGUE)를 정중앙에 배치
+      // (좌측에는 인덱스 3 CONVERSACIÓN 카드가 자연스럽게 피크되어 빈 공간이 생기지 않음)
+      setInstantScroll(getCenterScroll(setSize));
+
+      // 2. 1.5초(1500ms) 동안 모듈러(Modular) 연산으로 2바퀴(8장 거리) 회전 후 원본 홈(인덱스 4)에 정지
+      // 초기 랜딩 회전 중에는 마우스 호버/휠/클릭이 개입해 애니메이션을 멈추지 않도록 완전 보호
+      let spun = false;
+      let spinRafId = null;
+      let spinFailSafeTimer = null;
+
+      const spinRoulette = () => {
+        if (spun) return;
+        spun = true;
+
+        // [READ 단계] 기하 좌표 선제 측정
+        const homeX = getCenterScroll(setSize);       // 중앙 원본 DESPEGUE (인덱스 4)
+        const setSpan = getSetSpan();                 // 1세트(4장)의 정확한 픽셀 주기
+
+        // [WRITE 단계] 원본 카드 표시 전환
+        origCards.forEach(c => c.classList.add("in"));
+
+        if (RM || setSpan <= 0) {
+          setInstantScroll(homeX);
+          return;
         }
 
-        track.scrollBy({ left: dir * stepW, behavior: RM ? "auto" : "smooth" });
+        track.classList.add("is-spinning");
+
+        const totalDistance = setSpan * 2; // 정확히 2바퀴(8장 분량) 회전
+        const duration = 1500;
+        const t0 = performance.now();
+        const easeOutQuint = (t) => 1 - Math.pow(1 - t, 5);
+
+        const finishSpin = () => {
+          if (spinRafId !== null) {
+            cancelAnimationFrame(spinRafId);
+            spinRafId = null;
+          }
+          if (spinFailSafeTimer !== null) {
+            clearTimeout(spinFailSafeTimer);
+            spinFailSafeTimer = null;
+          }
+          // 도착 지점: 정확히 중앙 원본 DESPEGUE(인덱스 4)에 안착 후 is-spinning 해제(인터랙션 활성화)
+          setInstantScroll(homeX);
+        };
+
+        const step = (now) => {
+          const elapsed = now - t0;
+          const progress = Math.min(1, elapsed / duration);
+
+          if (progress < 1) {
+            const traveled = totalDistance * easeOutQuint(progress);
+            // [핵심] homeX ~ homeX + setSpan 구간 내에서 모듈러 순환하여 단 3세트(12장)만으로 무한 회전 구현
+            track.scrollLeft = homeX + (traveled % setSpan);
+            spinRafId = requestAnimationFrame(step);
+          } else {
+            finishSpin();
+          }
+        };
+
+        spinRafId = requestAnimationFrame(step);
+        // 탭 전환이나 브라우저 프레임 드랍 시에도 1.5초 후 반드시 인터랙션 잠금이 해제되도록 안전장치 부여
+        spinFailSafeTimer = setTimeout(finishSpin, duration + 100);
+      };
+
+      // 3. 화면 20% 지점 도달 감지 (threshold: 0.2)
+      new IntersectionObserver(([entry], obs) => {
+        if (entry.isIntersecting) {
+          spinRoulette();
+          obs.disconnect();
+        }
+      }, { threshold: 0.2 }).observe(track);
+
+      // 4. 사용자 터치 스와이프 / 트랙패드 스크롤 시 양방향 무한 루프 자동 복원
+      let scrollIdleTimer = null;
+      const normalizeInfiniteScroll = () => {
+        if (spinRafId !== null) return;
+        const stepW = getStepWidth();
+        const setSpan = getSetSpan();
+        if (setSpan <= 0) return;
+
+        const homeStart = getCenterScroll(setSize);             // 인덱스 4 (원본 첫 카드)
+        const homeEnd = getCenterScroll(setSize * 2 - 1);       // 인덱스 7 (원본 마지막 카드)
+
+        if (track.scrollLeft < homeStart - stepW * 0.45) {
+          setInstantScroll(track.scrollLeft + setSpan);
+        } else if (track.scrollLeft > homeEnd + stepW * 0.45) {
+          setInstantScroll(track.scrollLeft - setSpan);
+        }
+      };
+
+      track.addEventListener("scroll", () => {
+        if (spinRafId !== null) return;
+        const setSpan = getSetSpan();
+        if (setSpan > 0) {
+          // 빠른 연속 플릭(Flick) 시 양 끝단(인덱스 1 이하 또는 인덱스 10 이상)에 도달하기 전 즉시 순환
+          if (track.scrollLeft <= getCenterScroll(1)) {
+            setInstantScroll(track.scrollLeft + setSpan);
+          } else if (track.scrollLeft >= getCenterScroll(setSize * 3 - 2)) {
+            setInstantScroll(track.scrollLeft - setSpan);
+          }
+        }
+        clearTimeout(scrollIdleTimer);
+        scrollIdleTimer = setTimeout(normalizeInfiniteScroll, 220);
+      }, { passive: true });
+
+      // 5. 좌우 화살표 버튼(#peek-prev, #peek-next) 중앙 스냅 및 무한 루프 보정 연동
+      const prevBtn = $("#peek-prev"), nextBtn = $("#peek-next");
+
+      const moveByStep = (dir) => {
+        if (spinRafId !== null) return; // 초기 1.5초 랜딩 애니메이션 중에는 화살표 버튼 간섭 차단
+        clearTimeout(scrollIdleTimer);
+
+        const stepW = getStepWidth();
+        const setSpan = getSetSpan();
+        const homeStart = getCenterScroll(setSize);
+        if (stepW <= 0 || setSpan <= 0) return;
+
+        // 현재 스크롤 좌표를 기준으로 가장 가까운 카드 인덱스 산출 후 중앙 원본 세트(4~7) 범위로 정규화
+        let curIdx = setSize + Math.round((track.scrollLeft - homeStart) / stepW);
+        while (curIdx < setSize) {
+          setInstantScroll(track.scrollLeft + setSpan);
+          curIdx += setSize;
+        }
+        while (curIdx >= setSize * 2) {
+          setInstantScroll(track.scrollLeft - setSpan);
+          curIdx -= setSize;
+        }
+
+        // 경계(4번에서 이전, 7번에서 다음) 이동 시 반대편 복제 세트로 무결점 치환 후 중앙 원본 세트(4~7) 내부로 스무스 진입
+        if (dir < 0 && curIdx <= setSize) {
+          setInstantScroll(track.scrollLeft + setSpan);
+          curIdx += setSize; // 4 -> 8 (다음 목표: 7번 원본 카드)
+        } else if (dir > 0 && curIdx >= setSize * 2 - 1) {
+          setInstantScroll(track.scrollLeft - setSpan);
+          curIdx -= setSize; // 7 -> 3 (다음 목표: 4번 원본 카드)
+        }
+
+        const targetIdx = curIdx + dir;
+        track.scrollTo({
+          left: getCenterScroll(targetIdx),
+          behavior: RM ? "auto" : "smooth"
+        });
       };
 
       if (prevBtn) prevBtn.addEventListener("click", () => moveByStep(-1));

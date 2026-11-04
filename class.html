@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cursos de coreano por niveles. Empieza con El Despegue y domina el hangul desde el primer día.">
+  <meta name="description"
+    content="Cursos de coreano por niveles. Empieza con El Despegue y domina el hangul desde el primer día.">
   <title>Clases | Vamos Coreano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/token.css">  
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/token.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/class.css">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -17,15 +21,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 
-<body>
+<body data-subnav="cursos">
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
     <i class="orb" style="--c:var(--accent-primary);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
-    <i class="orb" style="--c:var(--accent-highlight);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
-    <i class="orb" style="--c:var(--accent-secondary);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
+    <i class="orb"
+      style="--c:var(--accent-highlight);width:38vmax;height:38vmax;right:-12vmax;top:30vh;animation-delay:-7s"></i>
+    <i class="orb"
+      style="--c:var(--accent-secondary);width:34vmax;height:34vmax;left:20vw;bottom:-16vmax;animation-delay:-13s"></i>
   </div>
 
- <header>
+  <header>
     <div class="w">
       <a class="logo" href="index.html"><b class="kr">한</b>Vamos Coreano</a>
       <nav aria-label="Principal">
@@ -36,196 +42,222 @@
         <a href="join.html" class="nav-cta-pill">Únete</a>
       </nav>
       <button id="th" aria-label="Cambiar tema claro u oscuro">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4.5"/>
-          <path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" />
+          <path
+            d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" />
         </svg>
       </button>
     </div>
   </header>
 
   <main id="contenido">
-  <!-- [섹션 1] 비행기 위쪽까지만 정확히 한 화면(100svh - 헤더 높이)을 차지하는 히어로 섹션 -->
-  <section class="class-hero">
-    <div class="w">
-      <h1>
-        <!-- 1박자 (쿵!): 위에서 묵직하게 내리꽂히는 첫 번째 줄 -->
-        <span class="h-line h-black beat-1">Un idioma.</span>
-        
-        <!-- 2박자 (쿵!): 같은 리듬으로 내리꽂히는 두 번째 줄 -->
-        <span class="h-line h-black beat-2">Un objetivo.</span>
-        
-        <!-- 3박자 (따!): 클랩처럼 시원하게 터지며 등장하는 세 번째 줄 -->
-        <!-- (팁: 만약 3번째 문구를 두 줄이 아니라 한 줄로 길게 보고 싶다면 아래 <br>만 지우시면 됩니다) -->
-        <span class="h-line h-blue beat-3">100% para<br>hispanohablantes.</span>
-      </h1>
-      
-      <!-- 쿵-쿵-따! 가 끝난 직후 부드럽게 올라오는 서브 문구 -->
-      <p class="h-sub">Aprende coreano desde tu idioma, no desde el inglés.</p>
-      
-      <!-- ❌ 기존에 있던 화살표(<a class="h-cue">...</a>)는 여기서 완전히 삭제했습니다 -->
-    </div>
-  </section>
-
-  <!-- [섹션 1과 섹션 2 사이] 비행기를 <section class="class-hero"> 바깥으로 분리! -->
-  <!-- 이렇게 빼두면 섹션 1의 높이 계산에 영향을 주지 않고, 스크롤할 때 섹션 1 바로 아래에서 날아갑니다 -->
-
-  <!-- (위쪽 기존 코드: 비행기 영역 끝부분) -->
-  <div class="class-fly-zone" aria-hidden="true">
-    <div class="fly">
-      <div class="plane">
-        <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- =====================================================================
-       👇 [여기에 추가!] index.html의 Sección 4(Cursos) 구조를 재활용한 섹션
-       ===================================================================== -->
-  <section id="curso" class="section-cursos">
-    <div class="w cursos-head">
-      <div class="cursos-head-text">
-        <h2 class="cursos-title rv">CURSOS</h2>
-        <p class="cursos-lead rv" style="--d:1">
-          Diseñados exclusivamente para ti.
-        </p>
-        <p class="cursos-sub rv" style="--d:2">
-          Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu idioma.
-        </p>
-      </div>
-
-      <!-- 좌우 슬라이드 화살표 버튼 -->
-      <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
-        <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-        </button>
-        <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- 수평 피크(Peek) 슬라이드 트랙 (스크롤 도달 시 2바퀴 회전 후 중앙 정지) -->
-    <div class="peek-track" id="peek-track">
-      
-      <!-- Card 01: DESPEGUE (주력 코스 -> 버튼 클릭 시 아래 #temario 커리큘럼으로 스크롤 이동!) -->
-      <article class="peek-card peek-card-primary rv" style="--d:1">
-        <div class="peek-top">
-          <span class="peek-tag">CURSO REGULAR · 01</span>
-          <span class="peek-kr kr" aria-hidden="true">이륙</span>
-        </div>
-        <div class="peek-body">
-          <h3 class="peek-name">DESPEGUE</h3>
-          <p class="peek-punch">Coreano desde cero.</p>
-          <p class="peek-desc">
-            Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la romanización.
-          </p>
-        </div>
-        <div class="peek-foot">
-          <!-- 💡 index.html에서는 href="class.html"이었지만, 여기서는 바로 아래 커리큘럼(#temario)으로 내려가게 변경! -->
-          <a href="#temario" class="b p">
-            <span>Ver el temario</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 02: ASCENSO -->
-      <article class="peek-card rv" style="--d:2">
-        <div class="peek-top">
-          <span class="peek-tag">CURSO REGULAR · 02</span>
-          <span class="peek-kr kr" aria-hidden="true">상승</span>
-        </div>
-        <div class="peek-body">
-          <h3 class="peek-name">ASCENSO</h3>
-          <p class="peek-punch">Dale alas a tu coreano.</p>
-          <p class="peek-desc">
-            Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones cotidianas.
-          </p>
-        </div>
-        <div class="peek-foot">
-          <!-- 💡 다른 코스들은 문의 페이지(contact.html)나 커뮤니티(join.html)로 연결하거나 #temario로 둘 수 있습니다 -->
-          <a href="contact.html" class="b">
-            <span>Consulta este curso</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 03: EXPRESIONES PARA VIAJE -->
-      <article class="peek-card rv" style="--d:3">
-        <div class="peek-top">
-          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
-          <span class="peek-kr kr" aria-hidden="true">여행</span>
-        </div>
-        <div class="peek-body">
-          <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
-          <p class="peek-punch">Coreano real para tu viaje.</p>
-          <p class="peek-desc">
-            Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y conversaciones locales.
-          </p>
-        </div>
-        <div class="peek-foot">
-          <a href="contact.html" class="b">
-            <span>Consulta este curso</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Card 04: CONVERSACIÓN & CULTURA -->
-      <article class="peek-card rv" style="--d:4">
-        <div class="peek-top">
-          <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
-          <span class="peek-kr kr" aria-hidden="true">실전</span>
-        </div>
-        <div class="peek-body">
-          <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
-          <p class="peek-punch">Habla como un nativo.</p>
-          <p class="peek-desc">
-            Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen en los libros.
-          </p>
-        </div>
-        <div class="peek-foot">
-          <a href="contact.html" class="b">
-            <span>Consulta este curso</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- 💡 [5번째 코스를 추가하고 싶다면?] 
-           위 <article class="peek-card rv" style="--d:4">...</article> 블록을 복사해서 
-           바로 여기에 하나 더 붙여넣기만 하면 JS가 알아서 카드 개수를 계산해 룰렛을 돌려줍니다! -->
-
-    </div>
-    <!-- ❌ index.html 맨 아래에 있던 <div class="w course-all rv"><a href="class.html">Descubre todos los cursos</a></div>는 
-         이미 class.html 페이지 안이므로 깔끔하게 제거했습니다 -->
-  </section>
-  <!-- =====================================================================
-       👆 [여기까지 추가!] 바로 아래에는 기존의 <section id="temario">가 이어집니다
-       ===================================================================== -->
-
-  <section id="temario" style="padding-top:40px">
+    <!-- [섹션 1] 비행기 위쪽까지만 정확히 한 화면(100svh - 헤더 높이)을 차지하는 히어로 섹션 -->
+    <section class="class-hero">
       <div class="w">
-        <h2 class="rv">Despegue, sesión por sesión</h2>
-        <p class="rv" style="--d:1">Elige una etapa y abre cada clase para ver su gramática, contenidos y ejemplos.</p>
-        <div class="fl2" id="fl2"></div>
-        <div class="tl" id="tl">
-          <div class="rail"><i></i></div>
-          <div id="its"></div>
+        <h1>
+          <!-- 1박자 (쿵!): 위에서 묵직하게 내리꽂히는 첫 번째 줄 -->
+          <span class="h-line h-black beat-1">Un idioma.</span>
+
+          <!-- 2박자 (쿵!): 같은 리듬으로 내리꽂히는 두 번째 줄 -->
+          <span class="h-line h-black beat-2">Un objetivo.</span>
+
+          <!-- 3박자 (따!): 클랩처럼 시원하게 터지며 등장하는 세 번째 줄 -->
+          <!-- (팁: 만약 3번째 문구를 두 줄이 아니라 한 줄로 길게 보고 싶다면 아래 <br>만 지우시면 됩니다) -->
+          <span class="h-line h-blue beat-3">100% para<br>hispanohablantes.</span>
+        </h1>
+
+        <!-- 쿵-쿵-따! 가 끝난 직후 부드럽게 올라오는 서브 문구 -->
+        <p class="h-sub">Aprende coreano desde tu idioma, no desde el inglés.</p>
+
+        <!-- ❌ 기존에 있던 화살표(<a class="h-cue">...</a>)는 여기서 완전히 삭제했습니다 -->
+      </div>
+    </section>
+
+    <!-- [섹션 1과 섹션 2 사이] 비행기를 <section class="class-hero"> 바깥으로 분리! -->
+    <!-- 이렇게 빼두면 섹션 1의 높이 계산에 영향을 주지 않고, 스크롤할 때 섹션 1 바로 아래에서 날아갑니다 -->
+
+    <!-- (위쪽 기존 코드: 비행기 영역 끝부분) -->
+    <div class="class-fly-zone" aria-hidden="true">
+      <div class="fly">
+        <div class="plane">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+            <path
+              d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================================
+       👇 [섹션 2] Cursos (3-Set 순환 링 버퍼 캐러셀)
+       ===================================================================== -->
+    <section id="curso" class="section-cursos">
+      <div class="w cursos-head">
+        <div class="cursos-head-text">
+          <h2 class="cursos-title rv">CURSOS</h2>
+          <p class="cursos-lead rv" style="--d:1">
+            Diseñados exclusivamente para ti.
+          </p>
+          <p class="cursos-sub rv" style="--d:2">
+            Explora nuestros programas regulares y especiales creados a la medida de tus metas. Sin rodeos, 100% en tu
+            idioma.
+          </p>
+        </div>
+
+        <!-- 좌우 슬라이드 화살표 버튼 -->
+        <div class="cursos-nav rv" style="--d:2" aria-label="Controles de deslizador">
+          <button type="button" class="peek-btn" id="peek-prev" aria-label="Curso anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button type="button" class="peek-btn" id="peek-next" aria-label="Siguiente curso">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 수평 피크(Peek) 슬라이드 트랙 (스크롤 도달 시 2바퀴 회전 후 중앙 정지) -->
+      <div class="peek-track" id="peek-track">
+
+        <!-- Card 01: DESPEGUE -->
+        <article class="peek-card peek-card-primary rv" style="--d:1">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 01</span>
+            <span class="peek-kr kr" aria-hidden="true">이륙</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">DESPEGUE</h3>
+            <p class="peek-punch">Coreano desde cero.</p>
+            <p class="peek-desc">
+              Domina el Hangul, la estructura básica y construye tus primeras conversaciones reales sin depender de la
+              romanización.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="class/despegue.html" class="b p">
+              <span>Explorar curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 02: ASCENSO -->
+        <article class="peek-card rv" style="--d:2">
+          <div class="peek-top">
+            <span class="peek-tag">CURSO REGULAR · 02</span>
+            <span class="peek-kr kr" aria-hidden="true">상승</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">ASCENSO</h3>
+            <p class="peek-punch">Dale alas a tu coreano.</p>
+            <p class="peek-desc">
+              Conecta ideas complejas, domina los tiempos verbales y habla con fluidez y naturalidad en situaciones
+              cotidianas.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="contact.html" class="b">
+              <span>Explorar curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 03: EXPRESIONES PARA VIAJE -->
+        <article class="peek-card rv" style="--d:3">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">여행</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">EXPRESIONES PARA VIAJE</h3>
+            <p class="peek-punch">Coreano real para tu viaje.</p>
+            <p class="peek-desc">
+              Todo lo que necesitas para moverte por Corea con seguridad: restaurantes, transporte, compras y
+              conversaciones locales.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="contact.html" class="b">
+              <span>Explorar curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 04: CONVERSACIÓN & CULTURA -->
+        <article class="peek-card rv" style="--d:4">
+          <div class="peek-top">
+            <span class="peek-tag peek-tag-accent">CURSO ESPECIAL</span>
+            <span class="peek-kr kr" aria-hidden="true">실전</span>
+          </div>
+          <div class="peek-body">
+            <h3 class="peek-name">CONVERSACIÓN &amp; CULTURA</h3>
+            <p class="peek-punch">Habla como un nativo.</p>
+            <p class="peek-desc">
+              Práctica intensiva de diálogo en tiempo real, expresiones naturales y matices culturales que no aparecen
+              en los libros.
+            </p>
+          </div>
+          <div class="peek-foot">
+            <a href="contact.html" class="b">
+              <span>Explorar curso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+       👇 [섹션 3] 한 화면(100svh) 커뮤니티 가입 CTA 섹션
+       ===================================================================== -->
+    <section id="comunidad" class="class-community-cta">
+      <div class="w">
+        <div class="cta-banner-card class-cta-card rv">
+
+          <h2 class="rv" style="--d:1">El curso es el mapa.<br>La comunidad es el viaje.</h2>
+          <p class="class-cta-lead rv" style="--d:2">
+            No aprendas coreano en solitario. Practica cada día en vivo con nosotros.
+          </p>
+          <p class="class-cta-sub rv" style="--d:3">
+            Al unirte a nuestra comunidad privada en Discord y Obsidian, recibes corrección de pronunciación en tiempo
+            real, apuntes conectados y el impulso diario de compañeros hispanohablantes.
+          </p>
+          <ul class="class-cta-pills rv" style="--d:3" aria-label="Beneficios de la comunidad">
+            <li><span class="kr" aria-hidden="true">말</span> Práctica en vivo 24/7 (Discord)</li>
+            <li><span class="kr" aria-hidden="true">글</span> Segundo Cerebro (Obsidian)</li>
+            <li><span class="kr" aria-hidden="true">한</span> Feedback 1:1 de pronunciación</li>
+          </ul>
+          <div class="class-cta-actions rv" style="--d:4">
+            <a href="join.html" class="b p class-cta-btn">
+              <span>Únete a la comunidad</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -237,7 +269,7 @@
     <p>Profesor Hyunho Lee</p>
   </footer>
 
-  <script src="js/class.js"></script>
   <script src="js/nav.js"></script>
 </body>
+
 </html>

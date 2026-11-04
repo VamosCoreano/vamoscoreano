@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 </head>
 
-<body>
+<body data-subnav="recursos">
   <div id="bar"></div>
   <div class="bg" aria-hidden="true">
   <i class="orb" style="--c:var(--accent-primary);width:46vmax;height:46vmax;left:-12vmax;top:-10vmax"></i>
@@ -49,8 +49,6 @@
     <!-- [Sección 1] Main Landing (Hero Section — "Aquí hay oro gratuito") -->
     <section class="res-hero">
       <div class="w">
-        <div class="tag rv"><i></i>BIBLIOTECA ABIERTA · 100% GRATUITO</div>
-
         <h1 class="rv" style="--d:1">
           Aprende sin barreras.<br>
           <em>Crece sin límites.</em>
@@ -66,15 +64,15 @@
 
         <!-- 3대 리소스 아카이브 퀵 점프 칩 -->
         <div class="res-pillars-bar rv" style="--d:4" aria-label="Categorías principales de recursos">
-          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="pdf">
+          <a href="#portal-pdf" class="res-pillar-chip">
             <b>01</b>
             <span>Materiales PDF</span>
           </a>
-          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="guia">
+          <a href="#portal-guia" class="res-pillar-chip">
             <b>02</b>
             <span>Guías de Estudio</span>
           </a>
-          <a href="#explorar" class="res-pillar-chip" data-filter-trigger="podcast">
+          <a href="#portal-podcast" class="res-pillar-chip">
             <b>03</b>
             <span>Vamos Coreano Podcast</span>
           </a>
@@ -88,28 +86,9 @@
       </div>
     </section>
 
-    <!-- [Sección 2 & 3] Navegación de Categorías (Tab UI) + Los 3 Portales de Recursos -->
+    <!-- [Sección 2] Los 3 Portales de Recursos -->
     <section id="explorar" class="res-hub-section">
       <div class="w">
-
-        <!-- Sticky Segmented Control (Tab UI) -->
-        <div class="res-toolbar-wrap rv">
-          <div class="res-tabs" role="tablist" aria-label="Filtrar recursos por categoría">
-            <button type="button" class="res-tab" role="tab" aria-selected="true" data-filter="all">
-              <span>Todos</span>
-              <span class="res-tab-count">3</span>
-            </button>
-            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="pdf">
-              <span>📄 Materiales PDF</span>
-            </button>
-            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="guia">
-              <span>🧭 Guías de Estudio</span>
-            </button>
-            <button type="button" class="res-tab" role="tab" aria-selected="false" data-filter="podcast">
-              <span>🎧 Podcast</span>
-            </button>
-          </div>
-        </div>
 
         <!-- 3대 전용 페이지(pdf-resource, guia-resource, podcast-resource) 게이트웨이 쇼케이스 -->
         <div class="res-portals">
@@ -380,7 +359,6 @@
     <section class="res-trampolin">
       <div class="w">
         <div class="res-trampolin-card rv">
-          <div class="tag"><i></i>EL TRAMPOLÍN FINAL</div>
           <h2 class="rv" style="--d:1">¿Te gustó el material gratuito?</h2>
           <p class="res-trampolin-lead rv" style="--d:2">
             Imagina lo que lograrás con nuestra comunidad privada.
@@ -409,6 +387,5 @@
   </footer>
 
   <script src="js/nav.js"></script>
-  <script src="js/resource.js"></script>
 </body>
 </html>
