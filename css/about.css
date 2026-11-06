@@ -345,19 +345,6 @@
   text-shadow: 0 8px 28px color-mix(in srgb, var(--accent-primary) 28%, transparent);
 }
 
-/* *뽀인트 단어 3총사 (claro, directo, diseñado): 오렌지->코랄 하이라이트 언더라인 */
-.m-point {
-  position: relative;
-  display: inline-block;
-  font-weight: 800;
-  color: var(--text-primary);
-  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-highlight));
-  background-repeat: no-repeat;
-  background-size: 100% 0.14em;
-  background-position: 0 92%;
-  padding-bottom: 0.04em;
-}
-
 /* ---------- Sección 4: El compañero (Julio) ---------- */
 .julio-photo {
   position: relative;

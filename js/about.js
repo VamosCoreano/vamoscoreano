@@ -1,89 +1,80 @@
-/* about.html: barra de progreso, revelado en cascada y foco de luz en tarjetas */
+/* ==========================================================================
+   FILE: js/about.js — about.html 전용 인터랙션
+   (공통 진행바 #bar, .rv 리빌, 카드 스포트라이트, .b 자석 버튼은 js/nav.js에서 통합 처리)
+   1. 이름 3D 달력 플립 오토 티저 & 호버 제어 (.name-flip)
+   2. LA MISIÓN 전용 그라데이션 필인 옵저버 (.somos-title)
+   ========================================================================== */
 (function () {
-  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  "use strict";
+
+  var $$ = function (s, r) {
+    return Array.prototype.slice.call((r || document).querySelectorAll(s));
+  };
   var RM = window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches;
 
-  /* barra de progreso de scroll */
-  var bar = document.getElementById("bar");
-  function tick() {
-    if (!bar) return;
-    var max = document.documentElement.scrollHeight - innerHeight;
-    bar.style.transform = "scaleX(" + (max > 0 ? scrollY / max : 0) + ")";
-  }
-  addEventListener("scroll", tick, { passive: true });
-  addEventListener("resize", tick);
-  tick();
+  /* 1. 이름 3D 달력 플립 오토 티저 & 호버 제어 (.name-flip 모두 지원)
+     - Hyunho Lee <-> 이현호, Julio Márquez <-> 이인우 등 모든 .name-flip 요소에 공통 작동
+     - 각 이름이 화면에 들어올 때 0.9초 후 한국어 이름으로 플립 -> 1초 후 스페인어 이름으로 복귀 */
+  var nameFlips = $$(".name-flip");
+  if (nameFlips.length && !RM) {
+    var runFlipTeaser = function (el) {
+      if (el.dataset.flipTeased === "1") return;
+      el.dataset.flipTeased = "1";
 
-  /* los h2 también se revelan (activa la línea naranja bajo el título) */
-  $$("section h2").forEach(function (h) { h.classList.add("rv"); });
+      var flipInTimer = setTimeout(function () {
+        el.classList.add("is-flipped");
+      }, 900);
 
-  /* revelado: al llegar al 20% del elemento aparece; --d escalona de arriba-izquierda a abajo-derecha */
-  var els = $$(".rv");
-  if (RM || !("IntersectionObserver" in window)) {
-    els.forEach(function (el) { el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("in");
-        io.unobserve(e.target);
+      var flipOutTimer = setTimeout(function () {
+        el.classList.remove("is-flipped");
+      }, 1900);
+
+      el.addEventListener(
+        "pointerenter",
+        function () {
+          clearTimeout(flipInTimer);
+          clearTimeout(flipOutTimer);
+          el.classList.remove("is-flipped");
+        },
+        { once: true }
+      );
+    };
+
+    if ("IntersectionObserver" in window) {
+      var flipObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            runFlipTeaser(entry.target);
+            flipObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      nameFlips.forEach(function (el) {
+        flipObserver.observe(el);
       });
-    }, { threshold: 0.2 });
-    els.forEach(function (el) { io.observe(el); });
+    } else {
+      nameFlips.forEach(runFlipTeaser);
+    }
   }
 
-  /* foco de luz que sigue al cursor sobre las tarjetas de valores */
-  var ticking = false, last = null;
-  addEventListener("pointermove", function (ev) {
-    last = ev;
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      var c = last.target.closest && last.target.closest(".cd");
-      if (c) {
-        var r = c.getBoundingClientRect();
-        c.style.setProperty("--x", last.clientX - r.left + "px");
-        c.style.setProperty("--y", last.clientY - r.top + "px");
-      }
-      ticking = false;
-    });
-  }, { passive: true });
-  /* ==========================================================================
-     [TASK 2] 이름 3D 플립 오토 티저 (입장 -> 1초 후 '이현호.' -> 1초 후 'Hyunho Lee.')
-     - 페이지 입장 후 사용자에게 "이 이름에 마우스를 올리면 뒤집힌다"는 힌트를 1회 자동 시연
-     ========================================================================== */
-  var nameFlip = document.querySelector(".name-flip");
-  if (nameFlip && !RM) {
-    // 1. 페이지 입장 1초(1000ms) 후: '이현호.'로 플립!
-    var flipInTimer = setTimeout(function () {
-      nameFlip.classList.add("is-flipped");
-    }, 1000);
-
-    // 2. 그로부터 1초 뒤(총 2000ms 시점): 다시 'Hyunho Lee.'로 원상 복구!
-    var flipOutTimer = setTimeout(function () {
-      nameFlip.classList.remove("is-flipped");
-    }, 2000);
-
-    // 3. [디테일 방어] 만약 자동 시연 도중 사용자가 직접 마우스를 올리면,
-    //    자동 타이머를 즉시 끄고 사용자의 마우스 호버에 제어권을 100% 넘김
-    nameFlip.addEventListener("pointerenter", function () {
-      clearTimeout(flipInTimer);
-      clearTimeout(flipOutTimer);
-      nameFlip.classList.remove("is-flipped"); // 이후엔 순수 CSS :hover로만 작동
-    }, { once: true });
-  }
-  /* LA MISIÓN 전용: 화면 중간(-25%)에 도달했을 때 그라데이션 잉크가 차오름 (index.js와 동일 로직) */
+  /* 2. LA MISIÓN 전용: 화면 중간(-25%)에 도달했을 때 그라데이션 잉크가 차오름 (index.js와 동일 로직) */
   var somosEl = document.querySelector(".somos-title");
   if (somosEl) {
     if (RM || !("IntersectionObserver" in window)) {
       somosEl.classList.add("in");
     } else {
-      new IntersectionObserver(function (entries, obs) {
-        if (entries[0].isIntersecting) {
-          entries[0].target.classList.add("in");
-          obs.disconnect();
-        }
-      }, { rootMargin: "0px 0px -25% 0px" }).observe(somosEl);
+      new IntersectionObserver(
+        function (entries, obs) {
+          if (entries[0].isIntersecting) {
+            entries[0].target.classList.add("in");
+            obs.disconnect();
+          }
+        },
+        { rootMargin: "0px 0px -25% 0px" }
+      ).observe(somosEl);
     }
   }
 })();

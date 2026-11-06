@@ -7,24 +7,54 @@
   const mobileMQ = window.matchMedia("(max-width: 760px)");
 
 
-// 1. 함수 내부에 join-page 예외 조건 추가
-function enforceMobileLightMode() {
-  if (mobileMQ.matches && !document.body.classList.contains('join-page')) {
-    d.dataset.theme = "light";
+  const THEME_KEY = "vc-theme";
+
+  function getSavedTheme() {
+    try {
+      const saved = localStorage.getItem(THEME_KEY);
+      return saved === "dark" || saved === "light" ? saved : null;
+    } catch (e) {
+      return null;
+    }
   }
-}
 
-// 2. 실행 및 이벤트 리스너 바인딩 (원래대로 유지)
-enforceMobileLightMode();
-if (mobileMQ.addEventListener) {
-  mobileMQ.addEventListener("change", enforceMobileLightMode);
-} else if (mobileMQ.addListener) {
-  mobileMQ.addListener(enforceMobileLightMode);
-}
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem(THEME_KEY, theme);
+    } catch (e) {}
+  }
 
-  // 데스크톱 다크모드 토글 버튼 (#th)
+  // 1. 페이지 로드 및 뷰포트 전환 시 테마 복원 (모바일 강제 라이트 모드 & .join-page 예외 규칙 유지)
+  function enforceMobileLightMode() {
+    const isJoinPage = document.body && document.body.classList.contains("join-page");
+    if (isJoinPage) {
+      d.dataset.theme = "dark";
+      return;
+    }
+    if (mobileMQ.matches) {
+      d.dataset.theme = "light";
+      return;
+    }
+    const saved = getSavedTheme();
+    if (saved) {
+      d.dataset.theme = saved;
+    }
+  }
+
+  // 2. 실행 및 이벤트 리스너 바인딩
+  enforceMobileLightMode();
+  if (mobileMQ.addEventListener) {
+    mobileMQ.addEventListener("change", enforceMobileLightMode);
+  } else if (mobileMQ.addListener) {
+    mobileMQ.addListener(enforceMobileLightMode);
+  }
+
+  // 데스크톱 다크모드 토글 버튼 (#th) + localStorage("vc-theme") 영속 저장
   if (th) {
     th.addEventListener("click", () => {
+      if (document.body && document.body.classList.contains("join-page")) {
+        return;
+      }
       if (mobileMQ.matches) {
         d.dataset.theme = "light";
         return;
@@ -32,7 +62,9 @@ if (mobileMQ.addEventListener) {
       const dark = d.dataset.theme
         ? d.dataset.theme === "dark"
         : window.matchMedia("(prefers-color-scheme: dark)").matches;
-      d.dataset.theme = dark ? "light" : "dark";
+      const nextTheme = dark ? "light" : "dark";
+      d.dataset.theme = nextTheme;
+      saveTheme(nextTheme);
     });
   }
 
@@ -275,9 +307,9 @@ if (mobileMQ.addEventListener) {
     recursos: {
       ariaLabel: "Submenú de recursos",
       items: [
-        { id: "pdf", label: "Materiales PDF", href: "pdf-resource.html" },
-        { id: "guia", label: "Guías de Estudio", href: "guia-resource.html" },
-        { id: "podcast", label: "Podcast", href: "podcast-resource.html" }
+        { id: "pdf", label: "Materiales PDF", href: "resource/pdf.html" },
+        { id: "guia", label: "Guías de Estudio", href: "resource/guia.html" },
+        { id: "podcast", label: "Podcast", href: "resource/podcast.html" }
       ]
     }
   };
@@ -468,7 +500,7 @@ if (mobileMQ.addEventListener) {
             const ev = latestEvent;
             
             const t = ev.target;
-            const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card,.cta-banner-card,.julio-card,.res-item-card,.res-portal");
+            const c = t.closest && t.closest(".sc,.cd,.mt,.rw,.action-card,.proof-item,.tutor-card-inner,.peek-card,.bento-card,.cta-banner-card,.julio-card,.res-item-card,.res-portal,.prog-card,.learn-card,.pdf-card");
             if (c) {
               const r = c.getBoundingClientRect(); // 3. 부하가 걸리지 않도록 주기에 맞춰 안전하게 실행
               c.style.setProperty("--x", ev.clientX - r.left + "px");

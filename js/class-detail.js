@@ -12,14 +12,6 @@
   const COURSE_DATA = {
     despegue: {
       graduationText: "Tu graduación de Despegue.",
-      phases: [
-        "Todas",
-        "Hangul y presentación",
-        "Acciones y lugares",
-        "Números y compras",
-        "Los tres tiempos",
-        "Expresarte y conectar"
-      ],
       sessions: [
         ["인사하고 자기소개 하기 / 한글 1", "Saludar y presentarse · Hangul 1", "S이에요/예요", "Consonantes ㅇ ㄴ ㅁ ㄹ~Vocales ㅏ ㅓ ㅗ ㅜ ㅡ ㅣ~Saludar y presentar el nombre", "안녕하세요=Hola;저는 마리아예요=Soy María", 1],
         ["국적 말하기 / 한글 2", "Hablar de la nacionalidad · Hangul 2", "S이에요/예요", "Consonantes ㄱ ㄷ ㅂ ㅅ ㅈ ㅎ~Vocales ㅐ ㅔ ㅚ ㅟ~Hablar de la nacionalidad", "저는 콜롬비아 사람이에요=Soy colombiano/a;저는 멕시코 사람이에요=Soy mexicano/a", 1],
@@ -52,17 +44,14 @@
     // 추후 오픈될 코스들을 위한 슬롯 (동일한 데이터 구조로 채우기만 하면 즉시 렌더링)
     ascenso: {
       graduationText: "Tu graduación de Ascenso.",
-      phases: ["Todas"],
       sessions: []
     },
     viaje: {
       graduationText: "Tu graduación de Expresiones para Viaje.",
-      phases: ["Todas"],
       sessions: []
     },
     conversacion: {
       graduationText: "Tu graduación de Conversación y Cultura.",
-      phases: ["Todas"],
       sessions: []
     }
   };
@@ -78,11 +67,9 @@
   ).toLowerCase();
 
   const course = COURSE_DATA[courseKey] || COURSE_DATA.despegue;
-  const PN = course.phases;
   const S = course.sessions;
 
   const its = $("#its");
-  const fl2 = $("#fl2");
   const tl_temario = $("#tl");
   let updateTimeline = null;
 
@@ -140,32 +127,6 @@
     });
 
     its.appendChild(itemsFrag);
-
-    if (fl2 && PN.length) {
-      const filterFrag = document.createDocumentFragment();
-      PN.forEach((n, i) => {
-        const b = document.createElement("button");
-        b.className = "fb";
-        b.textContent = n;
-        b.setAttribute("aria-pressed", i === 0);
-        b.onclick = () => {
-          $$(".fb", fl2).forEach((x) => x.setAttribute("aria-pressed", x === b));
-          $$(".it", its).forEach((el) => {
-            const h = i && +el.dataset.ph !== i;
-            el.classList.toggle("hd", h);
-            if (!h) {
-              el.classList.remove("ent");
-              requestAnimationFrame(() => {
-                if (!h) el.classList.add("ent");
-              });
-            }
-          });
-          if (typeof updateTimeline === "function") updateTimeline();
-        };
-        filterFrag.appendChild(b);
-      });
-      fl2.appendChild(filterFrag);
-    }
   }
 
   // 스크롤 진입 시 각 세션 아이템(.it) 순차 표시
@@ -228,4 +189,3 @@
     updateTimeline();
   }
 })();
-
